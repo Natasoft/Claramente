@@ -1,0 +1,100 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #F7F5FB;
+    color: #333;
+    font-family: "Gabriela", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.encabezado{
+    grid-area: header;
+    background-color: #599ec0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    border: 2px solid rgb(191, 160, 235);
+    border-radius: 10px;
+    height: 100%;
+}
+.header-izquierda{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.Logo-header{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 50px;
+    height: auto;
+}
+.Logo-header img{
+    width: 80px;
+    height: auto;
+}
+h2{
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.header-derecha{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+.usuario{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.btn:hover{
+    padding: 10px 15px;
+    background-color: #37BAE1;
+    border-radius: 10px;
+    border: none;
+    cursor:pointer;
+}
+.menu{
+    grid-area: menu;
+    background-color: #b1c7d6;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    height: 100%;
+}
+.menu ul{
+    list-style: none;
+    padding: 0;
+}
+.menu li:hover{
+    background-color:#8fb4c9;
+    border-radius:6px;
+    padding-left:20px;
+    cursor: pointer;
+}
+.contenido{
+    grid-area: contenido;
+    background-color: #FFFFFF;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 30px;
+}
+.panel{
+    display: grid;
+    grid-template-columns:250px 1fr;
+    grid-template-rows:80px 1fr;
+    height: 100vh;
+
+
+    grid-template-areas: 
+    "header header" 
+    "menu contenido";     
+}
+     
