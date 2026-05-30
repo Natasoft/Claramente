@@ -5,6 +5,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>CLARAMENTE - Mi Diario Emocional</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script src="../JS/stitcht.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
@@ -293,60 +294,9 @@
 <div class="flex gap-6">
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Aviso Legal</a>
 <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Accesibilidad</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors text-error" href="#">Contacto de Emergencia</a>
+<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors text-error" href="#">Red de apoyo profesional</a>
 </div>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2024 CLARAMENTE. Tu bienestar es nuestra prioridad.</p>
+<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 CLARAMENTE. Tu bienestar es nuestra prioridad.</p>
 </div>
 </footer>
-<script>
-        // Update live time/date
-        function updateDateTime() {
-            const now = new Date();
-            const dateOptions = { day: 'numeric', month: 'long', year: 'numeric' };
-            const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: true };
-            
-            document.getElementById('current-date').textContent = now.toLocaleDateString('es-ES', dateOptions);
-            document.getElementById('current-time').textContent = now.toLocaleTimeString('es-ES', timeOptions);
-        }
-        setInterval(updateDateTime, 1000);
-        updateDateTime();
-
-        // Slider functionality
-        const slider = document.getElementById('intensity-slider');
-        const intensityVal = document.getElementById('intensity-value');
-        slider.addEventListener('input', (e) => {
-            intensityVal.textContent = e.target.value;
-            // Visual feedback - brightness
-            intensityVal.style.filter = `brightness(${0.5 + (e.target.value / 10)})`;
-        });
-
-        // Emotion selection
-        function selectEmotion(btn) {
-            document.querySelectorAll('.emotion-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            btn.classList.add('active');
-        }
-
-        // Save registry logic
-        function saveRegistry() {
-            const modal = document.getElementById('success-modal');
-            const content = document.getElementById('modal-content');
-            
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.remove('opacity-0');
-                content.classList.remove('scale-90');
-                content.classList.add('scale-100');
-            }, 10);
-        }
-
-        function closeModal() {
-            const modal = document.getElementById('success-modal');
-            modal.classList.add('opacity-0');
-            setTimeout(() => {
-                modal.classList.add('hidden');
-            }, 300);
-        }
-    </script>
 </body></html>
