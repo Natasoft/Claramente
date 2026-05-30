@@ -4,5 +4,4 @@ document.addEventListener("DOMContentLoaded" (Event) => {
 document.addEventListener("submit" (Event) => {
 alert(Formulario enviado);
 
-
 })
