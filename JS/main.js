@@ -14,8 +14,9 @@ function login() {
     const email = document.getElementById("correo").value;
     const password = document.getElementById("password").value;
 
-    console.log("Correo:", correo);
+    console.log("correo:", email);
     console.log("Contraseña:", password);
+    alert(`email: ${email}\npassword: ${password}`);
 }
 
 formulario.addEventListener("submit", (event) => {
