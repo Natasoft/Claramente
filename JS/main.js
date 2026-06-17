@@ -1,3 +1,4 @@
+import { login } from "./inicio.js";
 document.addEventListener("DOMContentLoaded", (Event) => {
 // alert("Bienvenido a Claramente")
 });
@@ -7,19 +8,8 @@ event.preventDefault();
 login();
  }
     
-});
+});    
 
-function login() {
-    console.log("estamos en la funcion login");
-    const email = document.getElementById("correo").value;
-    const password = document.getElementById("password").value;
-
-    console.log("correo:", email);
-    console.log("Contraseña:", password);
-    alert(`email: ${email}\npassword: ${password}`);
-}
-
-formulario.addEventListener("submit", (event) => {
-    event.preventDefault();
-    login();
+document.addEventListener("click", (e) => {
+    console.log("e.target");
 });
