@@ -14,10 +14,11 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         alert("La contraseña debe tener al menos 4 caracteres.");
         const datos = {params: {correo: email, password: password}, "url": "http://localhost:8080/login", "method": "POST"};
         console.log("datos a enviar", datos);
-        enviarpeticion(datos);
+        enviarPeticion(datos);
     
     }
-    function enviarpeticion(datos) {
+    function enviarPeticion(datos) {
+         console.log("Entre a enviarPeticion");
        let {params, url, method} = datos;
         console.log("params:", params);
         console.log("url:", url);
@@ -38,7 +39,7 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         console.error("Error al enviar la peticion:", error);
         });
     } catch(error){
-        console.error("Error en la funcion enviarpeticion:", error);
+        console.error("Error en la funcion enviarPeticion:", error);
          }
     }
  }
