@@ -9,14 +9,14 @@ export async function enviarPeticion(info) {
         if (method === "GET") method ={ method, headers, params};
         if (method === "POST" || method === "PUT" || method === "DELETE" || method === "PATCH" ) method = { method, headers, body: JSON.stringify(params)};
         
-        TRY {
+        try {
             console.log(url, method);
             let resp = await fetch(url, method);
             if (resp.ok) throw { status: resp.status, statusText: resp.statusText };
             let respJson = await resp.json();
-            Fsuccess(respJson);
-        } catch (err) {
-                Fsuccess({code: err.status, message: err.message});
+            fSucces(respJson);
+        } catch (e) {
+            fSucces({code: e.status, msg: e.msg});
         }
 
 }
