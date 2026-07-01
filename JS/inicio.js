@@ -20,15 +20,15 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         console.log("datos a enviar", datos);
         //console.log("Voy a ejecutar fetch");
         await enviarPeticion({
-            url: "controller login.php",
+            url: "/backend/api/login/",
             method: "POST",
             params: {correo: email, password: hashedPassword},
             fSucces: (resp) =>{
-                if (resp.code !== 200) {
+                if (resp.code == 200) {
                     alert("Inicio de sesión exitoso");
                     ir("panelbootstrap.html");
                 }
-                else {alert(resp.msg)}
+                else {alert(resp.msg || "Error al iniciar sesión");}
         }
         });
         
