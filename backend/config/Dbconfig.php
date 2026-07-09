@@ -1,7 +1,7 @@
 <?php
 $host = "127.0.0.1";
 $usuario = "userdbclaramente";
-$contrasena = "@ClM3306/¿";
+$contrasena = "@/BpMpil6hsmrz!R";
 $base_de_datos = "bdclaramente";
 
 // Crear la conexión
