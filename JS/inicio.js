@@ -20,7 +20,7 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         console.log("datos a enviar", datos);
         //console.log("Voy a ejecutar fetch");
         await enviarPeticion({
-            url: "/backend/api/login/",
+            url: "../backend/login/index.php",
             method: "POST",
             params: {correo: email, password: hashedPassword},
             fSucces: (resp) =>{
