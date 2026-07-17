@@ -11,9 +11,9 @@ class Database
 
     // Datos de conexión
     private $host = "localhost";
-    private $dbname = "bdclaramente";
-    private $username = "userdbclaramente";
-    private $password = "@Clm3306/¿";
+    private $dbname = "bd_claramente";
+    private $username = "root"; //userdbclaramente";
+    private $password = ""; //@Clm3306/¿";
     private $charset = "utf8mb4";
 
     // Constructor privado

@@ -16,17 +16,18 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         alert("La contraseña debe tener al menos 4 caracteres.");
         return;
     }
-        const datos = {params: {correo: email, password: hashedPassword}, "url": "http://localhost:8080/login", "method": "POST"};
+        const datos = {params: {correo: email, password: hashedPassword}, "url": "../backend/vista_inicio/index.php", "method": "POST"};
         console.log("datos a enviar", datos);
         //console.log("Voy a ejecutar fetch");
         await enviarPeticion({
-            url: "../backend/login/index.php",
+            url: "../backend/vista_inicio/index.php",
             method: "POST",
             params: {correo: email, password: hashedPassword},
             fSucces: (resp) =>{
+                console.log("Respuesta del servidor:", resp);
                 if (resp.code == 200) {
                     alert("Inicio de sesión exitoso");
-                    ir("panelbootstrap.html");
+                    ir("../html/panelbootstrap.html");
                 }
                 else {alert(resp.msg || "Error al iniciar sesión");}
         }
