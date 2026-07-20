@@ -6,7 +6,7 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const password = document.getElementById("password").value;
     const hashedPassword = md5(password);
 
-    console.log("correo:", email);
+    console.log("usuario:", email);
     console.log("Contraseña:", hashedPassword);
     if (!regex.test(email)) {
         alert("Por favor, ingresa un correo electrónico válido.");
@@ -16,13 +16,13 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
         alert("La contraseña debe tener al menos 4 caracteres.");
         return;
     }
-        const datos = {params: {correo: email, password: hashedPassword}, "url": "../backend/vista_inicio/index.php", "method": "POST"};
+        const datos = {params: {usuario: email, password: hashedPassword}, "url": "../backend/vista_inicio/index.php", "method": "POST"};
         console.log("datos a enviar", datos);
         //console.log("Voy a ejecutar fetch");
         await enviarPeticion({
             url: "../backend/vista_inicio/index.php",
             method: "POST",
-            params: {correo: email, password: hashedPassword},
+            params: {usuario: email, password: hashedPassword},
             fSucces: (resp) =>{
                 console.log("Respuesta del servidor:", resp);
                 if (resp.code == 200) {

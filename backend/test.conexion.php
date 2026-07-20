@@ -7,7 +7,7 @@ require_once "config/Dbconfig.php";
 
 try {
 
-    $conexion = Database::getInstance()->getConnection();
+    $conexion = DbConfig::getInstance()->getConnection();
 
     echo "✅ Conexión exitosa";
 
