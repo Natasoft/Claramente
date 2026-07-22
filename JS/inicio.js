@@ -27,7 +27,7 @@ const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
                 console.log("Respuesta del servidor:", resp);
                 if (resp.code == 200) {
                     alert("Inicio de sesión exitoso");
-                    ir("../html/panelbootstrap.html");
+                    ir("../Html/panelbootstrap.html");
                 }
                 else {alert(resp.msg || "Error al iniciar sesión");}
         }

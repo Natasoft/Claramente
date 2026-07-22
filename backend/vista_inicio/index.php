@@ -12,11 +12,13 @@
                 if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
                     $usuario = htmlspecialchars(trim($_POST['usuario']));
                     $password = htmlspecialchars(trim($_POST['password']));
-                    $controller = new logincontroller();
+                    //echo "Usuario: $usuario, Contraseña: $password";
+                   $controller = new logincontroller();
                     $result = $controller->autenticar($usuario, $password);
-                    if(count($result) > 0){
+                   if(count($result) > 0){
+                        //echo json_encode($result);   
                         http_response_code(200);
-                        echo json_encode(array("code"=>200, "msg" => "Usuario OK", "user" => $result[0]["Nombre"]));
+                        echo json_encode(array("code"=>200, "msg" => "Usuario OK", "user" => $result[0]["NOMBRES"]));
                     } else {
                         http_response_code(203);
                         echo json_encode(array("code"=>203, "msg" => "Las credenciales no son válidas"));

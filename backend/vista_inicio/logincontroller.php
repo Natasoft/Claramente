@@ -13,7 +13,7 @@
                 $conectar = $db->getConnection();
 
                 // Preparar la consulta para verificar el usuario y la contraseña
-                $stmt = $conectar->prepare("SELECT * FROM usuario WHERE User = :usuario AND Clave = :password");
+                $stmt = $conectar->prepare("SELECT * FROM usuario WHERE EMAIL = :usuario AND PASSWORD = :password");
                 $stmt->bindParam(':usuario', $usuario);
                 $stmt->bindParam(':password', $password);
                 $stmt->execute();
