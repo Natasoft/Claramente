@@ -1,70 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Panel Bootstrap</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&display=swap" rel="stylesheet">
     <!-- Bootstrap -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
- <link rel="stylesheet" href="../CSS/st_dash.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../CSS/st_dash.css">
 </head>
+
 <body>
     <div class="container-fluid">
         <div class="panel">
-        <header class="encabezado">
-            <div class="header-izquierda">
-                <div class="Logo-header">
-                    <img src="../Imagenes/LOGO CLARAMENTE.png" alt="Logo">
-                    <h2>Claramente</h2>
+            <header class="encabezado">
+                <div class="header-izquierda">
+                    <div class="Logo-header">
+                        <img src="../Imagenes/LOGO CLARAMENTE.png" alt="Logo">
+                        <h2>Claramente</h2>
+                    </div>
                 </div>
-                 </div>
-                 <div class="header-derecha">
-                <div class="usuario">
-                    <strong>nombre usuario</strong>
-                    <button type="submit" class="btn btn-outline-info">Cerrar sesión</button>
+                <div class="header-derecha">
+                    <div class="usuario">
+                        <strong>nombre usuario</strong>
+                        <button type="submit" class="btn btn-outline-info">Cerrar sesión</button>
+                    </div>
                 </div>
-                </div>
-        </header>
-    
-    <ul class="nav flex-column card shadow p-3 mb-5 bg-body-tertiary rounded">
-        <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Diario emocional</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Evolución emocional</a>
-         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Recomendaciones</a>
-         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Bibliografìa</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="#">Foros</a>
-         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Alertas</a>
-         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Perfil</a>
-         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Configuración</a>
-         </li>
-    </ul>
-            
-        <main class="card shadow p-3 mb-5 bg-body-tertiary rounded">
-            <h2>Bienvenido/a a CLARAMENTE</h2>
-            <p>Aqui aparece contenido del sistema</p>
-        </main>
-    </div>
+            </header>
+
+            <aside class="sidebar">
+
+                <ul class="menu">
+
+                    <li>
+                        <a href="Inicio.html">
+                            <i class="bi bi-house-door"></i>
+                            Inicio
+                        </a>
+                    </li>
+
+                    <!-- BIENESTAR -->
+
+                    <li class="submenu">
+                        <button class="submenu-btn">
+                            <span>
+                                <i class="bi bi-heart-pulse"></i>
+                                Bienestar emocional
+                            </span>
+                            <i class="bi bi-chevron-down flecha"></i>
+                        </button>
+                        <ul class="submenu-items">
+                            <li>
+                                <a href="Registro_emocional.html">
+                                    Registro emocional
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Evolucionemocional.html">
+                                    Evolución emocional
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Retroalimentacion.html">
+                                    Retroalimentación
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- COMUNIDAD -->
+
+                    <li class="submenu">
+                        <button class="submenu-btn">
+                            <span>
+                                <i class="bi bi-people"></i>
+                                Comunidad
+                            </span>
+                            <i class="bi bi-chevron-down flecha"></i>
+                        </button>
+                        <ul class="submenu-items">
+                            <li>
+                                <a href="Participacion_foros.html">
+                                    Participación
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Modoanonimo.html">
+                                    Modo anónimo
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Moderacion_contenido_foros.html">
+                                    Moderación
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <!-- RECURSOS -->
+
+                    <li class="submenu">
+                        <button class="submenu-btn">
+                            <span>
+                                <i class="bi bi-book"></i>
+                                Recursos
+                            </span>
+                            <i class="bi bi-chevron-down flecha"></i>
+                        </button>
+                        <ul class="submenu-items">
+                            <li>
+                                <a href="Recomendaciones_bibliografia.html">
+                                    Recomendaciones
+                                </a>
+                            </li>
+                            <li>
+                                <a href="Bibliografia.html">
+                                    Bibliografía
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="panel.html">
+                            <i class="bi bi-person-circle"></i>
+                            Mi cuenta
+                        </a>
+                    </li>
+                </ul>
+
+            </aside>
+
+            <main class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+                <h2>Bienvenido/a a CLARAMENTE</h2>
+                <p>Aqui aparece contenido del sistema</p>
+            </main>
+        </div>
     </div>
     <script type="module" src="../JS/main.js"></script>
 </body>
+
 </html>
