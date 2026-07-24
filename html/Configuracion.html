@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Lumina Wellness - Cuenta</title>
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabriela&amp;family=Source+Sans+3:wght@400;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary": "#ffffff",
+                        "on-primary-container": "#e2d0ff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "secondary-fixed": "#ebdcff",
+                        "surface-bright": "#f8f9fa",
+                        "surface": "#f8f9fa",
+                        "surface-container-high": "#e7e8e9",
+                        "on-background": "#191c1d",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed-variant": "#503d73",
+                        "on-secondary-fixed": "#230f45",
+                        "on-primary-fixed": "#230f45",
+                        "surface-variant": "#e1e2e4",
+                        "on-surface": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "danger": "#93000a",
+                        "on-surface-variant": "#49454f",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e1e2e4",
+                        "secondary-fixed-dim": "#d3bcfc",
+                        "primary-fixed-dim": "#d3bcfc",
+                        "on-secondary-container": "#5d4a82",
+                        "on-tertiary-fixed-variant": "#4e4800",
+                        "tertiary": "#666018",
+                        "inverse-primary": "#d3bcfc",
+                        "on-primary": "#ffffff",
+                        "primary": "#503c74",
+                        "surface-container-low": "#f3f4f5",
+                        "secondary-container": "#d6beff",
+                        "success": "#24502c",
+                        "surface-tint": "#68548d",
+                        "tertiary-container": "#b6ae5e",
+                        "text-main": "#191c1d",
+                        "outline-variant": "#cbc4d0",
+                        "primary-subtle": "#ebdcff",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed-variant": "#503c74",
+                        "surface-dim": "#d9dadb",
+                        "secondary": "#68548d",
+                        "primary-container": "#68548d",
+                        "tertiary-fixed": "#efe58f",
+                        "outline": "#7a7580",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-fixed": "#1f1c00",
+                        "tertiary-fixed-dim": "#d2c976",
+                        "on-tertiary-container": "#464100",
+                        "on-error-container": "#93000a",
+                        "warning": "#b2aa5a",
+                        "warm-grey": "#E0E0E0",
+                        "inverse-surface": "#2e3132",
+                        "surface-container": "#edeeef",
+                        "primary-fixed": "#ebdcff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "xs": "8px",
+                        "container-max": "1200px",
+                        "lg": "24px",
+                        "xl": "32px",
+                        "md": "16px",
+                        "base": "4px",
+                        "gutter": "1.5rem",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "label-sm": ["Source Sans 3"],
+                        "label-md": ["Source Sans 3"],
+                        "headline-lg-mobile": ["Gabriela"],
+                        "body-sm": ["Source Sans 3"],
+                        "headline-lg": ["Gabriela"],
+                        "display-lg": ["Gabriela"],
+                        "body-lg": ["Source Sans 3"],
+                        "headline-sm": ["Gabriela"],
+                        "body-md": ["Source Sans 3"],
+                        "headline-md": ["Gabriela"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Source Sans 3', sans-serif;
+            background-color: #f8f9fa;
+            color: #191c1d;
+        }
+
+        .font-gabriela {
+            font-family: 'Gabriela', serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .soft-shadow {
+            box-shadow: 0 4px 12px rgba(25, 28, 29, 0.08);
+        }
+
+        .active-subitem {
+            background-color: #68548d !important;
+            color: white !important;
+            font-weight: 700;
+        }
+
+        /* Sidebar transition for mobile */
+        #mobile-sidebar {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .sidebar-hidden {
+            transform: translateX(-100%);
+        }
+
+        .nav-pill-active {
+            background-color: #68548d;
+            color: white;
+        }
+
+        .nav-pill-inactive {
+            background-color: #f3f4f5;
+            color: #191c1d;
+        }
+
+        .form-switch input:checked {
+            background-color: #68548d;
+            border-color: #68548d;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #cbc4d0;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #7a7580;
+        }
+    </style>
+</head>
+
+<body class="bg-surface overflow-x-hidden">
+    <!-- TOP BAR (Mobile Only) -->
+    <header
+        class="md:hidden fixed top-0 left-0 w-full bg-surface-container-lowest h-16 flex items-center px-md z-40 soft-shadow">
+        <button class="p-xs text-primary transition-all active:scale-90" id="toggle-sidebar">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+        <span class="ml-md font-headline-md text-headline-md font-bold text-primary">Lumina</span>
+    </header>
+    <!-- SIDEBAR -->
+    <aside
+        class="fixed left-0 top-0 h-full w-64 bg-surface-container-low pt-20 pb-8 px-md flex flex-col z-30 transition-transform duration-300 md:translate-x-0 -translate-x-full md:flex"
+        id="sidebar">
+        <!-- Brand Logo Header -->
+        <div class="mb-xl flex items-center gap-sm px-xs">
+            <div class="w-10 h-10 bg-primary-container rounded-lg flex items-center justify-center">
+                <span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">spa</span>
+            </div>
+            <div>
+                <h1 class="font-headline-md text-headline-md text-primary font-bold">Lumina</h1>
+                <p class="text-label-sm text-on-surface-variant opacity-70">Wellness Portal</p>
+            </div>
+        </div>
+        <nav class="flex-1 space-y-xs overflow-y-auto pr-1">
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- AQUÍ SE CARGARÁ EL MENÚ -->
+            </aside>
+
+            <!-- Cuenta (Active) -->
+            <div>
+                <button
+                    class="w-full flex items-center justify-between gap-md px-md py-sm rounded-lg bg-primary text-on-primary font-bold transition-all group">
+                    <div class="flex items-center gap-md">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+                        <span class="font-label-md text-label-md">Cuenta</span>
+                    </div>
+                    <span class="material-symbols-outlined text-white text-sm rotate-180">expand_more</span>
+                </button>
+                <div class="pl-xl mt-2 space-y-1">
+                    <button
+                        class="w-full text-left px-md py-xs rounded-lg text-label-sm hover:bg-primary-subtle transition-all active-subitem"
+                        id="sub-config" onclick="switchTab('config')">Configuración</button>
+                </div>
+            </div>
+        </nav>
+        <div class="pt-xl border-t border-outline-variant/30 space-y-xs">
+            <a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-primary-subtle transition-all"
+                href="#">
+                <span class="material-symbols-outlined">contact_support</span>
+                <span class="font-label-md text-label-md">Ayuda</span>
+            </a>
+            <a class="flex items-center gap-md px-md py-sm rounded-lg text-danger hover:bg-error-container/20 transition-all"
+                href="#">
+                <span class="material-symbols-outlined">logout</span>
+                <span class="font-label-md text-label-md">Cerrar sesión</span>
+            </a>
+        </div>
+    </aside>
+    <!-- MAIN CONTENT CANVAS -->
+    <main class="md:ml-64 pt-20 md:pt-8 min-h-screen">
+        <div class="container mx-auto px-md md:px-xl max-w-container-max pb-xl">
+            <!-- Header Section -->
+            <header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface font-gabriela">Gestión de Cuenta</h2>
+                    <p class="text-body-md text-on-surface-variant">Administra tu información personal y preferencias
+                        del portal.</p>
+                </div>
+                <!-- Nav Pills -->
+                <nav class="flex p-1 bg-surface-container-low rounded-full w-fit soft-shadow">
+                    <button class="px-xl py-xs rounded-full font-label-md transition-all nav-pill-active"
+                        id="pill-config" onclick="switchTab('config')">Configuración</button>
+                </nav>
+            </header>
+            <!-- INTERFACE 1: PERFIL -->
+            <!-- INTERFACE 2: CONFIGURACIÓN -->
+            <section class="space-y-lg transition-opacity duration-300" id="content-config">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
+                    <!-- Notifications Card -->
+                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col">
+                        <div class="p-lg border-b border-outline-variant/20">
+                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-primary">notifications</span> Notificaciones
+                            </h3>
+                        </div>
+                        <div class="p-lg flex-1 space-y-md">
+                            <div
+                                class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
+                                <div>
+                                    <p class="font-label-md text-on-surface">Recordatorios diarios</p>
+                                    <p class="text-body-sm text-outline">Avisos para tus registros de bienestar.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input checked="" class="sr-only peer" type="checkbox" />
+                                    <div
+                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                    </div>
+                                </label>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
+                                <div>
+                                    <p class="font-label-md text-on-surface">Actualizaciones de red</p>
+                                    <p class="text-body-sm text-outline">Novedades de la comunidad y grupos.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input class="sr-only peer" type="checkbox" />
+                                    <div
+                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                    </div>
+                                </label>
+                            </div>
+                            <div
+                                class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
+                                <div>
+                                    <p class="font-label-md text-on-surface">Reportes semanales</p>
+                                    <p class="text-body-sm text-outline">Resumen de tu progreso por email.</p>
+                                </div>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input checked="" class="sr-only peer" type="checkbox" />
+                                    <div
+                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Privacy Card -->
+                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col">
+                        <div class="p-lg border-b border-outline-variant/20">
+                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-primary">privacy_tip</span> Privacidad y
+                                Visibilidad
+                            </h3>
+                        </div>
+                        <div class="p-lg flex-1 space-y-md">
+                            <div class="flex items-start gap-md">
+                                <input checked=""
+                                    class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
+                                    id="priv-1" type="checkbox" />
+                                <label class="text-body-md" for="priv-1">Permitir que otros usuarios premium vean mi
+                                    perfil público.</label>
+                            </div>
+                            <div class="flex items-start gap-md">
+                                <input class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
+                                    id="priv-2" type="checkbox" />
+                                <label class="text-body-md" for="priv-2">Compartir datos de bienestar anónimos para
+                                    investigación académica.</label>
+                            </div>
+                            <div class="flex items-start gap-md">
+                                <input checked=""
+                                    class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
+                                    id="priv-3" type="checkbox" />
+                                <label class="text-body-md" for="priv-3">Activar modo navegación privada por
+                                    defecto.</label>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Password/Security Card -->
+                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col md:col-span-2">
+                        <div class="p-lg border-b border-outline-variant/20">
+                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-primary">security</span> Seguridad de la
+                                Cuenta
+                            </h3>
+                        </div>
+                        <div class="p-lg">
+                            <form class="grid grid-cols-1 md:grid-cols-3 gap-xl" id="password-form" novalidate="">
+                                <div class="space-y-xs">
+                                    <label class="text-label-md block font-bold">Contraseña actual</label>
+                                    <input
+                                        class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                        placeholder="••••••••" required="" type="password" />
+                                    <p class="text-danger text-label-sm hidden invalid-feedback">Este campo es
+                                        obligatorio.</p>
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="text-label-md block font-bold">Nueva contraseña</label>
+                                    <input
+                                        class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                        minlength="8" placeholder="Nueva contraseña" required="" type="password" />
+                                    <p class="text-body-sm text-outline">Mínimo 8 caracteres.</p>
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="text-label-md block font-bold">Confirmar contraseña</label>
+                                    <input
+                                        class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                        placeholder="Repite contraseña" required="" type="password" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <!-- Preferences Card -->
+                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col md:col-span-2">
+                        <div class="p-lg border-b border-outline-variant/20">
+                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                                <span class="material-symbols-outlined text-primary">tune</span> Preferencias de
+                                Interfaz
+                            </h3>
+                        </div>
+                        <div class="p-lg grid grid-cols-1 md:grid-cols-2 gap-xl">
+                            <div class="space-y-xs">
+                                <label class="text-label-md block font-bold">Idioma del sistema</label>
+                                <select
+                                    class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%237a7580%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
+                                    <option>Español (España)</option>
+                                    <option>English (US)</option>
+                                    <option>Français</option>
+                                </select>
+                            </div>
+                            <div class="space-y-xs">
+                                <label class="text-label-md block font-bold">Tema visual</label>
+                                <select
+                                    class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%237a7580%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
+                                    <option>Modo Claro (Predeterminado)</option>
+                                    <option>Modo Oscuro</option>
+                                    <option>Automático (Sistema)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div
+                            class="px-lg pb-lg flex flex-col md:flex-row justify-end gap-md border-t border-outline-variant/10 pt-lg">
+                            <button
+                                class="px-xl py-sm border border-outline text-on-surface-variant rounded-xl font-label-md hover:bg-surface transition-all active:scale-95">Cancelar</button>
+                            <button
+                                class="px-xl py-sm bg-primary text-white rounded-xl font-label-md soft-shadow hover:bg-primary/90 transition-all active:scale-95"
+                                onclick="handleSave()">Guardar cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- SUCCESS ALERT (Hidden) -->
+    <div class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out"
+        id="toast-success">
+        <div class="bg-success text-white px-xl py-md rounded-xl soft-shadow flex items-center gap-md">
+            <span class="material-symbols-outlined">check_circle</span>
+            <span class="font-label-md">¡Configuración guardada correctamente!</span>
+        </div>
+    </div>
+    <!-- CONFIRMATION MODAL -->
+    <div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-md"
+        id="modal-backdrop">
+        <div
+            class="bg-surface-container-lowest max-w-md w-full rounded-xl soft-shadow overflow-hidden transform scale-95 transition-transform duration-300">
+            <div class="p-lg">
+                <h3 class="font-headline-sm text-headline-sm font-gabriela mb-md">Confirmar Cambios</h3>
+                <p class="text-body-md text-on-surface-variant">¿Estás seguro de que deseas guardar las modificaciones
+                    realizadas en tu perfil y configuración?</p>
+            </div>
+            <div class="p-lg bg-surface-container flex justify-end gap-md">
+                <button class="px-lg py-xs text-on-surface-variant font-label-md"
+                    onclick="toggleModal(false)">Volver</button>
+                <button class="px-xl py-sm bg-primary text-white rounded-lg font-label-md shadow-md"
+                    onclick="confirmSave()">Confirmar y Guardar</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Sidebar Mobile Toggle
+        const toggleBtn = document.getElementById('toggle-sidebar');
+        const sidebar = document.getElementById('sidebar');
+        let isSidebarOpen = false;
+
+        toggleBtn.addEventListener('click', () => {
+            isSidebarOpen = !isSidebarOpen;
+            if (isSidebarOpen) {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0', 'shadow-2xl');
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                sidebar.classList.remove('translate-x-0', 'shadow-2xl');
+            }
+        });
+
+        // Tab Switching Logic
+        function switchTab(tabId) {
+            const perfilContent = document.getElementById('content-perfil');
+            const configContent = document.getElementById('content-config');
+
+            const pillPerfil = document.getElementById('pill-perfil');
+            const pillConfig = document.getElementById('pill-config');
+
+            const subPerfil = document.getElementById('sub-perfil');
+            const subConfig = document.getElementById('sub-config');
+
+            // Reset
+            perfilContent.classList.add('hidden');
+            configContent.classList.add('hidden');
+
+            pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
+            pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
+
+            subPerfil.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
+            subConfig.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
+
+            // Set Active
+            if (tabId === 'perfil') {
+                perfilContent.classList.remove('hidden');
+                pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
+                subPerfil.classList.add('active-subitem');
+                subPerfil.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
+            } else {
+                configContent.classList.remove('hidden');
+                pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
+                subConfig.classList.add('active-subitem');
+                subConfig.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
+            }
+
+            // Close mobile sidebar after click
+            if (window.innerWidth < 768) {
+                sidebar.classList.add('-translate-x-full');
+                isSidebarOpen = false;
+            }
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Modal Logic
+        function toggleModal(show) {
+            const modal = document.getElementById('modal-backdrop');
+            if (show) {
+                modal.classList.remove('hidden');
+                setTimeout(() => {
+                    modal.classList.add('opacity-100');
+                    modal.querySelector('div').classList.add('scale-100');
+                }, 10);
+            } else {
+                modal.classList.remove('opacity-100');
+                modal.querySelector('div').classList.remove('scale-100');
+                setTimeout(() => modal.classList.add('hidden'), 300);
+            }
+        }
+
+        function handleSave() {
+            const form = document.getElementById('password-form');
+            if (form.checkValidity()) {
+                toggleModal(true);
+            } else {
+                form.classList.add('was-validated');
+                // Trigger visual cues for validation
+                const inputs = form.querySelectorAll('input:invalid');
+                inputs.forEach(input => {
+                    input.classList.add('border-error');
+                });
+            }
+        }
+
+        function confirmSave() {
+            toggleModal(false);
+            const toast = document.getElementById('toast-success');
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 3000);
+        }
+
+        // Responsive Sidebar Adjustment
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                sidebar.classList.remove('-translate-x-full');
+                isSidebarOpen = false;
+            } else {
+                if (!isSidebarOpen) sidebar.classList.add('-translate-x-full');
+            }
+        });
+    </script>
+    <script type="module" src="../JS/main.js"></script>
+</body>
+
+</html>

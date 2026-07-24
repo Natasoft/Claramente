@@ -1,131 +1,142 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CLARAMENTE - Panel de Moderación</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela:wght@100..900&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CLARAMENTE - Panel de Moderación</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gabriela&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela:wght@100..900&amp;display=swap" rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-tertiary-fixed-variant": "#4e4800",
-                      "primary": "#68548d",
-                      "outline": "#7a7580",
-                      "tertiary-fixed-dim": "#d2c976",
-                      "on-secondary-fixed-variant": "#24502c",
-                      "warm-grey": "#E0E0E0",
-                      "on-primary-fixed": "#230f45",
-                      "surface-container-lowest": "#ffffff",
-                      "primary-container": "#b39ddb",
-                      "surface-container": "#edeeef",
-                      "error-container": "#ffdad6",
-                      "ink-dark": "#2C2C2C",
-                      "on-error-container": "#93000a",
-                      "on-background": "#191c1d",
-                      "on-tertiary-container": "#433e00",
-                      "tertiary-container": "#b2aa5a",
-                      "on-primary": "#ffffff",
-                      "primary-fixed": "#ebdcff",
-                      "inverse-on-surface": "#f0f1f2",
-                      "on-secondary-container": "#426e47",
-                      "inverse-surface": "#2e3132",
-                      "outline-variant": "#cbc4d0",
-                      "on-tertiary": "#ffffff",
-                      "surface-container-highest": "#e1e3e4",
-                      "inverse-primary": "#d3bcfc",
-                      "surface-tint": "#68548d",
-                      "surface-bright": "#f8f9fa",
-                      "error": "#ba1a1a",
-                      "surface-dim": "#d9dadb",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#bdefbe",
-                      "on-tertiary-fixed": "#1f1c00",
-                      "secondary-container": "#bdefbe",
-                      "surface": "#f8f9fa",
-                      "on-secondary": "#ffffff",
-                      "surface-container-low": "#f3f4f5",
-                      "on-secondary-fixed": "#002109",
-                      "calm-peach": "#FFCCBC",
-                      "surface-container-high": "#e7e8e9",
-                      "on-surface-variant": "#49454f",
-                      "on-surface": "#191c1d",
-                      "background": "#f8f9fa",
-                      "on-primary-fixed-variant": "#503d73",
-                      "tertiary-fixed": "#efe58f",
-                      "verde-menta": "#A5D6A7",
-                      "primary-fixed-dim": "#d3bcfc",
-                      "lila-suave": "#B39DDB",
-                      "surface-variant": "#e1e3e4",
-                      "secondary-fixed-dim": "#a2d3a4",
-                      "secondary": "#3c6842",
-                      "tertiary": "#666018",
-                      "on-primary-container": "#453268"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin-mobile": "16px",
-                      "margin-desktop": "40px",
-                      "sidebar-width": "280px",
-                      "gutter": "24px",
-                      "container-max": "1200px",
-                      "unit": "8px"
-              },
-              "fontFamily": {
-                      "headline-md": ["Gabriela"],
-                      "body-lg": ["Gabriela"],
-                      "label-md": ["Gabriela"],
-                      "title-lg": ["Gabriela"],
-                      "headline-md-mobile": ["Gabriela"],
-                      "display-lg": ["Gabriela"],
-                      "display-lg-mobile": ["Gabriela"],
-                      "body-md": ["Gabriela"],
-                      "label-sm": ["Gabriela"]
-              },
-              "fontSize": {
-                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-                      "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#4e4800",
+                        "primary": "#68548d",
+                        "outline": "#7a7580",
+                        "tertiary-fixed-dim": "#d2c976",
+                        "on-secondary-fixed-variant": "#24502c",
+                        "warm-grey": "#E0E0E0",
+                        "on-primary-fixed": "#230f45",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#b39ddb",
+                        "surface-container": "#edeeef",
+                        "error-container": "#ffdad6",
+                        "ink-dark": "#2C2C2C",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1d",
+                        "on-tertiary-container": "#433e00",
+                        "tertiary-container": "#b2aa5a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ebdcff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-container": "#426e47",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#cbc4d0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-primary": "#d3bcfc",
+                        "surface-tint": "#68548d",
+                        "surface-bright": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#bdefbe",
+                        "on-tertiary-fixed": "#1f1c00",
+                        "secondary-container": "#bdefbe",
+                        "surface": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed": "#002109",
+                        "calm-peach": "#FFCCBC",
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface-variant": "#49454f",
+                        "on-surface": "#191c1d",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed-variant": "#503d73",
+                        "tertiary-fixed": "#efe58f",
+                        "verde-menta": "#A5D6A7",
+                        "primary-fixed-dim": "#d3bcfc",
+                        "lila-suave": "#B39DDB",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#a2d3a4",
+                        "secondary": "#3c6842",
+                        "tertiary": "#666018",
+                        "on-primary-container": "#453268"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "sidebar-width": "280px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Gabriela"],
+                        "body-lg": ["Gabriela"],
+                        "label-md": ["Gabriela"],
+                        "title-lg": ["Gabriela"],
+                        "headline-md-mobile": ["Gabriela"],
+                        "display-lg": ["Gabriela"],
+                        "display-lg-mobile": ["Gabriela"],
+                        "body-md": ["Gabriela"],
+                        "label-sm": ["Gabriela"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                },
             },
-          },
         }
-      </script>
-<style>
+    </script>
+    <style>
         body {
             background-color: #f8f9fa;
             scroll-behavior: smooth;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
             vertical-align: middle;
         }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #b39ddb;
             border-radius: 10px;
         }
+
         .glass-card {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(10px);
@@ -133,298 +144,352 @@
         }
     </style>
 </head>
+
 <body class="font-body-md text-on-surface">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm z-40 flex justify-between items-center px-margin-desktop h-16 w-full">
-<div class="flex items-center gap-4">
-<span class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</span>
-</div>
-<div class="flex items-center gap-6">
-<div class="hidden md:flex gap-8">
-<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer font-label-md text-label-md" href="#">Panel Admin</a>
-<a class="text-primary border-b-2 border-primary cursor-pointer font-label-md text-label-md" href="#">Moderación</a>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70">notifications</span>
-<img alt="User profile photo" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover" data-alt="A professional headshot of a middle-aged male administrator with a calm expression, wearing a soft grey sweater. He is set against a blurred background of a modern, light-filled office space. The image follows a high-key, professional aesthetic with soft shadows and a warm, empathetic color palette dominated by muted greys and soft lilac tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWv27L3An_nOwQrpBnqF80aulg4rvEVPHEjB8P0eBAo50X32BgI4-6NF7RR6pUwTejasQUa7lIngMM7LtFJ9oM3LefdwCMPgTBVajFX9GJLx-ySQUfxJwPpC81qpQLKjI_3Ey-bsNjq2FMfdbRAejnxnq6ImCxIFcLlQWyTSq7s60QMzrLLn5802mVfEbSTp91KUeSqkeJKPugAScd-lBIbAVAvGviR7r_bMAfYWv1Yo3bTF62RhBq3z5OjIJMSp4e81cFS8mCeRA"/>
-</div>
-</div>
-</header>
-<!-- SideNavBar (Hidden on Mobile) -->
-<nav class="hidden lg:flex flex-col p-6 gap-2 z-50 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
-<div class="py-6 mb-4">
-<h2 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h2>
-<p class="font-body-md text-label-sm text-on-surface-variant">Tu santuario digital</p>
-</div>
-<div class="flex flex-col gap-2">
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">edit_note</span>
-<span class="font-body-md text-body-md">Diario</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">trending_up</span>
-<span class="font-body-md text-body-md">Evolución</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">auto_awesome</span>
-<span class="font-body-md text-body-md">Recomendaciones</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">menu_book</span>
-<span class="font-body-md text-body-md">Biblioteca</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">groups</span>
-<span class="font-body-md text-body-md">Comunidad</span>
-</a>
-<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">shield_person</span>
-<span class="font-body-md text-body-md">Moderación</span>
-</a>
-</div>
-</nav>
-<!-- Main Content Canvas -->
-<main class="lg:ml-sidebar-width pt-24 pb-12 px-6 md:px-margin-desktop min-h-screen">
-<div class="max-w-container-max mx-auto">
-<!-- Header Section -->
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
-<div>
-<h1 class="font-headline-md text-headline-md text-ink-dark mb-2">Panel de Moderación</h1>
-<p class="font-body-md text-body-lg text-on-surface-variant">Gestión proactiva y ética del bienestar comunitario.</p>
-</div>
-<div class="flex gap-3">
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md flex items-center gap-2 hover:brightness-110 transition-all shadow-md">
-<span class="material-symbols-outlined text-[20px]">file_download</span> Exportar Reporte
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm z-40 flex justify-between items-center px-margin-desktop h-16 w-full">
+        <div class="flex items-center gap-4">
+            <span class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</span>
+        </div>
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex gap-8">
+                <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer font-label-md text-label-md"
+                    href="#">Panel Admin</a>
+                <a class="text-primary border-b-2 border-primary cursor-pointer font-label-md text-label-md"
+                    href="#">Moderación</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span
+                    class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70">notifications</span>
+                <img alt="User profile photo" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover"
+                    data-alt="A professional headshot of a middle-aged male administrator with a calm expression, wearing a soft grey sweater. He is set against a blurred background of a modern, light-filled office space. The image follows a high-key, professional aesthetic with soft shadows and a warm, empathetic color palette dominated by muted greys and soft lilac tones."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWv27L3An_nOwQrpBnqF80aulg4rvEVPHEjB8P0eBAo50X32BgI4-6NF7RR6pUwTejasQUa7lIngMM7LtFJ9oM3LefdwCMPgTBVajFX9GJLx-ySQUfxJwPpC81qpQLKjI_3Ey-bsNjq2FMfdbRAejnxnq6ImCxIFcLlQWyTSq7s60QMzrLLn5802mVfEbSTp91KUeSqkeJKPugAScd-lBIbAVAvGviR7r_bMAfYWv1Yo3bTF62RhBq3z5OjIJMSp4e81cFS8mCeRA" />
+            </div>
+        </div>
+    </header>
+    <!-- SideNavBar (Hidden on Mobile) -->
+    <nav
+        class="hidden lg:flex flex-col p-6 gap-2 z-50 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
+        <div class="py-6 mb-4">
+            <h2 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h2>
+            <p class="font-body-md text-label-sm text-on-surface-variant">Tu santuario digital</p>
+        </div>
+        <div class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined">edit_note</span>
+                <!-- SIDEBAR -->
+                <aside class="sidebar">
+                    <!-- AQUÍ SE CARGARÁ EL MENÚ -->
+                </aside>
+                <a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                    href="#">
+                    <span class="material-symbols-outlined">shield_person</span>
+                    <span class="font-body-md text-body-md">Moderación</span>
+                </a>
+        </div>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-sidebar-width pt-24 pb-12 px-6 md:px-margin-desktop min-h-screen">
+        <div class="max-w-container-max mx-auto">
+            <!-- Header Section -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
+                <div>
+                    <h1 class="font-headline-md text-headline-md text-ink-dark mb-2">Panel de Moderación</h1>
+                    <p class="font-body-md text-body-lg text-on-surface-variant">Gestión proactiva y ética del bienestar
+                        comunitario.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md flex items-center gap-2 hover:brightness-110 transition-all shadow-md">
+                        <span class="material-symbols-outlined text-[20px]">file_download</span> Exportar Reporte
                     </button>
-</div>
-</div>
-<!-- Metrics Bento Grid -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-<div class="glass-card p-6 rounded-3xl flex flex-col justify-between h-40">
-<div class="flex justify-between items-start">
-<span class="bg-primary-fixed text-on-primary-fixed p-3 rounded-2xl material-symbols-outlined">article</span>
-<span class="text-verde-menta flex items-center gap-1 font-label-sm"><span class="material-symbols-outlined text-[14px]">trending_up</span> +12%</span>
-</div>
-<div>
-<p class="font-label-md text-on-surface-variant">Total Publicaciones</p>
-<h3 class="font-headline-md text-headline-md text-ink-dark">1,284</h3>
-</div>
-</div>
-<div class="glass-card p-6 rounded-3xl flex flex-col justify-between h-40">
-<div class="flex justify-between items-start">
-<span class="bg-calm-peach text-on-primary-fixed-variant p-3 rounded-2xl material-symbols-outlined">report</span>
-<span class="text-error flex items-center gap-1 font-label-sm"><span class="material-symbols-outlined text-[14px]">warning</span> Activo</span>
-</div>
-<div>
-<p class="font-label-md text-on-surface-variant">Reportes Totales</p>
-<h3 class="font-headline-md text-headline-md text-ink-dark">42</h3>
-</div>
-</div>
-<div class="glass-card p-6 rounded-3xl flex flex-col justify-between h-40 border-error/20">
-<div class="flex justify-between items-start">
-<span class="bg-error-container text-on-error-container p-3 rounded-2xl material-symbols-outlined">emergency_home</span>
-<span class="text-on-surface-variant font-label-sm">Prioridad Alta</span>
-</div>
-<div>
-<p class="font-label-md text-on-surface-variant">Casos Críticos</p>
-<h3 class="font-headline-md text-headline-md text-error">5</h3>
-</div>
-</div>
-</div>
-<!-- Content Moderation Section -->
-<div class="space-y-8">
-<!-- Reported Posts Table -->
-<div class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-outline-variant/30">
-<div class="flex items-center justify-between mb-6">
-<div class="flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">dynamic_feed</span>
-<h2 class="font-title-lg text-title-lg text-ink-dark">Publicaciones Reportadas</h2>
-</div>
-<div class="flex gap-2">
-<span class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary-container transition-all">Todos</span>
-<span class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary-container transition-all">Pendientes</span>
-</div>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left border-separate border-spacing-y-4">
-<thead>
-<tr class="text-on-surface-variant font-label-md">
-<th class="pb-2 px-4">Usuario</th>
-<th class="pb-2 px-4">Motivo</th>
-<th class="pb-2 px-4">Fecha</th>
-<th class="pb-2 px-4">Estado</th>
-<th class="pb-2 px-4 text-right">Acciones</th>
-</tr>
-</thead>
-<tbody class="font-body-md">
-<tr class="bg-surface hover:bg-surface-container-low transition-colors rounded-2xl">
-<td class="px-4 py-5 rounded-l-2xl">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-lila-suave/30 flex items-center justify-center text-primary font-bold text-xs">MA</div>
-<span>Marta Aranda</span>
-</div>
-</td>
-<td class="px-4 py-5"><span class="bg-calm-peach/30 text-ink-dark px-3 py-1 rounded-full text-xs">Contenido Sensible</span></td>
-<td class="px-4 py-5 text-on-surface-variant text-sm">Hace 2 horas</td>
-<td class="px-4 py-5">
-<div class="flex items-center gap-2 text-tertiary">
-<span class="w-2 h-2 rounded-full bg-tertiary"></span>
-<span class="text-xs">Revisando</span>
-</div>
-</td>
-<td class="px-4 py-5 text-right rounded-r-2xl">
-<div class="flex justify-end gap-2">
-<button class="w-8 h-8 rounded-full bg-verde-menta/20 text-secondary hover:bg-verde-menta hover:text-on-secondary transition-all flex items-center justify-center" title="Aprobar">
-<span class="material-symbols-outlined text-[18px]">check</span>
-</button>
-<button class="w-8 h-8 rounded-full bg-error-container/20 text-error hover:bg-error hover:text-on-error transition-all flex items-center justify-center" title="Rechazar">
-<span class="material-symbols-outlined text-[18px]">close</span>
-</button>
-<button class="w-8 h-8 rounded-full bg-primary-container/20 text-primary hover:bg-primary text-on-primary transition-all flex items-center justify-center" title="Escalar">
-<span class="material-symbols-outlined text-[18px]">priority_high</span>
-</button>
-</div>
-</td>
-</tr>
-<tr class="bg-surface hover:bg-surface-container-low transition-colors rounded-2xl">
-<td class="px-4 py-5 rounded-l-2xl">
-<div class="flex items-center gap-3">
-<div class="w-8 h-8 rounded-full bg-verde-menta/30 flex items-center justify-center text-secondary font-bold text-xs">JL</div>
-<span>Juan López</span>
-</div>
-</td>
-<td class="px-4 py-5"><span class="bg-error-container/30 text-on-error-container px-3 py-1 rounded-full text-xs">Acoso / Hostilidad</span></td>
-<td class="px-4 py-5 text-on-surface-variant text-sm">Hace 5 horas</td>
-<td class="px-4 py-5">
-<div class="flex items-center gap-2 text-error">
-<span class="w-2 h-2 rounded-full bg-error"></span>
-<span class="text-xs">Urgente</span>
-</div>
-</td>
-<td class="px-4 py-5 text-right rounded-r-2xl">
-<div class="flex justify-end gap-2">
-<button class="w-8 h-8 rounded-full bg-verde-menta/20 text-secondary hover:bg-verde-menta hover:text-on-secondary transition-all flex items-center justify-center" title="Aprobar">
-<span class="material-symbols-outlined text-[18px]">check</span>
-</button>
-<button class="w-8 h-8 rounded-full bg-error-container/20 text-error hover:bg-error hover:text-on-error transition-all flex items-center justify-center" title="Eliminar">
-<span class="material-symbols-outlined text-[18px]">delete</span>
-</button>
-<button class="w-8 h-8 rounded-full bg-primary-container/20 text-primary hover:bg-primary text-on-primary transition-all flex items-center justify-center" title="Editar">
-<span class="material-symbols-outlined text-[18px]">edit</span>
-</button>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-<!-- Critical Cases & Interventions Section -->
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-<!-- Critical Cases Dashboard -->
-<div class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-error-container/30">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">emergency</span>
-<h2 class="font-title-lg text-title-lg text-ink-dark">Casos Críticos Activos</h2>
-</div>
-<div class="space-y-4">
-<!-- Case Item -->
-<div class="p-4 rounded-2xl border border-outline-variant/30 flex items-start gap-4 hover:bg-error-container/5 transition-all">
-<div class="bg-error-container p-3 rounded-full text-error">
-<span class="material-symbols-outlined">psychiatry</span>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-center mb-1">
-<h4 class="font-label-md text-ink-dark font-bold">Riesgo de autolesión detectado</h4>
-<span class="text-[10px] uppercase font-bold text-error bg-error-container px-2 py-0.5 rounded">Inmediato</span>
-</div>
-<p class="text-sm text-on-surface-variant line-clamp-2 mb-3 font-body-md">El usuario "Serenidad22" ha publicado contenido con lenguaje indicativo de crisis aguda en el foro de apoyo nocturno.</p>
-<div class="flex gap-2">
-<button class="text-xs bg-primary text-on-primary px-3 py-1.5 rounded-full">Llamar Profesional</button>
-<button class="text-xs border border-outline px-3 py-1.5 rounded-full">Ver Historial</button>
-</div>
-</div>
-</div>
-<!-- Case Item -->
-<div class="p-4 rounded-2xl border border-outline-variant/30 flex items-start gap-4 hover:bg-error-container/5 transition-all">
-<div class="bg-primary-fixed p-3 rounded-full text-primary">
-<span class="material-symbols-outlined">health_and_safety</span>
-</div>
-<div class="flex-1">
-<div class="flex justify-between items-center mb-1">
-<h4 class="font-label-md text-ink-dark font-bold">Derivación pendiente</h4>
-<span class="text-[10px] uppercase font-bold text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded">60 min</span>
-</div>
-<p class="text-sm text-on-surface-variant line-clamp-2 mb-3 font-body-md">Solicitud de intervención profesional por parte del equipo de moderación nivel 1.</p>
-<div class="flex gap-2">
-<button class="text-xs bg-primary text-on-primary px-3 py-1.5 rounded-full">Asignar Terapeuta</button>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- Intervention Analytics -->
-<div class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-outline-variant/30">
-<div class="flex items-center gap-3 mb-6">
-<span class="material-symbols-outlined text-secondary">analytics</span>
-<h2 class="font-title-lg text-title-lg text-ink-dark">Actividad de Profesionales</h2>
-</div>
-<div class="h-64 flex items-end justify-between gap-2 px-4 border-b border-outline-variant/30 pb-4">
-<div class="flex flex-col items-center gap-2 flex-1 group">
-<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 60%;"></div>
-<span class="text-[10px] font-label-sm text-on-surface-variant">Lun</span>
-</div>
-<div class="flex flex-col items-center gap-2 flex-1 group">
-<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 45%;"></div>
-<span class="text-[10px] font-label-sm text-on-surface-variant">Mar</span>
-</div>
-<div class="flex flex-col items-center gap-2 flex-1 group">
-<div class="w-full bg-primary-container rounded-t-lg transition-all" style="height: 85%;"></div>
-<span class="text-[10px] font-label-sm text-on-surface-variant font-bold">Mié</span>
-</div>
-<div class="flex flex-col items-center gap-2 flex-1 group">
-<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 30%;"></div>
-<span class="text-[10px] font-label-sm text-on-surface-variant">Jue</span>
-</div>
-<div class="flex flex-col items-center gap-2 flex-1 group">
-<div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container" style="height: 70%;"></div>
-<span class="text-[10px] font-label-sm text-on-surface-variant">Vie</span>
-</div>
-</div>
-<div class="mt-6 flex justify-around">
-<div class="text-center">
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Intervenciones</p>
-<p class="font-title-lg text-primary">128</p>
-</div>
-<div class="text-center">
-<p class="text-xs text-on-surface-variant uppercase tracking-wider mb-1">T. Respuesta</p>
-<p class="font-title-lg text-secondary">14m</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-<!-- Footer Section -->
-<footer class="lg:ml-sidebar-width bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/10">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 w-full">
-<div class="flex flex-col items-center md:items-start gap-1">
-<span class="font-title-lg text-title-lg text-primary">CLARAMENTE</span>
-<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra prioridad.</p>
-</div>
-<div class="flex gap-6 font-label-sm text-label-sm">
-<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Aviso Legal</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Accesibilidad</a>
-<a class="text-primary underline cursor-pointer" href="#">Red de apoyo profesional</a>
-</div>
-</div>
-</footer>
-<!-- Interactive Scripts -->
-<script>
+                </div>
+            </div>
+            <!-- Metrics Bento Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+                <div class="glass-card p-6 rounded-3xl flex flex-col justify-between h-40">
+                    <div class="flex justify-between items-start">
+                        <span
+                            class="bg-primary-fixed text-on-primary-fixed p-3 rounded-2xl material-symbols-outlined">article</span>
+                        <span class="text-verde-menta flex items-center gap-1 font-label-sm"><span
+                                class="material-symbols-outlined text-[14px]">trending_up</span> +12%</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-on-surface-variant">Total Publicaciones</p>
+                        <h3 class="font-headline-md text-headline-md text-ink-dark">1,284</h3>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl flex flex-col justify-between h-40">
+                    <div class="flex justify-between items-start">
+                        <span
+                            class="bg-calm-peach text-on-primary-fixed-variant p-3 rounded-2xl material-symbols-outlined">report</span>
+                        <span class="text-error flex items-center gap-1 font-label-sm"><span
+                                class="material-symbols-outlined text-[14px]">warning</span> Activo</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-on-surface-variant">Reportes Totales</p>
+                        <h3 class="font-headline-md text-headline-md text-ink-dark">42</h3>
+                    </div>
+                </div>
+                <div class="glass-card p-6 rounded-3xl flex flex-col justify-between h-40 border-error/20">
+                    <div class="flex justify-between items-start">
+                        <span
+                            class="bg-error-container text-on-error-container p-3 rounded-2xl material-symbols-outlined">emergency_home</span>
+                        <span class="text-on-surface-variant font-label-sm">Prioridad Alta</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-on-surface-variant">Casos Críticos</p>
+                        <h3 class="font-headline-md text-headline-md text-error">5</h3>
+                    </div>
+                </div>
+            </div>
+            <!-- Content Moderation Section -->
+            <div class="space-y-8">
+                <!-- Reported Posts Table -->
+                <div class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-outline-variant/30">
+                    <div class="flex items-center justify-between mb-6">
+                        <div class="flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">dynamic_feed</span>
+                            <h2 class="font-title-lg text-title-lg text-ink-dark">Publicaciones Reportadas</h2>
+                        </div>
+                        <div class="flex gap-2">
+                            <span
+                                class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary-container transition-all">Todos</span>
+                            <span
+                                class="px-4 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant font-label-sm cursor-pointer hover:bg-primary-container hover:text-on-primary-container transition-all">Pendientes</span>
+                        </div>
+                    </div>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-separate border-spacing-y-4">
+                            <thead>
+                                <tr class="text-on-surface-variant font-label-md">
+                                    <th class="pb-2 px-4">Usuario</th>
+                                    <th class="pb-2 px-4">Motivo</th>
+                                    <th class="pb-2 px-4">Fecha</th>
+                                    <th class="pb-2 px-4">Estado</th>
+                                    <th class="pb-2 px-4 text-right">Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody class="font-body-md">
+                                <tr class="bg-surface hover:bg-surface-container-low transition-colors rounded-2xl">
+                                    <td class="px-4 py-5 rounded-l-2xl">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-lila-suave/30 flex items-center justify-center text-primary font-bold text-xs">
+                                                MA</div>
+                                            <span>Marta Aranda</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-5"><span
+                                            class="bg-calm-peach/30 text-ink-dark px-3 py-1 rounded-full text-xs">Contenido
+                                            Sensible</span></td>
+                                    <td class="px-4 py-5 text-on-surface-variant text-sm">Hace 2 horas</td>
+                                    <td class="px-4 py-5">
+                                        <div class="flex items-center gap-2 text-tertiary">
+                                            <span class="w-2 h-2 rounded-full bg-tertiary"></span>
+                                            <span class="text-xs">Revisando</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-5 text-right rounded-r-2xl">
+                                        <div class="flex justify-end gap-2">
+                                            <button
+                                                class="w-8 h-8 rounded-full bg-verde-menta/20 text-secondary hover:bg-verde-menta hover:text-on-secondary transition-all flex items-center justify-center"
+                                                title="Aprobar">
+                                                <span class="material-symbols-outlined text-[18px]">check</span>
+                                            </button>
+                                            <button
+                                                class="w-8 h-8 rounded-full bg-error-container/20 text-error hover:bg-error hover:text-on-error transition-all flex items-center justify-center"
+                                                title="Rechazar">
+                                                <span class="material-symbols-outlined text-[18px]">close</span>
+                                            </button>
+                                            <button
+                                                class="w-8 h-8 rounded-full bg-primary-container/20 text-primary hover:bg-primary text-on-primary transition-all flex items-center justify-center"
+                                                title="Escalar">
+                                                <span class="material-symbols-outlined text-[18px]">priority_high</span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <tr class="bg-surface hover:bg-surface-container-low transition-colors rounded-2xl">
+                                    <td class="px-4 py-5 rounded-l-2xl">
+                                        <div class="flex items-center gap-3">
+                                            <div
+                                                class="w-8 h-8 rounded-full bg-verde-menta/30 flex items-center justify-center text-secondary font-bold text-xs">
+                                                JL</div>
+                                            <span>Juan López</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-5"><span
+                                            class="bg-error-container/30 text-on-error-container px-3 py-1 rounded-full text-xs">Acoso
+                                            / Hostilidad</span></td>
+                                    <td class="px-4 py-5 text-on-surface-variant text-sm">Hace 5 horas</td>
+                                    <td class="px-4 py-5">
+                                        <div class="flex items-center gap-2 text-error">
+                                            <span class="w-2 h-2 rounded-full bg-error"></span>
+                                            <span class="text-xs">Urgente</span>
+                                        </div>
+                                    </td>
+                                    <td class="px-4 py-5 text-right rounded-r-2xl">
+                                        <div class="flex justify-end gap-2">
+                                            <button
+                                                class="w-8 h-8 rounded-full bg-verde-menta/20 text-secondary hover:bg-verde-menta hover:text-on-secondary transition-all flex items-center justify-center"
+                                                title="Aprobar">
+                                                <span class="material-symbols-outlined text-[18px]">check</span>
+                                            </button>
+                                            <button
+                                                class="w-8 h-8 rounded-full bg-error-container/20 text-error hover:bg-error hover:text-on-error transition-all flex items-center justify-center"
+                                                title="Eliminar">
+                                                <span class="material-symbols-outlined text-[18px]">delete</span>
+                                            </button>
+                                            <button
+                                                class="w-8 h-8 rounded-full bg-primary-container/20 text-primary hover:bg-primary text-on-primary transition-all flex items-center justify-center"
+                                                title="Editar">
+                                                <span class="material-symbols-outlined text-[18px]">edit</span>
+                                            </button>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- Critical Cases & Interventions Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <!-- Critical Cases Dashboard -->
+                    <div
+                        class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-error-container/30">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-error"
+                                style="font-variation-settings: 'FILL' 1;">emergency</span>
+                            <h2 class="font-title-lg text-title-lg text-ink-dark">Casos Críticos Activos</h2>
+                        </div>
+                        <div class="space-y-4">
+                            <!-- Case Item -->
+                            <div
+                                class="p-4 rounded-2xl border border-outline-variant/30 flex items-start gap-4 hover:bg-error-container/5 transition-all">
+                                <div class="bg-error-container p-3 rounded-full text-error">
+                                    <span class="material-symbols-outlined">psychiatry</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h4 class="font-label-md text-ink-dark font-bold">Riesgo de autolesión detectado
+                                        </h4>
+                                        <span
+                                            class="text-[10px] uppercase font-bold text-error bg-error-container px-2 py-0.5 rounded">Inmediato</span>
+                                    </div>
+                                    <p class="text-sm text-on-surface-variant line-clamp-2 mb-3 font-body-md">El usuario
+                                        "Serenidad22" ha publicado contenido con lenguaje indicativo de crisis aguda en
+                                        el foro de apoyo nocturno.</p>
+                                    <div class="flex gap-2">
+                                        <button
+                                            class="text-xs bg-primary text-on-primary px-3 py-1.5 rounded-full">Llamar
+                                            Profesional</button>
+                                        <button class="text-xs border border-outline px-3 py-1.5 rounded-full">Ver
+                                            Historial</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Case Item -->
+                            <div
+                                class="p-4 rounded-2xl border border-outline-variant/30 flex items-start gap-4 hover:bg-error-container/5 transition-all">
+                                <div class="bg-primary-fixed p-3 rounded-full text-primary">
+                                    <span class="material-symbols-outlined">health_and_safety</span>
+                                </div>
+                                <div class="flex-1">
+                                    <div class="flex justify-between items-center mb-1">
+                                        <h4 class="font-label-md text-ink-dark font-bold">Derivación pendiente</h4>
+                                        <span
+                                            class="text-[10px] uppercase font-bold text-on-surface-variant bg-surface-container-high px-2 py-0.5 rounded">60
+                                            min</span>
+                                    </div>
+                                    <p class="text-sm text-on-surface-variant line-clamp-2 mb-3 font-body-md">Solicitud
+                                        de intervención profesional por parte del equipo de moderación nivel 1.</p>
+                                    <div class="flex gap-2">
+                                        <button
+                                            class="text-xs bg-primary text-on-primary px-3 py-1.5 rounded-full">Asignar
+                                            Terapeuta</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Intervention Analytics -->
+                    <div
+                        class="bg-surface-container-lowest rounded-[24px] p-8 shadow-sm border border-outline-variant/30">
+                        <div class="flex items-center gap-3 mb-6">
+                            <span class="material-symbols-outlined text-secondary">analytics</span>
+                            <h2 class="font-title-lg text-title-lg text-ink-dark">Actividad de Profesionales</h2>
+                        </div>
+                        <div
+                            class="h-64 flex items-end justify-between gap-2 px-4 border-b border-outline-variant/30 pb-4">
+                            <div class="flex flex-col items-center gap-2 flex-1 group">
+                                <div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container"
+                                    style="height: 60%;"></div>
+                                <span class="text-[10px] font-label-sm text-on-surface-variant">Lun</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2 flex-1 group">
+                                <div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container"
+                                    style="height: 45%;"></div>
+                                <span class="text-[10px] font-label-sm text-on-surface-variant">Mar</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2 flex-1 group">
+                                <div class="w-full bg-primary-container rounded-t-lg transition-all"
+                                    style="height: 85%;"></div>
+                                <span class="text-[10px] font-label-sm text-on-surface-variant font-bold">Mié</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2 flex-1 group">
+                                <div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container"
+                                    style="height: 30%;"></div>
+                                <span class="text-[10px] font-label-sm text-on-surface-variant">Jue</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2 flex-1 group">
+                                <div class="w-full bg-primary-container/40 rounded-t-lg transition-all group-hover:bg-primary-container"
+                                    style="height: 70%;"></div>
+                                <span class="text-[10px] font-label-sm text-on-surface-variant">Vie</span>
+                            </div>
+                        </div>
+                        <div class="mt-6 flex justify-around">
+                            <div class="text-center">
+                                <p class="text-xs text-on-surface-variant uppercase tracking-wider mb-1">Intervenciones
+                                </p>
+                                <p class="font-title-lg text-primary">128</p>
+                            </div>
+                            <div class="text-center">
+                                <p class="text-xs text-on-surface-variant uppercase tracking-wider mb-1">T. Respuesta
+                                </p>
+                                <p class="font-title-lg text-secondary">14m</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Footer Section -->
+    <footer
+        class="lg:ml-sidebar-width bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/10">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 w-full">
+            <div class="flex flex-col items-center md:items-start gap-1">
+                <span class="font-title-lg text-title-lg text-primary">CLARAMENTE</span>
+                <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es
+                    nuestra prioridad.</p>
+            </div>
+            <div class="flex gap-6 font-label-sm text-label-sm">
+                <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Aviso
+                    Legal</a>
+                <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                    href="#">Accesibilidad</a>
+                <a class="text-primary underline cursor-pointer" href="#">Red de apoyo profesional</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Interactive Scripts -->
+    <script>
         // Simple notification toggle simulation
         document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-            icon.addEventListener('click', function() {
+            icon.addEventListener('click', function () {
                 this.classList.add('scale-110');
                 setTimeout(() => this.classList.remove('scale-110'), 200);
             });
@@ -436,4 +501,7 @@
             // logic to update tables would go here
         }
     </script>
-</body></html>
+    <script type="module" src="../JS/main.js"></script>
+</body>
+
+</html>

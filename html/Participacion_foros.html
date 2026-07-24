@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 
-<html lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CLARAMENTE - Comunidad</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CLARAMENTE - Comunidad</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -93,267 +99,331 @@
                         "label-sm": ["Gabriela"]
                     },
                     "fontSize": {
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-                        "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
                     }
                 },
             },
         }
     </script>
-<style>
-        body { font-family: 'Gabriela', serif; }
+    <style>
+        body {
+            font-family: 'Gabriela', serif;
+        }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         .glass-sidebar {
             backdrop-filter: blur(12px);
         }
+
         .bento-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+
         .bento-card:hover {
             transform: translateY(-4px);
         }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface">
-<!-- TopNavBar -->
-<header class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center px-margin-desktop h-16 z-40 shadow-sm">
-<div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
-<div class="flex items-center gap-6">
-<div class="hidden md:flex gap-8">
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Inicio</a>
-<a class="font-label-md text-label-md text-primary border-b-2 border-primary" href="#">Comunidad</a>
-<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#">Recursos</a>
-</div>
-<div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70" data-icon="notifications">notifications</span>
-<img alt="User profile photo" class="w-8 h-8 rounded-full border border-primary-container" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_iW5wpO2UMAIgFJM_axqjgSBE-qebraxtgC6L4uP-z7HHeGuO0XpS9cY5KDOImpGEgbqv2EB7pm1X3LLWF2AAGzIS-huAw2NDAVVYkJouf0CUIFfXyov5oJRVQ-wsf-Y-u2tAoQqWGpD3uv14OiKpA9iTg0fPELx7klv2j4xaIHsEeVgVEvbEEyYgINNnN1BKTL9k61YhnnVg3U6DuSPr0PvrAnpv_6DsAvVGcSl6S4dMl5MkWQC_ASESbx-ZIDwLzuYP3slrZ_s"/>
-</div>
-</div>
-</header>
-<!-- SideNavBar (Desktop Only) -->
-<nav class="hidden lg:flex flex-col p-6 gap-2 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl z-50 shadow-sm mt-16">
-<div class="mb-8">
-<h2 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h2>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Tu santuario digital</p>
-</div>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-<span class="font-body-md text-body-md">Diario</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
-<span class="font-body-md text-body-md">Evolución</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-<span class="font-body-md text-body-md">Recomendaciones</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
-<span class="font-body-md text-body-md">Biblioteca</span>
-</a>
-<a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="groups">groups</span>
-<span class="font-body-md text-body-md">Comunidad</span>
-</a>
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
-<span class="font-body-md text-body-md">Moderación</span>
-</a>
-</nav>
-<!-- Main Content Canvas -->
-<main class="lg:ml-[280px] mt-16 p-margin-mobile md:p-margin-desktop min-h-screen">
-<div class="max-w-container-max mx-auto">
-<!-- Header Section with Hero-like feel -->
-<section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
-<div>
-<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Comunidad Claramente</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Un espacio seguro para compartir, aprender y crecer juntos. Conecta con personas que entienden tu camino.</p>
-</div>
-<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-title-lg text-title-lg flex items-center gap-2 shadow-lg hover:brightness-110 transition-all active:scale-95">
-<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+    <!-- TopNavBar -->
+    <header
+        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center px-margin-desktop h-16 z-40 shadow-sm">
+        <div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
+        <div class="flex items-center gap-6">
+            <div class="hidden md:flex gap-8">
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Inicio</a>
+                <a class="font-label-md text-label-md text-primary border-b-2 border-primary" href="#">Comunidad</a>
+                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Recursos</a>
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70"
+                    data-icon="notifications">notifications</span>
+                <img alt="User profile photo" class="w-8 h-8 rounded-full border border-primary-container"
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_iW5wpO2UMAIgFJM_axqjgSBE-qebraxtgC6L4uP-z7HHeGuO0XpS9cY5KDOImpGEgbqv2EB7pm1X3LLWF2AAGzIS-huAw2NDAVVYkJouf0CUIFfXyov5oJRVQ-wsf-Y-u2tAoQqWGpD3uv14OiKpA9iTg0fPELx7klv2j4xaIHsEeVgVEvbEEyYgINNnN1BKTL9k61YhnnVg3U6DuSPr0PvrAnpv_6DsAvVGcSl6S4dMl5MkWQC_ASESbx-ZIDwLzuYP3slrZ_s" />
+            </div>
+        </div>
+    </header>
+    <!-- SideNavBar (Desktop Only) -->
+    <nav
+        class="hidden lg:flex flex-col p-6 gap-2 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl z-50 shadow-sm mt-16">
+        <div class="mb-8">
+            <h2 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h2>
+            <p class="font-body-md text-body-md text-on-surface-variant opacity-70">Tu santuario digital</p>
+        </div>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+            href="#">
+            <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- AQUÍ SE CARGARÁ EL MENÚ -->
+            </aside>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
+                <span class="font-body-md text-body-md">Moderación</span>
+            </a>
+    </nav>
+    <!-- Main Content Canvas -->
+    <main class="lg:ml-[280px] mt-16 p-margin-mobile md:p-margin-desktop min-h-screen">
+        <div class="max-w-container-max mx-auto">
+            <!-- Header Section with Hero-like feel -->
+            <section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+                <div>
+                    <h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-2">Comunidad
+                        Claramente</h1>
+                    <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Un espacio seguro para
+                        compartir, aprender y crecer juntos. Conecta con personas que entienden tu camino.</p>
+                </div>
+                <button
+                    class="bg-primary text-on-primary px-8 py-4 rounded-full font-title-lg text-title-lg flex items-center gap-2 shadow-lg hover:brightness-110 transition-all active:scale-95">
+                    <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
                     Crear publicación
                 </button>
-</section>
-<!-- Search and Filter Bar -->
-<section class="mb-10 flex flex-col md:flex-row gap-4">
-<div class="flex-1 relative">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline" data-icon="search">search</span>
-<input class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md" placeholder="Buscar hilos, usuarios o temas..." type="text"/>
-</div>
-<div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
-<button class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Más Recientes</button>
-<button class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Populares</button>
-<button class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Sin Respuesta</button>
-</div>
-</section>
-<!-- Bento Grid of Categories -->
-<section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-<!-- Anxiety Category -->
-<div class="bento-card bg-primary-container/20 p-8 rounded-[24px] border border-primary-container/30 flex flex-col justify-between h-48 cursor-pointer group">
-<div>
-<span class="material-symbols-outlined text-primary mb-2 block text-4xl" data-icon="wind_power">wind_power</span>
-<h3 class="font-title-lg text-title-lg text-primary">Ansiedad</h3>
-</div>
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm text-on-primary-container">1.2k Miembros</span>
-<span class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-<!-- Stress Category -->
-<div class="bento-card bg-calm-peach/20 p-8 rounded-[24px] border border-calm-peach/30 flex flex-col justify-between h-48 cursor-pointer group">
-<div>
-<span class="material-symbols-outlined text-tertiary mb-2 block text-4xl" data-icon="psychology_alt">psychology_alt</span>
-<h3 class="font-title-lg text-title-lg text-tertiary">Estrés</h3>
-</div>
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm text-on-tertiary-container">850 Miembros</span>
-<span class="material-symbols-outlined text-tertiary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-<!-- Self-esteem Category -->
-<div class="bento-card bg-verde-menta/20 p-8 rounded-[24px] border border-verde-menta/30 flex flex-col justify-between h-48 cursor-pointer group">
-<div>
-<span class="material-symbols-outlined text-secondary mb-2 block text-4xl" data-icon="favorite">favorite</span>
-<h3 class="font-title-lg text-title-lg text-secondary">Autoestima</h3>
-</div>
-<div class="flex justify-between items-center">
-<span class="font-label-sm text-label-sm text-on-secondary-container">2.4k Miembros</span>
-<span class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity" data-icon="arrow_forward">arrow_forward</span>
-</div>
-</div>
-</section>
-<!-- Discussion Threads -->
-<section class="space-y-6">
-<div class="flex items-center justify-between mb-4">
-<h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Hilos destacados</h2>
-<div class="flex gap-2">
-<span class="bg-verde-menta/20 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm border border-verde-menta/30">#resiliencia</span>
-<span class="bg-primary-container/20 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm border border-primary-container/30">#meditacion</span>
-</div>
-</div>
-<!-- Thread Card 1 -->
-<article class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
-<div class="flex gap-4 items-start">
-<img alt="Profile of Elena" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqW3ziSixaQNpw6oNdc7Fd8m0t0GA7lkbX0NWBhwNbhZ9Tt42hwBsTw9_oW88zoSRk5JpK5b0wX3QWQzjjqxvMZeA8HJSIJYM1TlOuBcdDyVdSFyPV70UwmgxII3LIdTyOWDlS1Wxj5wJvIo_icQ4vL0ggpvfSrcXBTGaUuUwttwAJRUbibOQIAURIi3fZtO0Kkl5D1FS1_ROGLiluuZwcN4KPfIy8TRhHliv1FzAPugTLeHsAv0LipKpFYWUULDxKqRI8OOaMTdrT"/>
-<div class="flex-1">
-<div class="flex items-center gap-2 mb-1">
-<span class="font-label-md text-label-md text-on-surface font-bold">Elena R.</span>
-<span class="font-label-sm text-label-sm text-outline">• Hace 2 horas</span>
-<span class="ml-auto bg-calm-peach/20 text-on-tertiary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Estrés</span>
-</div>
-<h4 class="font-title-lg text-title-lg text-on-surface mb-2">¿Cómo manejáis el estrés laboral un viernes tarde?</h4>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Siento que siempre llego al fin de semana agotada y me cuesta desconectar. He probado con música pero no es suficiente...</p>
-<div class="flex items-center gap-6 text-outline">
-<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
-<span class="font-label-sm text-label-sm">24 respuestas</span>
-</div>
-<div class="flex items-center gap-1.5 hover:text-error transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span class="font-label-sm text-label-sm">112</span>
-</div>
-<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-<!-- Thread Card 2 (Image embedded) -->
-<article class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
-<div class="flex flex-col md:flex-row gap-6">
-<div class="flex-1">
-<div class="flex gap-4 items-start">
-<img alt="Profile of Marcos" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfjnCQBe_Gb6FdUym4rSnyMH1l5nEshFGpByeHgOGDJ9tWHglGXkgU9f_MdybQfupFe_c5HFjpbrX9F-8iEyDouqqUz8ttupJ3R7xQ6di463V5kFYS04IJA6dz1nfcnzFl9ozXes1QIX8b7P3E01ZoF5gsRa7ovB-i_v2SjqYoLZx9tARZefQ203jr_bGwSV4lCO6GXEjIW0Ava2AGfsx__x3pWVOBwbfxdEwOyOemseMyT0_HCylhrEnb7G6fuv19jmDK7DfM0oO7"/>
-<div class="flex-1">
-<div class="flex items-center gap-2 mb-1">
-<span class="font-label-md text-label-md text-on-surface font-bold">Marcos S.</span>
-<span class="font-label-sm text-label-sm text-outline">• Hace 5 horas</span>
-<span class="ml-auto bg-verde-menta/20 text-on-secondary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Autoestima</span>
-</div>
-<h4 class="font-title-lg text-title-lg text-on-surface mb-2">Mi progreso con el diario de gratitud tras un mes</h4>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Nunca pensé que algo tan pequeño como escribir tres cosas buenas al día pudiera cambiar mi perspectiva de esta forma. Os animo a todos a probarlo.</p>
-<div class="flex items-center gap-6 text-outline">
-<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
-<span class="font-label-sm text-label-sm">48 respuestas</span>
-</div>
-<div class="flex items-center gap-1.5 hover:text-error transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span class="font-label-sm text-label-sm">340</span>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="md:w-48 h-32 rounded-2xl overflow-hidden relative">
-<img alt="Journaling aesthetic" class="w-full h-full object-cover" data-alt="A serene and aesthetic photograph of a minimalist open journal on a wooden desk. Beside the journal lies a delicate fountain pen and a sprig of fresh lavender. The scene is illuminated by soft morning sunlight filtering through a window, creating long shadows and a calm, reflective mood. The color palette is composed of soft whites, warm wood tones, and subtle hints of lilac, maintaining a modern and peaceful light-mode aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIC0DPWk7E8xFUnZPLXe_MHvrjX5fxJXZ_4fXsiuV_RqeWdbxAad6IZ328TIa6p01hiuRuXh_dfBl4Cc2INYpbpGsWygTMBe9PFCxJiL5SZrgOTRuORvRXagbBI8ANbAE-_KPpO8YubMQImnnMuzS0Yak7TlYVpSmIxz38yWspqqgpP7psURBNkMh1FY-HqdANQRpk7pHaruUpd7Ionm9ZqlQsFGMvhV_UxrxK5JpgQpDtLmT12iemegBtEHSdr-HpMwV5JJbQyZC"/>
-</div>
-</div>
-</article>
-<!-- Thread Card 3 -->
-<article class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
-<div class="flex gap-4 items-start">
-<img alt="Profile of Julian" class="w-12 h-12 rounded-full border-2 border-white shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLVgta-rVxTP1hSKwXs1lT4-K-VgNfa0mAgGuwf0I3BmvO8XJMB4pDVW6xH_S0oFWPEOs9XmxQSRIldM63NlWb-5233BnCT2UGSon7tK_O4iBnX9sbRjC0_lPlk6sbbBYX7e4H9HVcfvIGxGsJWQL4hos2U9hufDfElAj2zFkzH9dCLf_mZksFhWs79n7v-goCCzotkdv4MpuQNms0-1WKhdSj4eaI5idhEkA7-plEi9d7blphC7CAR6u-oszFqbDH-cluZdgSAE_"/>
-<div class="flex-1">
-<div class="flex items-center gap-2 mb-1">
-<span class="font-label-md text-label-md text-on-surface font-bold">Julian M.</span>
-<span class="font-label-sm text-label-sm text-outline">• Ayer</span>
-<span class="ml-auto bg-primary-container/20 text-on-primary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Ansiedad</span>
-</div>
-<h4 class="font-title-lg text-title-lg text-on-surface mb-2">Técnicas de respiración para ataques de pánico repentinos</h4>
-<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">¿Alguien ha probado la técnica 4-7-8? Me la recomendó mi terapeuta pero a veces en el momento me cuesta concentrarme...</p>
-<div class="flex items-center gap-6 text-outline">
-<div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="chat_bubble">chat_bubble</span>
-<span class="font-label-sm text-label-sm">12 respuestas</span>
-</div>
-<div class="flex items-center gap-1.5 hover:text-error transition-colors">
-<span class="material-symbols-outlined text-[20px]" data-icon="favorite" data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
-<span class="font-label-sm text-label-sm">85</span>
-</div>
-</div>
-</div>
-</div>
-</article>
-</section>
-<!-- Load More Button -->
-<div class="mt-12 text-center">
-<button class="font-label-md text-label-md text-primary border border-primary/20 px-8 py-3 rounded-full hover:bg-primary/5 transition-colors">Ver más temas</button>
-</div>
-</div>
-</main>
-<!-- Footer -->
-<footer class="lg:ml-[280px] bg-surface-container dark:bg-surface-container-highest w-full">
-<div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 w-full">
-<div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Aviso Legal</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Accesibilidad</a>
-<a class="font-label-sm text-label-sm text-primary underline" href="#">Red de apoyo emocional</a>
-</div>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 CLARAMENTE. Tu bienestar es nuestra prioridad.</p>
-</div>
-</footer>
-<!-- Mobile Bottom NavBar -->
-<nav class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-t border-outline-variant/10 flex justify-around items-center h-16 z-50">
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="edit_note">edit_note</span>
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="trending_up">trending_up</span>
-<span class="material-symbols-outlined text-primary" data-icon="groups" data-weight="fill" style="font-variation-settings: 'FILL' 1;">groups</span>
-<span class="material-symbols-outlined text-on-surface-variant" data-icon="menu_book">menu_book</span>
-<img alt="Profile" class="w-6 h-6 rounded-full grayscale opacity-70" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVOrdvdZcCuX6t-cj_K3djfzbOEUi1tT-CU0CsTt5dSFhcx95MvIIC8hqUBQKQp29HveDt8I4gZpR9Um4aOWQKTKNwTXgSqOleB5hcqyV_Pt0kz4fKFYu-7SHctXOcgn_X6bLgE9n61oxyLlGGCHiRxYC53k5YRj6nRv1FWREC8jWofWjFGgyVNXrWfcDalFjQ1GVsUnUaQdz8VCzcKkXEGlKb58G85CvMxZKRbeYpl3s2v6fp4Z-zs43x4_XyLcQpCnbREelcqore"/>
-</nav>
-<script>
+            </section>
+            <!-- Search and Filter Bar -->
+            <section class="mb-10 flex flex-col md:flex-row gap-4">
+                <div class="flex-1 relative">
+                    <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
+                        data-icon="search">search</span>
+                    <input
+                        class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md"
+                        placeholder="Buscar hilos, usuarios o temas..." type="text" />
+                </div>
+                <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
+                    <button
+                        class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Más
+                        Recientes</button>
+                    <button
+                        class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Populares</button>
+                    <button
+                        class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Sin
+                        Respuesta</button>
+                </div>
+            </section>
+            <!-- Bento Grid of Categories -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                <!-- Anxiety Category -->
+                <div
+                    class="bento-card bg-primary-container/20 p-8 rounded-[24px] border border-primary-container/30 flex flex-col justify-between h-48 cursor-pointer group">
+                    <div>
+                        <span class="material-symbols-outlined text-primary mb-2 block text-4xl"
+                            data-icon="wind_power">wind_power</span>
+                        <h3 class="font-title-lg text-title-lg text-primary">Ansiedad</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-on-primary-container">1.2k Miembros</span>
+                        <span
+                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- Stress Category -->
+                <div
+                    class="bento-card bg-calm-peach/20 p-8 rounded-[24px] border border-calm-peach/30 flex flex-col justify-between h-48 cursor-pointer group">
+                    <div>
+                        <span class="material-symbols-outlined text-tertiary mb-2 block text-4xl"
+                            data-icon="psychology_alt">psychology_alt</span>
+                        <h3 class="font-title-lg text-title-lg text-tertiary">Estrés</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-on-tertiary-container">850 Miembros</span>
+                        <span
+                            class="material-symbols-outlined text-tertiary opacity-0 group-hover:opacity-100 transition-opacity"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </div>
+                </div>
+                <!-- Self-esteem Category -->
+                <div
+                    class="bento-card bg-verde-menta/20 p-8 rounded-[24px] border border-verde-menta/30 flex flex-col justify-between h-48 cursor-pointer group">
+                    <div>
+                        <span class="material-symbols-outlined text-secondary mb-2 block text-4xl"
+                            data-icon="favorite">favorite</span>
+                        <h3 class="font-title-lg text-title-lg text-secondary">Autoestima</h3>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-label-sm text-label-sm text-on-secondary-container">2.4k Miembros</span>
+                        <span
+                            class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity"
+                            data-icon="arrow_forward">arrow_forward</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Discussion Threads -->
+            <section class="space-y-6">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Hilos
+                        destacados</h2>
+                    <div class="flex gap-2">
+                        <span
+                            class="bg-verde-menta/20 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm border border-verde-menta/30">#resiliencia</span>
+                        <span
+                            class="bg-primary-container/20 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm border border-primary-container/30">#meditacion</span>
+                    </div>
+                </div>
+                <!-- Thread Card 1 -->
+                <article
+                    class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="flex gap-4 items-start">
+                        <img alt="Profile of Elena" class="w-12 h-12 rounded-full border-2 border-white shadow-sm"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqW3ziSixaQNpw6oNdc7Fd8m0t0GA7lkbX0NWBhwNbhZ9Tt42hwBsTw9_oW88zoSRk5JpK5b0wX3QWQzjjqxvMZeA8HJSIJYM1TlOuBcdDyVdSFyPV70UwmgxII3LIdTyOWDlS1Wxj5wJvIo_icQ4vL0ggpvfSrcXBTGaUuUwttwAJRUbibOQIAURIi3fZtO0Kkl5D1FS1_ROGLiluuZwcN4KPfIy8TRhHliv1FzAPugTLeHsAv0LipKpFYWUULDxKqRI8OOaMTdrT" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-label-md text-label-md text-on-surface font-bold">Elena R.</span>
+                                <span class="font-label-sm text-label-sm text-outline">• Hace 2 horas</span>
+                                <span
+                                    class="ml-auto bg-calm-peach/20 text-on-tertiary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Estrés</span>
+                            </div>
+                            <h4 class="font-title-lg text-title-lg text-on-surface mb-2">¿Cómo manejáis el estrés
+                                laboral un viernes tarde?</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Siento que
+                                siempre llego al fin de semana agotada y me cuesta desconectar. He probado con música
+                                pero no es suficiente...</p>
+                            <div class="flex items-center gap-6 text-outline">
+                                <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="chat_bubble">chat_bubble</span>
+                                    <span class="font-label-sm text-label-sm">24 respuestas</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]" data-icon="favorite"
+                                        data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                    <span class="font-label-sm text-label-sm">112</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+                <!-- Thread Card 2 (Image embedded) -->
+                <article
+                    class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="flex-1">
+                            <div class="flex gap-4 items-start">
+                                <img alt="Profile of Marcos"
+                                    class="w-12 h-12 rounded-full border-2 border-white shadow-sm"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfjnCQBe_Gb6FdUym4rSnyMH1l5nEshFGpByeHgOGDJ9tWHglGXkgU9f_MdybQfupFe_c5HFjpbrX9F-8iEyDouqqUz8ttupJ3R7xQ6di463V5kFYS04IJA6dz1nfcnzFl9ozXes1QIX8b7P3E01ZoF5gsRa7ovB-i_v2SjqYoLZx9tARZefQ203jr_bGwSV4lCO6GXEjIW0Ava2AGfsx__x3pWVOBwbfxdEwOyOemseMyT0_HCylhrEnb7G6fuv19jmDK7DfM0oO7" />
+                                <div class="flex-1">
+                                    <div class="flex items-center gap-2 mb-1">
+                                        <span class="font-label-md text-label-md text-on-surface font-bold">Marcos
+                                            S.</span>
+                                        <span class="font-label-sm text-label-sm text-outline">• Hace 5 horas</span>
+                                        <span
+                                            class="ml-auto bg-verde-menta/20 text-on-secondary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Autoestima</span>
+                                    </div>
+                                    <h4 class="font-title-lg text-title-lg text-on-surface mb-2">Mi progreso con el
+                                        diario de gratitud tras un mes</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Nunca
+                                        pensé que algo tan pequeño como escribir tres cosas buenas al día pudiera
+                                        cambiar mi perspectiva de esta forma. Os animo a todos a probarlo.</p>
+                                    <div class="flex items-center gap-6 text-outline">
+                                        <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]"
+                                                data-icon="chat_bubble">chat_bubble</span>
+                                            <span class="font-label-sm text-label-sm">48 respuestas</span>
+                                        </div>
+                                        <div class="flex items-center gap-1.5 hover:text-error transition-colors">
+                                            <span class="material-symbols-outlined text-[20px]" data-icon="favorite"
+                                                data-weight="fill"
+                                                style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                            <span class="font-label-sm text-label-sm">340</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="md:w-48 h-32 rounded-2xl overflow-hidden relative">
+                            <img alt="Journaling aesthetic" class="w-full h-full object-cover"
+                                data-alt="A serene and aesthetic photograph of a minimalist open journal on a wooden desk. Beside the journal lies a delicate fountain pen and a sprig of fresh lavender. The scene is illuminated by soft morning sunlight filtering through a window, creating long shadows and a calm, reflective mood. The color palette is composed of soft whites, warm wood tones, and subtle hints of lilac, maintaining a modern and peaceful light-mode aesthetic."
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIC0DPWk7E8xFUnZPLXe_MHvrjX5fxJXZ_4fXsiuV_RqeWdbxAad6IZ328TIa6p01hiuRuXh_dfBl4Cc2INYpbpGsWygTMBe9PFCxJiL5SZrgOTRuORvRXagbBI8ANbAE-_KPpO8YubMQImnnMuzS0Yak7TlYVpSmIxz38yWspqqgpP7psURBNkMh1FY-HqdANQRpk7pHaruUpd7Ionm9ZqlQsFGMvhV_UxrxK5JpgQpDtLmT12iemegBtEHSdr-HpMwV5JJbQyZC" />
+                        </div>
+                    </div>
+                </article>
+                <!-- Thread Card 3 -->
+                <article
+                    class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
+                    <div class="flex gap-4 items-start">
+                        <img alt="Profile of Julian" class="w-12 h-12 rounded-full border-2 border-white shadow-sm"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLVgta-rVxTP1hSKwXs1lT4-K-VgNfa0mAgGuwf0I3BmvO8XJMB4pDVW6xH_S0oFWPEOs9XmxQSRIldM63NlWb-5233BnCT2UGSon7tK_O4iBnX9sbRjC0_lPlk6sbbBYX7e4H9HVcfvIGxGsJWQL4hos2U9hufDfElAj2zFkzH9dCLf_mZksFhWs79n7v-goCCzotkdv4MpuQNms0-1WKhdSj4eaI5idhEkA7-plEi9d7blphC7CAR6u-oszFqbDH-cluZdgSAE_" />
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="font-label-md text-label-md text-on-surface font-bold">Julian M.</span>
+                                <span class="font-label-sm text-label-sm text-outline">• Ayer</span>
+                                <span
+                                    class="ml-auto bg-primary-container/20 text-on-primary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Ansiedad</span>
+                            </div>
+                            <h4 class="font-title-lg text-title-lg text-on-surface mb-2">Técnicas de respiración para
+                                ataques de pánico repentinos</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">¿Alguien ha
+                                probado la técnica 4-7-8? Me la recomendó mi terapeuta pero a veces en el momento me
+                                cuesta concentrarme...</p>
+                            <div class="flex items-center gap-6 text-outline">
+                                <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]"
+                                        data-icon="chat_bubble">chat_bubble</span>
+                                    <span class="font-label-sm text-label-sm">12 respuestas</span>
+                                </div>
+                                <div class="flex items-center gap-1.5 hover:text-error transition-colors">
+                                    <span class="material-symbols-outlined text-[20px]" data-icon="favorite"
+                                        data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                                    <span class="font-label-sm text-label-sm">85</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </section>
+            <!-- Load More Button -->
+            <div class="mt-12 text-center">
+                <button
+                    class="font-label-md text-label-md text-primary border border-primary/20 px-8 py-3 rounded-full hover:bg-primary/5 transition-colors">Ver
+                    más temas</button>
+            </div>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer class="lg:ml-[280px] bg-surface-container dark:bg-surface-container-highest w-full">
+        <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 w-full">
+            <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Aviso Legal</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Accesibilidad</a>
+                <a class="font-label-sm text-label-sm text-primary underline" href="#">Red de apoyo emocional</a>
+            </div>
+            <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 CLARAMENTE. Tu bienestar es
+                nuestra prioridad.</p>
+        </div>
+    </footer>
+    <!-- Mobile Bottom NavBar -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-t border-outline-variant/10 flex justify-around items-center h-16 z-50">
+        <span class="material-symbols-outlined text-on-surface-variant" data-icon="edit_note">edit_note</span>
+        <span class="material-symbols-outlined text-on-surface-variant" data-icon="trending_up">trending_up</span>
+        <span class="material-symbols-outlined text-primary" data-icon="groups" data-weight="fill"
+            style="font-variation-settings: 'FILL' 1;">groups</span>
+        <span class="material-symbols-outlined text-on-surface-variant" data-icon="menu_book">menu_book</span>
+        <img alt="Profile" class="w-6 h-6 rounded-full grayscale opacity-70"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVOrdvdZcCuX6t-cj_K3djfzbOEUi1tT-CU0CsTt5dSFhcx95MvIIC8hqUBQKQp29HveDt8I4gZpR9Um4aOWQKTKNwTXgSqOleB5hcqyV_Pt0kz4fKFYu-7SHctXOcgn_X6bLgE9n61oxyLlGGCHiRxYC53k5YRj6nRv1FWREC8jWofWjFGgyVNXrWfcDalFjQ1GVsUnUaQdz8VCzcKkXEGlKb58G85CvMxZKRbeYpl3s2v6fp4Z-zs43x4_XyLcQpCnbREelcqore" />
+    </nav>
+    <script>
         // Micro-interaction for cards
         document.querySelectorAll('.bento-card, article').forEach(card => {
             card.addEventListener('mouseenter', () => {
@@ -370,4 +440,7 @@
             searchInput.parentElement.classList.remove('ring-2', 'ring-primary-container');
         });
     </script>
-</body></html>
+    <script type="module" src="../JS/main.js"></script>
+</body>
+
+</html>
