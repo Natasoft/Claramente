@@ -204,21 +204,37 @@
             </div>
         </div>
         <nav class="flex-1 space-y-xs overflow-y-auto pr-1">
-            <!-- SIDEBAR -->
-            <aside class="sidebar">
-                <!-- AQUÍ SE CARGARÁ EL MENÚ -->
-            </aside>
-
+            </div>
+            <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                <span class="font-body-md text-body-md">Inicio</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                <span class="font-body-md text-body-md">Bienestar emocional</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                <span class="font-body-md text-body-md">Comunidad</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                <span class="font-body-md text-body-md">Recursos</span>
+            </a>
+            <a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="groups">groups</span>
+                <span class="font-body-md text-body-md">Mi cuenta</span>
+            </a>
+        </nav>
+            
             <!-- Cuenta (Active) -->
             <div>
-                <button
-                    class="w-full flex items-center justify-between gap-md px-md py-sm rounded-lg bg-primary text-on-primary font-bold transition-all group">
-                    <div class="flex items-center gap-md">
-                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
-                        <span class="font-label-md text-label-md">Cuenta</span>
-                    </div>
-                    <span class="material-symbols-outlined text-white text-sm rotate-180">expand_more</span>
-                </button>
                 <div class="pl-xl mt-2 space-y-1">
                     <button
                         class="w-full text-left px-md py-xs rounded-lg text-label-sm hover:bg-primary-subtle transition-all active-subitem"
@@ -226,19 +242,16 @@
                 </div>
             </div>
         </nav>
+
         <div class="pt-xl border-t border-outline-variant/30 space-y-xs">
             <a class="flex items-center gap-md px-md py-sm rounded-lg text-on-surface-variant hover:bg-primary-subtle transition-all"
                 href="#">
                 <span class="material-symbols-outlined">contact_support</span>
                 <span class="font-label-md text-label-md">Ayuda</span>
             </a>
-            <a class="flex items-center gap-md px-md py-sm rounded-lg text-danger hover:bg-error-container/20 transition-all"
-                href="#">
-                <span class="material-symbols-outlined">logout</span>
-                <span class="font-label-md text-label-md">Cerrar sesión</span>
-            </a>
+           
         </div>
-    </aside>
+   </aside>
     <!-- MAIN CONTENT CANVAS -->
     <main class="md:ml-64 pt-20 md:pt-8 min-h-screen">
         <div class="container mx-auto px-md md:px-xl max-w-container-max pb-xl">
@@ -430,7 +443,7 @@
             <div class="p-lg">
                 <h3 class="font-headline-sm text-headline-sm font-gabriela mb-md">Confirmar Cambios</h3>
                 <p class="text-body-md text-on-surface-variant">¿Estás seguro de que deseas guardar las modificaciones
-                    realizadas en tu perfil y configuración?</p>
+                    realizadas en tu configuración?</p>
             </div>
             <div class="p-lg bg-surface-container flex justify-end gap-md">
                 <button class="px-lg py-xs text-on-surface-variant font-label-md"

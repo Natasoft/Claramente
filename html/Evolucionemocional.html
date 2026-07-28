@@ -169,372 +169,391 @@
             <div class="font-headline-md text-headline-md text-primary">CLARAMENTE</div>
             <p class="text-on-surface-variant font-body-md text-body-md opacity-80">Tu santuario digital</p>
         </div>
-        <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <!-- AQUÍ SE CARGARÁ EL MENÚ -->
-        </aside>
-        <!-- Main Content -->
-        <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
-            <div class="max-w-container-max mx-auto space-y-8">
-                <!-- Header Section -->
-                <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
-                    <div>
-                        <h1 class="font-headline-md text-headline-md text-on-surface">Mi Evolución Emocional</h1>
-                        <p class="text-on-surface-variant font-body-md text-body-md">Analiza tus patrones y celebra tu
-                            crecimiento personal.</p>
-                    </div>
-                    <div class="flex gap-3">
-                        <button
-                            class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container border border-outline-variant hover:bg-surface-container-high transition-all font-label-md text-label-md text-primary">
-                            <span class="material-symbols-outlined" data-icon="share">share</span>
-                            Compartir
-                        </button>
-                        <button
-                            class="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary shadow-sm hover:brightness-105 transition-all font-label-md text-label-md">
-                            <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-                            Exportar PDF
-                        </button>
-                    </div>
-                </header>
-                <!-- Filters Section -->
-                <section class="glass-card rounded-3xl p-6 soft-glow grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="flex flex-col gap-2">
-                        <label class="font-label-md text-label-md text-on-surface-variant px-1">Rango de fechas</label>
-                        <div
-                            class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
-                            <span class="material-symbols-outlined text-on-surface-variant"
-                                data-icon="calendar_today">calendar_today</span>
-                            <input
-                                class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface"
-                                readonly="" type="text" value="Últimos 30 días" />
-                            <span class="material-symbols-outlined text-on-surface-variant cursor-pointer"
-                                data-icon="expand_more">expand_more</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-col gap-2">
-                        <label class="font-label-md text-label-md text-on-surface-variant px-1">Filtrar por
-                            emoción</label>
-                        <div
-                            class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
-                            <span class="material-symbols-outlined text-on-surface-variant"
-                                data-icon="filter_list">filter_list</span>
-                            <select
-                                class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
-                                <option>Todas las emociones</option>
-                                <option>Calma</option>
-                                <option>Alegría</option>
-                                <option>Tristeza</option>
-                                <option>Ansiedad</option>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="flex items-end">
-                        <div class="flex gap-2 flex-wrap">
-                            <span
-                                class="px-4 py-2 rounded-full bg-verde-menta/20 text-secondary font-label-sm text-label-sm border border-verde-menta/30">Última
-                                semana</span>
-                            <span
-                                class="px-4 py-2 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm border border-primary-container/30">Mes
-                                actual</span>
-                            <span
-                                class="px-4 py-2 rounded-full bg-calm-peach/20 text-on-tertiary-fixed-variant font-label-sm text-label-sm border border-calm-peach/30">Histórico</span>
-                        </div>
-                    </div>
-                </section>
-                <!-- Key Metrics Grid -->
-                <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-full bg-verde-menta/30 flex items-center justify-center text-secondary">
-                            <span class="material-symbols-outlined text-[28px]"
-                                data-icon="sentiment_satisfied">sentiment_satisfied</span>
-                        </div>
-                        <div>
-                            <p class="font-label-md text-label-md text-on-surface-variant">Emoción Predominante</p>
-                            <h3 class="font-headline-md text-headline-md text-primary mt-1">Calma</h3>
-                        </div>
-                        <p class="font-label-sm text-label-sm text-secondary bg-verde-menta/10 px-3 py-1 rounded-full">
-                            +12% vs mes anterior</p>
-                    </div>
-                    <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-primary">
-                            <span class="material-symbols-outlined text-[28px]" data-icon="book">book</span>
-                        </div>
-                        <div>
-                            <p class="font-label-md text-label-md text-on-surface-variant">Total Registros</p>
-                            <h3 class="font-headline-md text-headline-md text-primary mt-1">42</h3>
-                        </div>
-                        <p class="font-label-sm text-label-sm text-on-surface-variant">Entradas constantes</p>
-                    </div>
-                    <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
-                        <div
-                            class="w-12 h-12 rounded-full bg-calm-peach/30 flex items-center justify-center text-on-tertiary-fixed-variant">
-                            <span class="material-symbols-outlined text-[28px]"
-                                data-icon="trending_up">trending_up</span>
-                        </div>
-                        <div>
-                            <p class="font-label-md text-label-md text-on-surface-variant">Tendencia Actual</p>
-                            <h3 class="font-headline-md text-headline-md text-primary mt-1">Ascendente</h3>
-                        </div>
-                        <p
-                            class="font-label-sm text-label-sm text-on-tertiary-fixed-variant bg-calm-peach/10 px-3 py-1 rounded-full">
-                            Mejora sostenida</p>
-                    </div>
-                </section>
-                <!-- Charts Section (Asymmetric Grid) -->
-                <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    <!-- Line Chart Placeholder -->
-                    <div class="lg:col-span-2 glass-card rounded-3xl p-8 soft-glow flex flex-col gap-6">
-                        <div class="flex justify-between items-center">
-                            <h2 class="font-title-lg text-title-lg text-on-surface">Evolución en el tiempo</h2>
-                            <span class="material-symbols-outlined text-on-surface-variant cursor-help"
-                                data-icon="info">info</span>
-                        </div>
-                        <div class="relative h-64 w-full bg-surface-container-low rounded-2xl overflow-hidden group">
-                            <div
-                                class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                                <span class="material-symbols-outlined text-9xl"
-                                    data-icon="show_chart">show_chart</span>
-                            </div>
-                            <!-- SVG "Mock" Line Chart -->
-                            <svg class="absolute inset-0 w-full h-full px-4" preserveaspectratio="none"
-                                viewbox="0 0 100 40">
-                                <path class="animate-[dash_3s_ease-in-out_infinite]"
-                                    d="M0,30 Q10,25 20,28 T40,20 T60,25 T80,10 T100,15" fill="none" stroke="#68548d"
-                                    stroke-width="0.8"></path>
-                                <path d="M0,30 Q10,25 20,28 T40,20 T60,25 T80,10 T100,15 L100,40 L0,40 Z"
-                                    fill="url(#grad1)" opacity="0.1"></path>
-                                <defs>
-                                    <lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
-                                        <stop offset="0%" style="stop-color:#b39ddb;stop-opacity:1"></stop>
-                                        <stop offset="100%" style="stop-color:#b39ddb;stop-opacity:0"></stop>
-                                    </lineargradient>
-                                </defs>
-                            </svg>
-                            <!-- Grid lines -->
-                            <div class="absolute inset-0 flex flex-col justify-between py-8 px-4 opacity-20">
-                                <div class="border-t border-outline"></div>
-                                <div class="border-t border-outline"></div>
-                                <div class="border-t border-outline"></div>
-                            </div>
-                        </div>
-                        <div class="flex justify-between text-on-surface-variant font-label-sm text-label-sm">
-                            <span>Semana 1</span>
-                            <span>Semana 2</span>
-                            <span>Semana 3</span>
-                            <span>Semana 4</span>
-                        </div>
-                    </div>
-                    <!-- Bar Chart Placeholder -->
-                    <div class="glass-card rounded-3xl p-8 soft-glow flex flex-col gap-6">
-                        <h2 class="font-title-lg text-title-lg text-on-surface">Frecuencia</h2>
-                        <div class="flex-1 flex items-end justify-between gap-4 px-2">
-                            <div class="w-full flex flex-col items-center gap-2">
-                                <div class="w-full bg-verde-menta rounded-t-lg transition-all hover:brightness-110"
-                                    style="height: 80%;"></div>
-                                <span class="font-label-sm text-label-sm rotate-45 mt-4">Calma</span>
-                            </div>
-                            <div class="w-full flex flex-col items-center gap-2">
-                                <div class="w-full bg-primary-container rounded-t-lg transition-all hover:brightness-110"
-                                    style="height: 45%;"></div>
-                                <span class="font-label-sm text-label-sm rotate-45 mt-4">Paz</span>
-                            </div>
-                            <div class="w-full flex flex-col items-center gap-2">
-                                <div class="w-full bg-calm-peach rounded-t-lg transition-all hover:brightness-110"
-                                    style="height: 30%;"></div>
-                                <span class="font-label-sm text-label-sm rotate-45 mt-4">Duda</span>
-                            </div>
-                            <div class="w-full flex flex-col items-center gap-2">
-                                <div class="w-full bg-outline-variant rounded-t-lg transition-all hover:brightness-110"
-                                    style="height: 15%;"></div>
-                                <span class="font-label-sm text-label-sm rotate-45 mt-4">Estrés</span>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <!-- Entries Table -->
-                <section class="glass-card rounded-3xl soft-glow overflow-hidden">
-                    <div class="p-8 border-b border-outline-variant flex justify-between items-center">
-                        <h2 class="font-title-lg text-title-lg text-on-surface">Histórico Cronológico</h2>
-                        <button class="text-primary font-label-md text-label-md hover:underline">Ver todas</button>
-                    </div>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left">
-                            <thead class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant">
-                                <tr>
-                                    <th class="px-8 py-4">Fecha</th>
-                                    <th class="px-8 py-4">Emoción</th>
-                                    <th class="px-8 py-4">Nota Principal</th>
-                                    <th class="px-8 py-4">Intensidad</th>
-                                    <th class="px-8 py-4"></th>
-                                </tr>
-                            </thead>
-                            <tbody class="font-body-md text-body-md text-on-surface divide-y divide-outline-variant">
-                                <tr class="hover:bg-surface-container transition-colors group">
-                                    <td class="px-8 py-5">12 Oct, 2024</td>
-                                    <td class="px-8 py-5">
-                                        <span class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-verde-menta"></span>
-                                            Calma profunda
-                                        </span>
-                                    </td>
-                                    <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">Hoy logré meditar
-                                        por 20 minutos seguidos...</td>
-                                    <td class="px-8 py-5">
-                                        <div class="flex gap-0.5">
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-outline-variant text-sm"
-                                                data-icon="star">star</span>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span
-                                            class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary"
-                                            data-icon="chevron_right">chevron_right</span>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-surface-container transition-colors group">
-                                    <td class="px-8 py-5">11 Oct, 2024</td>
-                                    <td class="px-8 py-5">
-                                        <span class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-calm-peach"></span>
-                                            Duda
-                                        </span>
-                                    </td>
-                                    <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">Sentí cierta
-                                        incertidumbre sobre el futuro laboral...</td>
-                                    <td class="px-8 py-5">
-                                        <div class="flex gap-0.5">
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-outline-variant text-sm"
-                                                data-icon="star">star</span>
-                                            <span class="material-symbols-outlined text-outline-variant text-sm"
-                                                data-icon="star">star</span>
-                                            <span class="material-symbols-outlined text-outline-variant text-sm"
-                                                data-icon="star">star</span>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span
-                                            class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary"
-                                            data-icon="chevron_right">chevron_right</span>
-                                    </td>
-                                </tr>
-                                <tr class="hover:bg-surface-container transition-colors group">
-                                    <td class="px-8 py-5">10 Oct, 2024</td>
-                                    <td class="px-8 py-5">
-                                        <span class="flex items-center gap-2">
-                                            <span class="w-2 h-2 rounded-full bg-primary"></span>
-                                            Inspiración
-                                        </span>
-                                    </td>
-                                    <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">La lectura del libro
-                                        de hoy me abrió los ojos...</td>
-                                    <td class="px-8 py-5">
-                                        <div class="flex gap-0.5">
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                            <span class="material-symbols-outlined text-primary text-sm"
-                                                data-icon="star" data-weight="fill">star</span>
-                                        </div>
-                                    </td>
-                                    <td
-                                        class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
-                                        <span
-                                            class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary"
-                                            data-icon="chevron_right">chevron_right</span>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </section>
-            </div>
-        </main>
-        <!-- Footer -->
-        <footer
-            class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
-            <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
-            <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
-                prioridad.</p>
-            <div class="flex gap-6">
-                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Aviso Legal</a>
-                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Accesibilidad</a>
-                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Red de apoyo profesional</a>
-            </div>
-        </footer>
-        <!-- Mobile Bottom NavBar (Visible only on mobile) -->
-        <nav
-            class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md flex justify-around items-center py-3 border-t border-outline-variant z-50">
-            <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
                 <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-                <span class="text-[10px] font-label-sm">Diario</span>
-            </button>
-            <button class="flex flex-col items-center gap-1 text-primary">
+                <span class="font-body-md text-body-md">Inicio</span>
+            </a>
+            <a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
                 <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
-                <span class="text-[10px] font-label-sm">Evolución</span>
-            </button>
-            <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+                <span class="font-body-md text-body-md">Bienestar emocional</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
                 <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-                <span class="text-[10px] font-label-sm">IA</span>
-            </button>
-            <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+                <span class="font-body-md text-body-md">Comunidad</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
                 <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
-                <span class="text-[10px] font-label-sm">Biblioteca</span>
-            </button>
-            <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+                <span class="font-body-md text-body-md">Recursos</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
                 <span class="material-symbols-outlined" data-icon="groups">groups</span>
-                <span class="text-[10px] font-label-sm">Comunidad</span>
-            </button>
+                <span class="font-body-md text-body-md">Mi cuenta</span>
+            </a>
         </nav>
-        <script>
-            // Simple micro-interactions
-            document.querySelectorAll('.glass-card').forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.transform = 'translateY(-4px)';
-                    card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.transform = 'translateY(0)';
-                });
-            });
 
-            // Simulating loading animation for charts
-            window.addEventListener('load', () => {
-                const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
-                bars.forEach(bar => {
-                    const targetHeight = bar.style.height;
-                    bar.style.height = '0';
-                    setTimeout(() => {
-                        bar.style.transition = 'height 1.5s ease-out';
-                        bar.style.height = targetHeight;
-                    }, 200);
-                });
+    </aside>
+    <!-- Main Content -->
+    <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto space-y-8">
+            <!-- Header Section -->
+            <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+                <div>
+                    <h1 class="font-headline-md text-headline-md text-on-surface">Mi Evolución Emocional</h1>
+                    <p class="text-on-surface-variant font-body-md text-body-md">Analiza tus patrones y celebra tu
+                        crecimiento personal.</p>
+                </div>
+                <div class="flex gap-3">
+                    <button
+                        class="flex items-center gap-2 px-6 py-3 rounded-full bg-surface-container border border-outline-variant hover:bg-surface-container-high transition-all font-label-md text-label-md text-primary">
+                        <span class="material-symbols-outlined" data-icon="share">share</span>
+                        Compartir
+                    </button>
+                    <button
+                        class="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary shadow-sm hover:brightness-105 transition-all font-label-md text-label-md">
+                        <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
+                        Exportar PDF
+                    </button>
+                </div>
+            </header>
+            <!-- Filters Section -->
+            <section class="glass-card rounded-3xl p-6 soft-glow grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="flex flex-col gap-2">
+                    <label class="font-label-md text-label-md text-on-surface-variant px-1">Rango de fechas</label>
+                    <div
+                        class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
+                        <span class="material-symbols-outlined text-on-surface-variant"
+                            data-icon="calendar_today">calendar_today</span>
+                        <input
+                            class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface"
+                            readonly="" type="text" value="Últimos 30 días" />
+                        <span class="material-symbols-outlined text-on-surface-variant cursor-pointer"
+                            data-icon="expand_more">expand_more</span>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-2">
+                    <label class="font-label-md text-label-md text-on-surface-variant px-1">Filtrar por
+                        emoción</label>
+                    <div
+                        class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
+                        <span class="material-symbols-outlined text-on-surface-variant"
+                            data-icon="filter_list">filter_list</span>
+                        <select
+                            class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
+                            <option>Todas las emociones</option>
+                            <option>Calma</option>
+                            <option>Alegría</option>
+                            <option>Tristeza</option>
+                            <option>Ansiedad</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="flex items-end">
+                    <div class="flex gap-2 flex-wrap">
+                        <span
+                            class="px-4 py-2 rounded-full bg-verde-menta/20 text-secondary font-label-sm text-label-sm border border-verde-menta/30">Última
+                            semana</span>
+                        <span
+                            class="px-4 py-2 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm border border-primary-container/30">Mes
+                            actual</span>
+                        <span
+                            class="px-4 py-2 rounded-full bg-calm-peach/20 text-on-tertiary-fixed-variant font-label-sm text-label-sm border border-calm-peach/30">Histórico</span>
+                    </div>
+                </div>
+            </section>
+            <!-- Key Metrics Grid -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-verde-menta/30 flex items-center justify-center text-secondary">
+                        <span class="material-symbols-outlined text-[28px]"
+                            data-icon="sentiment_satisfied">sentiment_satisfied</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-on-surface-variant">Emoción Predominante</p>
+                        <h3 class="font-headline-md text-headline-md text-primary mt-1">Calma</h3>
+                    </div>
+                    <p class="font-label-sm text-label-sm text-secondary bg-verde-menta/10 px-3 py-1 rounded-full">
+                        +12% vs mes anterior</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-primary-container/30 flex items-center justify-center text-primary">
+                        <span class="material-symbols-outlined text-[28px]" data-icon="book">book</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-on-surface-variant">Total Registros</p>
+                        <h3 class="font-headline-md text-headline-md text-primary mt-1">42</h3>
+                    </div>
+                    <p class="font-label-sm text-label-sm text-on-surface-variant">Entradas constantes</p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-calm-peach/30 flex items-center justify-center text-on-tertiary-fixed-variant">
+                        <span class="material-symbols-outlined text-[28px]" data-icon="trending_up">trending_up</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-on-surface-variant">Tendencia Actual</p>
+                        <h3 class="font-headline-md text-headline-md text-primary mt-1">Ascendente</h3>
+                    </div>
+                    <p
+                        class="font-label-sm text-label-sm text-on-tertiary-fixed-variant bg-calm-peach/10 px-3 py-1 rounded-full">
+                        Mejora sostenida</p>
+                </div>
+            </section>
+            <!-- Charts Section (Asymmetric Grid) -->
+            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <!-- Line Chart Placeholder -->
+                <div class="lg:col-span-2 glass-card rounded-3xl p-8 soft-glow flex flex-col gap-6">
+                    <div class="flex justify-between items-center">
+                        <h2 class="font-title-lg text-title-lg text-on-surface">Evolución en el tiempo</h2>
+                        <span class="material-symbols-outlined text-on-surface-variant cursor-help"
+                            data-icon="info">info</span>
+                    </div>
+                    <div class="relative h-64 w-full bg-surface-container-low rounded-2xl overflow-hidden group">
+                        <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+                            <span class="material-symbols-outlined text-9xl" data-icon="show_chart">show_chart</span>
+                        </div>
+                        <!-- SVG "Mock" Line Chart -->
+                        <svg class="absolute inset-0 w-full h-full px-4" preserveaspectratio="none"
+                            viewbox="0 0 100 40">
+                            <path class="animate-[dash_3s_ease-in-out_infinite]"
+                                d="M0,30 Q10,25 20,28 T40,20 T60,25 T80,10 T100,15" fill="none" stroke="#68548d"
+                                stroke-width="0.8"></path>
+                            <path d="M0,30 Q10,25 20,28 T40,20 T60,25 T80,10 T100,15 L100,40 L0,40 Z" fill="url(#grad1)"
+                                opacity="0.1"></path>
+                            <defs>
+                                <lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#b39ddb;stop-opacity:1"></stop>
+                                    <stop offset="100%" style="stop-color:#b39ddb;stop-opacity:0"></stop>
+                                </lineargradient>
+                            </defs>
+                        </svg>
+                        <!-- Grid lines -->
+                        <div class="absolute inset-0 flex flex-col justify-between py-8 px-4 opacity-20">
+                            <div class="border-t border-outline"></div>
+                            <div class="border-t border-outline"></div>
+                            <div class="border-t border-outline"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-on-surface-variant font-label-sm text-label-sm">
+                        <span>Semana 1</span>
+                        <span>Semana 2</span>
+                        <span>Semana 3</span>
+                        <span>Semana 4</span>
+                    </div>
+                </div>
+                <!-- Bar Chart Placeholder -->
+                <div class="glass-card rounded-3xl p-8 soft-glow flex flex-col gap-6">
+                    <h2 class="font-title-lg text-title-lg text-on-surface">Frecuencia</h2>
+                    <div class="flex-1 flex items-end justify-between gap-4 px-2">
+                        <div class="w-full flex flex-col items-center gap-2">
+                            <div class="w-full bg-verde-menta rounded-t-lg transition-all hover:brightness-110"
+                                style="height: 80%;"></div>
+                            <span class="font-label-sm text-label-sm rotate-45 mt-4">Calma</span>
+                        </div>
+                        <div class="w-full flex flex-col items-center gap-2">
+                            <div class="w-full bg-primary-container rounded-t-lg transition-all hover:brightness-110"
+                                style="height: 45%;"></div>
+                            <span class="font-label-sm text-label-sm rotate-45 mt-4">Paz</span>
+                        </div>
+                        <div class="w-full flex flex-col items-center gap-2">
+                            <div class="w-full bg-calm-peach rounded-t-lg transition-all hover:brightness-110"
+                                style="height: 30%;"></div>
+                            <span class="font-label-sm text-label-sm rotate-45 mt-4">Duda</span>
+                        </div>
+                        <div class="w-full flex flex-col items-center gap-2">
+                            <div class="w-full bg-outline-variant rounded-t-lg transition-all hover:brightness-110"
+                                style="height: 15%;"></div>
+                            <span class="font-label-sm text-label-sm rotate-45 mt-4">Estrés</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Entries Table -->
+            <section class="glass-card rounded-3xl soft-glow overflow-hidden">
+                <div class="p-8 border-b border-outline-variant flex justify-between items-center">
+                    <h2 class="font-title-lg text-title-lg text-on-surface">Histórico Cronológico</h2>
+                    <button class="text-primary font-label-md text-label-md hover:underline">Ver todas</button>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead class="bg-surface-container-low font-label-md text-label-md text-on-surface-variant">
+                            <tr>
+                                <th class="px-8 py-4">Fecha</th>
+                                <th class="px-8 py-4">Emoción</th>
+                                <th class="px-8 py-4">Nota Principal</th>
+                                <th class="px-8 py-4">Intensidad</th>
+                                <th class="px-8 py-4"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="font-body-md text-body-md text-on-surface divide-y divide-outline-variant">
+                            <tr class="hover:bg-surface-container transition-colors group">
+                                <td class="px-8 py-5">12 Oct, 2024</td>
+                                <td class="px-8 py-5">
+                                    <span class="flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-verde-menta"></span>
+                                        Calma profunda
+                                    </span>
+                                </td>
+                                <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">Hoy logré meditar
+                                    por 20 minutos seguidos...</td>
+                                <td class="px-8 py-5">
+                                    <div class="flex gap-0.5">
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-outline-variant text-sm"
+                                            data-icon="star">star</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span
+                                        class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary"
+                                        data-icon="chevron_right">chevron_right</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-surface-container transition-colors group">
+                                <td class="px-8 py-5">11 Oct, 2024</td>
+                                <td class="px-8 py-5">
+                                    <span class="flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-calm-peach"></span>
+                                        Duda
+                                    </span>
+                                </td>
+                                <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">Sentí cierta
+                                    incertidumbre sobre el futuro laboral...</td>
+                                <td class="px-8 py-5">
+                                    <div class="flex gap-0.5">
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-outline-variant text-sm"
+                                            data-icon="star">star</span>
+                                        <span class="material-symbols-outlined text-outline-variant text-sm"
+                                            data-icon="star">star</span>
+                                        <span class="material-symbols-outlined text-outline-variant text-sm"
+                                            data-icon="star">star</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span
+                                        class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary"
+                                        data-icon="chevron_right">chevron_right</span>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-surface-container transition-colors group">
+                                <td class="px-8 py-5">10 Oct, 2024</td>
+                                <td class="px-8 py-5">
+                                    <span class="flex items-center gap-2">
+                                        <span class="w-2 h-2 rounded-full bg-primary"></span>
+                                        Inspiración
+                                    </span>
+                                </td>
+                                <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">La lectura del libro
+                                    de hoy me abrió los ojos...</td>
+                                <td class="px-8 py-5">
+                                    <div class="flex gap-0.5">
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                        <span class="material-symbols-outlined text-primary text-sm" data-icon="star"
+                                            data-weight="fill">star</span>
+                                    </div>
+                                </td>
+                                <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                                    <span
+                                        class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary"
+                                        data-icon="chevron_right">chevron_right</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Footer -->
+    <footer
+        class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+        <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
+            prioridad.</p>
+        <div class="flex gap-6">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Aviso Legal</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Accesibilidad</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Red de apoyo profesional</a>
+        </div>
+    </footer>
+    <!-- Mobile Bottom NavBar (Visible only on mobile) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md flex justify-around items-center py-3 border-t border-outline-variant z-50">
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+            <span class="text-[10px] font-label-sm">Diario</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+            <span class="text-[10px] font-label-sm">Evolución</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+            <span class="text-[10px] font-label-sm">IA</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            <span class="text-[10px] font-label-sm">Biblioteca</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="groups">groups</span>
+            <span class="text-[10px] font-label-sm">Comunidad</span>
+        </button>
+    </nav>
+    <script>
+        // Simple micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             });
-        </script>
-        <script type="module" src="../JS/main.js"></script>
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+        });
+
+        // Simulating loading animation for charts
+        window.addEventListener('load', () => {
+            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'height 1.5s ease-out';
+                    bar.style.height = targetHeight;
+                }, 200);
+            });
+        });
+    </script>
+    <script type="module" src="../JS/main.js"></script>
 </body>
 
 </html>

@@ -132,4 +132,30 @@ h2{
     "header header" 
     "menu contenido";     
 }
+
+/* ===========================
+   ENLACE ACTIVO
+=========================== */
+
+.menu a.active{
+    background: #599ec0;
+    color: white;
+    font-weight: bold;
+}
+
+/* ===========================
+   BOTÓN PRINCIPAL ACTIVO
+=========================== */
+
+.submenu-btn.active{
+    background: #599ec0;
+    color: white;
+    font-weight: bold;
+}
+
+/* Mantener el color al pasar el mouse */
+.menu a.active:hover,
+.submenu-btn.active:hover{
+    background: #599ec0;
+}
      

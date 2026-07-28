@@ -1,380 +1,514 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CLARAMENTE - Recomendaciones y Biblioteca</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<style>
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CLARAMENTE - Recomendaciones y Biblioteca</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
+
         body {
             font-family: 'Gabriela', serif;
             scroll-behavior: smooth;
         }
+
         .glass-sidebar {
             backdrop-filter: blur(16px);
             -webkit-backdrop-filter: blur(16px);
         }
+
         .custom-scrollbar::-webkit-scrollbar {
             width: 4px;
         }
+
         .custom-scrollbar::-webkit-scrollbar-track {
             background: transparent;
         }
+
         .custom-scrollbar::-webkit-scrollbar-thumb {
             background: #cbc4d0;
             border-radius: 10px;
         }
+
         .soft-shadow {
             box-shadow: 0 10px 30px -10px rgba(179, 157, 219, 0.15);
         }
     </style>
-<script id="tailwind-config">
+    <script id="tailwind-config">
         tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-tertiary-fixed-variant": "#4e4800",
-                      "primary": "#68548d",
-                      "outline": "#7a7580",
-                      "tertiary-fixed-dim": "#d2c976",
-                      "on-secondary-fixed-variant": "#24502c",
-                      "warm-grey": "#E0E0E0",
-                      "on-primary-fixed": "#230f45",
-                      "surface-container-lowest": "#ffffff",
-                      "primary-container": "#b39ddb",
-                      "surface-container": "#edeeef",
-                      "error-container": "#ffdad6",
-                      "ink-dark": "#2C2C2C",
-                      "on-error-container": "#93000a",
-                      "on-background": "#191c1d",
-                      "on-tertiary-container": "#433e00",
-                      "tertiary-container": "#b2aa5a",
-                      "on-primary": "#ffffff",
-                      "primary-fixed": "#ebdcff",
-                      "inverse-on-surface": "#f0f1f2",
-                      "on-secondary-container": "#426e47",
-                      "inverse-surface": "#2e3132",
-                      "outline-variant": "#cbc4d0",
-                      "on-tertiary": "#ffffff",
-                      "surface-container-highest": "#e1e3e4",
-                      "inverse-primary": "#d3bcfc",
-                      "surface-tint": "#68548d",
-                      "surface-bright": "#f8f9fa",
-                      "error": "#ba1a1a",
-                      "surface-dim": "#d9dadb",
-                      "on-error": "#ffffff",
-                      "secondary-fixed": "#bdefbe",
-                      "on-tertiary-fixed": "#1f1c00",
-                      "secondary-container": "#bdefbe",
-                      "surface": "#f8f9fa",
-                      "on-secondary": "#ffffff",
-                      "surface-container-low": "#f3f4f5",
-                      "on-secondary-fixed": "#002109",
-                      "calm-peach": "#FFCCBC",
-                      "surface-container-high": "#e7e8e9",
-                      "on-surface-variant": "#49454f",
-                      "on-surface": "#191c1d",
-                      "background": "#f8f9fa",
-                      "on-primary-fixed-variant": "#503d73",
-                      "tertiary-fixed": "#efe58f",
-                      "verde-menta": "#A5D6A7",
-                      "primary-fixed-dim": "#d3bcfc",
-                      "lila-suave": "#B39DDB",
-                      "surface-variant": "#e1e3e4",
-                      "secondary-fixed-dim": "#a2d3a4",
-                      "secondary": "#3c6842",
-                      "tertiary": "#666018",
-                      "on-primary-container": "#453268"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "margin-mobile": "16px",
-                      "margin-desktop": "40px",
-                      "sidebar-width": "280px",
-                      "gutter": "24px",
-                      "container-max": "1200px",
-                      "unit": "8px"
-              },
-              "fontFamily": {
-                      "headline-md": ["Gabriela"],
-                      "body-lg": ["Gabriela"],
-                      "label-md": ["Gabriela"],
-                      "title-lg": ["Gabriela"],
-                      "headline-md-mobile": ["Gabriela"],
-                      "display-lg": ["Gabriela"],
-                      "display-lg-mobile": ["Gabriela"],
-                      "body-md": ["Gabriela"],
-                      "label-sm": ["Gabriela"]
-              },
-              "fontSize": {
-                      "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-                      "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "400"}],
-                      "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
-                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                      "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                      "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
-              }
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-tertiary-fixed-variant": "#4e4800",
+                        "primary": "#68548d",
+                        "outline": "#7a7580",
+                        "tertiary-fixed-dim": "#d2c976",
+                        "on-secondary-fixed-variant": "#24502c",
+                        "warm-grey": "#E0E0E0",
+                        "on-primary-fixed": "#230f45",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#b39ddb",
+                        "surface-container": "#edeeef",
+                        "error-container": "#ffdad6",
+                        "ink-dark": "#2C2C2C",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1d",
+                        "on-tertiary-container": "#433e00",
+                        "tertiary-container": "#b2aa5a",
+                        "on-primary": "#ffffff",
+                        "primary-fixed": "#ebdcff",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-container": "#426e47",
+                        "inverse-surface": "#2e3132",
+                        "outline-variant": "#cbc4d0",
+                        "on-tertiary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "inverse-primary": "#d3bcfc",
+                        "surface-tint": "#68548d",
+                        "surface-bright": "#f8f9fa",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d9dadb",
+                        "on-error": "#ffffff",
+                        "secondary-fixed": "#bdefbe",
+                        "on-tertiary-fixed": "#1f1c00",
+                        "secondary-container": "#bdefbe",
+                        "surface": "#f8f9fa",
+                        "on-secondary": "#ffffff",
+                        "surface-container-low": "#f3f4f5",
+                        "on-secondary-fixed": "#002109",
+                        "calm-peach": "#FFCCBC",
+                        "surface-container-high": "#e7e8e9",
+                        "on-surface-variant": "#49454f",
+                        "on-surface": "#191c1d",
+                        "background": "#f8f9fa",
+                        "on-primary-fixed-variant": "#503d73",
+                        "tertiary-fixed": "#efe58f",
+                        "verde-menta": "#A5D6A7",
+                        "primary-fixed-dim": "#d3bcfc",
+                        "lila-suave": "#B39DDB",
+                        "surface-variant": "#e1e3e4",
+                        "secondary-fixed-dim": "#a2d3a4",
+                        "secondary": "#3c6842",
+                        "tertiary": "#666018",
+                        "on-primary-container": "#453268"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "margin-desktop": "40px",
+                        "sidebar-width": "280px",
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "unit": "8px"
+                    },
+                    "fontFamily": {
+                        "headline-md": ["Gabriela"],
+                        "body-lg": ["Gabriela"],
+                        "label-md": ["Gabriela"],
+                        "title-lg": ["Gabriela"],
+                        "headline-md-mobile": ["Gabriela"],
+                        "display-lg": ["Gabriela"],
+                        "display-lg-mobile": ["Gabriela"],
+                        "body-md": ["Gabriela"],
+                        "label-sm": ["Gabriela"]
+                    },
+                    "fontSize": {
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                },
             },
-          },
         }
-      </script>
+    </script>
 </head>
+
 <body class="bg-surface text-on-surface">
-<!-- SideNavBar -->
-<aside class="hidden lg:flex flex-col p-6 gap-2 z-50 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
-<div class="mb-8 px-4">
-<h1 class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</h1>
-<p class="font-label-sm text-label-sm text-on-surface-variant">Tu santuario digital</p>
-</div>
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
-<span class="material-symbols-outlined">edit_note</span>
-</a>
- <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <!-- AQUÍ SE CARGARÁ EL MENÚ -->
-        </aside>
-<!-- Main Content Area -->
-<main class="lg:ml-sidebar-width min-h-screen flex flex-col pb-20">
-<!-- TopNavBar -->
-<header class="fixed top-0 right-0 left-0 lg:left-sidebar-width bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md h-16 flex justify-between items-center px-6 lg:px-margin-desktop z-40 shadow-sm">
-<h2 class="font-headline-md text-headline-md text-primary font-bold lg:hidden">CLARAMENTE</h2>
-<div class="hidden lg:flex items-center gap-6">
-<span class="font-body-md text-body-md text-primary border-b-2 border-primary cursor-pointer">Recursos</span>
-<span class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Mis Favoritos</span>
-</div>
-<div class="flex items-center gap-4">
-<button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<div class="w-10 h-10 rounded-full bg-primary-container overflow-hidden cursor-pointer active:opacity-70 transition-opacity">
-<img alt="User profile photo" class="w-full h-full object-cover" data-alt="A professional close-up portrait of a serene woman with a gentle smile, set against a soft, out-of-focus lavender background. The lighting is warm and ethereal, consistent with a high-end wellness app's aesthetic. The color palette is composed of soft pastels and muted violets, evoking a sense of calm and mental clarity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1AUmoIqKq5C8qpUytyqyfqUYqMpV75X_sJ0yzgPLr7ga-nQkku4YKn3fSjYKi4DEiEeL9UeJoiLjC035Fvohe0ht_md_TG7xZrBGIrT9tfzH73pOCM3IR5Mok-JpHcx53gKQVWUuDRM2LCTPfKQKz0Fvn-pAgnQKanpW_FFFyel123uvtuHomzxlAcV1Ia-ckLXKw2_Mso6MaiWU0JYvACmIP424A1XGDvm9EhIauHDEptj5TfERv7tb2n0-cakbQv_gucbUtf1Ip"/>
-</div>
-</div>
-</header>
-<!-- Content Canvas -->
-<div class="mt-16 px-6 lg:px-margin-desktop py-8 max-w-container-max mx-auto w-full">
-<!-- Hero / Search Section -->
-<section class="mb-12">
-<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">Tu refugio de sabiduría</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">Explora nuestra biblioteca curada de recursos psicológicos diseñados para acompañarte en tu camino hacia el bienestar emocional.</p>
-<div class="relative w-full max-w-xl">
-<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
-<input class="w-full pl-12 pr-4 py-4 rounded-full bg-surface-container-low border-none ring-1 ring-outline-variant focus:ring-2 focus:ring-primary-container font-body-md transition-all outline-none" placeholder="Buscar artículos, guías, podcasts..." type="text"/>
-</div>
-</section>
-<!-- Filters Section -->
-<section class="mb-12 overflow-x-auto pb-4 custom-scrollbar">
-<div class="flex gap-3 whitespace-nowrap">
-<button class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:brightness-110 transition-all">Todos</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Ansiedad</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Depresión</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Autoestima</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Relaciones</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Mindfulness</button>
-<button class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Duelo</button>
-</div>
-</section>
-<div class="grid grid-cols-1 xl:grid-cols-3 gap-10">
-<!-- Resource Grid (Main Content) -->
-<div class="xl:col-span-2 space-y-12">
-<!-- Section: Recomendadas para ti -->
-<section>
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Recomendadas para ti</h3>
-<span class="font-label-md text-label-md text-primary cursor-pointer hover:underline">Ver todo</span>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<!-- Card 1 -->
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow group transition-transform duration-300 hover:-translate-y-1">
-<div class="h-48 overflow-hidden relative">
-<img alt="Resilience and mental health" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="A tranquil landscape featuring a single, vibrant green plant growing through a crack in a smooth, light grey stone. The lighting is soft and morning-like, with a gentle mist in the background. The aesthetic is clean and minimalist, using a calming color palette of soft greens, warm greys, and pale lilac accents to symbolize resilience and hope." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv5ULLf3yc8r6Imz_bp-fqTPxs_IvzHKl0YG69UyuoqMm3rjwZ8J8AcBQxJrj4Mwk9Pd9y3cb4h1DGfl-tFIAkjG3DoMPiHME3tlaRybWbUOcPpNj-vpqCbYItnmt7DGDN9kmHcvUXgqh74I7Hv2Y0SL1Tt_qKpGGc7p_upyV--hRdknfmC-kKMbTnJjK-1hoSiqPF-BS-ToW3hvsaVyBk6BNmj6_9DRnqK6tliCMCu34VY_0CziEl0JWvNmQSt4zSFUKVVWbicTAQ"/>
-<div class="absolute top-4 left-4">
-<span class="bg-verde-menta/80 backdrop-blur-md text-on-secondary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm">Ansiedad</span>
-</div>
-</div>
-<div class="p-6">
-<h4 class="font-title-lg text-title-lg text-ink-dark mb-2">5 Técnicas de respiración rápida</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Aprende a calmar tu sistema nervioso en menos de tres minutos con estos ejercicios probados clínicamente.</p>
-<div class="flex justify-between items-center">
-<button class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Ver recurso</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-calm-peach/30 transition-all text-on-surface-variant">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-</div>
-</div>
-<!-- Card 2 -->
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow group transition-transform duration-300 hover:-translate-y-1">
-<div class="h-48 overflow-hidden relative">
-<img alt="Peaceful journaling" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="An overhead view of a minimalist desk with an open, blank journal and a simple pen. Beside it sits a ceramic cup of tea emitting soft steam. The lighting is diffuse and serene, casting gentle shadows. The color story is dominated by warm wood tones, off-whites, and a hint of soft lilac, creating a peaceful, contemplative mood for journaling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1tO1O1T-G3N1aAWizCpVb4rnWFSoQf0DYW4rvv1bc4FHLsN_EwGKZjLbrjBhqP-GiKAtF6QcvrfZPXuMJ1eFZNRKApn-cQvjPNavRj-P8gWIiPOVvoVtB5q8H9p9EiNVV2fBwLQPxpkTJ_jd1wLCQwiDQOq9_UiXPgb264IJU41YXTDkz18JmE4OzxztJu0HDihPqVLEU47Oa93NyFdgdKlXrur4zSG1wChC0--sorlAMzlCkLMA_sZQMIuVdcAHWjl3qptvgreMl"/>
-<div class="absolute top-4 left-4">
-<span class="bg-calm-peach/80 backdrop-blur-md text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Autoestima</span>
-</div>
-</div>
-<div class="p-6">
-<h4 class="font-title-lg text-title-lg text-ink-dark mb-2">El arte del diálogo interno</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Cómo transformar tu voz crítica en una aliada compasiva para mejorar tu bienestar diario.</p>
-<div class="flex justify-between items-center">
-<button class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Ver recurso</button>
-<button class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-calm-peach/30 transition-all text-on-surface-variant">
-<span class="material-symbols-outlined">favorite</span>
-</button>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Section: Biblioteca General (Bento-ish) -->
-<section>
-<h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-6">Explora la Biblioteca</h3>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-<!-- Card 3 -->
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow flex flex-col md:flex-row col-span-1 sm:col-span-2 group">
-<div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
-<img alt="Meditation and focus" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="A person sitting in a peaceful yoga pose on a terrace overlooking a calm sea at sunset. The lighting is golden and warm, creating a profound sense of tranquility. The overall aesthetic is clean and artistic, with a focus on harmony and balance, featuring a color palette of soft oranges, deep purples, and calming blues." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGweMz3vf7ujnBHpDcxNiSrXqjO3E8oTTRVyvCA_Y3NqUB1mIGV4eIPOARPFwKLCD3nVr6TR92mlqmsmCnIgzCBNKA_iSJbSjcFLQBJjZ7Ny89ZHuJFx8kfYI6-aAjLplDsMHJTbjfsdPrb9vIAWKrQGUyezF9sB8R0C8fpPFqE9fVeAdZKbxSf5EEFfFgbNqSUXn8sOnQIA9-92AmbbftriwpOnZzL_8xs7j21JJW6OpvFMctd3mTPhKiRVlGH00HAdIsYyyGXwzl"/>
-</div>
-<div class="p-6 md:p-8 md:w-2/3 flex flex-col justify-center">
-<span class="text-primary font-label-md text-label-md mb-2">Podcast • 15 min</span>
-<h4 class="font-title-lg text-title-lg text-ink-dark mb-3">Meditación guiada para el sueño profundo</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-6">Una sesión auditiva diseñada para soltar las tensiones del día y facilitar un descanso reparador.</p>
-<div class="flex gap-4">
-<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Escuchar ahora</button>
-<button class="border border-primary text-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-primary/5 transition-all">Guardar</button>
-</div>
-</div>
-</div>
-<!-- Card 4 -->
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-shadow hover:-translate-y-1 transition-all">
-<div class="w-12 h-12 rounded-xl bg-verde-menta/20 flex items-center justify-center text-secondary mb-4">
-<span class="material-symbols-outlined">menu_book</span>
-</div>
-<h4 class="font-title-lg text-title-lg text-ink-dark mb-2">Guía del Duelo</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Un manual comprensivo sobre las etapas del duelo y cómo navegar la pérdida con paciencia.</p>
-<a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2" href="#">Descargar PDF <span class="material-symbols-outlined text-sm">download</span></a>
-</div>
-<!-- Card 5 -->
-<div class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-shadow hover:-translate-y-1 transition-all">
-<div class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary mb-4">
-<span class="material-symbols-outlined">videocam</span>
-</div>
-<h4 class="font-title-lg text-title-lg text-ink-dark mb-2">Taller de Ansiedad Social</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Serie de 4 videos con estrategias prácticas para enfrentar situaciones sociales complejas.</p>
-<a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2" href="#">Ver videos <span class="material-symbols-outlined text-sm">arrow_forward</span></a>
-</div>
-</div>
-</section>
-</div>
-<!-- Sidebar / Popular Resources -->
-<aside class="space-y-8">
-<div class="bg-surface-container-low rounded-[24px] p-6 sticky top-24">
-<h3 class="font-title-lg text-title-lg text-primary mb-6 flex items-center gap-2">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+    <!-- SideNavBar -->
+    <aside
+        class="hidden lg:flex flex-col p-6 gap-2 z-50 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
+        <div class="mb-8 px-4">
+            <h1 class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</h1>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Tu santuario digital</p>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+                <span class="font-body-md text-body-md">Inicio</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+                <span class="font-body-md text-body-md">Bienestar emocional</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+                <span class="font-body-md text-body-md">Comunidad</span>
+            </a>
+            <a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+                <span class="font-body-md text-body-md">Recursos</span>
+            </a>
+            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
+                href="#">
+                <span class="material-symbols-outlined" data-icon="groups">groups</span>
+                <span class="font-body-md text-body-md">Mi cuenta</span>
+            </a>
+        </nav>
+    
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="lg:ml-sidebar-width min-h-screen flex flex-col pb-20">
+        <!-- TopNavBar -->
+        <header
+            class="fixed top-0 right-0 left-0 lg:left-sidebar-width bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md h-16 flex justify-between items-center px-6 lg:px-margin-desktop z-40 shadow-sm">
+            <h2 class="font-headline-md text-headline-md text-primary font-bold lg:hidden">CLARAMENTE</h2>
+            <div class="hidden lg:flex items-center gap-6">
+                <span
+                    class="font-body-md text-body-md text-primary border-b-2 border-primary cursor-pointer">Recursos</span>
+                <span
+                    class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Mis
+                    Favoritos</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined">notifications</span>
+                </button>
+                <div
+                    class="w-10 h-10 rounded-full bg-primary-container overflow-hidden cursor-pointer active:opacity-70 transition-opacity">
+                    <img alt="User profile photo" class="w-full h-full object-cover"
+                        data-alt="A professional close-up portrait of a serene woman with a gentle smile, set against a soft, out-of-focus lavender background. The lighting is warm and ethereal, consistent with a high-end wellness app's aesthetic. The color palette is composed of soft pastels and muted violets, evoking a sense of calm and mental clarity."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1AUmoIqKq5C8qpUytyqyfqUYqMpV75X_sJ0yzgPLr7ga-nQkku4YKn3fSjYKi4DEiEeL9UeJoiLjC035Fvohe0ht_md_TG7xZrBGIrT9tfzH73pOCM3IR5Mok-JpHcx53gKQVWUuDRM2LCTPfKQKz0Fvn-pAgnQKanpW_FFFyel123uvtuHomzxlAcV1Ia-ckLXKw2_Mso6MaiWU0JYvACmIP424A1XGDvm9EhIauHDEptj5TfERv7tb2n0-cakbQv_gucbUtf1Ip" />
+                </div>
+            </div>
+        </header>
+        <!-- Content Canvas -->
+        <div class="mt-16 px-6 lg:px-margin-desktop py-8 max-w-container-max mx-auto w-full">
+            <!-- Hero / Search Section -->
+            <section class="mb-12">
+                <h1
+                    class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-4">
+                    Tu refugio de sabiduría</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mb-8">Explora nuestra biblioteca
+                    curada de recursos psicológicos diseñados para acompañarte en tu camino hacia el bienestar
+                    emocional.</p>
+                <div class="relative w-full max-w-xl">
+                    <span
+                        class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
+                    <input
+                        class="w-full pl-12 pr-4 py-4 rounded-full bg-surface-container-low border-none ring-1 ring-outline-variant focus:ring-2 focus:ring-primary-container font-body-md transition-all outline-none"
+                        placeholder="Buscar artículos, guías, podcasts..." type="text" />
+                </div>
+            </section>
+            <!-- Filters Section -->
+            <section class="mb-12 overflow-x-auto pb-4 custom-scrollbar">
+                <div class="flex gap-3 whitespace-nowrap">
+                    <button
+                        class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:brightness-110 transition-all">Todos</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Ansiedad</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Depresión</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Autoestima</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Relaciones</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Mindfulness</button>
+                    <button
+                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Duelo</button>
+                </div>
+            </section>
+            <div class="grid grid-cols-1 xl:grid-cols-3 gap-10">
+                <!-- Resource Grid (Main Content) -->
+                <div class="xl:col-span-2 space-y-12">
+                    <!-- Section: Recomendadas para ti -->
+                    <section>
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">
+                                Recomendadas para ti</h3>
+                            <span class="font-label-md text-label-md text-primary cursor-pointer hover:underline">Ver
+                                todo</span>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <!-- Card 1 -->
+                            <div
+                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow group transition-transform duration-300 hover:-translate-y-1">
+                                <div class="h-48 overflow-hidden relative">
+                                    <img alt="Resilience and mental health"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        data-alt="A tranquil landscape featuring a single, vibrant green plant growing through a crack in a smooth, light grey stone. The lighting is soft and morning-like, with a gentle mist in the background. The aesthetic is clean and minimalist, using a calming color palette of soft greens, warm greys, and pale lilac accents to symbolize resilience and hope."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv5ULLf3yc8r6Imz_bp-fqTPxs_IvzHKl0YG69UyuoqMm3rjwZ8J8AcBQxJrj4Mwk9Pd9y3cb4h1DGfl-tFIAkjG3DoMPiHME3tlaRybWbUOcPpNj-vpqCbYItnmt7DGDN9kmHcvUXgqh74I7Hv2Y0SL1Tt_qKpGGc7p_upyV--hRdknfmC-kKMbTnJjK-1hoSiqPF-BS-ToW3hvsaVyBk6BNmj6_9DRnqK6tliCMCu34VY_0CziEl0JWvNmQSt4zSFUKVVWbicTAQ" />
+                                    <div class="absolute top-4 left-4">
+                                        <span
+                                            class="bg-verde-menta/80 backdrop-blur-md text-on-secondary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm">Ansiedad</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">5 Técnicas de respiración
+                                        rápida</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
+                                        Aprende a calmar tu sistema nervioso en menos de tres minutos con estos
+                                        ejercicios probados clínicamente.</p>
+                                    <div class="flex justify-between items-center">
+                                        <button
+                                            class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Ver
+                                            recurso</button>
+                                        <button
+                                            class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-calm-peach/30 transition-all text-on-surface-variant">
+                                            <span class="material-symbols-outlined">favorite</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 2 -->
+                            <div
+                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow group transition-transform duration-300 hover:-translate-y-1">
+                                <div class="h-48 overflow-hidden relative">
+                                    <img alt="Peaceful journaling"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                        data-alt="An overhead view of a minimalist desk with an open, blank journal and a simple pen. Beside it sits a ceramic cup of tea emitting soft steam. The lighting is diffuse and serene, casting gentle shadows. The color story is dominated by warm wood tones, off-whites, and a hint of soft lilac, creating a peaceful, contemplative mood for journaling."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1tO1O1T-G3N1aAWizCpVb4rnWFSoQf0DYW4rvv1bc4FHLsN_EwGKZjLbrjBhqP-GiKAtF6QcvrfZPXuMJ1eFZNRKApn-cQvjPNavRj-P8gWIiPOVvoVtB5q8H9p9EiNVV2fBwLQPxpkTJ_jd1wLCQwiDQOq9_UiXPgb264IJU41YXTDkz18JmE4OzxztJu0HDihPqVLEU47Oa93NyFdgdKlXrur4zSG1wChC0--sorlAMzlCkLMA_sZQMIuVdcAHWjl3qptvgreMl" />
+                                    <div class="absolute top-4 left-4">
+                                        <span
+                                            class="bg-calm-peach/80 backdrop-blur-md text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Autoestima</span>
+                                    </div>
+                                </div>
+                                <div class="p-6">
+                                    <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">El arte del diálogo
+                                        interno</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Cómo
+                                        transformar tu voz crítica en una aliada compasiva para mejorar tu bienestar
+                                        diario.</p>
+                                    <div class="flex justify-between items-center">
+                                        <button
+                                            class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Ver
+                                            recurso</button>
+                                        <button
+                                            class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-calm-peach/30 transition-all text-on-surface-variant">
+                                            <span class="material-symbols-outlined">favorite</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Section: Biblioteca General (Bento-ish) -->
+                    <section>
+                        <h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-6">
+                            Explora la Biblioteca</h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <!-- Card 3 -->
+                            <div
+                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow flex flex-col md:flex-row col-span-1 sm:col-span-2 group">
+                                <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
+                                    <img alt="Meditation and focus"
+                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        data-alt="A person sitting in a peaceful yoga pose on a terrace overlooking a calm sea at sunset. The lighting is golden and warm, creating a profound sense of tranquility. The overall aesthetic is clean and artistic, with a focus on harmony and balance, featuring a color palette of soft oranges, deep purples, and calming blues."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGweMz3vf7ujnBHpDcxNiSrXqjO3E8oTTRVyvCA_Y3NqUB1mIGV4eIPOARPFwKLCD3nVr6TR92mlqmsmCnIgzCBNKA_iSJbSjcFLQBJjZ7Ny89ZHuJFx8kfYI6-aAjLplDsMHJTbjfsdPrb9vIAWKrQGUyezF9sB8R0C8fpPFqE9fVeAdZKbxSf5EEFfFgbNqSUXn8sOnQIA9-92AmbbftriwpOnZzL_8xs7j21JJW6OpvFMctd3mTPhKiRVlGH00HAdIsYyyGXwzl" />
+                                </div>
+                                <div class="p-6 md:p-8 md:w-2/3 flex flex-col justify-center">
+                                    <span class="text-primary font-label-md text-label-md mb-2">Podcast • 15 min</span>
+                                    <h4 class="font-title-lg text-title-lg text-ink-dark mb-3">Meditación guiada para el
+                                        sueño profundo</h4>
+                                    <p class="font-body-md text-body-md text-on-surface-variant mb-6">Una sesión
+                                        auditiva diseñada para soltar las tensiones del día y facilitar un descanso
+                                        reparador.</p>
+                                    <div class="flex gap-4">
+                                        <button
+                                            class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Escuchar
+                                            ahora</button>
+                                        <button
+                                            class="border border-primary text-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-primary/5 transition-all">Guardar</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Card 4 -->
+                            <div
+                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-shadow hover:-translate-y-1 transition-all">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-verde-menta/20 flex items-center justify-center text-secondary mb-4">
+                                    <span class="material-symbols-outlined">menu_book</span>
+                                </div>
+                                <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">Guía del Duelo</h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Un manual comprensivo
+                                    sobre las etapas del duelo y cómo navegar la pérdida con paciencia.</p>
+                                <a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2"
+                                    href="#">Descargar PDF <span
+                                        class="material-symbols-outlined text-sm">download</span></a>
+                            </div>
+                            <!-- Card 5 -->
+                            <div
+                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-shadow hover:-translate-y-1 transition-all">
+                                <div
+                                    class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary mb-4">
+                                    <span class="material-symbols-outlined">videocam</span>
+                                </div>
+                                <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">Taller de Ansiedad Social
+                                </h4>
+                                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Serie de 4 videos con
+                                    estrategias prácticas para enfrentar situaciones sociales complejas.</p>
+                                <a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2"
+                                    href="#">Ver videos <span
+                                        class="material-symbols-outlined text-sm">arrow_forward</span></a>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!-- Sidebar / Popular Resources -->
+                <aside class="space-y-8">
+                    <div class="bg-surface-container-low rounded-[24px] p-6 sticky top-24">
+                        <h3 class="font-title-lg text-title-lg text-primary mb-6 flex items-center gap-2">
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings: 'FILL' 1;">star</span>
                             Lo más consultado
                         </h3>
-<div class="space-y-6">
-<!-- Popular Item 1 -->
-<div class="flex gap-4 group cursor-pointer">
-<div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
-<img alt="Mindfulness decor" class="w-full h-full object-cover" data-alt="A macro photograph of a stack of smooth, dark river stones balanced perfectly on a clean wooden surface. A single white flower petal rests on top. The background is a soft blur of sage green and pale lilac. The lighting is natural and bright, conveying a sense of focus, balance, and modern zen aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Uf8aQ2XT8UNS16w2YTS2YM827gGqkzh7aNJInAqMQ87dewM23GhqJUvVowLxMsV_eUJBFhEGXhK-3Fw7N3_fyUp8rPB9IAE5Y8KEVpkWKsSiBmQ432vkp2gWacInCLD6CHwAsGtUz7BAstTzRbtND5cUPdi9NdsbpPgOyZx35u_Lbte-j0cmkRmL4bPDe8CReG8GcsWZmBygvIuQi0YF3VgcArxY5ns4h2-n2rUA-NxB9Kd-q-jh5VkThTE5qNuOblAlKQnG13Df"/>
-</div>
-<div>
-<h5 class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">Vencer el insomnio</h5>
-<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Guía práctica nocturna</p>
-<div class="flex items-center gap-1 mt-1">
-<span class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">2.4k lecturas</span>
-</div>
-</div>
-</div>
-<!-- Popular Item 2 -->
-<div class="flex gap-4 group cursor-pointer">
-<div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
-<img alt="Calming waves" class="w-full h-full object-cover" data-alt="A stylized digital illustration of soft, rolling ocean waves in shades of lavender and seafoam green. The style is flat yet textured, evoking a sense of rhythmic peace. The lighting is consistent with a bright afternoon, clear and optimistic, fitting the serene and supportive atmosphere of a mental health platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDxwHYk8rBny8HsK4SjBndeHQqQVu8VkCnj7SnWkEwwH2fdPVstPYBvb4EsXb575Qi8D01Jcs3uG9emYZ15T-DduE-xtz2x_qw99mqg43plY1IQBrX7qFRH5NRzIHFSN1sRdsC1c3QzlpYjr0z3o_MVvmB0oT82tHw8rqTi4vW0KVjf-UlBOeLTvUu5I-D07Ix1L2JMmnIOvKzkBGx6HMXllug_yrjBkakPvfc15XHO5EPfHyvGKcNU3SvOsZjt9_U2kTicYEe-yFi"/>
-</div>
-<div>
-<h5 class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">Ansiedad y Trabajo</h5>
-<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Límites saludables en la oficina</p>
-<div class="flex items-center gap-1 mt-1">
-<span class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">1.8k lecturas</span>
-</div>
-</div>
-</div>
-<!-- Popular Item 3 -->
-<div class="flex gap-4 group cursor-pointer">
-<div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
-<img alt="Stretching" class="w-full h-full object-cover" data-alt="A serene indoor scene featuring a yoga mat and a small succulent plant by a window. Soft sunlight filters through sheer white curtains, creating a dappled light effect. The color palette is composed of soft whites, pale greens, and delicate purple tones, emphasizing a clean, restorative, and modern interior aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_CM-6eBAh0A8UH-3KexWnxIEj4qhmmx09Kx1a_MzHTqH8mRY4XLQLeXxFTBwFeXLvie09JXcfvnrAkJFBFa27vYrUiNOYoIeNM09NtuI9YTdb4zT7CyV2KW_fqJ4V4yooEdRPf5_KrhcAUNXxxd3-_2XrBaBRYsnDuEWO2CzIcvDBp7qCLJ8x0CjdH_gk_tOAIktn83BvVNV2bsA4AQc0ngpXh7pCjOnv2D0x39m6MucNGdFNrJl1oNNj2HDqC7kgFfjsH_vdz08"/>
-</div>
-<div>
-<h5 class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">Mindful Eating</h5>
-<p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Relación sana con la comida</p>
-<div class="flex items-center gap-1 mt-1">
-<span class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">1.2k lecturas</span>
-</div>
-</div>
-</div>
-</div>
-<div class="mt-10 p-6 bg-primary-container/20 rounded-2xl border border-primary-container/30">
-<h4 class="font-title-lg text-title-lg text-primary mb-2">¿No encuentras lo que buscas?</h4>
-<p class="font-body-md text-body-md text-on-surface-variant mb-4">Nuestro equipo de psicólogos puede sugerir recursos personalizados para ti.</p>
-<button class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Solicitar ayuda</button>
-</div>
-</div>
-</aside>
-</div>
-</div>
-<!-- Footer -->
-<footer class="mt-auto w-full bg-surface-container dark:bg-surface-container-highest">
-<div class="flex flex-col md:flex-row justify-between items-center px-6 lg:px-margin-desktop py-8 gap-4 w-full">
-<div class="flex flex-col items-center md:items-start gap-2">
-<span class="font-title-lg text-title-lg text-primary">CLARAMENTE</span>
-<p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra prioridad.</p>
-</div>
-<div class="flex flex-wrap justify-center gap-6">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Aviso Legal</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Accesibilidad</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Red de apoyo profesional</a>
-</div>
-</div>
-</footer>
-</main>
-<!-- Mobile Navigation Bar -->
-<nav class="lg:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md h-16 flex items-center justify-around px-2 z-50 border-t border-outline-variant/10">
-<button class="flex flex-col items-center gap-1 text-on-surface-variant">
-<span class="material-symbols-outlined">edit_note</span>
-<span class="text-[10px] font-label-sm">Diario</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-primary">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-<span class="text-[10px] font-label-sm">Recursos</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-on-surface-variant">
-<span class="material-symbols-outlined">menu_book</span>
-<span class="text-[10px] font-label-sm">Biblioteca</span>
-</button>
-<button class="flex flex-col items-center gap-1 text-on-surface-variant">
-<span class="material-symbols-outlined">groups</span>
-<span class="text-[10px] font-label-sm">Social</span>
-</button>
-</nav>
-<script>
+                        <div class="space-y-6">
+                            <!-- Popular Item 1 -->
+                            <div class="flex gap-4 group cursor-pointer">
+                                <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
+                                    <img alt="Mindfulness decor" class="w-full h-full object-cover"
+                                        data-alt="A macro photograph of a stack of smooth, dark river stones balanced perfectly on a clean wooden surface. A single white flower petal rests on top. The background is a soft blur of sage green and pale lilac. The lighting is natural and bright, conveying a sense of focus, balance, and modern zen aesthetic."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Uf8aQ2XT8UNS16w2YTS2YM827gGqkzh7aNJInAqMQ87dewM23GhqJUvVowLxMsV_eUJBFhEGXhK-3Fw7N3_fyUp8rPB9IAE5Y8KEVpkWKsSiBmQ432vkp2gWacInCLD6CHwAsGtUz7BAstTzRbtND5cUPdi9NdsbpPgOyZx35u_Lbte-j0cmkRmL4bPDe8CReG8GcsWZmBygvIuQi0YF3VgcArxY5ns4h2-n2rUA-NxB9Kd-q-jh5VkThTE5qNuOblAlKQnG13Df" />
+                                </div>
+                                <div>
+                                    <h5
+                                        class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">
+                                        Vencer el insomnio</h5>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Guía
+                                        práctica nocturna</p>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <span
+                                            class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">2.4k
+                                            lecturas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Popular Item 2 -->
+                            <div class="flex gap-4 group cursor-pointer">
+                                <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
+                                    <img alt="Calming waves" class="w-full h-full object-cover"
+                                        data-alt="A stylized digital illustration of soft, rolling ocean waves in shades of lavender and seafoam green. The style is flat yet textured, evoking a sense of rhythmic peace. The lighting is consistent with a bright afternoon, clear and optimistic, fitting the serene and supportive atmosphere of a mental health platform."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDxwHYk8rBny8HsK4SjBndeHQqQVu8VkCnj7SnWkEwwH2fdPVstPYBvb4EsXb575Qi8D01Jcs3uG9emYZ15T-DduE-xtz2x_qw99mqg43plY1IQBrX7qFRH5NRzIHFSN1sRdsC1c3QzlpYjr0z3o_MVvmB0oT82tHw8rqTi4vW0KVjf-UlBOeLTvUu5I-D07Ix1L2JMmnIOvKzkBGx6HMXllug_yrjBkakPvfc15XHO5EPfHyvGKcNU3SvOsZjt9_U2kTicYEe-yFi" />
+                                </div>
+                                <div>
+                                    <h5
+                                        class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">
+                                        Ansiedad y Trabajo</h5>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Límites
+                                        saludables en la oficina</p>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <span
+                                            class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">1.8k
+                                            lecturas</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Popular Item 3 -->
+                            <div class="flex gap-4 group cursor-pointer">
+                                <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
+                                    <img alt="Stretching" class="w-full h-full object-cover"
+                                        data-alt="A serene indoor scene featuring a yoga mat and a small succulent plant by a window. Soft sunlight filters through sheer white curtains, creating a dappled light effect. The color palette is composed of soft whites, pale greens, and delicate purple tones, emphasizing a clean, restorative, and modern interior aesthetic."
+                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_CM-6eBAh0A8UH-3KexWnxIEj4qhmmx09Kx1a_MzHTqH8mRY4XLQLeXxFTBwFeXLvie09JXcfvnrAkJFBFa27vYrUiNOYoIeNM09NtuI9YTdb4zT7CyV2KW_fqJ4V4yooEdRPf5_KrhcAUNXxxd3-_2XrBaBRYsnDuEWO2CzIcvDBp7qCLJ8x0CjdH_gk_tOAIktn83BvVNV2bsA4AQc0ngpXh7pCjOnv2D0x39m6MucNGdFNrJl1oNNj2HDqC7kgFfjsH_vdz08" />
+                                </div>
+                                <div>
+                                    <h5
+                                        class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">
+                                        Mindful Eating</h5>
+                                    <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Relación
+                                        sana con la comida</p>
+                                    <div class="flex items-center gap-1 mt-1">
+                                        <span
+                                            class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
+                                        <span class="font-label-sm text-label-sm text-on-surface-variant">1.2k
+                                            lecturas</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10 p-6 bg-primary-container/20 rounded-2xl border border-primary-container/30">
+                            <h4 class="font-title-lg text-title-lg text-primary mb-2">¿No encuentras lo que buscas?</h4>
+                            <p class="font-body-md text-body-md text-on-surface-variant mb-4">Nuestro equipo de
+                                psicólogos puede sugerir recursos personalizados para ti.</p>
+                            <button
+                                class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Solicitar
+                                ayuda</button>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <!-- Footer -->
+        <footer class="mt-auto w-full bg-surface-container dark:bg-surface-container-highest">
+            <div
+                class="flex flex-col md:flex-row justify-between items-center px-6 lg:px-margin-desktop py-8 gap-4 w-full">
+                <div class="flex flex-col items-center md:items-start gap-2">
+                    <span class="font-title-lg text-title-lg text-primary">CLARAMENTE</span>
+                    <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es
+                        nuestra prioridad.</p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-6">
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                        href="#">Aviso Legal</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                        href="#">Accesibilidad</a>
+                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
+                        href="#">Red de apoyo profesional</a>
+                </div>
+            </div>
+        </footer>
+    </main>
+    <!-- Mobile Navigation Bar -->
+    <nav
+        class="lg:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md h-16 flex items-center justify-around px-2 z-50 border-t border-outline-variant/10">
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">edit_note</span>
+            <span class="text-[10px] font-label-sm">Diario</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+            <span class="text-[10px] font-label-sm">Recursos</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">menu_book</span>
+            <span class="text-[10px] font-label-sm">Biblioteca</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined">groups</span>
+            <span class="text-[10px] font-label-sm">Social</span>
+        </button>
+    </nav>
+    <script>
         // Micro-interactions
         document.querySelectorAll('button').forEach(button => {
             button.addEventListener('mousedown', () => {
@@ -391,9 +525,9 @@
         // Filter functionality simulation
         const filterButtons = document.querySelectorAll('button[class*="rounded-full"]');
         filterButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                if(this.textContent === 'Ver recurso' || this.textContent === 'Ver videos' || this.textContent === 'Solicitar ayuda') return;
-                
+            btn.addEventListener('click', function () {
+                if (this.textContent === 'Ver recurso' || this.textContent === 'Ver videos' || this.textContent === 'Solicitar ayuda') return;
+
                 filterButtons.forEach(b => {
                     if (b.classList.contains('bg-primary')) {
                         b.classList.remove('bg-primary', 'text-on-primary');
@@ -406,4 +540,6 @@
         });
     </script>
     <script type="module" src="../JS/main.js"></script>
-</body></html>
+</body>
+
+</html>
