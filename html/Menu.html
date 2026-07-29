@@ -1,111 +1,99 @@
-<ul class="menu">
+<!-- Inicio -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="#">
+    <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+    <span class="font-body-md text-body-md">Inicio</span>
+</a>
 
-                    <li>
-                        <a href="Inicio.html">
-                            <i class="bi bi-house-door"></i>
-                            Inicio
-                        </a>
-                    </li>
+<!-- Bienestar Emocional con Submenú -->
+<details class="group [&_summary::-webkit-details-marker]:hidden">
+    <summary class="flex items-center justify-between hover:bg-primary-container text-on-primary-container rounded-xl px-4 py-3 cursor-pointer transition-all active:scale-95 duration-200 select-none">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+        <span class="font-body-md text-body-md font-medium">Bienestar emocional</span>
+    </div>
+    <!-- Flecha con rotación automática al abrir/cerrar -->
+    <span class="material-symbols-outlined transition-transform duration-200 group-open:-rotate-180">expand_more</span>
+    </summary>
 
-                    <!-- BIENESTAR -->
+    <!-- Lista del Submenú -->
+    <div class="flex flex-col gap-1 mt-1 pl-4">
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Registro_emocional.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Registro emocional</span>
+        </a>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Evolucionemocional.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Evolución emocional</span>
+        </a>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Retroalimentacion.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Retroalimentación</span>
+        </a>
+    </div>
+</details>
+<!-- Comunidad -->
+<details class="group [&_summary::-webkit-details-marker]:hidden">
+    <summary class="flex items-center justify-between hover:bg-primary-container text-on-primary-container rounded-xl px-4 py-3 cursor-pointer transition-all active:scale-95 duration-200 select-none">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined" data-icon="trending_up">auto_awesome</span>
+        <span class="font-body-md text-body-md font-medium">Comunidad</span>
+    </div>
+    <!-- Flecha con rotación automática al abrir/cerrar -->
+    <span class="material-symbols-outlined transition-transform duration-200 group-open:-rotate-180">expand_more</span>
+    </summary>
 
-                    <li class="submenu">
-                        <button class="submenu-btn">
-                            <span>
-                                <i class="bi bi-heart-pulse"></i>
-                                Bienestar emocional
-                            </span>
-                            <i class="bi bi-chevron-down flecha"></i>
-                        </button>
-                        <ul class="submenu-items">
-                            <li>
-                                <a href="Registro_emocional.html">
-                                    Registro emocional
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Evolucionemocional.html">
-                                    Evolución emocional
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Retroalimentacion.html">
-                                    Retroalimentación
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+    <!-- Lista del Submenú -->
+    <div class="flex flex-col gap-1 mt-1 pl-4">
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Participacion_foros.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Participación</span>
+        </a>
 
-                    <!-- COMUNIDAD -->
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Modoanonimo.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Modo anónimo</span>
+        </a>
 
-                    <li class="submenu">
-                        <button class="submenu-btn">
-                            <span>
-                                <i class="bi bi-people"></i>
-                                Comunidad
-                            </span>
-                            <i class="bi bi-chevron-down flecha"></i>
-                        </button>
-                        <ul class="submenu-items">
-                            <li>
-                                <a href="Participacion_foros.html">
-                                    Participación
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Modoanonimo.html">
-                                    Modo anónimo
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Moderacion_contenido_foros.html">
-                                    Moderación
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Moderacion_contenido_foros.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Moderación</span>
+        </a>
+    </div>
+</details>
 
-                    <!-- RECURSOS -->
+<!-- Recomendaciones -->
+<a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="Recomendaciones.html">
+    <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+    <span class="font-body-md text-body-md">Recomendaciones</span>
+</a>
 
-                    <li class="submenu">
-                        <button class="submenu-btn">
-                            <span>
-                                <i class="bi bi-book"></i>
-                                Recursos
-                            </span>
-                            <i class="bi bi-chevron-down flecha"></i>
-                        </button>
-                        <ul class="submenu-items">
-                            <li>
-                                <a href="Recomendaciones_bibliografia.html">
-                                    Recomendaciones
-                                </a>
-                            </li>
-                            <li></
-                                <a href="Bibliografia.html">
-                                    Bibliografía
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <!-- MI CUENTA -->
-                     <li class="submenu">
-                        <button class="submenu-btn">
-                            <span>
-                                <i class="bi bi-person-circle"></i>
-                                Mi cuenta
-                            </span>
-                            <i class="bi bi-chevron-down flecha"></i>
-                        </button>
-                        <ul class="submenu-items">
-                            <li>
-                                <a href="Perfil.html">
-                                    Perfil
-                                </a>
-                            </li>
-                            <li>
-                                <a href="Configuracion.html">
-                                    Configuración
-                                </a>
-                            </li>
-                        </ul>
+<!-- Mi cuenta -->            
+<details class="group [&_summary::-webkit-details-marker]:hidden">
+    <summary class="flex items-center justify-between hover:bg-primary-container text-on-primary-container rounded-xl px-4 py-3 cursor-pointer transition-all active:scale-95 duration-200 select-none">
+    <div class="flex items-center gap-3">
+        <span class="material-symbols-outlined" data-icon="trending_up">groups</span>
+        <span class="font-body-md text-body-md font-medium">Mi cuenta</span>
+    </div>
+    <!-- Flecha con rotación automática al abrir/cerrar -->
+    <span class="material-symbols-outlined transition-transform duration-200 group-open:-rotate-180">expand_more</span>
+    </summary>
+
+    <!-- Lista del Submenú -->
+    <div class="flex flex-col gap-1 mt-1 pl-4">
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Perfil.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Perfil</span>
+        </a>
+
+        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-primary-container rounded-lg px-4 py-2.5 transition-all active:scale-95 duration-200 text-sm" href="Configuracion.html">
+            <span class="w-1.5 h-1.5 rounded-full bg-current opacity-60"></span>
+            <span class="font-body-md">Configuración</span>
+        </a>
+    </div>
+</details>
+
+<!-- Salir -->
+<a class="flex items-center gap-3 text-on-surface-variant text-danger hover:bg-error-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200" href="salir.html">
+    <span class="material-symbols-outlined" data-icon="menu_book">logout</span>
+    <span class="font-body-md text-body-md">Cerrar sesión</span>
+</a>

@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html lang="es">
+<html class="light" lang="es">
 
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>CLARAMENTE - Comunidad</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet" />
     <link
@@ -114,72 +113,71 @@
         }
     </script>
     <style>
-        body {
-            font-family: 'Gabriela', serif;
-        }
-
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
 
-        .glass-sidebar {
+        body {
+            font-family: 'Gabriela', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
             backdrop-filter: blur(12px);
+            border: 1px solid rgba(179, 157, 219, 0.2);
         }
 
-        .bento-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .soft-glow {
+            box-shadow: 0 10px 30px -10px rgba(179, 157, 219, 0.15);
         }
 
-        .bento-card:hover {
-            transform: translateY(-4px);
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #b39ddb;
+            border-radius: 10px;
         }
     </style>
 </head>
 
-<body class="bg-surface text-on-surface">
+<body class="bg-surface text-on-surface selection:bg-primary-container">
     <!-- TopNavBar -->
-    <header
-        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center px-margin-desktop h-16 z-40 shadow-sm">
+    <nav
+        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm z-40 flex justify-between items-center px-margin-desktop h-16">
         <div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
         <div class="flex items-center gap-6">
-            <div class="hidden md:flex gap-8">
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Inicio</a>
-                <a class="font-label-md text-label-md text-primary border-b-2 border-primary" href="#">Comunidad</a>
-                <a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Recursos</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70"
-                    data-icon="notifications">notifications</span>
-                <img alt="User profile photo" class="w-8 h-8 rounded-full border border-primary-container"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1_iW5wpO2UMAIgFJM_axqjgSBE-qebraxtgC6L4uP-z7HHeGuO0XpS9cY5KDOImpGEgbqv2EB7pm1X3LLWF2AAGzIS-huAw2NDAVVYkJouf0CUIFfXyov5oJRVQ-wsf-Y-u2tAoQqWGpD3uv14OiKpA9iTg0fPELx7klv2j4xaIHsEeVgVEvbEEyYgINNnN1BKTL9k61YhnnVg3U6DuSPr0PvrAnpv_6DsAvVGcSl6S4dMl5MkWQC_ASESbx-ZIDwLzuYP3slrZ_s" />
+            <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70"
+                data-icon="notifications">notifications</span>
+            <div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant">
+                <img alt="User profile photo" class="w-full h-full object-cover"
+                    data-alt="A professional and warm studio portrait of a woman in her 30s with a peaceful expression, set against a soft lavender background with gentle, diffused natural lighting. The image evokes a sense of serenity and emotional intelligence, fitting for a mental health digital sanctuary interface."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACc_qDXqKEIKbRYpJBm4T6glTore3bcnJ6dkrnGs5DGaaDiLiYtwbbiGgtAhdbLRxAMKOWMxX9j5VX8sgYsiHWUjEcq-0ebNRuWRKPWwsJu7VfSOP3b3FcHRmqWvg4oUuYg01JGReqGlzuTAMh160bao7kLJATPS4Btch5gR4ChWi6XDptoPl_ErqEEw3AWHp2y0blCaO7iaDIBbc17aJG7Kmr7WPXerPvM9LNX3mb94PBZXN1HzRWxuoEmO4Vf-IErN4HRzVKGLxN" />
             </div>
         </div>
-    </header>
+    </nav>
     <!-- SideNavBar (Desktop Only) -->
-    <nav
-        class="hidden lg:flex flex-col p-6 gap-2 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl z-50 shadow-sm mt-16">
-        <div class="mb-8">
-            <h2 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h2>
-            <p class="font-body-md text-body-md text-on-surface-variant opacity-70">Tu santuario digital</p>
+    <aside
+        class="hidden lg:flex flex-col p-6 gap-2 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm z-50">
+        <div class="mb-10 mt-4 px-4">
+            <div class="font-headline-md text-headline-md text-primary">CLARAMENTE</div>
+            <p class="text-on-surface-variant font-body-md text-body-md opacity-80">Tu santuario digital</p>
         </div>
-        <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-            href="#">
-            <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-            <!-- SIDEBAR -->
+        <nav class="flex flex-col gap-2">
             <aside class="sidebar">
                 <!-- AQUÍ SE CARGARÁ EL MENÚ -->
             </aside>
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="shield_person">shield_person</span>
-                <span class="font-body-md text-body-md">Moderación</span>
-            </a>
-    </nav>
-    <!-- Main Content Canvas -->
-    <main class="lg:ml-[280px] mt-16 p-margin-mobile md:p-margin-desktop min-h-screen">
-        <div class="max-w-container-max mx-auto">
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto space-y-8">          
             <!-- Header Section with Hero-like feel -->
             <section class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
                 <div>
@@ -398,49 +396,68 @@
         </div>
     </main>
     <!-- Footer -->
-    <footer class="lg:ml-[280px] bg-surface-container dark:bg-surface-container-highest w-full">
-        <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 w-full">
-            <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
-            <div class="flex flex-wrap justify-center gap-6">
-                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Aviso Legal</a>
-                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
-                    href="#">Accesibilidad</a>
-                <a class="font-label-sm text-label-sm text-primary underline" href="#">Red de apoyo emocional</a>
-            </div>
-            <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 CLARAMENTE. Tu bienestar es
-                nuestra prioridad.</p>
+    <footer class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+        <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
+            prioridad.</p>
+        <div class="flex gap-6">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Aviso Legal</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Accesibilidad</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Red de apoyo profesional</a>
         </div>
     </footer>
-    <!-- Mobile Bottom NavBar -->
+    <!-- Mobile Bottom NavBar (Visible only on mobile) -->
     <nav
-        class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-xl border-t border-outline-variant/10 flex justify-around items-center h-16 z-50">
-        <span class="material-symbols-outlined text-on-surface-variant" data-icon="edit_note">edit_note</span>
-        <span class="material-symbols-outlined text-on-surface-variant" data-icon="trending_up">trending_up</span>
-        <span class="material-symbols-outlined text-primary" data-icon="groups" data-weight="fill"
-            style="font-variation-settings: 'FILL' 1;">groups</span>
-        <span class="material-symbols-outlined text-on-surface-variant" data-icon="menu_book">menu_book</span>
-        <img alt="Profile" class="w-6 h-6 rounded-full grayscale opacity-70"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCVOrdvdZcCuX6t-cj_K3djfzbOEUi1tT-CU0CsTt5dSFhcx95MvIIC8hqUBQKQp29HveDt8I4gZpR9Um4aOWQKTKNwTXgSqOleB5hcqyV_Pt0kz4fKFYu-7SHctXOcgn_X6bLgE9n61oxyLlGGCHiRxYC53k5YRj6nRv1FWREC8jWofWjFGgyVNXrWfcDalFjQ1GVsUnUaQdz8VCzcKkXEGlKb58G85CvMxZKRbeYpl3s2v6fp4Z-zs43x4_XyLcQpCnbREelcqore" />
+        class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md flex justify-around items-center py-3 border-t border-outline-variant z-50">
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+            <span class="text-[10px] font-label-sm">Diario</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+            <span class="text-[10px] font-label-sm">Evolución</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+            <span class="text-[10px] font-label-sm">IA</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            <span class="text-[10px] font-label-sm">Biblioteca</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="groups">groups</span>
+            <span class="text-[10px] font-label-sm">Comunidad</span>
+        </button>
     </nav>
     <script>
-        // Micro-interaction for cards
-        document.querySelectorAll('.bento-card, article').forEach(card => {
+        // Simple micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
             card.addEventListener('mouseenter', () => {
-                // Subtle lift or inner glow could be added here
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
             });
         });
 
-        // Search highlight effect
-        const searchInput = document.querySelector('input[type="text"]');
-        searchInput.addEventListener('focus', () => {
-            searchInput.parentElement.classList.add('ring-2', 'ring-primary-container');
-        });
-        searchInput.addEventListener('blur', () => {
-            searchInput.parentElement.classList.remove('ring-2', 'ring-primary-container');
+        // Simulating loading animation for charts
+        window.addEventListener('load', () => {
+            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'height 1.5s ease-out';
+                    bar.style.height = targetHeight;
+                }, 200);
+            });
         });
     </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
-
 </html>

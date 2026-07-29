@@ -5,15 +5,14 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>CLARAMENTE - Panel de Moderación</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet" />
     <link
-        href="https://fonts.googleapis.com/css2?family=Gabriela&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Gabriela:wght@100..900&amp;display=swap" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -114,98 +113,71 @@
         }
     </script>
     <style>
-        body {
-            background-color: #f8f9fa;
-            scroll-behavior: smooth;
-        }
-
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
         }
 
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #b39ddb;
-            border-radius: 10px;
+        body {
+            font-family: 'Gabriela', serif;
+            -webkit-font-smoothing: antialiased;
         }
 
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(104, 84, 141, 0.1);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(179, 157, 219, 0.2);
+        }
+
+        .soft-glow {
+            box-shadow: 0 10px 30px -10px rgba(179, 157, 219, 0.15);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #b39ddb;
+            border-radius: 10px;
         }
     </style>
 </head>
 
-<body class="font-body-md text-on-surface">
+<body class="bg-surface text-on-surface selection:bg-primary-container">
     <!-- TopNavBar -->
-    <header
-        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm z-40 flex justify-between items-center px-margin-desktop h-16 w-full">
-        <div class="flex items-center gap-4">
-            <span class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</span>
-        </div>
-        <div class="flex items-center gap-6">
-            <div class="hidden md:flex gap-8">
-                <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer font-label-md text-label-md"
-                    href="#">Panel Admin</a>
-                <a class="text-primary border-b-2 border-primary cursor-pointer font-label-md text-label-md"
-                    href="#">Moderación</a>
-            </div>
-            <div class="flex items-center gap-4">
-                <span
-                    class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70">notifications</span>
-                <img alt="User profile photo" class="w-10 h-10 rounded-full border-2 border-primary/20 object-cover"
-                    data-alt="A professional headshot of a middle-aged male administrator with a calm expression, wearing a soft grey sweater. He is set against a blurred background of a modern, light-filled office space. The image follows a high-key, professional aesthetic with soft shadows and a warm, empathetic color palette dominated by muted greys and soft lilac tones."
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAHWv27L3An_nOwQrpBnqF80aulg4rvEVPHEjB8P0eBAo50X32BgI4-6NF7RR6pUwTejasQUa7lIngMM7LtFJ9oM3LefdwCMPgTBVajFX9GJLx-ySQUfxJwPpC81qpQLKjI_3Ey-bsNjq2FMfdbRAejnxnq6ImCxIFcLlQWyTSq7s60QMzrLLn5802mVfEbSTp91KUeSqkeJKPugAScd-lBIbAVAvGviR7r_bMAfYWv1Yo3bTF62RhBq3z5OjIJMSp4e81cFS8mCeRA" />
-            </div>
-        </div>
-    </header>
-    <!-- SideNavBar (Hidden on Mobile) -->
     <nav
-        class="hidden lg:flex flex-col p-6 gap-2 z-50 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
-        <div class="py-6 mb-4">
-            <h2 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h2>
-            <p class="font-body-md text-label-sm text-on-surface-variant">Tu santuario digital</p>
+        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm z-40 flex justify-between items-center px-margin-desktop h-16">
+        <div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
+        <div class="flex items-center gap-6">
+            <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70"
+                data-icon="notifications">notifications</span>
+            <div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant">
+                <img alt="User profile photo" class="w-full h-full object-cover"
+                    data-alt="A professional and warm studio portrait of a woman in her 30s with a peaceful expression, set against a soft lavender background with gentle, diffused natural lighting. The image evokes a sense of serenity and emotional intelligence, fitting for a mental health digital sanctuary interface."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACc_qDXqKEIKbRYpJBm4T6glTore3bcnJ6dkrnGs5DGaaDiLiYtwbbiGgtAhdbLRxAMKOWMxX9j5VX8sgYsiHWUjEcq-0ebNRuWRKPWwsJu7VfSOP3b3FcHRmqWvg4oUuYg01JGReqGlzuTAMh160bao7kLJATPS4Btch5gR4ChWi6XDptoPl_ErqEEw3AWHp2y0blCaO7iaDIBbc17aJG7Kmr7WPXerPvM9LNX3mb94PBZXN1HzRWxuoEmO4Vf-IErN4HRzVKGLxN" />
+            </div>
+        </div>
+    </nav>
+    <!-- SideNavBar (Desktop Only) -->
+    <aside
+        class="hidden lg:flex flex-col p-6 gap-2 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm z-50">
+        <div class="mb-10 mt-4 px-4">
+            <div class="font-headline-md text-headline-md text-primary">CLARAMENTE</div>
+            <p class="text-on-surface-variant font-body-md text-body-md opacity-80">Tu santuario digital</p>
         </div>
         <nav class="flex flex-col gap-2">
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-                <span class="font-body-md text-body-md">Inicio</span>
-            </a>
-           <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
-                <span class="font-body-md text-body-md">Bienestar emocional</span>
-            </a>
-            <a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-                <span class="font-body-md text-body-md">Comunidad</span>
-            </a>
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
-                <span class="font-body-md text-body-md">Recursos</span>
-            </a>
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="groups">groups</span>
-                <span class="font-body-md text-body-md">Mi cuenta</span>
-            </a>
+            <aside class="sidebar">
+                <!-- AQUÍ SE CARGARÁ EL MENÚ -->
+            </aside>
         </nav>
-        </aside>
-    <!-- Main Content Canvas -->
-    <main class="lg:ml-sidebar-width pt-24 pb-12 px-6 md:px-margin-desktop min-h-screen">
-        <div class="max-w-container-max mx-auto">
+    </aside>
+    <!-- Main Content -->
+    <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto space-y-8">          
             <!-- Header Section -->
             <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
                 <div>
@@ -480,41 +452,69 @@
             </div>
         </div>
     </main>
-    <!-- Footer Section -->
-    <footer
-        class="lg:ml-sidebar-width bg-surface-container dark:bg-surface-container-highest border-t border-outline-variant/10">
-        <div class="flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4 w-full">
-            <div class="flex flex-col items-center md:items-start gap-1">
-                <span class="font-title-lg text-title-lg text-primary">CLARAMENTE</span>
-                <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es
-                    nuestra prioridad.</p>
-            </div>
-            <div class="flex gap-6 font-label-sm text-label-sm">
-                <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer" href="#">Aviso
-                    Legal</a>
-                <a class="text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
-                    href="#">Accesibilidad</a>
-                <a class="text-primary underline cursor-pointer" href="#">Red de apoyo profesional</a>
-            </div>
+    <!-- Footer -->
+    <footer class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+        <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
+            prioridad.</p>
+        <div class="flex gap-6">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Aviso Legal</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Accesibilidad</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Red de apoyo profesional</a>
         </div>
     </footer>
-    <!-- Interactive Scripts -->
+    <!-- Mobile Bottom NavBar (Visible only on mobile) -->
+    <nav
+        class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md flex justify-around items-center py-3 border-t border-outline-variant z-50">
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
+            <span class="text-[10px] font-label-sm">Diario</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-primary">
+            <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+            <span class="text-[10px] font-label-sm">Evolución</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+            <span class="text-[10px] font-label-sm">IA</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
+            <span class="text-[10px] font-label-sm">Biblioteca</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="groups">groups</span>
+            <span class="text-[10px] font-label-sm">Comunidad</span>
+        </button>
+    </nav>
     <script>
-        // Simple notification toggle simulation
-        document.querySelectorAll('.material-symbols-outlined').forEach(icon => {
-            icon.addEventListener('click', function () {
-                this.classList.add('scale-110');
-                setTimeout(() => this.classList.remove('scale-110'), 200);
+        // Simple micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
             });
         });
 
-        // Search Filter simulation logic (Front-end only)
-        function filterContent(type) {
-            console.log("Filtering by: " + type);
-            // logic to update tables would go here
-        }
+        // Simulating loading animation for charts
+        window.addEventListener('load', () => {
+            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'height 1.5s ease-out';
+                    bar.style.height = targetHeight;
+                }, 200);
+            });
+        });
     </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
-
 </html>
