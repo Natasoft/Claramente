@@ -2,6 +2,7 @@ import { login } from "./inicio.js";
 document.addEventListener("DOMContentLoaded", (Event) => {
     // alert("Bienvenido a Claramente")
 });
+
 document.addEventListener("submit", (event) => {
     if (event.target && event.target.id === "formlogin") {
         event.preventDefault();
@@ -34,6 +35,34 @@ fetch('menu.html')
 // 2. FUNCIÓN PARA INICIALIZAR EL MENÚ
 // ============================================
 function initMenu() {
+
+    const currentPath = window.location.pathname; // O la URL actual que desees comparar
+    const navLinks = document.querySelectorAll("nav a");
+
+    navLinks.forEach((link) => {
+        // Verificar si el enlace coincide con la ruta actual
+        if (link.getAttribute("href") === currentPath || link.href === window.location.href) {
+        
+        // 1. Quitar la clase de hover y aplicar el estado activo al enlace
+        link.classList.remove("hover:bg-primary-container", "hover:bg-surface-container-high");
+        link.classList.add("bg-primary-container", "text-on-primary-container", "font-medium");
+
+        // 2. Si el enlace pertenece a un submenú (<details>), abrirlo y marcar el menú padre
+        const parentDetails = link.closest("details");
+        if (parentDetails) {
+            // Abrir el submenú contenedor
+            parentDetails.setAttribute("open", "");
+
+            // Estilizar el botón principal (<summary>) del submenú contenedor
+            const summary = parentDetails.querySelector("summary");
+            if (summary) {
+                //summary.classList.remove("hover:bg-primary-container", "hover:bg-surface-container-high");
+                //summary.classList.add("bg-primary-container", "text-primary", "font-semibold");
+            }
+        }
+        }
+    });
+    /*
     // ABRIR/CERRAR SUBMENÚS
     const submenu = document.querySelectorAll(".submenu");
 
@@ -84,6 +113,6 @@ function initMenu() {
                 }
             }
         }
-    });
+    });*/
 
 }

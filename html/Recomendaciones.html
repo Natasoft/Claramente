@@ -5,7 +5,6 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>CLARAMENTE - Recomendaciones y Biblioteca</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet" />
     <link
@@ -14,38 +13,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-
-        body {
-            font-family: 'Gabriela', serif;
-            scroll-behavior: smooth;
-        }
-
-        .glass-sidebar {
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-        }
-
-        .custom-scrollbar::-webkit-scrollbar {
-            width: 4px;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-            background: #cbc4d0;
-            border-radius: 10px;
-        }
-
-        .soft-shadow {
-            box-shadow: 0 10px 30px -10px rgba(179, 157, 219, 0.15);
-        }
-    </style>
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -145,73 +112,72 @@
             },
         }
     </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Gabriela', serif;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(179, 157, 219, 0.2);
+        }
+
+        .soft-glow {
+            box-shadow: 0 10px 30px -10px rgba(179, 157, 219, 0.15);
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #b39ddb;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 
-<body class="bg-surface text-on-surface">
-    <!-- SideNavBar -->
+<body class="bg-surface text-on-surface selection:bg-primary-container">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md shadow-sm z-40 flex justify-between items-center px-margin-desktop h-16">
+        <div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
+        <div class="flex items-center gap-6">
+            <span class="material-symbols-outlined text-primary cursor-pointer active:opacity-70"
+                data-icon="notifications">notifications</span>
+            <div class="w-8 h-8 rounded-full bg-primary-container overflow-hidden border border-outline-variant">
+                <img alt="User profile photo" class="w-full h-full object-cover"
+                    data-alt="A professional and warm studio portrait of a woman in her 30s with a peaceful expression, set against a soft lavender background with gentle, diffused natural lighting. The image evokes a sense of serenity and emotional intelligence, fitting for a mental health digital sanctuary interface."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuACc_qDXqKEIKbRYpJBm4T6glTore3bcnJ6dkrnGs5DGaaDiLiYtwbbiGgtAhdbLRxAMKOWMxX9j5VX8sgYsiHWUjEcq-0ebNRuWRKPWwsJu7VfSOP3b3FcHRmqWvg4oUuYg01JGReqGlzuTAMh160bao7kLJATPS4Btch5gR4ChWi6XDptoPl_ErqEEw3AWHp2y0blCaO7iaDIBbc17aJG7Kmr7WPXerPvM9LNX3mb94PBZXN1HzRWxuoEmO4Vf-IErN4HRzVKGLxN" />
+            </div>
+        </div>
+    </nav>
+    <!-- SideNavBar (Desktop Only) -->
     <aside
-        class="hidden lg:flex flex-col p-6 gap-2 z-50 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm">
-        <div class="mb-8 px-4">
-            <h1 class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</h1>
-            <p class="font-label-sm text-label-sm text-on-surface-variant">Tu santuario digital</p>
+        class="hidden lg:flex flex-col p-6 gap-2 fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl shadow-sm z-50">
+        <div class="mb-10 mt-4 px-4">
+            <div class="font-headline-md text-headline-md text-primary">CLARAMENTE</div>
+            <p class="text-on-surface-variant font-body-md text-body-md opacity-80">Tu santuario digital</p>
         </div>
         <nav class="flex flex-col gap-2">
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
-                <span class="font-body-md text-body-md">Inicio</span>
-            </a>
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
-                <span class="font-body-md text-body-md">Bienestar emocional</span>
-            </a>
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
-                <span class="font-body-md text-body-md">Comunidad</span>
-            </a>
-            <a class="flex items-center gap-3 bg-primary-container text-on-primary-container rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
-                <span class="font-body-md text-body-md">Recursos</span>
-            </a>
-            <a class="flex items-center gap-3 text-on-surface-variant hover:bg-surface-container-high rounded-xl px-4 py-3 transition-all active:scale-95 duration-200"
-                href="#">
-                <span class="material-symbols-outlined" data-icon="groups">groups</span>
-                <span class="font-body-md text-body-md">Mi cuenta</span>
-            </a>
+            <aside class="sidebar">
+                <!-- AQUÍ SE CARGARÁ EL MENÚ -->
+            </aside>
         </nav>
-    
     </aside>
-
-    <!-- Main Content Area -->
-    <main class="lg:ml-sidebar-width min-h-screen flex flex-col pb-20">
-        <!-- TopNavBar -->
-        <header
-            class="fixed top-0 right-0 left-0 lg:left-sidebar-width bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md h-16 flex justify-between items-center px-6 lg:px-margin-desktop z-40 shadow-sm">
-            <h2 class="font-headline-md text-headline-md text-primary font-bold lg:hidden">CLARAMENTE</h2>
-            <div class="hidden lg:flex items-center gap-6">
-                <span
-                    class="font-body-md text-body-md text-primary border-b-2 border-primary cursor-pointer">Recursos</span>
-                <span
-                    class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors cursor-pointer">Mis
-                    Favoritos</span>
-            </div>
-            <div class="flex items-center gap-4">
-                <button class="p-2 text-on-surface-variant hover:text-primary transition-colors">
-                    <span class="material-symbols-outlined">notifications</span>
-                </button>
-                <div
-                    class="w-10 h-10 rounded-full bg-primary-container overflow-hidden cursor-pointer active:opacity-70 transition-opacity">
-                    <img alt="User profile photo" class="w-full h-full object-cover"
-                        data-alt="A professional close-up portrait of a serene woman with a gentle smile, set against a soft, out-of-focus lavender background. The lighting is warm and ethereal, consistent with a high-end wellness app's aesthetic. The color palette is composed of soft pastels and muted violets, evoking a sense of calm and mental clarity."
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1AUmoIqKq5C8qpUytyqyfqUYqMpV75X_sJ0yzgPLr7ga-nQkku4YKn3fSjYKi4DEiEeL9UeJoiLjC035Fvohe0ht_md_TG7xZrBGIrT9tfzH73pOCM3IR5Mok-JpHcx53gKQVWUuDRM2LCTPfKQKz0Fvn-pAgnQKanpW_FFFyel123uvtuHomzxlAcV1Ia-ckLXKw2_Mso6MaiWU0JYvACmIP424A1XGDvm9EhIauHDEptj5TfERv7tb2n0-cakbQv_gucbUtf1Ip" />
-                </div>
-            </div>
-        </header>
-        <!-- Content Canvas -->
-        <div class="mt-16 px-6 lg:px-margin-desktop py-8 max-w-container-max mx-auto w-full">
+    <!-- Main Content -->
+    <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
+        <div class="max-w-container-max mx-auto space-y-8">          
             <!-- Hero / Search Section -->
             <section class="mb-12">
                 <h1
@@ -468,78 +434,70 @@
                 </aside>
             </div>
         </div>
-        <!-- Footer -->
-        <footer class="mt-auto w-full bg-surface-container dark:bg-surface-container-highest">
-            <div
-                class="flex flex-col md:flex-row justify-between items-center px-6 lg:px-margin-desktop py-8 gap-4 w-full">
-                <div class="flex flex-col items-center md:items-start gap-2">
-                    <span class="font-title-lg text-title-lg text-primary">CLARAMENTE</span>
-                    <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es
-                        nuestra prioridad.</p>
-                </div>
-                <div class="flex flex-wrap justify-center gap-6">
-                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
-                        href="#">Aviso Legal</a>
-                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
-                        href="#">Accesibilidad</a>
-                    <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors cursor-pointer"
-                        href="#">Red de apoyo profesional</a>
-                </div>
-            </div>
-        </footer>
     </main>
-    <!-- Mobile Navigation Bar -->
+    <!-- Footer -->
+    <footer class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+        <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
+        <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
+            prioridad.</p>
+        <div class="flex gap-6">
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Aviso Legal</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Accesibilidad</a>
+            <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                href="#">Red de apoyo profesional</a>
+        </div>
+    </footer>
+    <!-- Mobile Bottom NavBar (Visible only on mobile) -->
     <nav
-        class="lg:hidden fixed bottom-0 left-0 right-0 bg-surface/90 backdrop-blur-md h-16 flex items-center justify-around px-2 z-50 border-t border-outline-variant/10">
+        class="md:hidden fixed bottom-0 left-0 w-full bg-surface/90 backdrop-blur-md flex justify-around items-center py-3 border-t border-outline-variant z-50">
         <button class="flex flex-col items-center gap-1 text-on-surface-variant">
-            <span class="material-symbols-outlined">edit_note</span>
+            <span class="material-symbols-outlined" data-icon="edit_note">edit_note</span>
             <span class="text-[10px] font-label-sm">Diario</span>
         </button>
         <button class="flex flex-col items-center gap-1 text-primary">
-            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
-            <span class="text-[10px] font-label-sm">Recursos</span>
+            <span class="material-symbols-outlined" data-icon="trending_up">trending_up</span>
+            <span class="text-[10px] font-label-sm">Evolución</span>
         </button>
         <button class="flex flex-col items-center gap-1 text-on-surface-variant">
-            <span class="material-symbols-outlined">menu_book</span>
+            <span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+            <span class="text-[10px] font-label-sm">IA</span>
+        </button>
+        <button class="flex flex-col items-center gap-1 text-on-surface-variant">
+            <span class="material-symbols-outlined" data-icon="menu_book">menu_book</span>
             <span class="text-[10px] font-label-sm">Biblioteca</span>
         </button>
         <button class="flex flex-col items-center gap-1 text-on-surface-variant">
-            <span class="material-symbols-outlined">groups</span>
-            <span class="text-[10px] font-label-sm">Social</span>
+            <span class="material-symbols-outlined" data-icon="groups">groups</span>
+            <span class="text-[10px] font-label-sm">Comunidad</span>
         </button>
     </nav>
     <script>
-        // Micro-interactions
-        document.querySelectorAll('button').forEach(button => {
-            button.addEventListener('mousedown', () => {
-                button.classList.add('scale-95');
+        // Simple micro-interactions
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-4px)';
+                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
             });
-            button.addEventListener('mouseup', () => {
-                button.classList.remove('scale-95');
-            });
-            button.addEventListener('mouseleave', () => {
-                button.classList.remove('scale-95');
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
             });
         });
 
-        // Filter functionality simulation
-        const filterButtons = document.querySelectorAll('button[class*="rounded-full"]');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', function () {
-                if (this.textContent === 'Ver recurso' || this.textContent === 'Ver videos' || this.textContent === 'Solicitar ayuda') return;
-
-                filterButtons.forEach(b => {
-                    if (b.classList.contains('bg-primary')) {
-                        b.classList.remove('bg-primary', 'text-on-primary');
-                        b.classList.add('bg-surface-container-high', 'text-on-surface-variant');
-                    }
-                });
-                this.classList.remove('bg-surface-container-high', 'text-on-surface-variant');
-                this.classList.add('bg-primary', 'text-on-primary');
+        // Simulating loading animation for charts
+        window.addEventListener('load', () => {
+            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
+            bars.forEach(bar => {
+                const targetHeight = bar.style.height;
+                bar.style.height = '0';
+                setTimeout(() => {
+                    bar.style.transition = 'height 1.5s ease-out';
+                    bar.style.height = targetHeight;
+                }, 200);
             });
         });
     </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
-
 </html>
