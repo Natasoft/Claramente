@@ -177,147 +177,173 @@
     </aside>
     <!-- Main Content -->
     <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
-        <div class="max-w-container-max mx-auto space-y-8">          
-            
-        <!-- Header Section -->
-        <header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
-        <div>
-        <h2 class="font-headline-lg text-headline-lg text-on-surface font-gabriela">Gestión de Cuenta</h2>
-        <p class="text-body-md text-on-surface-variant">Administra tu información personal y preferencias del portal.</p>
+        <div class="max-w-container-max mx-auto space-y-8">
+
+            <!-- Header Section -->
+            <header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+                <div>
+                    <h2 class="font-headline-lg text-headline-lg text-on-surface font-gabriela">Gestión de Cuenta</h2>
+                    <p class="text-body-md text-on-surface-variant">Administra tu información personal y preferencias
+                        del portal.</p>
+                </div>
+                <!-- Nav Pills -->
+            </header>
+            <!-- INTERFACE 1: PERFIL -->
+            <section class="space-y-lg transition-opacity duration-300" id="content-perfil">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
+                    <!-- Profile Card -->
+                    <div class="lg:col-span-2 bg-surface-container-lowest rounded-xl soft-shadow overflow-hidden">
+                        <div class="p-lg border-b border-outline-variant/20 flex items-center justify-between">
+                            <h3 class="font-headline-sm text-headline-sm font-gabriela">Información Personal</h3>
+                            <span
+                                class="px-sm py-1 bg-warning/20 text-tertiary-fixed-dim rounded-lg text-label-sm font-bold border border-warning/30">Miembro
+                                Premium</span>
+                        </div>
+                        <div class="p-lg">
+                            <div class="flex flex-col md:flex-row gap-xl items-center md:items-start mb-xl">
+                                <div class="relative group">
+                                    <div class="w-[120px] h-[120px] rounded-full border-4 border-primary p-1 bg-white">
+                                        <div class="w-full h-full rounded-full bg-surface-container overflow-hidden">
+                                            <img class="w-full h-full object-cover"
+                                                data-alt="A professional studio portrait of a serene woman in her late 30s with a warm and composed expression. She has soft, natural lighting on her face, accentuating her professional and reliable demeanor. The background is a soft-focus minimalist wellness clinic with light lavender and warm wood accents. The overall aesthetic is clean, light, and premium corporate."
+                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbVCWDFcTNlGHCYNOeapjHwzkyrXJV0Ifly2hjLzlnZ4s6rwT_6m6jUW9TZ5NTSfsajVjzSy_HptOyDF_juxCcyoQ5J9ZRfwSIcKT-fLOgYZn9qikYjiLOobh9kwT1GK4O3CLPjAQ7n_e1OBBjwVeJYgV_P-dISTCKqqSg9486WOot5GmaXcKMUKnUr363sHERP8Rnw8SvnU_aTrwpYbrtu1W48nxPeKYJIbA-ZkfIcpSYgPz3f0a7uiYTjVDvNUJ8UlKaPLSx2T47" />
+                                        </div>
+                                    </div>
+                                    <button
+                                        class="absolute bottom-0 right-0 bg-primary text-white p-xs rounded-full soft-shadow hover:scale-110 transition-transform">
+                                        <span class="material-symbols-outlined text-base">photo_camera</span>
+                                    </button>
+                                </div>
+                                <div class="flex-1 text-center md:text-left">
+                                    <h4 class="font-headline-md text-headline-md font-gabriela">Elena Valdivia</h4>
+                                    <p class="text-body-md text-outline mb-sm italic">"En busca de un equilibrio
+                                        consciente entre el trabajo y la vida personal."</p>
+                                    <div class="flex flex-wrap justify-center md:justify-start gap-xs">
+                                        <span
+                                            class="text-label-sm px-sm py-1 bg-primary-subtle text-primary rounded-lg">Mindfulness</span>
+                                        <span
+                                            class="text-label-sm px-sm py-1 bg-primary-subtle text-primary rounded-lg">Productividad</span>
+                                        <span
+                                            class="text-label-sm px-sm py-1 bg-primary-subtle text-primary rounded-lg">Bienestar</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
+                                <div class="space-y-xs">
+                                    <label class="text-label-md text-outline flex items-center gap-xs">
+                                        <span class="material-symbols-outlined text-sm">mail</span> Correo electrónico
+                                    </label>
+                                    <p class="font-body-md text-body-md font-bold">elena.valdivia@empresa.com</p>
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="text-label-md text-outline flex items-center gap-xs">
+                                        <span class="material-symbols-outlined text-sm">call</span> Teléfono
+                                    </label>
+                                    <p class="font-body-md text-body-md font-bold">+34 612 345 678</p>
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="text-label-md text-outline flex items-center gap-xs">
+                                        <span class="material-symbols-outlined text-sm">location_on</span> Ubicación
+                                    </label>
+                                    <p class="font-body-md text-body-md font-bold">Madrid, España</p>
+                                </div>
+                                <div class="space-y-xs">
+                                    <label class="text-label-md text-outline flex items-center gap-xs">
+                                        <span class="material-symbols-outlined text-sm">calendar_month</span> Fecha de
+                                        registro
+                                    </label>
+                                    <p class="font-body-md text-body-md font-bold">15 de Marzo, 2023</p>
+                                </div>
+                            </div>
+                            <div class="mt-xl pt-xl border-t border-outline-variant/20">
+                                <label class="text-label-md text-outline block mb-xs">Biografía</label>
+                                <p class="text-body-md text-on-surface-variant leading-relaxed">
+                                    Consultora senior especializada en recursos humanos con más de 10 años de
+                                    experiencia. Elena utiliza Lumina Wellness para gestionar el estrés corporativo y
+                                    mantener una rutina de salud mental estable. Apasionada de la lectura clásica y las
+                                    caminatas matutinas.
+                                </p>
+                            </div>
+                            <div class="mt-xl flex justify-end">
+                                <button
+                                    class="px-xl py-sm bg-primary text-white rounded-xl font-label-md soft-shadow hover:bg-primary/90 transition-all active:scale-95 flex items-center gap-sm">
+                                    <span class="material-symbols-outlined text-sm">edit</span> Editar perfil
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Sidebar Stats/Extras -->
+                    <div class="space-y-lg">
+                        <div class="bg-surface-container-lowest p-lg rounded-xl soft-shadow border-l-4 border-primary">
+                            <h5 class="font-headline-sm text-headline-sm font-gabriela mb-md">Tu Progreso</h5>
+                            <div class="space-y-md">
+                                <div>
+                                    <div class="flex justify-between text-label-sm mb-xs">
+                                        <span>Racha de bienestar</span>
+                                        <span class="text-primary font-bold">12 días</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[60%]"></div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div class="flex justify-between text-label-sm mb-xs">
+                                        <span>Sesiones completadas</span>
+                                        <span class="text-primary font-bold">48/50</span>
+                                    </div>
+                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
+                                        <div class="bg-primary h-full w-[96%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-primary text-white p-lg rounded-xl soft-shadow relative overflow-hidden">
+                            <div class="relative z-10">
+                                <h5 class="font-headline-sm text-headline-sm font-gabriela mb-xs">¿Necesitas ayuda?</h5>
+                                <p class="text-body-sm opacity-90 mb-md">Nuestros asesores de bienestar están
+                                    disponibles 24/7 para premium.</p>
+                                <button
+                                    class="w-full py-sm bg-white text-primary rounded-lg font-label-md hover:bg-secondary-fixed transition-all">Contactar
+                                    Soporte</button>
+                            </div>
+                            <span
+                                class="material-symbols-outlined absolute -bottom-4 -right-4 text-[120px] opacity-10 rotate-12">support_agent</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- INTERFACE 2: CONFIGURACIÓN -->
         </div>
-        <!-- Nav Pills -->
-        </header>
-        <!-- INTERFACE 1: PERFIL -->
-        <section class="space-y-lg transition-opacity duration-300" id="content-perfil">
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-lg">
-        <!-- Profile Card -->
-        <div class="lg:col-span-2 bg-surface-container-lowest rounded-xl soft-shadow overflow-hidden">
-        <div class="p-lg border-b border-outline-variant/20 flex items-center justify-between">
-        <h3 class="font-headline-sm text-headline-sm font-gabriela">Información Personal</h3>
-        <span class="px-sm py-1 bg-warning/20 text-tertiary-fixed-dim rounded-lg text-label-sm font-bold border border-warning/30">Miembro Premium</span>
-        </div>
-        <div class="p-lg">
-        <div class="flex flex-col md:flex-row gap-xl items-center md:items-start mb-xl">
-        <div class="relative group">
-        <div class="w-[120px] h-[120px] rounded-full border-4 border-primary p-1 bg-white">
-        <div class="w-full h-full rounded-full bg-surface-container overflow-hidden">
-        <img class="w-full h-full object-cover" data-alt="A professional studio portrait of a serene woman in her late 30s with a warm and composed expression. She has soft, natural lighting on her face, accentuating her professional and reliable demeanor. The background is a soft-focus minimalist wellness clinic with light lavender and warm wood accents. The overall aesthetic is clean, light, and premium corporate." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbVCWDFcTNlGHCYNOeapjHwzkyrXJV0Ifly2hjLzlnZ4s6rwT_6m6jUW9TZ5NTSfsajVjzSy_HptOyDF_juxCcyoQ5J9ZRfwSIcKT-fLOgYZn9qikYjiLOobh9kwT1GK4O3CLPjAQ7n_e1OBBjwVeJYgV_P-dISTCKqqSg9486WOot5GmaXcKMUKnUr363sHERP8Rnw8SvnU_aTrwpYbrtu1W48nxPeKYJIbA-ZkfIcpSYgPz3f0a7uiYTjVDvNUJ8UlKaPLSx2T47"/>
-        </div>
-        </div>
-        <button class="absolute bottom-0 right-0 bg-primary text-white p-xs rounded-full soft-shadow hover:scale-110 transition-transform">
-        <span class="material-symbols-outlined text-base">photo_camera</span>
-        </button>
-        </div>
-        <div class="flex-1 text-center md:text-left">
-        <h4 class="font-headline-md text-headline-md font-gabriela">Elena Valdivia</h4>
-        <p class="text-body-md text-outline mb-sm italic">"En busca de un equilibrio consciente entre el trabajo y la vida personal."</p>
-        <div class="flex flex-wrap justify-center md:justify-start gap-xs">
-        <span class="text-label-sm px-sm py-1 bg-primary-subtle text-primary rounded-lg">Mindfulness</span>
-        <span class="text-label-sm px-sm py-1 bg-primary-subtle text-primary rounded-lg">Productividad</span>
-        <span class="text-label-sm px-sm py-1 bg-primary-subtle text-primary rounded-lg">Bienestar</span>
-        </div>
-        </div>
-        </div>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-xl">
-        <div class="space-y-xs">
-        <label class="text-label-md text-outline flex items-center gap-xs">
-        <span class="material-symbols-outlined text-sm">mail</span> Correo electrónico
-                                            </label>
-        <p class="font-body-md text-body-md font-bold">elena.valdivia@empresa.com</p>
-        </div>
-        <div class="space-y-xs">
-        <label class="text-label-md text-outline flex items-center gap-xs">
-        <span class="material-symbols-outlined text-sm">call</span> Teléfono
-                                            </label>
-        <p class="font-body-md text-body-md font-bold">+34 612 345 678</p>
-        </div>
-        <div class="space-y-xs">
-        <label class="text-label-md text-outline flex items-center gap-xs">
-        <span class="material-symbols-outlined text-sm">location_on</span> Ubicación
-                                            </label>
-        <p class="font-body-md text-body-md font-bold">Madrid, España</p>
-        </div>
-        <div class="space-y-xs">
-        <label class="text-label-md text-outline flex items-center gap-xs">
-        <span class="material-symbols-outlined text-sm">calendar_month</span> Fecha de registro
-                                            </label>
-        <p class="font-body-md text-body-md font-bold">15 de Marzo, 2023</p>
-        </div>
-        </div>
-        <div class="mt-xl pt-xl border-t border-outline-variant/20">
-        <label class="text-label-md text-outline block mb-xs">Biografía</label>
-        <p class="text-body-md text-on-surface-variant leading-relaxed">
-                                            Consultora senior especializada en recursos humanos con más de 10 años de experiencia. Elena utiliza Lumina Wellness para gestionar el estrés corporativo y mantener una rutina de salud mental estable. Apasionada de la lectura clásica y las caminatas matutinas.
-                                        </p>
-        </div>
-        <div class="mt-xl flex justify-end">
-        <button class="px-xl py-sm bg-primary text-white rounded-xl font-label-md soft-shadow hover:bg-primary/90 transition-all active:scale-95 flex items-center gap-sm">
-        <span class="material-symbols-outlined text-sm">edit</span> Editar perfil
-                                        </button>
-        </div>
-        </div>
-        </div>
-        <!-- Sidebar Stats/Extras -->
-        <div class="space-y-lg">
-        <div class="bg-surface-container-lowest p-lg rounded-xl soft-shadow border-l-4 border-primary">
-        <h5 class="font-headline-sm text-headline-sm font-gabriela mb-md">Tu Progreso</h5>
-        <div class="space-y-md">
-        <div>
-        <div class="flex justify-between text-label-sm mb-xs">
-        <span>Racha de bienestar</span>
-        <span class="text-primary font-bold">12 días</span>
-        </div>
-        <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-        <div class="bg-primary h-full w-[60%]"></div>
-        </div>
-        </div>
-        <div>
-        <div class="flex justify-between text-label-sm mb-xs">
-        <span>Sesiones completadas</span>
-        <span class="text-primary font-bold">48/50</span>
-        </div>
-        <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-        <div class="bg-primary h-full w-[96%]"></div>
-        </div>
-        </div>
-        </div>
-        </div>
-        <div class="bg-primary text-white p-lg rounded-xl soft-shadow relative overflow-hidden">
-        <div class="relative z-10">
-        <h5 class="font-headline-sm text-headline-sm font-gabriela mb-xs">¿Necesitas ayuda?</h5>
-        <p class="text-body-sm opacity-90 mb-md">Nuestros asesores de bienestar están disponibles 24/7 para premium.</p>
-        <button class="w-full py-sm bg-white text-primary rounded-lg font-label-md hover:bg-secondary-fixed transition-all">Contactar Soporte</button>
-        </div>
-        <span class="material-symbols-outlined absolute -bottom-4 -right-4 text-[120px] opacity-10 rotate-12">support_agent</span>
-        </div>
-        </div>
-        </div>
-        </section>
-        <!-- INTERFACE 2: CONFIGURACIÓN -->
-        </div>
-        </main>
-        <!-- SUCCESS ALERT (Hidden) -->
-        <div class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out" id="toast-success">
+    </main>
+    <!-- SUCCESS ALERT (Hidden) -->
+    <div class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out"
+        id="toast-success">
         <div class="bg-success text-white px-xl py-md rounded-xl soft-shadow flex items-center gap-md">
-        <span class="material-symbols-outlined">check_circle</span>
-        <span class="font-label-md">¡Configuración guardada correctamente!</span>
+            <span class="material-symbols-outlined">check_circle</span>
+            <span class="font-label-md">¡Configuración guardada correctamente!</span>
         </div>
+    </div>
+    <!-- CONFIRMATION MODAL -->
+    <div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-md"
+        id="modal-backdrop">
+        <div
+            class="bg-surface-container-lowest max-w-md w-full rounded-xl soft-shadow overflow-hidden transform scale-95 transition-transform duration-300">
+            <div class="p-lg">
+                <h3 class="font-headline-sm text-headline-sm font-gabriela mb-md">Confirmar Cambios</h3>
+                <p class="text-body-md text-on-surface-variant">¿Estás seguro de que deseas guardar las modificaciones
+                    realizadas en tu perfil y configuración?</p>
+            </div>
+            <div class="p-lg bg-surface-container flex justify-end gap-md">
+                <button class="px-lg py-xs text-on-surface-variant font-label-md"
+                    onclick="toggleModal(false)">Volver</button>
+                <button class="px-xl py-sm bg-primary text-white rounded-lg font-label-md shadow-md"
+                    onclick="confirmSave()">Confirmar y Guardar</button>
+            </div>
         </div>
-        <!-- CONFIRMATION MODAL -->
-        <div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-md" id="modal-backdrop">
-        <div class="bg-surface-container-lowest max-w-md w-full rounded-xl soft-shadow overflow-hidden transform scale-95 transition-transform duration-300">
-        <div class="p-lg">
-        <h3 class="font-headline-sm text-headline-sm font-gabriela mb-md">Confirmar Cambios</h3>
-        <p class="text-body-md text-on-surface-variant">¿Estás seguro de que deseas guardar las modificaciones realizadas en tu perfil y configuración?</p>
-        </div>
-        <div class="p-lg bg-surface-container flex justify-end gap-md">
-        <button class="px-lg py-xs text-on-surface-variant font-label-md" onclick="toggleModal(false)">Volver</button>
-        <button class="px-xl py-sm bg-primary text-white rounded-lg font-label-md shadow-md" onclick="confirmSave()">Confirmar y Guardar</button>
-        </div>
-        </div>
-        </div>
+    </div>
     <!-- Footer -->
-    <footer class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+    <footer
+        class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
         <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
         <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
             prioridad.</p>
@@ -381,124 +407,126 @@
     </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
+
 </html>
 
 
 
 
 
-
 <script>
-        // Sidebar Mobile Toggle
-        const toggleBtn = document.getElementById('toggle-sidebar');
-        const sidebar = document.getElementById('sidebar');
-        let isSidebarOpen = false;
+    // Sidebar Mobile Toggle
+    const toggleBtn = document.getElementById('toggle-sidebar');
+    const sidebar = document.getElementById('sidebar');
+    let isSidebarOpen = false;
 
-        toggleBtn.addEventListener('click', () => {
-            isSidebarOpen = !isSidebarOpen;
-            if(isSidebarOpen) {
-                sidebar.classList.remove('-translate-x-full');
-                sidebar.classList.add('translate-x-0', 'shadow-2xl');
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                sidebar.classList.remove('translate-x-0', 'shadow-2xl');
-            }
-        });
+    toggleBtn.addEventListener('click', () => {
+        isSidebarOpen = !isSidebarOpen;
+        if (isSidebarOpen) {
+            sidebar.classList.remove('-translate-x-full');
+            sidebar.classList.add('translate-x-0', 'shadow-2xl');
+        } else {
+            sidebar.classList.add('-translate-x-full');
+            sidebar.classList.remove('translate-x-0', 'shadow-2xl');
+        }
+    });
 
-        // Tab Switching Logic
-        function switchTab(tabId) {
-            const perfilContent = document.getElementById('content-perfil');
-            const configContent = document.getElementById('content-config');
-            
-            const pillPerfil = document.getElementById('pill-perfil');
-            const pillConfig = document.getElementById('pill-config');
+    // Tab Switching Logic
+    function switchTab(tabId) {
+        const perfilContent = document.getElementById('content-perfil');
+        const configContent = document.getElementById('content-config');
 
-            const subPerfil = document.getElementById('sub-perfil');
-            const subConfig = document.getElementById('sub-config');
+        const pillPerfil = document.getElementById('pill-perfil');
+        const pillConfig = document.getElementById('pill-config');
 
-            // Reset
-            perfilContent.classList.add('hidden');
-            configContent.classList.add('hidden');
-            
-            pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
-            pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
-            
-            subPerfil.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
-            subConfig.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
+        const subPerfil = document.getElementById('sub-perfil');
+        const subConfig = document.getElementById('sub-config');
 
-            // Set Active
-            if(tabId === 'perfil') {
-                perfilContent.classList.remove('hidden');
-                pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
-                subPerfil.classList.add('active-subitem');
-                subPerfil.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
-            } else {
-                configContent.classList.remove('hidden');
-                pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
-                subConfig.classList.add('active-subitem');
-                subConfig.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
-            }
+        // Reset
+        perfilContent.classList.add('hidden');
+        configContent.classList.add('hidden');
 
-            // Close mobile sidebar after click
-            if(window.innerWidth < 768) {
-                sidebar.classList.add('-translate-x-full');
-                isSidebarOpen = false;
-            }
+        pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
+        pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        subPerfil.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
+        subConfig.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
+
+        // Set Active
+        if (tabId === 'perfil') {
+            perfilContent.classList.remove('hidden');
+            pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
+            subPerfil.classList.add('active-subitem');
+            subPerfil.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
+        } else {
+            configContent.classList.remove('hidden');
+            pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
+            subConfig.classList.add('active-subitem');
+            subConfig.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
         }
 
-        // Modal Logic
-        function toggleModal(show) {
-            const modal = document.getElementById('modal-backdrop');
-            if(show) {
-                modal.classList.remove('hidden');
-                setTimeout(() => {
-                    modal.classList.add('opacity-100');
-                    modal.querySelector('div').classList.add('scale-100');
-                }, 10);
-            } else {
-                modal.classList.remove('opacity-100');
-                modal.querySelector('div').classList.remove('scale-100');
-                setTimeout(() => modal.classList.add('hidden'), 300);
-            }
+        // Close mobile sidebar after click
+        if (window.innerWidth < 768) {
+            sidebar.classList.add('-translate-x-full');
+            isSidebarOpen = false;
         }
 
-        function handleSave() {
-            const form = document.getElementById('password-form');
-            if (form.checkValidity()) {
-                toggleModal(true);
-            } else {
-                form.classList.add('was-validated');
-                // Trigger visual cues for validation
-                const inputs = form.querySelectorAll('input:invalid');
-                inputs.forEach(input => {
-                    input.classList.add('border-error');
-                });
-            }
-        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
 
-        function confirmSave() {
-            toggleModal(false);
-            const toast = document.getElementById('toast-success');
-            toast.classList.remove('translate-y-20', 'opacity-0');
-            toast.classList.add('translate-y-0', 'opacity-100');
-            
+    // Modal Logic
+    function toggleModal(show) {
+        const modal = document.getElementById('modal-backdrop');
+        if (show) {
+            modal.classList.remove('hidden');
             setTimeout(() => {
-                toast.classList.add('translate-y-20', 'opacity-0');
-                toast.classList.remove('translate-y-0', 'opacity-100');
-            }, 3000);
+                modal.classList.add('opacity-100');
+                modal.querySelector('div').classList.add('scale-100');
+            }, 10);
+        } else {
+            modal.classList.remove('opacity-100');
+            modal.querySelector('div').classList.remove('scale-100');
+            setTimeout(() => modal.classList.add('hidden'), 300);
         }
+    }
 
-        // Responsive Sidebar Adjustment
-        window.addEventListener('resize', () => {
-            if(window.innerWidth >= 768) {
-                sidebar.classList.remove('-translate-x-full');
-                isSidebarOpen = false;
-            } else {
-                if(!isSidebarOpen) sidebar.classList.add('-translate-x-full');
-            }
-        });
-    </script>
-    <script type="module" src="../JS/main.js"></script>
-</body></html>
+    function handleSave() {
+        const form = document.getElementById('password-form');
+        if (form.checkValidity()) {
+            toggleModal(true);
+        } else {
+            form.classList.add('was-validated');
+            // Trigger visual cues for validation
+            const inputs = form.querySelectorAll('input:invalid');
+            inputs.forEach(input => {
+                input.classList.add('border-error');
+            });
+        }
+    }
+
+    function confirmSave() {
+        toggleModal(false);
+        const toast = document.getElementById('toast-success');
+        toast.classList.remove('translate-y-20', 'opacity-0');
+        toast.classList.add('translate-y-0', 'opacity-100');
+
+        setTimeout(() => {
+            toast.classList.add('translate-y-20', 'opacity-0');
+            toast.classList.remove('translate-y-0', 'opacity-100');
+        }, 3000);
+    }
+
+    // Responsive Sidebar Adjustment
+    window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) {
+            sidebar.classList.remove('-translate-x-full');
+            isSidebarOpen = false;
+        } else {
+            if (!isSidebarOpen) sidebar.classList.add('-translate-x-full');
+        }
+    });
+</script>
+<script type="module" src="../JS/main.js"></script>
+</body>
+
+</html>

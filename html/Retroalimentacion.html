@@ -177,174 +177,222 @@
     </aside>
     <!-- Main Content -->
     <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
-        <div class="max-w-container-max mx-auto space-y-8">          
+        <div class="max-w-container-max mx-auto space-y-8">
             <header class="mb-10">
-                <h2 class="font-headline-md text-headline-md text-on-surface mb-2">Retroalimentación Emocional</h2>
-                <p class="font-body-lg text-body-lg text-on-surface-variant">Un espacio para reflexionar sobre tus progresos y recibir orientación experta.</p>
+                <h1 class="font-headline-md text-headline-md text-primary">Retroalimentación Emocional</h1>
+                <p class="font-body-lg text-body-lg text-on-surface-variant">Un espacio para reflexionar sobre tus
+                    progresos y recibir orientación experta.</p>
             </header>
             <!-- Grid Layout -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
                 <!-- Left Column: Retroalimentación Automática (Motivational & Risks) -->
                 <div class="lg:col-span-4 flex flex-col gap-gutter">
-                <!-- Daily Motivation Card -->
-                <section class="bg-surface-container-low p-8 rounded-[24px] border border-outline-variant/30 flex flex-col gap-4 relative overflow-hidden group">
-                <div class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
-                <span class="material-symbols-outlined text-[120px] text-primary">favorite</span>
-                </div>
-                <div class="flex items-center gap-3 text-primary">
-                <span class="material-symbols-outlined">auto_awesome</span>
-                <h3 class="font-title-lg text-title-lg">Inspiración del Día</h3>
-                </div>
-                <p class="font-body-lg text-body-lg text-on-surface leading-relaxed italic italic">
-                                            "Recuerda que cada pequeño paso que das hoy es una victoria sobre los desafíos de ayer. Eres más fuerte de lo que crees."
+                    <!-- Daily Motivation Card -->
+                    <section
+                        class="bg-surface-container-low p-8 rounded-[24px] border border-outline-variant/30 flex flex-col gap-4 relative overflow-hidden group">
+                        <div
+                            class="absolute -right-4 -top-4 opacity-10 group-hover:scale-110 transition-transform duration-700">
+                            <span class="material-symbols-outlined text-[120px] text-primary">favorite</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-primary">
+                            <span class="material-symbols-outlined">auto_awesome</span>
+                            <h3 class="font-title-lg text-title-lg">Inspiración del Día</h3>
+                        </div>
+                        <p class="font-body-lg text-body-lg text-on-surface leading-relaxed italic italic">
+                            "Recuerda que cada pequeño paso que das hoy es una victoria sobre los desafíos de ayer. Eres
+                            más fuerte de lo que crees."
+                        </p>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span class="w-8 h-px bg-primary/30"></span>
+                            <span class="font-label-sm text-label-sm text-on-surface-variant">Sistema Claramente</span>
+                        </div>
+                    </section>
+                    <!-- Risk Indicator Section -->
+                    <section
+                        class="bg-surface-container-low p-8 rounded-[24px] border border-outline-variant/30 flex flex-col gap-6">
+                        <h3 class="font-title-lg text-title-lg text-on-surface">Estado de Alerta</h3>
+                        <div class="flex flex-col gap-4">
+                            <!-- High Risk Item -->
+                            <div
+                                class="flex items-center justify-between p-4 bg-error-container/20 rounded-xl border border-error/20">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-error"
+                                        style="font-variation-settings: 'FILL' 1;">error</span>
+                                    <div>
+                                        <p class="font-label-md text-label-md text-on-error-container font-bold">Riesgo
+                                            Alto</p>
+                                        <p class="font-label-sm text-label-sm text-on-surface-variant">Ansiedad
+                                            Detectada</p>
+                                    </div>
+                                </div>
+                                <span class="w-3 h-3 rounded-full bg-error animate-pulse"></span>
+                            </div>
+                            <!-- Moderate Risk Item -->
+                            <div
+                                class="flex items-center justify-between p-4 bg-tertiary-container/10 rounded-xl border border-tertiary/20 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-tertiary">warning</span>
+                                    <div>
+                                        <p class="font-label-md text-label-md text-on-tertiary-container">Riesgo
+                                            Moderado</p>
+                                        <p class="font-label-sm text-label-sm text-on-surface-variant">Patrones de Sueño
                                         </p>
-                <div class="mt-2 flex items-center gap-2">
-                <span class="w-8 h-px bg-primary/30"></span>
-                <span class="font-label-sm text-label-sm text-on-surface-variant">Sistema Claramente</span>
-                </div>
-                </section>
-                <!-- Risk Indicator Section -->
-                <section class="bg-surface-container-low p-8 rounded-[24px] border border-outline-variant/30 flex flex-col gap-6">
-                <h3 class="font-title-lg text-title-lg text-on-surface">Estado de Alerta</h3>
-                <div class="flex flex-col gap-4">
-                <!-- High Risk Item -->
-                <div class="flex items-center justify-between p-4 bg-error-container/20 rounded-xl border border-error/20">
-                <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">error</span>
-                <div>
-                <p class="font-label-md text-label-md text-on-error-container font-bold">Riesgo Alto</p>
-                <p class="font-label-sm text-label-sm text-on-surface-variant">Ansiedad Detectada</p>
-                </div>
-                </div>
-                <span class="w-3 h-3 rounded-full bg-error animate-pulse"></span>
-                </div>
-                <!-- Moderate Risk Item -->
-                <div class="flex items-center justify-between p-4 bg-tertiary-container/10 rounded-xl border border-tertiary/20 opacity-60">
-                <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-tertiary">warning</span>
-                <div>
-                <p class="font-label-md text-label-md text-on-tertiary-container">Riesgo Moderado</p>
-                <p class="font-label-sm text-label-sm text-on-surface-variant">Patrones de Sueño</p>
-                </div>
-                </div>
-                <span class="w-3 h-3 rounded-full bg-tertiary"></span>
-                </div>
-                <!-- Low Risk Item -->
-                <div class="flex items-center justify-between p-4 bg-secondary-container/10 rounded-xl border border-secondary/20 opacity-60">
-                <div class="flex items-center gap-3">
-                <span class="material-symbols-outlined text-secondary">check_circle</span>
-                <div>
-                <p class="font-label-md text-label-md text-on-secondary-container">Riesgo Bajo</p>
-                <p class="font-label-sm text-label-sm text-on-surface-variant">Interacción Social</p>
-                </div>
-                </div>
-                <span class="w-3 h-3 rounded-full bg-secondary"></span>
-                </div>
-                </div>
-                <button class="w-full py-3 px-6 bg-primary text-on-primary rounded-full font-body-md text-body-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20">
-                                            Ver Análisis Completo
-                                        </button>
-                </section>
+                                    </div>
+                                </div>
+                                <span class="w-3 h-3 rounded-full bg-tertiary"></span>
+                            </div>
+                            <!-- Low Risk Item -->
+                            <div
+                                class="flex items-center justify-between p-4 bg-secondary-container/10 rounded-xl border border-secondary/20 opacity-60">
+                                <div class="flex items-center gap-3">
+                                    <span class="material-symbols-outlined text-secondary">check_circle</span>
+                                    <div>
+                                        <p class="font-label-md text-label-md text-on-secondary-container">Riesgo Bajo
+                                        </p>
+                                        <p class="font-label-sm text-label-sm text-on-surface-variant">Interacción
+                                            Social</p>
+                                    </div>
+                                </div>
+                                <span class="w-3 h-3 rounded-full bg-secondary"></span>
+                            </div>
+                        </div>
+                        <button
+                            class="w-full py-3 px-6 bg-primary text-on-primary rounded-full font-body-md text-body-md hover:brightness-110 transition-all active:scale-95 shadow-lg shadow-primary/20">
+                            Ver Análisis Completo
+                        </button>
+                    </section>
                 </div>
                 <!-- Right Column: Recent History Feed (Professional Feedback) -->
                 <div class="lg:col-span-8">
-                <section class="bg-surface-container-low p-8 rounded-[24px] border border-outline-variant/30 h-full">
-                <div class="flex justify-between items-center mb-8">
-                <h3 class="font-title-lg text-title-lg text-on-surface">Retroalimentación Profesional</h3>
-                <div class="flex gap-2">
-                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">filter_list</span>
-                <span class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">history</span>
+                    <section
+                        class="bg-surface-container-low p-8 rounded-[24px] border border-outline-variant/30 h-full">
+                        <div class="flex justify-between items-center mb-8">
+                            <h3 class="font-title-lg text-title-lg text-on-surface">Retroalimentación Profesional</h3>
+                            <div class="flex gap-2">
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">filter_list</span>
+                                <span
+                                    class="material-symbols-outlined text-on-surface-variant cursor-pointer hover:text-primary transition-colors">history</span>
+                            </div>
+                        </div>
+                        <!-- Feed Items -->
+                        <div class="flex flex-col gap-6">
+                            <!-- Professional Comment 1 -->
+                            <article
+                                class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 hover:border-primary/30 transition-all duration-300">
+                                <div class="flex-shrink-0">
+                                    <div class="w-14 h-14 rounded-full border-2 border-lila-suave p-0.5">
+                                        <img alt="Doctor profile" class="w-full h-full object-cover rounded-full"
+                                            data-alt="A professional medical portrait of a female psychologist with glasses, smiling gently. The background is a clean, bright medical office with soft natural light. The photograph conveys empathy, expertise, and a welcoming clinical atmosphere in a modern light-mode style."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd6H0YGuz7kJjmrih5bWgIIVUMaQiIKfksgIxn3kKvz5EpPVNiK5OYeC148StpdURXwWq0UXbcNXX0qg-t7ePsHYYjhCPmcTwlBQ5zY93pK1-WXvCRh5Myjkd8KlaxJzjXsyWsMwlyzxq8bYFZeTLwKmHAZ0p45Tzu4Xmo_SfwbPaNJVPemXquRajNhcOd2afj9vGwL1vbVnUmYjS9cVrrnIN8rvvQp70W4HI17r8jIoKIVm5L-3P4wZbiTdXupFyQdpsVtsQYbUXs" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Dra. Elena
+                                                Martínez</h4>
+                                            <span
+                                                class="px-3 py-1 bg-verde-menta/20 text-secondary text-[10px] rounded-full font-bold tracking-wider uppercase">Leído</span>
+                                        </div>
+                                        <time class="font-label-sm text-label-sm text-on-surface-variant">15 Oct, 2024 •
+                                            10:30 AM</time>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface leading-relaxed mb-4">
+                                        "He revisado tus últimas entradas del diario. Se nota un progreso significativo
+                                        en cómo identificas los disparadores de ansiedad. Te recomiendo continuar con el
+                                        ejercicio de respiración 4-7-8 que practicamos en la última sesión."
+                                    </p>
+                                    <div class="flex gap-4">
+                                        <button
+                                            class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[18px]">reply</span> Responder
+                                        </button>
+                                        <button
+                                            class="text-on-surface-variant font-label-md text-label-md hover:underline flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[18px]">bookmark</span> Guardar
+                                            nota
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Professional Comment 2 -->
+                            <article
+                                class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 opacity-90">
+                                <div class="flex-shrink-0">
+                                    <div class="w-14 h-14 rounded-full border-2 border-primary-container p-0.5">
+                                        <img alt="Specialist profile" class="w-full h-full object-cover rounded-full"
+                                            data-alt="A portrait of a male mental health specialist with a kind expression, wearing professional attire. The setting is a minimalist, brightly lit studio with subtle wooden textures in the background. The lighting is soft and even, highlighting a trustworthy and compassionate personality in a high-end digital health environment."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GwRhH_uEF4auxVXAJuCn-u9Zm1wajkOCHzcuHHoY-68WOz2mg671t7_1RikoEq-dkT99nI7ZpQnlBxKzDKFZB5ntwKkoVlxWgxa1lqZD0SACgKNK1wTBFBHdUYOzTirOzPxSk_2mzGB7rH5Z5K5oYA-T6P3VU6Rhh_uRYLc0MxWQICGFQqS_Xi3ZWT3R1PWrRnPwIytY2nki2uJMxg8Xd8j9RR4xjdg0fjf1sZIj3Pj1xGQ6EJ9a9tehgnzIkTE7RXRme9S9jQPT" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Dr. Ricardo
+                                                Silva</h4>
+                                            <span
+                                                class="px-3 py-1 bg-primary-container/20 text-primary text-[10px] rounded-full font-bold tracking-wider uppercase">Nuevo</span>
+                                        </div>
+                                        <time class="font-label-sm text-label-sm text-on-surface-variant">Hoy • 08:15
+                                            AM</time>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface leading-relaxed mb-4">
+                                        "Me preocupa un poco la fluctuación en tus horas de sueño reportadas esta
+                                        semana. ¿Has tenido dificultades para desconectarte de las pantallas por la
+                                        noche? Vamos a revisar esto en nuestra próxima cita."
+                                    </p>
+                                    <div class="flex gap-4">
+                                        <button
+                                            class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
+                                            <span class="material-symbols-outlined text-[18px]">reply</span> Responder
+                                        </button>
+                                    </div>
+                                </div>
+                            </article>
+                            <!-- Professional Comment 3 -->
+                            <article
+                                class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 opacity-80">
+                                <div class="flex-shrink-0">
+                                    <div class="w-14 h-14 rounded-full border-2 border-outline-variant p-0.5">
+                                        <img alt="Counselor profile" class="w-full h-full object-cover rounded-full"
+                                            data-alt="A portrait of a serene female counselor in her 50s, looking directly at the camera with a reassuring smile. The background is a soft-focus library with warm light filtering through. The composition is clean and focused, reflecting a professional and calming mentorship role in a digital wellness platform."
+                                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkdzWLAE8jj717P5AmK7SnZ6Q_U_Ubp8regXjdT4WEbj8tdDedhv4nj8PbpM59dK43-akrMizpG17qz7QfSk3DKC6JRV7DlJ6VvCN3Slp4wlJQdz1QtgJ0ftGvfT-Zpji3pu91EM5IqO5r73BpZz-_bNKgGrcJNoZBJVJ2gbxgtH7klFFLKBuHuVZAqDZdC2fHUP2MhyzGoKnEGpkC8zKetTcuWM2I3kbhmpJUvHu3V_ZtkJqe-LtqGZQtoNpvRXNWWLHL3MfIM2wl" />
+                                    </div>
+                                </div>
+                                <div class="flex-grow">
+                                    <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                                        <div class="flex items-center gap-3">
+                                            <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Psic.
+                                                Claudia Rivas</h4>
+                                            <span
+                                                class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] rounded-full font-bold tracking-wider uppercase">Archivado</span>
+                                        </div>
+                                        <time class="font-label-sm text-label-sm text-on-surface-variant">05 Oct,
+                                            2024</time>
+                                    </div>
+                                    <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                                        "Excelente manejo de la situación de estrés laboral reportada el lunes. Tu
+                                        capacidad de resiliencia está creciendo notablemente."
+                                    </p>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- Load More -->
+                        <div class="mt-10 pt-6 border-t border-outline-variant/20 text-center">
+                            <button
+                                class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors flex items-center gap-2 mx-auto">
+                                <span class="material-symbols-outlined">expand_more</span> Cargar comentarios anteriores
+                            </button>
+                        </div>
+                    </section>
                 </div>
-                </div>
-                <!-- Feed Items -->
-                <div class="flex flex-col gap-6">
-                <!-- Professional Comment 1 -->
-                <article class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 hover:border-primary/30 transition-all duration-300">
-                <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full border-2 border-lila-suave p-0.5">
-                <img alt="Doctor profile" class="w-full h-full object-cover rounded-full" data-alt="A professional medical portrait of a female psychologist with glasses, smiling gently. The background is a clean, bright medical office with soft natural light. The photograph conveys empathy, expertise, and a welcoming clinical atmosphere in a modern light-mode style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAd6H0YGuz7kJjmrih5bWgIIVUMaQiIKfksgIxn3kKvz5EpPVNiK5OYeC148StpdURXwWq0UXbcNXX0qg-t7ePsHYYjhCPmcTwlBQ5zY93pK1-WXvCRh5Myjkd8KlaxJzjXsyWsMwlyzxq8bYFZeTLwKmHAZ0p45Tzu4Xmo_SfwbPaNJVPemXquRajNhcOd2afj9vGwL1vbVnUmYjS9cVrrnIN8rvvQp70W4HI17r8jIoKIVm5L-3P4wZbiTdXupFyQdpsVtsQYbUXs"/>
-                </div>
-                </div>
-                <div class="flex-grow">
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <div class="flex items-center gap-3">
-                <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Dra. Elena Martínez</h4>
-                <span class="px-3 py-1 bg-verde-menta/20 text-secondary text-[10px] rounded-full font-bold tracking-wider uppercase">Leído</span>
-                </div>
-                <time class="font-label-sm text-label-sm text-on-surface-variant">15 Oct, 2024 • 10:30 AM</time>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface leading-relaxed mb-4">
-                                                        "He revisado tus últimas entradas del diario. Se nota un progreso significativo en cómo identificas los disparadores de ansiedad. Te recomiendo continuar con el ejercicio de respiración 4-7-8 que practicamos en la última sesión."
-                                                    </p>
-                <div class="flex gap-4">
-                <button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
-                <span class="material-symbols-outlined text-[18px]">reply</span> Responder
-                                                        </button>
-                <button class="text-on-surface-variant font-label-md text-label-md hover:underline flex items-center gap-1">
-                <span class="material-symbols-outlined text-[18px]">bookmark</span> Guardar nota
-                                                        </button>
-                </div>
-                </div>
-                </article>
-                <!-- Professional Comment 2 -->
-                <article class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 opacity-90">
-                <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full border-2 border-primary-container p-0.5">
-                <img alt="Specialist profile" class="w-full h-full object-cover rounded-full" data-alt="A portrait of a male mental health specialist with a kind expression, wearing professional attire. The setting is a minimalist, brightly lit studio with subtle wooden textures in the background. The lighting is soft and even, highlighting a trustworthy and compassionate personality in a high-end digital health environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9GwRhH_uEF4auxVXAJuCn-u9Zm1wajkOCHzcuHHoY-68WOz2mg671t7_1RikoEq-dkT99nI7ZpQnlBxKzDKFZB5ntwKkoVlxWgxa1lqZD0SACgKNK1wTBFBHdUYOzTirOzPxSk_2mzGB7rH5Z5K5oYA-T6P3VU6Rhh_uRYLc0MxWQICGFQqS_Xi3ZWT3R1PWrRnPwIytY2nki2uJMxg8Xd8j9RR4xjdg0fjf1sZIj3Pj1xGQ6EJ9a9tehgnzIkTE7RXRme9S9jQPT"/>
-                </div>
-                </div>
-                <div class="flex-grow">
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <div class="flex items-center gap-3">
-                <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Dr. Ricardo Silva</h4>
-                <span class="px-3 py-1 bg-primary-container/20 text-primary text-[10px] rounded-full font-bold tracking-wider uppercase">Nuevo</span>
-                </div>
-                <time class="font-label-sm text-label-sm text-on-surface-variant">Hoy • 08:15 AM</time>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface leading-relaxed mb-4">
-                                                        "Me preocupa un poco la fluctuación en tus horas de sueño reportadas esta semana. ¿Has tenido dificultades para desconectarte de las pantallas por la noche? Vamos a revisar esto en nuestra próxima cita."
-                                                    </p>
-                <div class="flex gap-4">
-                <button class="text-primary font-label-md text-label-md hover:underline flex items-center gap-1">
-                <span class="material-symbols-outlined text-[18px]">reply</span> Responder
-                                                        </button>
-                </div>
-                </div>
-                </article>
-                <!-- Professional Comment 3 -->
-                <article class="flex flex-col md:flex-row gap-6 p-6 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 opacity-80">
-                <div class="flex-shrink-0">
-                <div class="w-14 h-14 rounded-full border-2 border-outline-variant p-0.5">
-                <img alt="Counselor profile" class="w-full h-full object-cover rounded-full" data-alt="A portrait of a serene female counselor in her 50s, looking directly at the camera with a reassuring smile. The background is a soft-focus library with warm light filtering through. The composition is clean and focused, reflecting a professional and calming mentorship role in a digital wellness platform." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkdzWLAE8jj717P5AmK7SnZ6Q_U_Ubp8regXjdT4WEbj8tdDedhv4nj8PbpM59dK43-akrMizpG17qz7QfSk3DKC6JRV7DlJ6VvCN3Slp4wlJQdz1QtgJ0ftGvfT-Zpji3pu91EM5IqO5r73BpZz-_bNKgGrcJNoZBJVJ2gbxgtH7klFFLKBuHuVZAqDZdC2fHUP2MhyzGoKnEGpkC8zKetTcuWM2I3kbhmpJUvHu3V_ZtkJqe-LtqGZQtoNpvRXNWWLHL3MfIM2wl"/>
-                </div>
-                </div>
-                <div class="flex-grow">
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
-                <div class="flex items-center gap-3">
-                <h4 class="font-body-lg text-body-lg text-on-surface font-bold">Psic. Claudia Rivas</h4>
-                <span class="px-3 py-1 bg-surface-container-highest text-on-surface-variant text-[10px] rounded-full font-bold tracking-wider uppercase">Archivado</span>
-                </div>
-                <time class="font-label-sm text-label-sm text-on-surface-variant">05 Oct, 2024</time>
-                </div>
-                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                                                        "Excelente manejo de la situación de estrés laboral reportada el lunes. Tu capacidad de resiliencia está creciendo notablemente."
-                                                    </p>
-                </div>
-                </article>
-                </div>
-                <!-- Load More -->
-                <div class="mt-10 pt-6 border-t border-outline-variant/20 text-center">
-                <button class="font-label-md text-label-md text-primary hover:text-primary-container transition-colors flex items-center gap-2 mx-auto">
-                <span class="material-symbols-outlined">expand_more</span> Cargar comentarios anteriores
-                                            </button>
-                </div>
-                </section>
-                </div>
-                </div>
+            </div>
         </div>
     </main>
     <!-- Footer -->
-    <footer class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+    <footer
+        class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
         <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
         <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
             prioridad.</p>
@@ -408,4 +456,5 @@
     </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
+
 </html>
