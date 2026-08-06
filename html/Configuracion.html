@@ -175,15 +175,15 @@
             </aside>
         </nav>
     </aside>
-     <!-- Main Content -->
+    <!-- Main Content -->
     <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
-        <div class="max-w-container-max mx-auto space-y-8">          
+        <div class="max-w-container-max mx-auto space-y-8">
             <!-- Header Section -->
-            <header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+            <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
-                    <h2 class="font-headline-lg text-headline-lg text-on-surface font-gabriela">Gestión de Cuenta</h2>
-                    <p class="text-body-md text-on-surface-variant">Administra tu información personal y preferencias
-                        del portal.</p>
+                    <h1 class="font-headline-md text-headline-md text-primary">Gestión de Cuenta</h1>
+                    <p class="text-on-surface-variant font-body-md text-body-md">Administra tu información personal y
+                        preferencias del portal.</p>
                 </div>
                 <!-- Nav Pills -->
                 <nav class="flex p-1 bg-surface-container-low rounded-full w-fit soft-shadow">
@@ -197,11 +197,11 @@
                     <!-- Notifications Card -->
                     <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col">
                         <div class="p-lg border-b border-outline-variant/20">
-                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
                                 <span class="material-symbols-outlined text-primary">notifications</span> Notificaciones
                             </h3>
                         </div>
-                        <div class="p-lg flex-1 space-y-md">
+                        <div class="p-6 flex-1 space-y-6">
                             <div
                                 class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
                                 <div>
@@ -244,28 +244,28 @@
                         </div>
                     </div>
                     <!-- Privacy Card -->
-                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col">
-                        <div class="p-lg border-b border-outline-variant/20">
-                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                    <div class="glass-card rounded-3xl soft-glow flex flex-col">
+                        <div class="p-6 border-b border-outline-variant/20">
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
                                 <span class="material-symbols-outlined text-primary">privacy_tip</span> Privacidad y
                                 Visibilidad
                             </h3>
                         </div>
-                        <div class="p-lg flex-1 space-y-md">
-                            <div class="flex items-start gap-md">
+                        <div class="p-6 flex-1 space-y-6">
+                            <div class="flex items-start gap-2">
                                 <input checked=""
                                     class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
                                     id="priv-1" type="checkbox" />
-                                <label class="text-body-md" for="priv-1">Permitir que otros usuarios premium vean mi
+                                <label class="text-body-md" for="priv-1">Permitir que otros usuarios vean mi
                                     perfil público.</label>
                             </div>
-                            <div class="flex items-start gap-md">
+                            <div class="flex items-start gap-2">
                                 <input class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
                                     id="priv-2" type="checkbox" />
                                 <label class="text-body-md" for="priv-2">Compartir datos de bienestar anónimos para
                                     investigación académica.</label>
                             </div>
-                            <div class="flex items-start gap-md">
+                            <div class="flex items-start gap-2">
                                 <input checked=""
                                     class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
                                     id="priv-3" type="checkbox" />
@@ -275,16 +275,16 @@
                         </div>
                     </div>
                     <!-- Password/Security Card -->
-                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col md:col-span-2">
-                        <div class="p-lg border-b border-outline-variant/20">
-                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                    <div class="glass-card rounded-3xl soft-glow flex flex-col md:col-span-2">
+                        <div class="p-6 border-b border-outline-variant/20">
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
                                 <span class="material-symbols-outlined text-primary">security</span> Seguridad de la
                                 Cuenta
                             </h3>
                         </div>
-                        <div class="p-lg">
+                        <div class="p-6">
                             <form class="grid grid-cols-1 md:grid-cols-3 gap-xl" id="password-form" novalidate="">
-                                <div class="space-y-xs">
+                                <div class="space-y-2">
                                     <label class="text-label-md block font-bold">Contraseña actual</label>
                                     <input
                                         class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
@@ -292,14 +292,14 @@
                                     <p class="text-danger text-label-sm hidden invalid-feedback">Este campo es
                                         obligatorio.</p>
                                 </div>
-                                <div class="space-y-xs">
+                                <div class="space-y-2">
                                     <label class="text-label-md block font-bold">Nueva contraseña</label>
                                     <input
                                         class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                                         minlength="8" placeholder="Nueva contraseña" required="" type="password" />
-                                    <p class="text-body-sm text-outline">Mínimo 8 caracteres.</p>
+                                    <p class="text-label-md text-outline">Mínimo 8 caracteres.</p>
                                 </div>
-                                <div class="space-y-xs">
+                                <div class="space-y-2">
                                     <label class="text-label-md block font-bold">Confirmar contraseña</label>
                                     <input
                                         class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
@@ -309,48 +309,58 @@
                         </div>
                     </div>
                     <!-- Preferences Card -->
-                    <div class="bg-surface-container-lowest rounded-xl soft-shadow flex flex-col md:col-span-2">
-                        <div class="p-lg border-b border-outline-variant/20">
-                            <h3 class="font-headline-sm text-headline-sm font-gabriela flex items-center gap-sm">
+                    <div class="glass-card rounded-3xl soft-glow flex flex-col md:col-span-2">
+                        <div class="p-6 border-b border-outline-variant/20">
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
                                 <span class="material-symbols-outlined text-primary">tune</span> Preferencias de
                                 Interfaz
                             </h3>
                         </div>
-                        <div class="p-lg grid grid-cols-1 md:grid-cols-2 gap-xl">
-                            <div class="space-y-xs">
-                                <label class="text-label-md block font-bold">Idioma del sistema</label>
+                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                            <div class="space-y-2">
+                                <label class="block font-bold text-label-md">
+                                    Idioma del sistema
+                                </label>
                                 <select
-                                    class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%237a7580%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
-                                    <option>Español (España)</option>
-                                    <option>English (US)</option>
-                                    <option>Français</option>
-                                </select>
-                            </div>
-                            <div class="space-y-xs">
-                                <label class="text-label-md block font-bold">Tema visual</label>
-                                <select
-                                    class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%237a7580%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
-                                    <option>Modo Claro (Predeterminado)</option>
-                                    <option>Modo Oscuro</option>
-                                    <option>Automático (Sistema)</option>
+                                    class="w-full px-4 py-2 border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
+                                    <option>Español</option>
+                                    <option>English</option>
                                 </select>
                             </div>
                         </div>
-                        <div
-                            class="px-lg pb-lg flex flex-col md:flex-row justify-end gap-md border-t border-outline-variant/10 pt-lg">
-                            <button
-                                class="px-xl py-sm border border-outline text-on-surface-variant rounded-xl font-label-md hover:bg-surface transition-all active:scale-95">Cancelar</button>
-                            <button
-                                class="px-xl py-sm bg-primary text-white rounded-xl font-label-md soft-shadow hover:bg-primary/90 transition-all active:scale-95"
-                                onclick="handleSave()">Guardar cambios</button>
-                        </div>
+                        </form>
                     </div>
                 </div>
-            </section>
+                <!-- Preferences Card -->
+                <div class="glass-card rounded-3xl soft-glow flex flex-col md:col-span-2">
+                    <div class="p-6 border-b border-outline-variant/20">
+                        <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
+                            <label class="text-label-md block font-bold">Tema visual</label>
+                            <select
+                                class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%237a7580%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
+                                <option>Modo Claro (Predeterminado)</option>
+                                <option>Modo Oscuro</option>
+                                <option>Automático (Sistema)</option>
+                            </select>
+                    </div>
+                </div>
+                <div
+                    class="px-8 py-2 flex flex-col md:flex-row justify-end gap-4 border-t border-outline-variant/10 pt-lg">
+                    <button
+                        class="px-8 py-2 border border-outline text-on-surface-variant rounded-xl font-label-md hover:bg-surface transition-all active:scale-95">Cancelar</button>
+                    <button
+                        class="px-8 py-2 bg-primary text-white rounded-xl font-label-md soft-shadow hover:bg-primary/90 transition-all active:scale-95"
+                        onclick="handleSave()">Guardar cambios</button>
+                </div>
+        </div>
+        </div>
+        </section>
         </div>
     </main>
     <!-- Footer -->
-    <footer class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
+    <footer
+        class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
         <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
         <p class="font-label-sm text-label-sm text-on-surface-variant">© 2026 CLARAMENTE. Tu bienestar es nuestra
             prioridad.</p>
@@ -414,5 +424,5 @@
     </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
-</html>
 
+</html>
