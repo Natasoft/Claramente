@@ -1,71 +1,109 @@
-*{
+* {
     margin: 0%;
     padding: 0px;
     box-sizing: border-box;
 }
-body{
-background-color: #F7F5FB;
+
+body {
+    background-color: #F7F5FB;
     width: 100vw;
     height: 100vh;
     font-family: "Gabriela", serif;
-  font-weight: 400;
-  font-style: normal;
+    font-weight: 400;
+    font-style: normal;
 }
-section{
+
+section {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0px;
 }
-.Registro{
+
+/* Enlace recuperar contraseña */
+form>a {
+    display: block;
+    text-align: right;
+    margin-top: 10px;
+    text-decoration: none;
+}
+
+/* Texto de registro */
+.registrate {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.registrate a {
+    color: #37BAE1;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.registrate a:hover {
+    text-decoration: underline;
+}
+
+.Registro {
     max-width: 500px;
     width: 100%;
     padding: 20px;
     border: 2px solid rgb(189, 146, 230);
     border-radius: 15px;
 }
-.Inicio{
+
+.Inicio {
     max-width: 500px;
     width: 100%;
     padding: 20px;
     border: 2px solid rgb(189, 146, 230);
     border-radius: 15px;
 }
-.Modoanònimo{
+
+.Modoanònimo {
     max-width: 500px;
     width: 100%;
     padding: 20px;
     border: 2px solid rgb(189, 146, 230);
     border-radius: 15px;
-} 
-.logo, form{
+}
+
+.logo,
+form {
     display: flex;
     flex-direction: column;
     gap: 20px;
     width: 100%;
 }
-.logo img{
-    max-width: 400px;   
+
+.logo img {
+    max-width: 400px;
 }
-h2{
+
+h2 {
     text-align: center;
     width: 100%;
-  }
-p{
+}
+
+p {
     text-align: center;
     width: 100%;
-  }
-button{
+}
+
+button {
     width: 100%;
     height: 40px;
     background-color: #37BAE1;
     border-radius: 10px;
 }
-input, button{
+
+input,
+button {
     width: 100%;
-    
+
 }
-input{
+
+input {
     padding-left: 10px;
 }
