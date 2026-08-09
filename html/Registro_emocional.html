@@ -1,15 +1,21 @@
 <!DOCTYPE html>
 
-<html class="light" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>CLARAMENTE - Mi Diario Emocional</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script src="../JS/stitcht.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>CLARAMENTE - Mi Diario Emocional</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="../JS/stitcht.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Gabriela&amp;display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -94,27 +100,47 @@
                         "label-sm": ["Gabriela"]
                     },
                     "fontSize": {
-                        "headline-md": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400"}],
-                        "title-lg": ["22px", {"lineHeight": "28px", "fontWeight": "400"}],
-                        "headline-md-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "400"}],
-                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400"}],
-                        "display-lg-mobile": ["32px", {"lineHeight": "40px", "fontWeight": "400"}],
-                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
-                        "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                        "headline-md": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.01em", "fontWeight": "400" }],
+                        "title-lg": ["22px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "400" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "400" }],
+                        "display-lg-mobile": ["32px", { "lineHeight": "40px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
                     }
                 }
             }
         }
     </script>
-<style>
-        body { font-family: 'Gabriela', serif; }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-        .glass-sidebar { backdrop-filter: blur(16px); }
-        .scroll-hide::-webkit-scrollbar { display: none; }
-        .emotion-card.active { border-color: #68548d; background-color: #ebdcff; transform: scale(1.05); }
-        .tinted-shadow { box-shadow: 0 10px 30px -5px rgba(179, 157, 219, 0.2); }
+    <style>
+        body {
+            font-family: 'Gabriela', serif;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .glass-sidebar {
+            backdrop-filter: blur(16px);
+        }
+
+        .scroll-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .emotion-card.active {
+            border-color: #68548d;
+            background-color: #ebdcff;
+            transform: scale(1.05);
+        }
+
+        .tinted-shadow {
+            box-shadow: 0 10px 30px -5px rgba(179, 157, 219, 0.2);
+        }
+
         input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
@@ -127,157 +153,219 @@
         }
     </style>
 </head>
+
 <body class="bg-surface text-on-surface">
-<!-- TopAppBar -->
-<header class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center px-6 md:px-margin-desktop h-16 z-40 shadow-sm">
-<div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
-<div class="flex items-center gap-4">
-<button class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70 p-2 rounded-full hover:bg-surface-container-high transition-colors" data-icon="notifications">notifications</button>
-<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container cursor-pointer">
-<img alt="User profile photo" data-alt="A serene close-up portrait of a professional woman with a kind expression, softly lit by warm afternoon sun in a minimalist office. The background is a blurred wash of soft lilac and white tones, matching a professional and empathetic digital sanctuary aesthetic. The high-quality photography captures a sense of trust and calm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXKLKDQ6hdV10BhzPv2otqB2NH2x6bdYPpycvxm8A9Q_Ni6VKPObIDKgNoKivbvF7R2YMzKpHBnVGbrfY-lm_VSGhILnhV_UGof0I0Koxd9ItNa61SdPyQzn4Bh_MYPeDYODg-QNSCUG3zVyCY83VdXqO53sQlESzmyuadVv3Z7FZBVX7ZjMke7GmHj1wzskbyb9z6kqRuj7Bl21onnDQNavV3Qey5A5aduSWWBVcQIXsPir_5as3P_3XwCDNWAp3p508ivxqwtQb_"/>
-</div>
-</div>
-</header>
-<!-- SideNavBar -->
-<aside class="hidden lg:flex fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl flex-col p-6 gap-2 z-50 shadow-sm border-r border-outline-variant/20">
-<div class="mb-8 mt-2">
-<h1 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h1>
-<p class="font-body-md text-body-md text-on-surface-variant opacity-70">Tu santuario digital</p>
-</div>
-<nav class="flex flex-col gap-2">
- <!-- SIDEBAR -->
-        <aside class="sidebar">
-            <!-- AQUÍ SE CARGARÁ EL MENÚ -->
-        </aside>
-</nav>
-</aside>
-<!-- Main Content -->
-<main class="lg:ml-sidebar-width mt-16 px-4 md:px-margin-desktop py-8 min-h-screen">
-<div class="max-w-container-max mx-auto">
-<header class="mb-10 text-center lg:text-left">
-<h2 class="font-headline-md text-headline-md text-primary mb-2">Mi Diario Emocional</h2>
-<div class="flex flex-col lg:flex-row lg:items-center gap-4 text-on-surface-variant">
-<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full w-fit mx-auto lg:mx-0">
-<span class="material-symbols-outlined text-primary" data-icon="calendar_today">calendar_today</span>
-<span class="font-label-md text-label-md" id="current-date">14 de Octubre, 2023</span>
-</div>
-<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full w-fit mx-auto lg:mx-0">
-<span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
-<span class="font-label-md text-label-md" id="current-time">10:45 AM</span>
-</div>
-</div>
-</header>
-<!-- Registration Form Area -->
-<section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
-<!-- Left Column: Emotion Selection (Bento Style) -->
-<div class="lg:col-span-8 flex flex-col gap-8">
-<div class="bg-surface-container-lowest p-8 rounded-[24px] border border-outline-variant/30 tinted-shadow">
-<h3 class="font-title-lg text-title-lg mb-6 text-primary">¿Cómo te sientes en este momento?</h3>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="emotion-grid">
-<!-- Emotion Card 1 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😊</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Calma</span>
-</button>
-<!-- Emotion Card 2 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">🌟</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Alegría</span>
-</button>
-<!-- Emotion Card 3 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😔</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Tristeza</span>
-</button>
-<!-- Emotion Card 4 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😰</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Ansiedad</span>
-</button>
-<!-- Emotion Card 5 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😤</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Ira</span>
-</button>
-<!-- Emotion Card 6 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😴</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Cansancio</span>
-</button>
-<!-- Emotion Card 7 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">🤔</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Reflexión</span>
-</button>
-<!-- Emotion Card 8 -->
-<button class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300" onclick="selectEmotion(this)">
-<span class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">✨</span>
-<span class="font-label-md text-label-md text-on-surface-variant">Gratitud</span>
-</button>
-</div>
-</div>
-<!-- Emotional Intensity Slider -->
-<div class="bg-surface-container-lowest p-8 rounded-[24px] border border-outline-variant/30 tinted-shadow">
-<div class="flex justify-between items-center mb-6">
-<h3 class="font-title-lg text-title-lg text-primary">Intensidad de la emoción</h3>
-<span class="w-12 h-12 flex items-center justify-center bg-primary text-on-primary rounded-full font-headline-md-mobile text-headline-md-mobile" id="intensity-value">5</span>
-</div>
-<div class="relative pt-4 pb-2">
-<input class="w-full h-3 bg-surface-container-high rounded-full appearance-none cursor-pointer" id="intensity-slider" max="10" min="1" type="range" value="5"/>
-<div class="flex justify-between mt-4 px-1 text-on-surface-variant opacity-60">
-<span class="font-label-sm text-label-sm">Leve</span>
-<span class="font-label-sm text-label-sm">Moderada</span>
-<span class="font-label-sm text-label-sm">Intensa</span>
-</div>
-</div>
-</div>
-</div>
-<!-- Right Column: Notes & Summary -->
-<div class="lg:col-span-4 flex flex-col gap-gutter">
-<div class="bg-surface-container-lowest p-8 rounded-[24px] border border-outline-variant/30 tinted-shadow flex-grow">
-<label class="block font-title-lg text-title-lg text-primary mb-4" for="notes">Notas personales (opcional)</label>
-<textarea class="w-full h-48 bg-surface-container-low border-2 border-transparent focus:border-primary-container focus:ring-0 rounded-[16px] p-4 font-body-md text-body-md resize-none transition-all placeholder:text-on-surface-variant/40" id="notes" placeholder="¿Qué está pasando por tu mente?"></textarea>
-<div class="mt-8 space-y-4">
-<button class="w-full bg-primary text-on-primary py-4 rounded-full font-body-lg text-body-lg hover:brightness-110 active:scale-95 transition-all tinted-shadow" onclick="saveRegistry()">Guardar Registro</button>
-<button class="w-full bg-surface-container-high text-on-surface-variant py-4 rounded-full font-body-lg text-body-lg hover:bg-surface-container-highest active:scale-95 transition-all">Cancelar</button>
-</div>
-</div>
-<!-- Visual Tip Card -->
-<div class="bg-primary-container/20 p-6 rounded-[24px] border border-primary-container/30">
-<div class="flex gap-4">
-<span class="material-symbols-outlined text-primary" data-icon="lightbulb" style="font-variation-settings: 'FILL' 1;">lightbulb</span>
-<div>
-<h4 class="font-title-lg text-title-lg text-primary mb-1">Dato de bienestar</h4>
-<p class="font-label-md text-label-md text-on-primary-container">Escribir tus emociones ayuda a reducir la actividad de la amígdala, disminuyendo los niveles de estrés de forma natural.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-</div>
-</main>
-<!-- Success Modal (Hidden by default) -->
-<div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink-dark/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300" id="success-modal">
-<div class="bg-surface p-8 rounded-[32px] max-w-sm w-full text-center tinted-shadow scale-90 transition-transform duration-300" id="modal-content">
-<div class="w-20 h-20 bg-verde-menta/20 rounded-full flex items-center justify-center mx-auto mb-6">
-<span class="material-symbols-outlined text-secondary text-4xl" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-</div>
-<h3 class="font-headline-md-mobile text-headline-md-mobile text-primary mb-2">Registro Guardado</h3>
-<p class="font-body-md text-body-md text-on-surface-variant mb-8">Gracias por tomarte un momento para escucharte hoy.</p>
-<button class="w-full bg-primary text-on-primary py-3 rounded-full font-body-md text-body-md" onclick="closeModal()">Continuar</button>
-</div>
-</div>
-<!-- Footer -->
-<footer class="w-full bg-surface-container dark:bg-surface-container-highest mt-12 lg:ml-sidebar-width lg:w-[calc(100%-280px)]">
-<div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-8 gap-4 w-full">
-<div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
-<div class="flex gap-6">
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Aviso Legal</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors" href="#">Accesibilidad</a>
-<a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors text-error" href="#">Red de apoyo profesional</a>
-</div>
-<p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 CLARAMENTE. Tu bienestar es nuestra prioridad.</p>
-</div>
-</footer>
-<script type="module" src="../JS/main.js"></script>
-</body></html>
+    <!-- TopAppBar -->
+    <header
+        class="fixed top-0 w-full bg-surface/80 dark:bg-surface-dim/80 backdrop-blur-md flex justify-between items-center px-6 md:px-margin-desktop h-16 z-40 shadow-sm">
+        <div class="font-headline-md text-headline-md text-primary font-bold">CLARAMENTE</div>
+        <div class="flex items-center gap-4">
+            <button
+                class="material-symbols-outlined text-on-surface-variant cursor-pointer active:opacity-70 p-2 rounded-full hover:bg-surface-container-high transition-colors"
+                data-icon="notifications">notifications</button>
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-primary-container cursor-pointer">
+                <img alt="User profile photo"
+                    data-alt="A serene close-up portrait of a professional woman with a kind expression, softly lit by warm afternoon sun in a minimalist office. The background is a blurred wash of soft lilac and white tones, matching a professional and empathetic digital sanctuary aesthetic. The high-quality photography captures a sense of trust and calm."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDXKLKDQ6hdV10BhzPv2otqB2NH2x6bdYPpycvxm8A9Q_Ni6VKPObIDKgNoKivbvF7R2YMzKpHBnVGbrfY-lm_VSGhILnhV_UGof0I0Koxd9ItNa61SdPyQzn4Bh_MYPeDYODg-QNSCUG3zVyCY83VdXqO53sQlESzmyuadVv3Z7FZBVX7ZjMke7GmHj1wzskbyb9z6kqRuj7Bl21onnDQNavV3Qey5A5aduSWWBVcQIXsPir_5as3P_3XwCDNWAp3p508ivxqwtQb_" />
+            </div>
+        </div>
+    </header>
+    <!-- SideNavBar -->
+    <aside
+        class="hidden lg:flex fixed left-0 top-0 h-full w-sidebar-width bg-surface/90 dark:bg-surface-dim/90 backdrop-blur-xl flex-col p-6 gap-2 z-50 shadow-sm border-r border-outline-variant/20">
+        <div class="mb-8 mt-2">
+            <h1 class="font-headline-md text-headline-md text-primary">CLARAMENTE</h1>
+            <p class="font-body-md text-body-md text-on-surface-variant opacity-70">Tu santuario digital</p>
+        </div>
+        <nav class="flex flex-col gap-2">
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+                <!-- AQUÍ SE CARGARÁ EL MENÚ -->
+            </aside>
+        </nav>
+    </aside>
+    <!-- Main Content -->
+    <main class="lg:ml-sidebar-width mt-16 px-4 md:px-margin-desktop py-8 min-h-screen">
+        <div class="max-w-container-max mx-auto">
+            <header class="mb-10 text-center lg:text-left">
+                <h2 class="font-headline-md text-headline-md text-primary mb-2">Mi Diario Emocional</h2>
+                <div class="flex flex-col lg:flex-row lg:items-center gap-4 text-on-surface-variant">
+                    <div
+                        class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full w-fit mx-auto lg:mx-0">
+                        <span class="material-symbols-outlined text-primary"
+                            data-icon="calendar_today">calendar_today</span>
+                        <span class="font-label-md text-label-md" id="current-date">14 de Octubre, 2023</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full w-fit mx-auto lg:mx-0">
+                        <span class="material-symbols-outlined text-primary" data-icon="schedule">schedule</span>
+                        <span class="font-label-md text-label-md" id="current-time">10:45 AM</span>
+                    </div>
+                </div>
+            </header>
+            <!-- Registration Form Area -->
+            <section class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+                <!-- Left Column: Emotion Selection (Bento Style) -->
+                <div class="lg:col-span-8 flex flex-col gap-8">
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-[24px] border border-outline-variant/30 tinted-shadow">
+                        <h3 class="font-title-lg text-title-lg mb-6 text-primary">¿Cómo te sientes en este momento?</h3>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4" id="emotion-grid">
+                            <!-- Emotion Card 1 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😊</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Calma</span>
+                            </button>
+                            <!-- Emotion Card 2 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">🌟</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Alegría</span>
+                            </button>
+                            <!-- Emotion Card 3 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😔</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Tristeza</span>
+                            </button>
+                            <!-- Emotion Card 4 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😰</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Ansiedad</span>
+                            </button>
+                            <!-- Emotion Card 5 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😤</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Ira</span>
+                            </button>
+                            <!-- Emotion Card 6 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">😴</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Cansancio</span>
+                            </button>
+                            <!-- Emotion Card 7 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">🤔</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Reflexión</span>
+                            </button>
+                            <!-- Emotion Card 8 -->
+                            <button
+                                class="emotion-card group flex flex-col items-center justify-center p-6 bg-surface border-2 border-transparent rounded-[24px] hover:border-primary-container hover:bg-surface-container-high transition-all duration-300"
+                                onclick="selectEmotion(this)">
+                                <span
+                                    class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">✨</span>
+                                <span class="font-label-md text-label-md text-on-surface-variant">Gratitud</span>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Emotional Intensity Slider -->
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-[24px] border border-outline-variant/30 tinted-shadow">
+                        <div class="flex justify-between items-center mb-6">
+                            <h3 class="font-title-lg text-title-lg text-primary">Intensidad de la emoción</h3>
+                            <span
+                                class="w-12 h-12 flex items-center justify-center bg-primary text-on-primary rounded-full font-headline-md-mobile text-headline-md-mobile"
+                                id="intensity-value">5</span>
+                        </div>
+                        <div class="relative pt-4 pb-2">
+                            <input
+                                class="w-full h-3 bg-surface-container-high rounded-full appearance-none cursor-pointer"
+                                id="intensity-slider" max="10" min="1" type="range" value="5" />
+                            <div class="flex justify-between mt-4 px-1 text-on-surface-variant opacity-60">
+                                <span class="font-label-sm text-label-sm">Leve</span>
+                                <span class="font-label-sm text-label-sm">Moderada</span>
+                                <span class="font-label-sm text-label-sm">Intensa</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Column: Notes & Summary -->
+                <div class="lg:col-span-4 flex flex-col gap-gutter">
+                    <div
+                        class="bg-surface-container-lowest p-8 rounded-[24px] border border-outline-variant/30 tinted-shadow flex-grow">
+                        <label class="block font-title-lg text-title-lg text-primary mb-4" for="notes">Notas personales
+                            (opcional)</label>
+                        <textarea
+                            class="w-full h-48 bg-surface-container-low border-2 border-transparent focus:border-primary-container focus:ring-0 rounded-[16px] p-4 font-body-md text-body-md resize-none transition-all placeholder:text-on-surface-variant/40"
+                            id="notes" placeholder="¿Qué está pasando por tu mente?"></textarea>
+                        <div class="mt-8 space-y-4">
+                            <button
+                                class="w-full bg-primary text-on-primary py-4 rounded-full font-body-lg text-body-lg hover:brightness-110 active:scale-95 transition-all tinted-shadow"
+                                onclick="saveRegistry()">Guardar Registro</button>
+                            <button
+                                class="w-full bg-surface-container-high text-on-surface-variant py-4 rounded-full font-body-lg text-body-lg hover:bg-surface-container-highest active:scale-95 transition-all">Cancelar</button>
+                        </div>
+                    </div>
+                    <!-- Visual Tip Card -->
+                    <div class="bg-primary-container/20 p-6 rounded-[24px] border border-primary-container/30">
+                        <div class="flex gap-4">
+                            <span class="material-symbols-outlined text-primary" data-icon="lightbulb"
+                                style="font-variation-settings: 'FILL' 1;">lightbulb</span>
+                            <div>
+                                <h4 class="font-title-lg text-title-lg text-primary mb-1">Dato de bienestar</h4>
+                                <p class="font-label-md text-label-md text-on-primary-container">Escribir tus emociones
+                                    ayuda a reducir la actividad de la amígdala, disminuyendo los niveles de estrés de
+                                    forma natural.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+    <!-- Success Modal (Hidden by default) -->
+    <div class="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-ink-dark/40 backdrop-blur-sm hidden opacity-0 transition-opacity duration-300"
+        id="success-modal">
+        <div class="bg-surface p-8 rounded-[32px] max-w-sm w-full text-center tinted-shadow scale-90 transition-transform duration-300"
+            id="modal-content">
+            <div class="w-20 h-20 bg-verde-menta/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                <span class="material-symbols-outlined text-secondary text-4xl" data-icon="check_circle"
+                    style="font-variation-settings: 'FILL' 1;">check_circle</span>
+            </div>
+            <h3 class="font-headline-md-mobile text-headline-md-mobile text-primary mb-2">Registro Guardado</h3>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-8">Gracias por tomarte un momento para
+                escucharte hoy.</p>
+            <button class="w-full bg-primary text-on-primary py-3 rounded-full font-body-md text-body-md"
+                onclick="closeModal()">Continuar</button>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer
+        class="w-full bg-surface-container dark:bg-surface-container-highest mt-12 lg:ml-sidebar-width lg:w-[calc(100%-280px)]">
+        <div class="flex flex-col md:flex-row justify-between items-center px-6 md:px-margin-desktop py-8 gap-4 w-full">
+            <div class="font-title-lg text-title-lg text-primary">CLARAMENTE</div>
+            <div class="flex gap-6">
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Aviso Legal</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors"
+                    href="#">Accesibilidad</a>
+                <a class="font-label-sm text-label-sm text-on-surface-variant hover:text-primary transition-colors text-error"
+                    href="#">Red de apoyo profesional</a>
+            </div>
+            <p class="font-label-sm text-label-sm text-on-surface-variant opacity-60">© 2026 CLARAMENTE. Tu bienestar es
+                nuestra prioridad.</p>
+        </div>
+    </footer>
+    <script type="module" src="../JS/main.js"></script>
+</body>
+
+</html>
