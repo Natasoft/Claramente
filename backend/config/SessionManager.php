@@ -38,7 +38,10 @@ class SessionManager {
     public function refreshSession(): void {
         session_regenerate_id(true);
         unset($_SESSION['session_token']);
-        $this->getUniqueToken();
+        $this->getSessionToken(
+            $_SESSION['usuario'],
+            $_SESSION['id_usuario']
+        );
     }
 
     /**

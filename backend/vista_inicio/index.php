@@ -1,5 +1,6 @@
 <?php
     require_once 'logincontroller.php';
+    require_once '../config/SessionManager.php';
     header('Access-Control-Allow-Origin: *');
     header('Content-Type: application/json');
 
@@ -20,7 +21,7 @@
                     $IdToken = $sesion->getSessionToken($result[0]["NOMBRES"], $result[0]["ID_USUARIO"]);
                         //echo json_encode($result);   
                         http_response_code(200);
-                        echo json_encode(array("code"=>200, "msg" => "Usuario OK", "user" => $result[0]["NOMBRES"]));
+                        echo json_encode(array("code"=>200, "msg" => "usuario OK", "iduser" => $result[0]["ID_USUARIO"], "user" => $result[0]["NOMBRES"], "token" => $IdToken));
                     } else {
                         http_response_code(203);
                         echo json_encode(array("code"=>203, "msg" => "Las credenciales no son válidas"));
@@ -28,7 +29,7 @@
                                    
                 } else {
                     http_response_code(402);
-                    echo json_encode(array("code"=>401, "msg" => "Error, faltan parámetros necesarios"));
+                    echo json_encode(array("code"=>402, "msg" => "Error, faltan parámetros necesarios"));
                 }
 
             } catch (Exception $e) {
