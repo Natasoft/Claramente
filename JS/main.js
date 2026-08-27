@@ -1,6 +1,10 @@
-import { login } from "./inicio.js";
+
+import { validarCredenciales , validarToken} from './inicio.js';
+import { validarUsuario } from './panelbootstrap.js';
+
 document.addEventListener("DOMContentLoaded", (Event) => {
-    // alert("Bienvenido a Claramente")
+   if(location.pathname.includes("panelbootstrap.html")) validarUsuario()
+    if(location.pathname.includes("inicio.html")) validarToken() 
 });
 
 document.addEventListener("submit", (event) => {
