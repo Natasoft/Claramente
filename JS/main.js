@@ -1,10 +1,10 @@
 
-import { validarCredenciales , validarToken} from './inicio.js';
-import { validarUsuario } from './panelbootstrap.js';
+import { login, validarCredenciales, validarToken } from './inicio.js';
+import { validarUsuario } from '../panelbootstrap.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
-   if(location.pathname.includes("panelbootstrap.html")) validarUsuario()
-    if(location.pathname.includes("inicio.html")) validarToken() 
+    if (location.pathname.includes("panelbootstrap.html")) validarUsuario()
+    if (location.pathname.includes("inicio.html")) validarToken()
 });
 
 document.addEventListener("submit", (event) => {
@@ -46,24 +46,24 @@ function initMenu() {
     navLinks.forEach((link) => {
         // Verificar si el enlace coincide con la ruta actual
         if (link.getAttribute("href") === currentPath || link.href === window.location.href) {
-        
-        // 1. Quitar la clase de hover y aplicar el estado activo al enlace
-        link.classList.remove("hover:bg-primary-container", "hover:bg-surface-container-high");
-        link.classList.add("bg-primary-container", "text-on-primary-container", "font-medium");
 
-        // 2. Si el enlace pertenece a un submenú (<details>), abrirlo y marcar el menú padre
-        const parentDetails = link.closest("details");
-        if (parentDetails) {
-            // Abrir el submenú contenedor
-            parentDetails.setAttribute("open", "");
+            // 1. Quitar la clase de hover y aplicar el estado activo al enlace
+            link.classList.remove("hover:bg-primary-container", "hover:bg-surface-container-high");
+            link.classList.add("bg-primary-container", "text-on-primary-container", "font-medium");
 
-            // Estilizar el botón principal (<summary>) del submenú contenedor
-            const summary = parentDetails.querySelector("summary");
-            if (summary) {
-                //summary.classList.remove("hover:bg-primary-container", "hover:bg-surface-container-high");
-                //summary.classList.add("bg-primary-container", "text-primary", "font-semibold");
+            // 2. Si el enlace pertenece a un submenú (<details>), abrirlo y marcar el menú padre
+            const parentDetails = link.closest("details");
+            if (parentDetails) {
+                // Abrir el submenú contenedor
+                parentDetails.setAttribute("open", "");
+
+                // Estilizar el botón principal (<summary>) del submenú contenedor
+                const summary = parentDetails.querySelector("summary");
+                if (summary) {
+                    //summary.classList.remove("hover:bg-primary-container", "hover:bg-surface-container-high");
+                    //summary.classList.add("bg-primary-container", "text-primary", "font-semibold");
+                }
             }
-        }
         }
     });
     /*
