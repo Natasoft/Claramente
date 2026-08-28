@@ -1,4 +1,3 @@
-
 import { login, validarToken } from './inicio.js';
 import { validarUsuario, menu, salir} from './panelbootstrap.js';
 
@@ -6,7 +5,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
     //if (location.pathname.includes("panelbootstrap.html")) 
     if (location.pathname.includes("inicio.html")) {
-        validarToken()
+        validarToken();
     } else {
         validarUsuario();
         menu();
@@ -18,7 +17,6 @@ document.addEventListener("submit", (event) => {
         event.preventDefault();
         login();
     }
-
 });
 
 document.addEventListener("click", (e) => {
