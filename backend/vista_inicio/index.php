@@ -36,7 +36,15 @@
                 http_response_code(500);
                 echo json_encode(["code"=>500,"msg"=>"Error en el servidor \n".$e->getMessage()]);
             }
-        }else{
+        } else if($_SERVER["REQUEST_METHOD"]=="DELETE"){
+            $_POST = json_decode(file_get_contents('php://input'), true);
+            //var_dump($_POST['token']);
+            $sesion = new SessionManager();
+            $token = $_POST['token'] ?? '';            
+            $sesion->destroy();
+            http_response_code(200);
+            echo json_encode(["code"=>200,"msg"=>"Sesión cerrada correctamente"]);
+        } else{
             http_response_code(401);
             echo json_encode(["code"=>401,"msg"=>"No autorizado"]);
         }

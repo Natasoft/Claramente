@@ -1,13 +1,13 @@
 import { enviarPeticion, ir } from "./herramientas.js";
 export async function login() {
-    console.log("estamos en la funcion login");
+    //console.log("estamos en la funcion login");
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const email = document.getElementById("correo").value;
     const password = document.getElementById("password").value;
     const hashedPassword = md5(password);
 
-    console.log("usuario:", email);
-    console.log("Contraseña:", hashedPassword);
+    //console.log("usuario:", email);
+    //console.log("Contraseña:", hashedPassword);
     if (!regex.test(email)) {
         alert("Por favor, ingresa un correo electrónico válido.");
         return;
@@ -17,16 +17,16 @@ export async function login() {
         return;
     }
     const datos = { params: { usuario: email, password: hashedPassword }, "url": "../backend/vista_inicio/index.php", "method": "POST" };
-    console.log("datos a enviar", datos);
+    //console.log("datos a enviar", datos);
     //console.log("Voy a ejecutar fetch");
     await enviarPeticion({
         url: "../backend/vista_inicio/index.php",
         method: "POST",
         params: { usuario: email, password: hashedPassword },
         fSucces: (resp) => {
-            console.log("Respuesta del servidor:", resp);
+            //console.log("Respuesta del servidor:", resp);
             if (resp.code == 200) {
-                alert("Inicio de sesión exitoso");
+                //alert("Inicio de sesión exitoso");
                 localStorage.clear();
                 localStorage.setItem('token', resp.token);
                 localStorage.setItem('iduser', resp.iduser);
