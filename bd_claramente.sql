@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-08-2026 a las 02:28:37
+-- Tiempo de generación: 04-09-2026 a las 04:32:11
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -216,22 +216,25 @@ INSERT INTO `roles` (`ID_ROL`, `DESCRIPCION`) VALUES
 
 CREATE TABLE `tipo_emocion` (
   `ID_EMOCION` int(11) NOT NULL,
-  `NOMBRE` varchar(15) NOT NULL
+  `NOMBRE` varchar(15) NOT NULL,
+  `ICONO` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `tipo_emocion`
 --
 
-INSERT INTO `tipo_emocion` (`ID_EMOCION`, `NOMBRE`) VALUES
-(1, 'Alegria'),
-(2, 'Tristeza'),
-(3, 'Desesperanzado'),
-(4, 'Ira'),
-(5, 'Miedo'),
-(6, 'Ansiedad'),
-(7, 'Vergüenza'),
-(8, 'Culpa');
+INSERT INTO `tipo_emocion` (`ID_EMOCION`, `NOMBRE`, `ICONO`) VALUES
+(1, 'Alegria', '🌟'),
+(2, 'Tristeza', '😔'),
+(3, 'Calma', '😊'),
+(4, 'Ira', '😤'),
+(5, 'Miedo', '😱'),
+(6, 'Ansiedad', '😰'),
+(7, 'Vergüenza', '🥹'),
+(8, 'Pensativo', '🤔'),
+(9, 'Cansancio', '😴'),
+(10, 'Gratitud', '✨');
 
 -- --------------------------------------------------------
 
@@ -400,7 +403,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `tipo_emocion`
 --
 ALTER TABLE `tipo_emocion`
-  MODIFY `ID_EMOCION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `ID_EMOCION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `usuario`
