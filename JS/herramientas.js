@@ -10,7 +10,7 @@ export async function enviarPeticion(info) {
         if (method === "POST" || method === "PUT" || method === "DELETE" || method === "PATCH" ) method = { method, headers, body: JSON.stringify(params)};
         
         try {
-            console.log(url, method);
+            //console.log(url, method);
             let resp = await fetch(url, method);
             if (!resp.ok) 
                 throw { 
@@ -21,7 +21,7 @@ export async function enviarPeticion(info) {
             //console.log(respJson);
             //fSucces(respJson);
         let texto = await resp.text();
-        console.log("Respuesta cruda del servidor:", texto);
+        //console.log("Respuesta cruda del servidor:", texto);
 
         let respJson = JSON.parse(texto);
         fSucces(respJson);
