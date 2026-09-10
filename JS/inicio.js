@@ -49,5 +49,4 @@ export function validarToken() {
     } else {
         ir("panelbootstrap.html?token=" + token);
     }
-
 }
