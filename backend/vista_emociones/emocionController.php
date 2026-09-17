@@ -2,7 +2,7 @@
     include_once '../config/DbConfig.php';
 
     class emocionController{
-        
+
         public function __construct() {
             // Constructor vacío o inicialización si es necesario
         }
@@ -22,11 +22,9 @@
                 $result = $stmt->fetchAll();
                 return $result;
             } catch (Exception $e) {
-                // Manejo de errores: podrías loguear o lanzar una excepción personalizada
                 throw new Exception("Error al realizar la consulta: " . $e->getMessage());
             }
         }
-    }
 
         public function registrarEmocion($id_emocion, $intensidad, $comentario, $id_usuario) {
             try {
@@ -36,11 +34,11 @@
                 $fecha = date('Y-m-d H:i:s');
 
                 $stmt = $conectar->prepare(
-                "INSERT INTO estado_emocional
-                (FECHA_REG, ID_EMOCION, INTENSIDAD, COMENTARIO, ID_USUARIO)
-                VALUES
-                (:fecha, :id_emocion, :intensidad, :comentario, :id_usuario)"
-        );
+                    "INSERT INTO estado_emocional
+                    (FECHA_REG, ID_EMOCION, INTENSIDAD, COMENTARIO, ID_USUARIO)
+                    VALUES
+                    (:fecha, :id_emocion, :intensidad, :comentario, :id_usuario)"
+                );
 
                 $stmt->bindParam(':fecha', $fecha);
                 $stmt->bindParam(':id_emocion', $id_emocion);
@@ -52,10 +50,11 @@
 
                 return true;
 
-        }   catch (Exception $e) {
-            throw new Exception(
-            "Error al guardar el registro emocional: " . $e->getMessage()
-        );
+            } catch (Exception $e) {
+                throw new Exception(
+                    "Error al guardar el registro emocional: " . $e->getMessage()
+                );
+            }
+        }
     }
-}
 ?>

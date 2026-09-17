@@ -1,8 +1,10 @@
-import {enviarPeticion} from "./herramientas.js";
+import { enviarPeticion } from "./herramientas.js";
+
+let selectedEmotionId = null;
 
 export async function cargarEmociones() {
     // Lógica para cargar las emociones
-    let info="", $div_emociones = document.getElementById("emotion-grid");
+    let info = "", $div_emociones = document.getElementById("emotion-grid");
     $div_emociones.innerHTML = `<div role="status">
         <svg aria-hidden="true" class="w-8 h-8 text-neutral-tertiary animate-spin fill-brand" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z" fill="currentColor"/>
@@ -29,10 +31,58 @@ export async function cargarEmociones() {
                             class="text-4xl mb-3 group-hover:scale-125 transition-transform duration-300">${emocion.ICONO}</span>
                         <span class="font-label-md text-label-md text-on-surface-variant">${emocion.NOMBRE}</span>
                     </button>`;
-                });                
+                });
             }
             else { alert(resp.msg || "Error en la petición"); }
         }
     });
     $div_emociones.innerHTML = info; // Limpiar el contenido previo
 }
+
+// --- Selección de emoción ---
+// Se llama desde el atributo onclick="selectEmotion(this)" de cada botón generado en cargarEmociones()
+export function selectEmotion(boton) {
+    document.querySelectorAll("#emotion-grid .emotion-card").forEach(b => b.classList.remove("active"));
+    boton.classList.add("active");
+    selectedEmotionId = boton.value;
+}
+
+// --- Guardar registro ---
+// Se llama desde el botón "Guardar Registro" (onclick="saveRegistry()")
+export async function saveRegistry() {
+    if (!selectedEmotionId) {
+        alert("Por favor selecciona cómo te sientes antes de guardar.");
+        return;
+    }
+
+    const intensidad = document.getElementById("intensity-slider").value;
+    const comentario = document.getElementById("notes").value;
+
+    await enviarPeticion({
+        url: "../backend/vista_emociones/index.php",
+        method: "POST",
+        params: {
+            id_emocion: selectedEmotionId,
+            intensidad: intensidad,
+            comentario: comentario,
+            id_usuario: localStorage.getItem("iduser")
+        },
+        fSucces: (resp) => {
+            if (resp.code == 200) {
+                document.getElementById("success-modal").classList.remove("hidden", "opacity-0");
+            } else {
+                alert(resp.msg || "No se pudo guardar el registro.");
+            }
+        }
+    });
+}
+
+export function closeModal() {
+    document.getElementById("success-modal").classList.add("opacity-0");
+    setTimeout(() => document.getElementById("success-modal").classList.add("hidden"), 300);
+}
+
+// Exponer al scope global porque el HTML las llama vía atributos onclick
+window.selectEmotion = selectEmotion;
+window.saveRegistry = saveRegistry;
+window.closeModal = closeModal;
