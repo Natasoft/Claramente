@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-09-2026 a las 04:32:11
+-- Tiempo de generación: 17-09-2026 a las 04:02:55
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -54,6 +54,7 @@ CREATE TABLE `estado_emocional` (
   `ID_ESTADO_EMOCIONAL` int(11) NOT NULL,
   `FECHA_REG` datetime NOT NULL,
   `ID_EMOCION` int(11) NOT NULL,
+  `INTENSIDAD` int(11) NOT NULL,
   `COMENTARIO` text NOT NULL,
   `ID_USUARIO` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -62,10 +63,10 @@ CREATE TABLE `estado_emocional` (
 -- Volcado de datos para la tabla `estado_emocional`
 --
 
-INSERT INTO `estado_emocional` (`ID_ESTADO_EMOCIONAL`, `FECHA_REG`, `ID_EMOCION`, `COMENTARIO`, `ID_USUARIO`) VALUES
-(1, '2026-04-16 05:02:52', 1, 'Me siento feliz porque saldre de viaje', 3),
-(2, '2026-04-16 05:03:56', 2, 'me siento mal porque no pase el examen', 1),
-(3, '2026-04-16 05:03:56', 2, 'me siento triste porque discuti con mi pareja', 2);
+INSERT INTO `estado_emocional` (`ID_ESTADO_EMOCIONAL`, `FECHA_REG`, `ID_EMOCION`, `INTENSIDAD`, `COMENTARIO`, `ID_USUARIO`) VALUES
+(1, '2026-04-16 05:02:52', 1, 0, 'Me siento feliz porque saldre de viaje', 3),
+(2, '2026-04-16 05:03:56', 2, 0, 'me siento mal porque no pase el examen', 1),
+(3, '2026-04-16 05:03:56', 2, 0, 'me siento triste porque discuti con mi pareja', 2);
 
 -- --------------------------------------------------------
 
