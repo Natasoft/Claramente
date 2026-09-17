@@ -86,3 +86,10 @@ export function closeModal() {
 window.selectEmotion = selectEmotion;
 window.saveRegistry = saveRegistry;
 window.closeModal = closeModal;
+
+// --- Actualizar el número visible junto al slider de intensidad ---
+// El input existe de forma estática en Registro_emocional.html; el optional chaining (?.)
+// evita errores en otras páginas donde este elemento no exista.
+document.getElementById("intensity-slider")?.addEventListener("input", (e) => {
+    document.getElementById("intensity-value").textContent = e.target.value;
+});
