@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 17-09-2026 a las 04:02:55
+-- Tiempo de generación: 17-09-2026 a las 04:29:19
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -66,7 +66,11 @@ CREATE TABLE `estado_emocional` (
 INSERT INTO `estado_emocional` (`ID_ESTADO_EMOCIONAL`, `FECHA_REG`, `ID_EMOCION`, `INTENSIDAD`, `COMENTARIO`, `ID_USUARIO`) VALUES
 (1, '2026-04-16 05:02:52', 1, 0, 'Me siento feliz porque saldre de viaje', 3),
 (2, '2026-04-16 05:03:56', 2, 0, 'me siento mal porque no pase el examen', 1),
-(3, '2026-04-16 05:03:56', 2, 0, 'me siento triste porque discuti con mi pareja', 2);
+(3, '2026-04-16 05:03:56', 2, 0, 'me siento triste porque discuti con mi pareja', 2),
+(4, '2026-09-17 04:18:18', 10, 5, 'Me siento agradecida por todas las bendiciones de Dios', 1),
+(5, '2026-09-17 04:18:46', 10, 5, 'Me siento agradecida por todas las bendiciones de Dios', 1),
+(6, '2026-09-17 04:19:06', 10, 5, 'Agradecida con Dios', 1),
+(7, '2026-09-17 04:25:58', 3, 7, 'Equilibrio total', 1);
 
 -- --------------------------------------------------------
 
@@ -362,7 +366,7 @@ ALTER TABLE `bibliografia`
 -- AUTO_INCREMENT de la tabla `estado_emocional`
 --
 ALTER TABLE `estado_emocional`
-  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `foro`
