@@ -30,26 +30,13 @@
             try {
                 $db = DbConfig::getInstance();
                 $conectar = $db->getConnection();
-
-                $fecha = date('Y-m-d H:i:s');
-
-                $stmt = $conectar->prepare(
-                    "INSERT INTO estado_emocional
-                    (FECHA_REG, ID_EMOCION, INTENSIDAD, COMENTARIO, ID_USUARIO)
-                    VALUES
-                    (:fecha, :id_emocion, :intensidad, :comentario, :id_usuario)"
-                );
-
-                $stmt->bindParam(':fecha', $fecha);
+                $stmt = $conectar->prepare("CALL guardar_estado_emocional(:id_emocion, :intensidad, :comentario, :id_usuario)");
                 $stmt->bindParam(':id_emocion', $id_emocion);
                 $stmt->bindParam(':intensidad', $intensidad);
                 $stmt->bindParam(':comentario', $comentario);
                 $stmt->bindParam(':id_usuario', $id_usuario);
-
                 $stmt->execute();
-
                 return true;
-
             } catch (Exception $e) {
                 throw new Exception(
                     "Error al guardar el registro emocional: " . $e->getMessage()

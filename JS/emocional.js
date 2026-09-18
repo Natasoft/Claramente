@@ -79,7 +79,7 @@ export async function saveRegistry() {
 
 export function closeModal() {
     document.getElementById("success-modal").classList.add("opacity-0");
-    setTimeout(() => document.getElementById("success-modal").classList.add("hidden"), 300);
+    setTimeout(() => {document.getElementById("success-modal").classList.add("hidden"); window.location.reload();}, 300);
 }
 
 // Exponer al scope global porque el HTML las llama vía atributos onclick
