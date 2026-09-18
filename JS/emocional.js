@@ -79,7 +79,7 @@ export async function saveRegistry() {
 
 export function closeModal() {
     document.getElementById("success-modal").classList.add("opacity-0");
-    setTimeout(() => document.getElementById("success-modal").classList.add("hidden"), 300);
+    setTimeout(() => {document.getElementById("success-modal").classList.add("hidden"); window.location.reload();}, 300);
 }
 
 // Exponer al scope global porque el HTML las llama vía atributos onclick
@@ -93,3 +93,37 @@ window.closeModal = closeModal;
 document.getElementById("intensity-slider")?.addEventListener("input", (e) => {
     document.getElementById("intensity-value").textContent = e.target.value;
 });
+
+export async function cargarEstadisticas() { 
+    await enviarPeticion({
+        url: "../backend/vista_emociones/index.php",
+        method: "GET",
+        params: {
+            id: "*",
+            id_usuario: localStorage.getItem("iduser")
+        },
+        fSucces: (resp) => {
+            if (resp.code == 200) {
+                estadistica(resp.datos)
+            } else {
+                alert(resp.msg || "No se pudo guardar el registro.");
+            }
+        }
+    });
+}
+
+function estadistica(datos) {
+    const emocionpredominante = document.getElementById("emocion-predominante");
+    const emocionactual = document.getElementById("emocion-actual");
+    const totalregistros = document.getElementById("total-registros");
+    const fechaemocion = document.getElementById("fecha-emocion");
+    const intensidadpredominante = document.getElementById("intensidad-predominante");  
+
+    console.log(datos);
+    datos.forEach((emocion) => {
+        totalregistros.textContent = datos.length;
+        emocionactual.textContent = emocion.NOMBRE;
+        fechaemocion.textContent = emocion.FECHA_REG;
+        intensidadpredominante.textContent = emocion.CANTIDAD;
+    })
+}

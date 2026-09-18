@@ -6,8 +6,14 @@
     try{
         if($_SERVER["REQUEST_METHOD"]=="GET"){
             $id = $_GET['id'] ?? null;
+            $id_usuario = $_GET['id_usuario'] ?? null;
             $Emociones = new emocionController();
-            $result = $Emociones->obtenerEmociones($id);
+            if(!empty($id_usuario) && $id=="*"){
+                $result = $Emociones->obtenerEmocionesUsuario($id_usuario);
+            } else {
+                $result = $Emociones->obtenerEmociones($id);   
+            }
+            
             if(count($result) > 0){
                 http_response_code(200);
                 echo json_encode(array("code"=>200, "msg" => "OK", "datos" => $result));

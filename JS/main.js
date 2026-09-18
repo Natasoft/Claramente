@@ -1,6 +1,6 @@
 import { login, validarToken } from './inicio.js';
 import { validarUsuario, menu, salir} from './panelbootstrap.js';
-import { cargarEmociones } from './emocional.js';
+import { cargarEmociones, cargarEstadisticas } from './emocional.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
         validarUsuario();
         menu();
         if (location.pathname.includes("Registro_emocional.html")) cargarEmociones();
+        if (location.pathname.includes("Evolucionemocional.html")) cargarEstadisticas();
     }
 });
 
