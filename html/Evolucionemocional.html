@@ -198,53 +198,8 @@
                     </button>
                 </div>
             </header>
-            <!-- Filters Section -->
-            <section class="glass-card rounded-3xl p-6 soft-glow grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="flex flex-col gap-2">
-                    <label class="font-label-md text-label-md text-on-surface-variant px-1">Rango de fechas</label>
-                    <div
-                        class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
-                        <span class="material-symbols-outlined text-on-surface-variant"
-                            data-icon="calendar_today">calendar_today</span>
-                        <input
-                            class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface"
-                            readonly="" type="text" value="Últimos 30 días" />
-                        <span class="material-symbols-outlined text-on-surface-variant cursor-pointer"
-                            data-icon="expand_more">expand_more</span>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-2">
-                    <label class="font-label-md text-label-md text-on-surface-variant px-1">Filtrar por
-                        emoción</label>
-                    <div
-                        class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
-                        <span class="material-symbols-outlined text-on-surface-variant"
-                            data-icon="filter_list">filter_list</span>
-                        <select
-                            class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
-                            <option>Todas las emociones</option>
-                            <option>Calma</option>
-                            <option>Alegría</option>
-                            <option>Tristeza</option>
-                            <option>Ansiedad</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="flex items-end">
-                    <div class="flex gap-2 flex-wrap">
-                        <span
-                            class="px-4 py-2 rounded-full bg-verde-menta/20 text-secondary font-label-sm text-label-sm border border-verde-menta/30">Última
-                            semana</span>
-                        <span
-                            class="px-4 py-2 rounded-full bg-primary-container/20 text-primary font-label-sm text-label-sm border border-primary-container/30">Mes
-                            actual</span>
-                        <span
-                            class="px-4 py-2 rounded-full bg-calm-peach/20 text-on-tertiary-fixed-variant font-label-sm text-label-sm border border-calm-peach/30">Histórico</span>
-                    </div>
-                </div>
-            </section>
             <!-- Key Metrics Grid -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
                 <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
                     <div
                         class="w-12 h-12 rounded-full bg-verde-menta/30 flex items-center justify-center text-secondary">
@@ -253,10 +208,9 @@
                     </div>
                     <div>
                         <p class="font-label-md text-label-md text-on-surface-variant">Emoción Predominante</p>
-                        <h3 class="font-headline-md text-headline-md text-primary mt-1">Calma</h3>
+                        <h3 class="font-headline-md text-headline-md text-primary mt-1" id="emocion-predominante">-</h3>
                     </div>
-                    <p class="font-label-sm text-label-sm text-secondary bg-verde-menta/10 px-3 py-1 rounded-full">
-                        +12% vs mes anterior</p>
+                    <p class="font-label-sm text-label-sm text-secondary bg-verde-menta/10 px-3 py-1 rounded-full" id="intensidad-predominante"></p>
                 </div>
                 <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
                     <div
@@ -265,7 +219,7 @@
                     </div>
                     <div>
                         <p class="font-label-md text-label-md text-on-surface-variant">Total Registros</p>
-                        <h3 class="font-headline-md text-headline-md text-primary mt-1">42</h3>
+                        <h3 class="font-headline-md text-headline-md text-primary mt-1" id="total-registros">-</h3>
                     </div>
                     <p class="font-label-sm text-label-sm text-on-surface-variant">Entradas constantes</p>
                 </div>
@@ -275,12 +229,26 @@
                         <span class="material-symbols-outlined text-[28px]" data-icon="trending_up">trending_up</span>
                     </div>
                     <div>
-                        <p class="font-label-md text-label-md text-on-surface-variant">Tendencia Actual</p>
-                        <h3 class="font-headline-md text-headline-md text-primary mt-1">Ascendente</h3>
+                        <p class="font-label-md text-label-md text-on-surface-variant">Emocion Actual</p>
+                        <h3 class="font-headline-md text-headline-md text-primary mt-1" id="emocion-actual">-</h3>
                     </div>
                     <p
-                        class="font-label-sm text-label-sm text-on-tertiary-fixed-variant bg-calm-peach/10 px-3 py-1 rounded-full">
-                        Mejora sostenida</p>
+                        class="font-label-sm text-label-sm text-on-tertiary-fixed-variant bg-calm-peach/10 px-3 py-1 rounded-full" id="fecha-emocion"></p>
+                </div>
+                <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
+                    <div
+                        class="w-12 h-12 rounded-full bg-indigo-400/30 flex items-center justify-center text-on-tertiary-fixed-variant">
+                        <span class="material-symbols-outlined text-[28px]" data-icon="filter_list">filter_list</span>
+                    </div>
+                    <div>
+                        <p class="font-label-md text-label-md text-on-surface-variant">Filtrar por emoción</p>
+                        <div class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
+                            <span class="material-symbols-outlined text-on-surface-variant" data-icon="filter_list">filter_list</span>
+                            <select id="emotion-filter" class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
+                                <option>Todas las emociones</option>
+                            </select>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!-- Charts Section (Asymmetric Grid) -->

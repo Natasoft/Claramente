@@ -43,5 +43,20 @@
                 );
             }
         }
+
+        public function obtenerEmocionesUsuario($id_usuario) {
+            try {
+                $db = DbConfig::getInstance();
+                $conectar = $db->getConnection();
+                //$stmt = $conectar->prepare("SELECT tp.ID_EMOCION, tp.NOMBRE, COUNT(em.ID_EMOCION) as CANTIDAD, em.FECHA_REG FROM tipo_emocion tp INNER JOIN estado_emocional em ON (em.ID_EMOCION=tp.ID_EMOCION) WHERE em.ID_USUARIO=:id_usuario GROUP BY em.ID_EMOCION ORDER BY CANTIDAD DESC");
+                $stmt = $conectar->prepare("SELECT tp.ID_EMOCION, tp.NOMBRE, em.FECHA_REG FROM tipo_emocion tp INNER JOIN estado_emocional em ON (em.ID_EMOCION=tp.ID_EMOCION) WHERE em.ID_USUARIO=:id_usuario ORDER BY em.FECHA_REG");
+                $stmt->bindParam(':id_usuario', $id_usuario);
+                $stmt->execute();
+                $result = $stmt->fetchAll();
+                return $result;
+            } catch (Exception $e) {
+                throw new Exception("Error al realizar la consulta: " . $e->getMessage());
+            }
+        }
     }
 ?>
