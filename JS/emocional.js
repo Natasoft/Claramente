@@ -118,13 +118,21 @@ function estadistica(datos) {
     const totalregistros = document.getElementById("total-registros");
     const fechaemocion = document.getElementById("fecha-emocion");
     const intensidadpredominante = document.getElementById("intensidad-predominante");  
-    let tabla = document.querySelector("#historico-emocional tbody"), historial = "";
+    const tabla = document.querySelector("#historico-emocional tbody");
+    const grafico = document.getElementById("grafico-frecuencia");
+    let historial = "", barras ="";
     console.log(datos);
     datos.forEach((emocion) => {
         totalregistros.textContent = datos.length;
         emocionactual.textContent = emocion.NOMBRE;
         fechaemocion.textContent = emocion.FECHA_REG;
         intensidadpredominante.textContent = emocion.INTENSIDAD;
+        barras += `
+            <div class="w-full flex flex-col items-center gap-2">
+                <div class="w-full bg-verde-menta rounded-t-lg transition-all hover:brightness-110" style="height: ${emocion.INTENSIDAD}%;">${emocion.INTENSIDAD}</div>
+                <span class="font-label-sm text-label-sm rotate-45 mt-4">${emocion.NOMBRE}</span>
+            </div>
+        `;
         historial += `
             <tr>
                 <td class="px-8 py-5">${emocion.FECHA_REG}</td>
@@ -148,6 +156,7 @@ function estadistica(datos) {
         `;
     });
     tabla.innerHTML = historial;
+    grafico.innerHTML = barras;
 }
 
 function intensidadenEstrella(datos) {
@@ -199,7 +208,7 @@ function intensidadenEstrella(datos) {
                 <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
                 <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
                 <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill[1]">star</span>
             `;
     }
 }
