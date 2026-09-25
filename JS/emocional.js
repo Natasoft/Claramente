@@ -129,7 +129,7 @@ function estadistica(datos) {
         intensidadpredominante.textContent = emocion.INTENSIDAD;
         barras += `
             <div class="w-full flex flex-col items-center gap-2 h-full justify-end">
-                <div class="w-full bg-primary-container rounded-t-lg transition-all hover:brightness-110 flex items-center justify-center text-xs font-bold" style="height: ${emocion.INTENSIDAD * 10}%;">${emocion.INTENSIDAD}</div>
+                <div class="w-full bg-primary-container rounded-t-lg transition-all hover:brightness-110 flex items-center justify-center text-xs font-bold" style="height: ${emocion.INTENSIDAD*10}%;">${emocion.INTENSIDAD}</div>
                 <span class="font-label-sm text-label-sm rotate-45 mt-4 whitespace-nowrap">${emocion.NOMBRE}</span>
             </div>
         `;
