@@ -79,7 +79,7 @@ export async function saveRegistry() {
 
 export function closeModal() {
     document.getElementById("success-modal").classList.add("opacity-0");
-    setTimeout(() => {document.getElementById("success-modal").classList.add("hidden"); window.location.reload();}, 300);
+    setTimeout(() => { document.getElementById("success-modal").classList.add("hidden"); window.location.reload(); }, 300);
 }
 
 // Exponer al scope global porque el HTML las llama vía atributos onclick
@@ -94,7 +94,7 @@ document.getElementById("intensity-slider")?.addEventListener("input", (e) => {
     document.getElementById("intensity-value").textContent = e.target.value;
 });
 
-export async function cargarEstadisticas() { 
+export async function cargarEstadisticas() {
     await enviarPeticion({
         url: "../backend/vista_emociones/index.php",
         method: "GET",
@@ -117,10 +117,10 @@ function estadistica(datos) {
     const emocionactual = document.getElementById("emocion-actual");
     const totalregistros = document.getElementById("total-registros");
     const fechaemocion = document.getElementById("fecha-emocion");
-    const intensidadpredominante = document.getElementById("intensidad-predominante");  
+    const intensidadpredominante = document.getElementById("intensidad-predominante");
     const tabla = document.querySelector("#historico-emocional tbody");
     const grafico = document.getElementById("grafico-frecuencia");
-    let historial = "", barras ="";
+    let historial = "", barras = "";
     console.log(datos);
     datos.forEach((emocion) => {
         totalregistros.textContent = datos.length;
@@ -146,7 +146,7 @@ function estadistica(datos) {
                 <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">${emocion.COMENTARIO}</td>
                 <td class="px-8 py-5">
                     <div class="flex gap-0.5" title="Intensidad de la emoción: ${emocion.INTENSIDAD}/10">
-                        ${intensidadenEstrella(emocion.INTENSIDAD/2)}
+                        ${intensidadenEstrella(emocion.INTENSIDAD / 2)}
                     </div>
                 </td>
                 <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
