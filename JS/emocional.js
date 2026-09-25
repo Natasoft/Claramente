@@ -118,12 +118,88 @@ function estadistica(datos) {
     const totalregistros = document.getElementById("total-registros");
     const fechaemocion = document.getElementById("fecha-emocion");
     const intensidadpredominante = document.getElementById("intensidad-predominante");  
-
+    let tabla = document.querySelector("#historico-emocional tbody"), historial = "";
     console.log(datos);
     datos.forEach((emocion) => {
         totalregistros.textContent = datos.length;
         emocionactual.textContent = emocion.NOMBRE;
         fechaemocion.textContent = emocion.FECHA_REG;
-        intensidadpredominante.textContent = emocion.CANTIDAD;
-    })
+        intensidadpredominante.textContent = emocion.INTENSIDAD;
+        historial += `
+            <tr>
+                <td class="px-8 py-5">${emocion.FECHA_REG}</td>
+                <td class="px-8 py-5">
+                    <span class="flex items-center gap-2">
+                        <!--<span class="w-2 h-2 rounded-full bg-verde-menta"></span>-->
+                        <span class="text-4xl group-hover:scale-125 transition-transform duration-300">${emocion.ICONO}</span>
+                        ${emocion.NOMBRE}
+                    </span>
+                </td>
+                <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">${emocion.COMENTARIO}</td>
+                <td class="px-8 py-5">
+                    <div class="flex gap-0.5" title="Intensidad de la emoción: ${emocion.INTENSIDAD}/10">
+                        ${intensidadenEstrella(emocion.INTENSIDAD/2)}
+                    </div>
+                </td>
+                <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
+                    <span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary" data-icon="chevron_right">chevron_right</span>
+                </td>
+            </tr>
+        `;
+    });
+    tabla.innerHTML = historial;
+}
+
+function intensidadenEstrella(datos) {
+    let intensidad = Math.round(datos);
+    switch (intensidad) {
+        case 0:
+            return `
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+            `;
+        case 1:
+            return `
+                <span class="material-symbols text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+            `;
+        case 2:
+            return `
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm"data-icon="star">star</span>
+            `;
+        case 3:
+            return `
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+            `;
+        case 4:
+            return `
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
+            `;
+        case 5:
+            return `
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
+            `;
+    }
 }
