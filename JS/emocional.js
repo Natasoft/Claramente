@@ -94,6 +94,31 @@ document.getElementById("intensity-slider")?.addEventListener("input", (e) => {
     document.getElementById("intensity-value").textContent = e.target.value;
 });
 
+// --- Dato de bienestar aleatorio ---
+// Requiere agregar id="wellness-tip" al <p> del "Dato de bienestar" en el HTML.
+const datosBienestar = [
+    "Escribir tus emociones ayuda a reducir la actividad de la amígdala, disminuyendo los niveles de estrés de forma natural.",
+    "Nombrar lo que sientes activa la corteza prefrontal, lo que ayuda a regular emociones intensas.",
+    "Llevar un registro emocional constante puede ayudarte a identificar patrones y disparadores con el tiempo.",
+    "No existen emociones 'buenas' o 'malas': todas cumplen una función y merecen ser escuchadas.",
+    "Tomarte un momento para reflexionar sobre tu día fortalece tu autoconocimiento.",
+    "La respiración profunda durante unos minutos puede bajar tu nivel de intensidad emocional.",
+    "Permitirte sentir sin juzgarte es el primer paso para procesar cualquier emoción.",
+    "Reconocer tus emociones a tiempo puede ayudarte a responder mejor ante situaciones difíciles.",
+    "Un pequeño hábito diario, como este registro, puede tener un gran impacto en tu bienestar a largo plazo.",
+    "Hablar o escribir sobre lo que sientes puede aliviar la carga emocional, aunque nadie más lo lea.",
+    "Las emociones son temporales: identificar cómo te sientes hoy no define cómo te sentirás mañana.",
+    "Notar cambios en tu estado de ánimo es una forma de cuidado personal, no de debilidad.",
+    "Celebrar tus emociones positivas con la misma atención que las difíciles ayuda a equilibrar tu bienestar.",
+    "Comparar tus registros con el tiempo puede ayudarte a ver tu propio progreso emocional.",
+    "Cuidar tu salud emocional es tan importante como cuidar tu salud física."
+];
+
+const $tip = document.getElementById("wellness-tip");
+if ($tip) {
+    $tip.textContent = datosBienestar[Math.floor(Math.random() * datosBienestar.length)];
+}
+
 export async function cargarEstadisticas() {
     await enviarPeticion({
         url: "../backend/vista_emociones/index.php",
