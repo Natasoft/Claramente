@@ -199,7 +199,7 @@
                 </div>
             </header>
             <!-- Key Metrics Grid -->
-            <section class="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <section class="grid grid-cols-1 sm:grid-cols-3 gap-6">
                 <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
                     <div
                         class="w-12 h-12 rounded-full bg-verde-menta/30 flex items-center justify-center text-secondary">
@@ -235,68 +235,33 @@
                     <p
                         class="font-label-sm text-label-sm text-on-tertiary-fixed-variant bg-calm-peach/10 px-3 py-1 rounded-full" id="fecha-emocion"></p>
                 </div>
-                <div class="glass-card p-8 rounded-3xl soft-glow text-center flex flex-col items-center gap-3">
-                    <div
-                        class="w-12 h-12 rounded-full bg-indigo-400/30 flex items-center justify-center text-on-tertiary-fixed-variant">
-                        <span class="material-symbols-outlined text-[28px]" data-icon="filter_list">filter_list</span>
-                    </div>
-                    <div>
-                        <p class="font-label-md text-label-md text-on-surface-variant">Filtrar por emoción</p>
-                        <div class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all">
-                            <span class="material-symbols-outlined text-on-surface-variant" data-icon="filter_list">filter_list</span>
-                            <select id="emotion-filter" class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
-                                <option>Todas las emociones</option>
-                            </select>
-                        </div>
+            </section>
+            <!-- Filtro por emoción (separado de las tarjetas estadísticas) -->
+            <section class="glass-card p-6 rounded-3xl soft-glow flex flex-col sm:flex-row sm:items-center gap-4">
+                <div
+                    class="w-12 h-12 shrink-0 rounded-full bg-indigo-400/30 flex items-center justify-center text-on-tertiary-fixed-variant">
+                    <span class="material-symbols-outlined text-[28px]" data-icon="filter_list">filter_list</span>
+                </div>
+                <div class="flex-1">
+                    <p class="font-label-md text-label-md text-on-surface-variant mb-1">Filtrar por emoción</p>
+                    <div class="flex items-center gap-2 bg-surface-container-low px-4 py-2.5 rounded-xl border border-outline-variant focus-within:ring-2 focus-within:ring-primary-container transition-all max-w-sm">
+                        <span class="material-symbols-outlined text-on-surface-variant" data-icon="filter_list">filter_list</span>
+                        <select id="emotion-filter" class="bg-transparent border-none focus:ring-0 w-full font-body-md text-body-md text-on-surface appearance-none cursor-pointer">
+                            <option>Todas las emociones</option>
+                        </select>
                     </div>
                 </div>
             </section>
-            <!-- Charts Section (Asymmetric Grid) -->
-            <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                <!-- Line Chart Placeholder -->
-                <div class="lg:col-span-2 glass-card rounded-3xl p-8 soft-glow flex flex-col gap-6">
+            <!-- Charts Section -->
+            <section class="grid grid-cols-1 gap-6">
+                <!-- Bar Chart: Frecuencia (conectado a datos reales vía #grafico-frecuencia) -->
+                <div class="glass-card rounded-3xl p-8 soft-glow flex flex-col gap-4">
                     <div class="flex justify-between items-center">
-                        <h2 class="font-title-lg text-title-lg text-on-surface">Evolución en el tiempo</h2>
+                        <h2 class="font-title-lg text-title-lg text-on-surface">Frecuencia</h2>
                         <span class="material-symbols-outlined text-on-surface-variant cursor-help"
                             data-icon="info">info</span>
                     </div>
-                    <div class="relative h-64 w-full bg-surface-container-low rounded-2xl overflow-hidden group">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
-                            <span class="material-symbols-outlined text-9xl" data-icon="show_chart">show_chart</span>
-                        </div>
-                        <!-- SVG "Mock" Line Chart -->
-                        <svg class="absolute inset-0 w-full h-full px-4" preserveaspectratio="none"
-                            viewbox="0 0 100 40">
-                            <path class="animate-[dash_3s_ease-in-out_infinite]"
-                                d="M0,30 Q10,25 20,28 T40,20 T60,25 T80,10 T100,15" fill="none" stroke="#68548d"
-                                stroke-width="0.8"></path>
-                            <path d="M0,30 Q10,25 20,28 T40,20 T60,25 T80,10 T100,15 L100,40 L0,40 Z" fill="url(#grad1)"
-                                opacity="0.1"></path>
-                            <defs>
-                                <lineargradient id="grad1" x1="0%" x2="0%" y1="0%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#b39ddb;stop-opacity:1"></stop>
-                                    <stop offset="100%" style="stop-color:#b39ddb;stop-opacity:0"></stop>
-                                </lineargradient>
-                            </defs>
-                        </svg>
-                        <!-- Grid lines -->
-                        <div class="absolute inset-0 flex flex-col justify-between py-8 px-4 opacity-20">
-                            <div class="border-t border-outline"></div>
-                            <div class="border-t border-outline"></div>
-                            <div class="border-t border-outline"></div>
-                        </div>
-                    </div>
-                    <div class="flex justify-between text-on-surface-variant font-label-sm text-label-sm">
-                        <span>Semana 1</span>
-                        <span>Semana 2</span>
-                        <span>Semana 3</span>
-                        <span>Semana 4</span>
-                    </div>
-                </div>
-                <!-- Bar Chart Placeholder -->
-                <div class="glass-card rounded-3xl p-8 soft-glow flex flex-col gap-6">
-                    <h2 class="font-title-lg text-title-lg text-on-surface">Frecuencia</h2>
-                    <div class="flex-1 flex items-end justify-between gap-4 px-2" id="grafico-frecuencia">
+                    <div class="flex-1 min-h-[14rem] flex items-end justify-between gap-6 px-4" id="grafico-frecuencia">
                         <div class="w-full flex flex-col items-center gap-2">
                             <div class="w-full bg-verde-menta rounded-t-lg transition-all hover:brightness-110" style="height: 80%;">8</div>
                             <span class="font-label-sm text-label-sm rotate-45 mt-4">Calma</span>
