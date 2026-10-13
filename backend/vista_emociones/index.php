@@ -10,6 +10,8 @@
             $Emociones = new emocionController();
             if(!empty($id_usuario) && $id=="*"){
                 $result = $Emociones->obtenerEmocionesUsuario($id_usuario);
+            } else if(!empty($id_usuario) && $id=="alerta"){
+                $result = $Emociones->obtenerNivelAlerta($id_usuario);
             } else {
                 $result = $Emociones->obtenerEmociones($id);   
             }
