@@ -1,7 +1,7 @@
 import { login, validarToken } from './inicio.js';
-import { validarUsuario, menu, salir} from './panelbootstrap.js';
+import { validarUsuario, menu, salir } from './panelbootstrap.js';
 import { cargarEmociones, cargarEstadisticas } from './emocional.js';
-import { cargarSugerencia, mostrarInspiracionDelDia } from './recomendaciones.js';
+import { cargarSugerencia, mostrarInspiracionDelDia, cargarEstadoAlerta } from './recomendaciones.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
         if (location.pathname.includes("Retroalimentacion.html")) {
             cargarSugerencia();
             mostrarInspiracionDelDia();
+            cargarEstadoAlerta();
         }
     }
 });
