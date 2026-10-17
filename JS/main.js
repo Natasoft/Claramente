@@ -2,6 +2,7 @@ import { login, validarToken } from './inicio.js';
 import { validarUsuario, menu, salir } from './panelbootstrap.js';
 import { cargarEmociones, cargarEstadisticas } from './emocional.js';
 import { cargarSugerencia, mostrarInspiracionDelDia, cargarEstadoAlerta } from './recomendaciones.js';
+import { cargarForos } from './foros.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
             mostrarInspiracionDelDia();
             cargarEstadoAlerta();
         }
+        if (location.pathname.includes("Participacion_foros.html")) cargarForos();
     }
 });
 

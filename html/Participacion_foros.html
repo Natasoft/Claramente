@@ -10,9 +10,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -186,215 +183,125 @@
                     <p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Un espacio seguro para
                         compartir, aprender y crecer juntos. Conecta con personas que entienden tu camino.</p>
                 </div>
-                <button
+                <button id="btn-crear-publicacion" type="button"
                     class="bg-primary text-on-primary px-8 py-4 rounded-full font-title-lg text-title-lg flex items-center gap-2 shadow-lg hover:brightness-110 transition-all active:scale-95">
                     <span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
                     Crear publicación
                 </button>
             </section>
+            <!-- Aviso de espacio de apoyo -->
+            <p class="font-label-md text-label-md text-on-surface-variant bg-surface-container-low border border-outline-variant/30 rounded-2xl px-5 py-3">
+                Este es un espacio de apoyo entre personas y no reemplaza la atención profesional. Si estás pasando por
+                una crisis, comunícate con una línea de ayuda o con un profesional.
+            </p>
             <!-- Search and Filter Bar -->
             <section class="mb-10 flex flex-col md:flex-row gap-4">
                 <div class="flex-1 relative">
                     <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline"
                         data-icon="search">search</span>
-                    <input
+                    <input id="buscador-foros"
                         class="w-full pl-12 pr-4 py-4 rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md"
-                        placeholder="Buscar hilos, usuarios o temas..." type="text" />
+                        placeholder="Buscar hilos o temas..." type="text" />
                 </div>
-                <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0 scrollbar-hide">
-                    <button
+                <div class="flex gap-2 overflow-x-auto pb-2 md:pb-0">
+                    <button type="button" data-filtro="recientes"
                         class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Más
-                        Recientes</button>
-                    <button
-                        class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Populares</button>
-                    <button
+                        recientes</button>
+                    <button type="button" data-filtro="sin-respuesta"
                         class="px-6 py-4 rounded-2xl bg-surface-container-high text-on-surface-variant font-label-md whitespace-nowrap hover:bg-primary-container hover:text-on-primary-container transition-colors">Sin
-                        Respuesta</button>
+                        respuesta</button>
                 </div>
             </section>
-            <!-- Bento Grid of Categories -->
-            <section class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-                <!-- Anxiety Category -->
-                <div
-                    class="bento-card bg-primary-container/20 p-8 rounded-[24px] border border-primary-container/30 flex flex-col justify-between h-48 cursor-pointer group">
-                    <div>
-                        <span class="material-symbols-outlined text-primary mb-2 block text-4xl"
-                            data-icon="wind_power">wind_power</span>
-                        <h3 class="font-title-lg text-title-lg text-primary">Ansiedad</h3>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="font-label-sm text-label-sm text-on-primary-container">1.2k Miembros</span>
-                        <span
-                            class="material-symbols-outlined text-primary opacity-0 group-hover:opacity-100 transition-opacity"
-                            data-icon="arrow_forward">arrow_forward</span>
-                    </div>
-                </div>
-                <!-- Stress Category -->
-                <div
-                    class="bento-card bg-calm-peach/20 p-8 rounded-[24px] border border-calm-peach/30 flex flex-col justify-between h-48 cursor-pointer group">
-                    <div>
-                        <span class="material-symbols-outlined text-tertiary mb-2 block text-4xl"
-                            data-icon="psychology_alt">psychology_alt</span>
-                        <h3 class="font-title-lg text-title-lg text-tertiary">Estrés</h3>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="font-label-sm text-label-sm text-on-tertiary-container">850 Miembros</span>
-                        <span
-                            class="material-symbols-outlined text-tertiary opacity-0 group-hover:opacity-100 transition-opacity"
-                            data-icon="arrow_forward">arrow_forward</span>
-                    </div>
-                </div>
-                <!-- Self-esteem Category -->
-                <div
-                    class="bento-card bg-verde-menta/20 p-8 rounded-[24px] border border-verde-menta/30 flex flex-col justify-between h-48 cursor-pointer group">
-                    <div>
-                        <span class="material-symbols-outlined text-secondary mb-2 block text-4xl"
-                            data-icon="favorite">favorite</span>
-                        <h3 class="font-title-lg text-title-lg text-secondary">Autoestima</h3>
-                    </div>
-                    <div class="flex justify-between items-center">
-                        <span class="font-label-sm text-label-sm text-on-secondary-container">2.4k Miembros</span>
-                        <span
-                            class="material-symbols-outlined text-secondary opacity-0 group-hover:opacity-100 transition-opacity"
-                            data-icon="arrow_forward">arrow_forward</span>
-                    </div>
+            <!-- Aviso temporal (errores de carga) -->
+            <p id="foros-aviso" role="status"
+                class="hidden font-label-md text-label-md text-on-error-container bg-error-container/40 rounded-2xl px-5 py-3"></p>
+            <!-- Foros temáticos (se cargan desde la tabla foro) -->
+            <section>
+                <h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-4">Foros
+                    temáticos</h2>
+                <div id="foros-grid" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <p class="font-body-md text-body-md text-on-surface-variant md:col-span-3">Cargando foros...</p>
                 </div>
             </section>
-            <!-- Discussion Threads -->
+            <!-- Hilos (se cargan desde la tabla participacion) -->
             <section class="space-y-6">
                 <div class="flex items-center justify-between mb-4">
-                    <h2 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Hilos
-                        destacados</h2>
-                    <div class="flex gap-2">
-                        <span
-                            class="bg-verde-menta/20 text-secondary px-3 py-1 rounded-full font-label-sm text-label-sm border border-verde-menta/30">#resiliencia</span>
-                        <span
-                            class="bg-primary-container/20 text-primary px-3 py-1 rounded-full font-label-sm text-label-sm border border-primary-container/30">#meditacion</span>
-                    </div>
+                    <h2 id="hilos-titulo"
+                        class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">Hilos
+                        recientes</h2>
                 </div>
-                <!-- Thread Card 1 -->
-                <article
-                    class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
-                    <div class="flex gap-4 items-start">
-                        <img alt="Profile of Elena" class="w-12 h-12 rounded-full border-2 border-white shadow-sm"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAqW3ziSixaQNpw6oNdc7Fd8m0t0GA7lkbX0NWBhwNbhZ9Tt42hwBsTw9_oW88zoSRk5JpK5b0wX3QWQzjjqxvMZeA8HJSIJYM1TlOuBcdDyVdSFyPV70UwmgxII3LIdTyOWDlS1Wxj5wJvIo_icQ4vL0ggpvfSrcXBTGaUuUwttwAJRUbibOQIAURIi3fZtO0Kkl5D1FS1_ROGLiluuZwcN4KPfIy8TRhHliv1FzAPugTLeHsAv0LipKpFYWUULDxKqRI8OOaMTdrT" />
-                        <div class="flex-1">
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="font-label-md text-label-md text-on-surface font-bold">Elena R.</span>
-                                <span class="font-label-sm text-label-sm text-outline">• Hace 2 horas</span>
-                                <span
-                                    class="ml-auto bg-calm-peach/20 text-on-tertiary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Estrés</span>
-                            </div>
-                            <h4 class="font-title-lg text-title-lg text-on-surface mb-2">¿Cómo manejáis el estrés
-                                laboral un viernes tarde?</h4>
-                            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Siento que
-                                siempre llego al fin de semana agotada y me cuesta desconectar. He probado con música
-                                pero no es suficiente...</p>
-                            <div class="flex items-center gap-6 text-outline">
-                                <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                                    <span class="material-symbols-outlined text-[20px]"
-                                        data-icon="chat_bubble">chat_bubble</span>
-                                    <span class="font-label-sm text-label-sm">24 respuestas</span>
-                                </div>
-                                <div class="flex items-center gap-1.5 hover:text-error transition-colors">
-                                    <span class="material-symbols-outlined text-[20px]" data-icon="favorite"
-                                        data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
-                                    <span class="font-label-sm text-label-sm">112</span>
-                                </div>
-                                <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                                    <span class="material-symbols-outlined text-[20px]" data-icon="share">share</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-                <!-- Thread Card 2 (Image embedded) -->
-                <article
-                    class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
-                    <div class="flex flex-col md:flex-row gap-6">
-                        <div class="flex-1">
-                            <div class="flex gap-4 items-start">
-                                <img alt="Profile of Marcos"
-                                    class="w-12 h-12 rounded-full border-2 border-white shadow-sm"
-                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfjnCQBe_Gb6FdUym4rSnyMH1l5nEshFGpByeHgOGDJ9tWHglGXkgU9f_MdybQfupFe_c5HFjpbrX9F-8iEyDouqqUz8ttupJ3R7xQ6di463V5kFYS04IJA6dz1nfcnzFl9ozXes1QIX8b7P3E01ZoF5gsRa7ovB-i_v2SjqYoLZx9tARZefQ203jr_bGwSV4lCO6GXEjIW0Ava2AGfsx__x3pWVOBwbfxdEwOyOemseMyT0_HCylhrEnb7G6fuv19jmDK7DfM0oO7" />
-                                <div class="flex-1">
-                                    <div class="flex items-center gap-2 mb-1">
-                                        <span class="font-label-md text-label-md text-on-surface font-bold">Marcos
-                                            S.</span>
-                                        <span class="font-label-sm text-label-sm text-outline">• Hace 5 horas</span>
-                                        <span
-                                            class="ml-auto bg-verde-menta/20 text-on-secondary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Autoestima</span>
-                                    </div>
-                                    <h4 class="font-title-lg text-title-lg text-on-surface mb-2">Mi progreso con el
-                                        diario de gratitud tras un mes</h4>
-                                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">Nunca
-                                        pensé que algo tan pequeño como escribir tres cosas buenas al día pudiera
-                                        cambiar mi perspectiva de esta forma. Os animo a todos a probarlo.</p>
-                                    <div class="flex items-center gap-6 text-outline">
-                                        <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                                            <span class="material-symbols-outlined text-[20px]"
-                                                data-icon="chat_bubble">chat_bubble</span>
-                                            <span class="font-label-sm text-label-sm">48 respuestas</span>
-                                        </div>
-                                        <div class="flex items-center gap-1.5 hover:text-error transition-colors">
-                                            <span class="material-symbols-outlined text-[20px]" data-icon="favorite"
-                                                data-weight="fill"
-                                                style="font-variation-settings: 'FILL' 1;">favorite</span>
-                                            <span class="font-label-sm text-label-sm">340</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="md:w-48 h-32 rounded-2xl overflow-hidden relative">
-                            <img alt="Journaling aesthetic" class="w-full h-full object-cover"
-                                data-alt="A serene and aesthetic photograph of a minimalist open journal on a wooden desk. Beside the journal lies a delicate fountain pen and a sprig of fresh lavender. The scene is illuminated by soft morning sunlight filtering through a window, creating long shadows and a calm, reflective mood. The color palette is composed of soft whites, warm wood tones, and subtle hints of lilac, maintaining a modern and peaceful light-mode aesthetic."
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAzIC0DPWk7E8xFUnZPLXe_MHvrjX5fxJXZ_4fXsiuV_RqeWdbxAad6IZ328TIa6p01hiuRuXh_dfBl4Cc2INYpbpGsWygTMBe9PFCxJiL5SZrgOTRuORvRXagbBI8ANbAE-_KPpO8YubMQImnnMuzS0Yak7TlYVpSmIxz38yWspqqgpP7psURBNkMh1FY-HqdANQRpk7pHaruUpd7Ionm9ZqlQsFGMvhV_UxrxK5JpgQpDtLmT12iemegBtEHSdr-HpMwV5JJbQyZC" />
-                        </div>
-                    </div>
-                </article>
-                <!-- Thread Card 3 -->
-                <article
-                    class="bg-surface-container-low p-6 rounded-[24px] border border-outline-variant/30 hover:border-primary/50 transition-all cursor-pointer">
-                    <div class="flex gap-4 items-start">
-                        <img alt="Profile of Julian" class="w-12 h-12 rounded-full border-2 border-white shadow-sm"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaLVgta-rVxTP1hSKwXs1lT4-K-VgNfa0mAgGuwf0I3BmvO8XJMB4pDVW6xH_S0oFWPEOs9XmxQSRIldM63NlWb-5233BnCT2UGSon7tK_O4iBnX9sbRjC0_lPlk6sbbBYX7e4H9HVcfvIGxGsJWQL4hos2U9hufDfElAj2zFkzH9dCLf_mZksFhWs79n7v-goCCzotkdv4MpuQNms0-1WKhdSj4eaI5idhEkA7-plEi9d7blphC7CAR6u-oszFqbDH-cluZdgSAE_" />
-                        <div class="flex-1">
-                            <div class="flex items-center gap-2 mb-1">
-                                <span class="font-label-md text-label-md text-on-surface font-bold">Julian M.</span>
-                                <span class="font-label-sm text-label-sm text-outline">• Ayer</span>
-                                <span
-                                    class="ml-auto bg-primary-container/20 text-on-primary-container px-2 py-0.5 rounded-md font-label-sm text-label-sm">Ansiedad</span>
-                            </div>
-                            <h4 class="font-title-lg text-title-lg text-on-surface mb-2">Técnicas de respiración para
-                                ataques de pánico repentinos</h4>
-                            <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-4">¿Alguien ha
-                                probado la técnica 4-7-8? Me la recomendó mi terapeuta pero a veces en el momento me
-                                cuesta concentrarme...</p>
-                            <div class="flex items-center gap-6 text-outline">
-                                <div class="flex items-center gap-1.5 hover:text-primary transition-colors">
-                                    <span class="material-symbols-outlined text-[20px]"
-                                        data-icon="chat_bubble">chat_bubble</span>
-                                    <span class="font-label-sm text-label-sm">12 respuestas</span>
-                                </div>
-                                <div class="flex items-center gap-1.5 hover:text-error transition-colors">
-                                    <span class="material-symbols-outlined text-[20px]" data-icon="favorite"
-                                        data-weight="fill" style="font-variation-settings: 'FILL' 1;">favorite</span>
-                                    <span class="font-label-sm text-label-sm">85</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </article>
+                <div id="hilos-lista" class="space-y-6"></div>
             </section>
             <!-- Load More Button -->
             <div class="mt-12 text-center">
-                <button
-                    class="font-label-md text-label-md text-primary border border-primary/20 px-8 py-3 rounded-full hover:bg-primary/5 transition-colors">Ver
-                    más temas</button>
+                <button id="btn-mas-hilos" type="button"
+                    class="hidden font-label-md text-label-md text-primary border border-primary/20 px-8 py-3 rounded-full hover:bg-primary/5 transition-colors">Ver
+                    más hilos</button>
             </div>
         </div>
     </main>
+    <!-- Ventana: crear publicación -->
+    <dialog id="dlg-publicar"
+        class="bg-surface text-on-surface rounded-[24px] border border-outline-variant/30 shadow-xl p-0 w-[92%] max-w-xl backdrop:bg-black/40">
+        <div class="p-8 space-y-5">
+            <div class="flex items-start justify-between gap-4">
+                <h3 class="font-title-lg text-title-lg text-primary">Crear publicación</h3>
+                <button type="button" data-cerrar aria-label="Cerrar" class="text-outline hover:text-primary">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div>
+                <label for="pub-foro" class="font-label-md text-label-md text-on-surface-variant block mb-1">Foro</label>
+                <select id="pub-foro" class="w-full rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md"></select>
+            </div>
+            <div>
+                <label for="pub-titulo" class="font-label-md text-label-md text-on-surface-variant block mb-1">Título</label>
+                <input id="pub-titulo" type="text" maxlength="120" placeholder="¿De qué quieres hablar?" class="w-full rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md" />
+            </div>
+            <div>
+                <label for="pub-contenido" class="font-label-md text-label-md text-on-surface-variant block mb-1">Mensaje</label>
+                <textarea id="pub-contenido" rows="5" maxlength="5000" placeholder="Cuéntanos con tus palabras..." class="w-full rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md"></textarea>
+            </div>
+            <p class="font-label-sm text-label-sm text-on-surface-variant">Un moderador revisará tu publicación antes de que se muestre.</p>
+            <p id="pub-msg" role="status" class="hidden font-label-md text-label-md"></p>
+            <div class="flex justify-end gap-3">
+                <button type="button" data-cerrar
+                    class="px-6 py-3 rounded-full bg-surface-container-high text-on-surface-variant font-body-md hover:brightness-95 transition-all">Cerrar</button>
+                <button type="button" id="pub-enviar"
+                    class="px-6 py-3 rounded-full bg-primary text-on-primary font-body-md hover:brightness-110 transition-all active:scale-95 disabled:opacity-60">Publicar</button>
+            </div>
+        </div>
+    </dialog>
+    <!-- Ventana: ver un hilo y sus respuestas -->
+    <dialog id="dlg-hilo"
+        class="bg-surface text-on-surface rounded-[24px] border border-outline-variant/30 shadow-xl p-0 w-[92%] max-w-2xl backdrop:bg-black/40">
+        <div class="p-8 space-y-6">
+            <div class="flex items-start justify-between gap-4">
+                <span id="hilo-foro" class="px-2 py-0.5 rounded-md font-label-sm text-label-sm"></span>
+                <button type="button" data-cerrar aria-label="Cerrar" class="text-outline hover:text-primary">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div>
+                <h3 id="hilo-titulo" class="font-title-lg text-title-lg text-on-surface mb-1 break-words"></h3>
+                <p id="hilo-meta" class="font-label-sm text-label-sm text-outline"></p>
+            </div>
+            <p id="hilo-contenido" class="font-body-md text-body-md text-on-surface whitespace-pre-line break-words"></p>
+            <div class="border-t border-outline-variant/30 pt-6 space-y-4">
+                <h4 id="resp-titulo" class="font-title-lg text-title-lg text-primary">Respuestas</h4>
+                <div id="resp-lista" class="space-y-4"></div>
+            </div>
+            <div class="space-y-3">
+                <label for="resp-texto" class="sr-only">Tu respuesta</label>
+                <textarea id="resp-texto" rows="3" maxlength="2000" placeholder="Escribe una respuesta amable..." class="w-full rounded-2xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md"></textarea>
+                <p id="resp-msg" role="status" class="hidden font-label-md text-label-md"></p>
+                <div class="flex justify-end">
+                    <button type="button" id="resp-enviar"
+                        class="px-6 py-3 rounded-full bg-primary text-on-primary font-body-md hover:brightness-110 transition-all active:scale-95 disabled:opacity-60">Responder</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
     <!-- Footer -->
     <footer
         class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
@@ -434,31 +341,6 @@
             <span class="text-[10px] font-label-sm">Comunidad</span>
         </button>
     </nav>
-    <script>
-        // Simple micro-interactions
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-4px)';
-                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Simulating loading animation for charts
-        window.addEventListener('load', () => {
-            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
-            bars.forEach(bar => {
-                const targetHeight = bar.style.height;
-                bar.style.height = '0';
-                setTimeout(() => {
-                    bar.style.transition = 'height 1.5s ease-out';
-                    bar.style.height = targetHeight;
-                }, 200);
-            });
-        });
-    </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
 
