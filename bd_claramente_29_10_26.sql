@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-10-2026 a las 22:43:51
+-- Tiempo de generación: 30-10-2026 a las 03:54:25
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -162,7 +162,8 @@ CREATE TABLE `participacion` (
 INSERT INTO `participacion` (`ID_PARTICIPACION`, `TITULO`, `CONTENIDO`, `FECHA_PUBLICACION`, `MOSTRAR`, `OBS_MODERADOR`, `FECHA_REG_OBS`, `ID_FORO`, `ID_CLIENTE`, `ID_MODERADOR`) VALUES
 (1, NULL, 'siento que todo avanza rápido, necesito estar al día con todo', '2026-04-16 05:22:47', 1, 'nanananananana', '2026-04-16 05:22:47', 1, 1, 3),
 (2, NULL, 'Amo a mi hijo, pero necesito espacio para mi autocuidado', '2026-04-16 05:22:48', 1, '', '2026-04-16 05:22:48', 2, 3, 1),
-(3, NULL, 'Me estoy destruyendo si continuo en mi relación de pareja, no me valora', '2026-04-16 05:25:45', 1, 'nananananananana', '2026-04-16 05:25:45', 7, 2, 1);
+(3, NULL, 'Me estoy destruyendo si continuo en mi relación de pareja, no me valora', '2026-04-16 05:25:45', 1, 'nananananananana', '2026-04-16 05:25:45', 7, 2, 1),
+(4, 'Separacion de pareja', 'La relación se torna conflictiva ya no puedo seguir mas', '2026-10-30 03:51:47', 0, NULL, NULL, 6, 1, 3);
 
 -- --------------------------------------------------------
 
@@ -437,7 +438,7 @@ ALTER TABLE `gente`
 -- AUTO_INCREMENT de la tabla `participacion`
 --
 ALTER TABLE `participacion`
-  MODIFY `ID_PARTICIPACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ID_PARTICIPACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `recomendaciones`
