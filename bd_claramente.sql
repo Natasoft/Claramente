@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-10-2026 a las 04:55:14
+-- Tiempo de generación: 29-10-2026 a las 22:43:51
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -49,7 +49,7 @@ CREATE TABLE `bibliografia` (
 
 INSERT INTO `bibliografia` (`ID_BIBLIOGRAFIA`, `TITULO`, `DESCRIPCION`, `URL`, `ID_FORO`) VALUES
 (1, 'Preparación primeros auxilios psicológicos', 'Instrucciones', 'https://www.pagina.com.co', 1),
-(2, 'Protocolo de intervención primeros auxilios psicológicos', 'Instrucciones', 'https://www.pagina.com.co', 3),
+(2, 'Protocolo de intervención primeros auxilios psicológicos', 'Instrucciones', 'https://www.pagina.com.co', 2),
 (3, 'PAP aplicados a conducta de riesgo suicida', 'Instrucciones', 'https://www.pagina.com.co', 1);
 
 -- --------------------------------------------------------
@@ -97,6 +97,7 @@ CREATE TABLE `foro` (
   `ID_FORO` int(11) NOT NULL,
   `TITULO` varchar(30) NOT NULL,
   `DESCRIPCION` text NOT NULL,
+  `ICONO` varchar(50) NOT NULL DEFAULT 'forum',
   `FECHA_CREACION` datetime NOT NULL,
   `ID_MODERADOR` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -105,14 +106,13 @@ CREATE TABLE `foro` (
 -- Volcado de datos para la tabla `foro`
 --
 
-INSERT INTO `foro` (`ID_FORO`, `TITULO`, `DESCRIPCION`, `FECHA_CREACION`, `ID_MODERADOR`) VALUES
-(1, 'Ansiedad', 'Contenido', '2026-04-16 05:11:00', 1),
-(2, 'Crianza', 'Contenido', '2026-04-16 05:11:00', 3),
-(3, 'Maternidad', 'Contenido', '2026-04-16 05:12:17', 1),
-(4, 'Duelo', 'Contenido', '2026-04-16 05:12:17', 1),
-(5, 'Separación', 'Contenido', '2026-04-16 05:13:10', 3),
-(6, 'Relaciones parejas', 'Contenido', '2026-04-16 05:13:10', 3),
-(7, 'Amor propio', 'Contenido', '2026-04-16 05:14:20', 1);
+INSERT INTO `foro` (`ID_FORO`, `TITULO`, `DESCRIPCION`, `ICONO`, `FECHA_CREACION`, `ID_MODERADOR`) VALUES
+(1, 'Ansiedad y estrés', 'Nervios, pánico y presión del día a día', 'wind_power', '2026-04-16 05:11:00', 1),
+(2, 'Crianza y maternidad', 'Embarazo, posparto, hijos y familia', 'child_care', '2026-04-16 05:11:00', 3),
+(4, 'Duelo y pérdidas', 'Despedidas, ausencias y proceso de sanar', 'local_florist', '2026-04-16 05:12:17', 1),
+(6, 'Pareja y separación', 'Convivencia, rupturas y nuevos comienzos', 'diversity_1', '2026-04-16 05:13:10', 3),
+(7, 'Amor propio y bienestar', 'Gratitud, hábitos y crecimiento personal', 'self_improvement', '2026-04-16 05:14:20', 1),
+(8, 'Estado de ánimo', 'Tristeza, cansancio y días difíciles', 'mood', '2026-10-27 21:33:43', 1);
 
 -- --------------------------------------------------------
 
@@ -144,11 +144,12 @@ INSERT INTO `gente` (`Id`, `nombre`, `Fecha`, `edad`) VALUES
 
 CREATE TABLE `participacion` (
   `ID_PARTICIPACION` int(11) NOT NULL,
+  `TITULO` varchar(120) DEFAULT NULL,
   `CONTENIDO` text NOT NULL,
   `FECHA_PUBLICACION` datetime NOT NULL,
   `MOSTRAR` tinyint(1) NOT NULL DEFAULT 1,
-  `OBS_MODERADOR` text NOT NULL,
-  `FECHA_REG_OBS` datetime NOT NULL,
+  `OBS_MODERADOR` text DEFAULT NULL,
+  `FECHA_REG_OBS` datetime DEFAULT NULL,
   `ID_FORO` int(11) NOT NULL,
   `ID_CLIENTE` int(11) NOT NULL,
   `ID_MODERADOR` int(11) NOT NULL
@@ -158,10 +159,10 @@ CREATE TABLE `participacion` (
 -- Volcado de datos para la tabla `participacion`
 --
 
-INSERT INTO `participacion` (`ID_PARTICIPACION`, `CONTENIDO`, `FECHA_PUBLICACION`, `MOSTRAR`, `OBS_MODERADOR`, `FECHA_REG_OBS`, `ID_FORO`, `ID_CLIENTE`, `ID_MODERADOR`) VALUES
-(1, 'siento que todo avanza rápido, necesito estar al día con todo', '2026-04-16 05:22:47', 1, 'nanananananana', '2026-04-16 05:22:47', 1, 1, 3),
-(2, 'Amo a mi hijo, pero necesito espacio para mi autocuidado', '2026-04-16 05:22:48', 1, '', '2026-04-16 05:22:48', 3, 3, 1),
-(3, 'Me estoy destruyendo si continuo en mi relación de pareja, no me valora', '2026-04-16 05:25:45', 1, 'nananananananana', '2026-04-16 05:25:45', 7, 2, 1);
+INSERT INTO `participacion` (`ID_PARTICIPACION`, `TITULO`, `CONTENIDO`, `FECHA_PUBLICACION`, `MOSTRAR`, `OBS_MODERADOR`, `FECHA_REG_OBS`, `ID_FORO`, `ID_CLIENTE`, `ID_MODERADOR`) VALUES
+(1, NULL, 'siento que todo avanza rápido, necesito estar al día con todo', '2026-04-16 05:22:47', 1, 'nanananananana', '2026-04-16 05:22:47', 1, 1, 3),
+(2, NULL, 'Amo a mi hijo, pero necesito espacio para mi autocuidado', '2026-04-16 05:22:48', 1, '', '2026-04-16 05:22:48', 2, 3, 1),
+(3, NULL, 'Me estoy destruyendo si continuo en mi relación de pareja, no me valora', '2026-04-16 05:25:45', 1, 'nananananananana', '2026-04-16 05:25:45', 7, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -195,6 +196,24 @@ INSERT INTO `recomendaciones` (`ID_RECOMENDACION`, `TITULO`, `TIPO`, `DESCRIPCIO
 (10, 'FRASE MOTIVACIONAL', 'FRASE', 'No necesitas tener todas las respuestas hoy. Dale espacio a tus ideas.', '', 8),
 (11, 'FRASE MOTIVACIONAL', 'FRASE', 'Descansar también es productivo. Escucha lo que tu cuerpo te pide.', '', 9),
 (12, 'FRASE MOTIVACIONAL', 'FRASE', 'Reconocer lo bueno, por pequeño que sea, fortalece tu bienestar.', '', 10);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `respuesta`
+--
+
+CREATE TABLE `respuesta` (
+  `ID_RESPUESTA` int(11) NOT NULL,
+  `CONTENIDO` text NOT NULL,
+  `FECHA_PUBLICACION` datetime NOT NULL,
+  `MOSTRAR` tinyint(1) NOT NULL DEFAULT 1,
+  `OBS_MODERADOR` text DEFAULT NULL,
+  `FECHA_REG_OBS` datetime DEFAULT NULL,
+  `ID_PARTICIPACION` int(11) NOT NULL,
+  `ID_CLIENTE` int(11) NOT NULL,
+  `ID_MODERADOR` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -346,6 +365,15 @@ ALTER TABLE `recomendaciones`
   ADD KEY `RECOMENDACIONES_fk4` (`ID_TIPO_EMOCION`);
 
 --
+-- Indices de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  ADD PRIMARY KEY (`ID_RESPUESTA`),
+  ADD KEY `respuesta_idx_part` (`ID_PARTICIPACION`,`FECHA_PUBLICACION`),
+  ADD KEY `respuesta_idx_cliente` (`ID_CLIENTE`),
+  ADD KEY `respuesta_idx_moderador` (`ID_MODERADOR`);
+
+--
 -- Indices de la tabla `retroalimentacion`
 --
 ALTER TABLE `retroalimentacion`
@@ -397,7 +425,7 @@ ALTER TABLE `estado_emocional`
 -- AUTO_INCREMENT de la tabla `foro`
 --
 ALTER TABLE `foro`
-  MODIFY `ID_FORO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ID_FORO` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `gente`
@@ -416,6 +444,12 @@ ALTER TABLE `participacion`
 --
 ALTER TABLE `recomendaciones`
   MODIFY `ID_RECOMENDACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT de la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  MODIFY `ID_RESPUESTA` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `retroalimentacion`
@@ -477,6 +511,14 @@ ALTER TABLE `participacion`
 --
 ALTER TABLE `recomendaciones`
   ADD CONSTRAINT `RECOMENDACIONES_fk4` FOREIGN KEY (`ID_TIPO_EMOCION`) REFERENCES `tipo_emocion` (`ID_EMOCION`);
+
+--
+-- Filtros para la tabla `respuesta`
+--
+ALTER TABLE `respuesta`
+  ADD CONSTRAINT `respuesta_fk_cliente` FOREIGN KEY (`ID_CLIENTE`) REFERENCES `usuario` (`ID_USUARIO`),
+  ADD CONSTRAINT `respuesta_fk_moderador` FOREIGN KEY (`ID_MODERADOR`) REFERENCES `usuario` (`ID_USUARIO`),
+  ADD CONSTRAINT `respuesta_fk_part` FOREIGN KEY (`ID_PARTICIPACION`) REFERENCES `participacion` (`ID_PARTICIPACION`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `retroalimentacion`

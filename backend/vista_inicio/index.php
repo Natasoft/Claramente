@@ -18,7 +18,7 @@
                     $result = $controller->autenticar($usuario, $password);
                    if(count($result) > 0){
                     $sesion = new SessionManager();
-                    $IdToken = $sesion->getSessionToken($result[0]["NOMBRES"], $result[0]["ID_USUARIO"]);
+                    $IdToken = $sesion->iniciarSesion($result[0]["NOMBRES"], $result[0]["ID_USUARIO"]);
                         //echo json_encode($result);   
                         http_response_code(200);
                         echo json_encode(array("code"=>200, "msg" => "usuario OK", "iduser" => $result[0]["ID_USUARIO"], "user" => $result[0]["NOMBRES"], "token" => $IdToken));

@@ -42,9 +42,34 @@ fetch('menu.html')
 
         // Inicializar funcionalidades del menú
         initMenu();
+        mostrarOpcionesPorPermiso();
     })
     .catch(error => {
         console.error('Error al cargar el menú:', error);
+    });
+}
+
+
+// ============================================
+// MOSTRAR OPCIONES SEGÚN PERMISOS
+// Los enlaces con data-requiere="moderador" vienen ocultos en menu.html.
+// Solo se muestran si el servidor confirma que el usuario modera al menos un foro.
+// Si la consulta falla, quedan ocultos. Esto es solo comodidad visual:
+// la protección real está en el servidor (backend/vista_moderacion).
+// ============================================
+function mostrarOpcionesPorPermiso() {
+    const $enlaces = document.querySelectorAll('[data-requiere="moderador"]');
+    if ($enlaces.length === 0) return;
+
+    enviarPeticion({
+        url: "../backend/vista_moderacion/index.php",
+        method: "GET",
+        params: { id: "permisos" },
+        fSucces: (resp) => {
+            if (resp.code == 200 && resp.es_moderador === true) {
+                $enlaces.forEach($a => { $a.style.display = ""; });
+            }
+        }
     });
 }
 

@@ -1,6 +1,10 @@
 <?php
 
 class SessionManager {
+
+    // Cuánto dura la sesión desde que la persona inicia sesión (en segundos).
+    // 604800 = 7 días. Cámbialo aquí si quieres más o menos tiempo.
+    const DURACION = 604800;
     
     /**
      * Inicializa la sesión de forma segura si no ha sido iniciada.
@@ -8,8 +12,11 @@ class SessionManager {
     public function __construct() {
         if (session_status() === PHP_SESSION_NONE) {
             // Configuración de seguridad para las cookies de sesión
+            // cookie_lifetime: el navegador conserva la cookie ese tiempo.
+            // gc_maxlifetime: PHP no borra la sesión del servidor antes de ese tiempo.
             session_start([
-                'cookie_lifetime' => 0,
+                'cookie_lifetime' => self::DURACION,
+                'gc_maxlifetime'  => self::DURACION,
                 'cookie_secure'   => false, // Cambiar a false si no se usa HTTPS en desarrollo
                 'cookie_httponly' => true,
                 'cookie_samesite' => 'Strict'
@@ -29,6 +36,21 @@ class SessionManager {
             $_SESSION['usuario'] = $user;
             $_SESSION['id_usuario'] = $id_usuario;
         }
+        return $_SESSION['session_token'];
+    }
+
+    /**
+     * Inicia una sesión NUEVA para quien acaba de autenticarse.
+     * Descarta cualquier sesión anterior de este navegador, para que nadie herede
+     * la identidad de otra persona (getSessionToken conserva los datos si ya existían).
+     * @return string Token único de 64 caracteres.
+     */
+    public function iniciarSesion($user, $id_usuario): string {
+        session_regenerate_id(true);
+        $_SESSION = [];
+        $_SESSION['session_token'] = bin2hex(random_bytes(32));
+        $_SESSION['usuario'] = $user;
+        $_SESSION['id_usuario'] = $id_usuario;
         return $_SESSION['session_token'];
     }
 
