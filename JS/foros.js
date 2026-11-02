@@ -169,6 +169,13 @@ function seleccionarForo(id) {
     marcarForoActivo();
     actualizarTituloHilos();
     cargarHilos();
+    irALosHilos();
+}
+
+// La lista de hilos queda debajo de las tarjetas: se baja hasta ella para que se vea el efecto del clic
+function irALosHilos() {
+    const y = $.hilosTitulo.getBoundingClientRect().top + window.scrollY - 100;
+    window.scrollTo({ top: Math.max(0, y), behavior: "smooth" });
 }
 
 function marcarForoActivo() {

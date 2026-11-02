@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 30-10-2026 a las 03:54:25
+-- Tiempo de generación: 02-11-2026 a las 16:35:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -85,7 +85,8 @@ INSERT INTO `estado_emocional` (`ID_ESTADO_EMOCIONAL`, `FECHA_REG`, `ID_EMOCION`
 (11, '2026-10-03 15:52:43', 10, 5, 'Gracias Dios', 1),
 (12, '2026-10-03 16:18:52', 4, 7, 'No me alcanzo el tiempo para hacer todo lo que tenia pensado', 1),
 (13, '2026-10-12 16:51:36', 8, 5, 'No se que hacer respecto a mi relacion', 1),
-(14, '2026-10-13 01:15:14', 3, 7, 'todo good', 1);
+(14, '2026-10-13 01:15:14', 3, 7, 'todo good', 1),
+(15, '2026-11-02 15:16:56', 8, 8, 'Debo tomar una decision pero me cuesta', 1);
 
 -- --------------------------------------------------------
 
@@ -163,7 +164,8 @@ INSERT INTO `participacion` (`ID_PARTICIPACION`, `TITULO`, `CONTENIDO`, `FECHA_P
 (1, NULL, 'siento que todo avanza rápido, necesito estar al día con todo', '2026-04-16 05:22:47', 1, 'nanananananana', '2026-04-16 05:22:47', 1, 1, 3),
 (2, NULL, 'Amo a mi hijo, pero necesito espacio para mi autocuidado', '2026-04-16 05:22:48', 1, '', '2026-04-16 05:22:48', 2, 3, 1),
 (3, NULL, 'Me estoy destruyendo si continuo en mi relación de pareja, no me valora', '2026-04-16 05:25:45', 1, 'nananananananana', '2026-04-16 05:25:45', 7, 2, 1),
-(4, 'Separacion de pareja', 'La relación se torna conflictiva ya no puedo seguir mas', '2026-10-30 03:51:47', 0, NULL, NULL, 6, 1, 3);
+(4, 'Separacion de pareja', 'La relación se torna conflictiva ya no puedo seguir mas', '2026-10-30 03:51:47', 1, '', '2026-11-02 16:13:02', 6, 1, 1),
+(5, 'decision dificil', 'No es fácil tomar la decision de terminar la relación, pero es algo necesario para el bienestar de nosotros', '2026-11-02 16:12:20', 1, '', '2026-11-02 16:13:09', 6, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -420,7 +422,7 @@ ALTER TABLE `bibliografia`
 -- AUTO_INCREMENT de la tabla `estado_emocional`
 --
 ALTER TABLE `estado_emocional`
-  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT de la tabla `foro`
@@ -438,7 +440,7 @@ ALTER TABLE `gente`
 -- AUTO_INCREMENT de la tabla `participacion`
 --
 ALTER TABLE `participacion`
-  MODIFY `ID_PARTICIPACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ID_PARTICIPACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `recomendaciones`

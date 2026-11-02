@@ -3,6 +3,7 @@ import { validarUsuario, menu, salir } from './panelbootstrap.js';
 import { cargarEmociones, cargarEstadisticas } from './emocional.js';
 import { cargarSugerencia, mostrarInspiracionDelDia, cargarEstadoAlerta } from './recomendaciones.js';
 import { cargarForos } from './foros.js';
+import { cargarModeracion } from './moderacion.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
@@ -20,6 +21,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
             cargarEstadoAlerta();
         }
         if (location.pathname.includes("Participacion_foros.html")) cargarForos();
+        if (location.pathname.includes("Moderacion_contenido_foros.html")) cargarModeracion();
     }
 });
 
