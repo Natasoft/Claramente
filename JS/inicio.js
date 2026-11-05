@@ -4,10 +4,10 @@ export async function login() {
     const regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const email = document.getElementById("correo").value;
     const password = document.getElementById("password").value;
-    const hashedPassword = md5(password);
+    // La contraseña se envía tal cual; el servidor la verifica con password_verify.
+    // Al publicar el sistema, el sitio debe usar HTTPS para que viaje cifrada.
 
     //console.log("usuario:", email);
-    //console.log("Contraseña:", hashedPassword);
     if (!regex.test(email)) {
         alert("Por favor, ingresa un correo electrónico válido.");
         return;
@@ -16,13 +16,13 @@ export async function login() {
         alert("La contraseña debe tener al menos 4 caracteres.");
         return;
     }
-    const datos = { params: { usuario: email, password: hashedPassword }, "url": "../backend/vista_inicio/index.php", "method": "POST" };
+    const datos = { params: { usuario: email, password: password }, "url": "../backend/vista_inicio/index.php", "method": "POST" };
     //console.log("datos a enviar", datos);
     //console.log("Voy a ejecutar fetch");
     await enviarPeticion({
         url: "../backend/vista_inicio/index.php",
         method: "POST",
-        params: { usuario: email, password: hashedPassword },
+        params: { usuario: email, password: password },
         fSucces: (resp) => {
             //console.log("Respuesta del servidor:", resp);
             if (resp.code == 200) {

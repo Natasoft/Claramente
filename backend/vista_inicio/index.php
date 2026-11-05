@@ -10,9 +10,12 @@
                 //Validacion de parametros
                 $_POST = json_decode(file_get_contents('php://input'), true);
                 // Validar parámetros
-                if (!empty($_POST['usuario']) && !empty($_POST['password'])) {
-                    $usuario = htmlspecialchars(trim($_POST['usuario']));
-                    $password = htmlspecialchars(trim($_POST['password']));
+                if (!empty($_POST['usuario']) && !empty($_POST['password'])
+                    && is_string($_POST['usuario']) && is_string($_POST['password'])) {
+                    $usuario = trim($_POST['usuario']);
+                    // La contraseña se usa tal cual la escribió la persona: no se recorta ni se escapa.
+                    // (htmlspecialchars la cambiaría si lleva &, <, > o comillas y ya no coincidiría con su hash.)
+                    $password = $_POST['password'];
                     //echo "Usuario: $usuario, Contraseña: $password";
                    $controller = new logincontroller();
                     $result = $controller->autenticar($usuario, $password);
