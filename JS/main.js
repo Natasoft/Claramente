@@ -4,6 +4,7 @@ import { cargarEmociones, cargarEstadisticas } from './emocional.js';
 import { cargarSugerencia, mostrarInspiracionDelDia, cargarEstadoAlerta } from './recomendaciones.js';
 import { cargarForos } from './foros.js';
 import { cargarModeracion } from './moderacion.js';
+import { cargarBiblioteca } from './biblioteca.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
         }
         if (location.pathname.includes("Participacion_foros.html")) cargarForos();
         if (location.pathname.includes("Moderacion_contenido_foros.html")) cargarModeracion();
+        if (location.pathname.includes("Recomendaciones.html")) cargarBiblioteca();
     }
 });
 

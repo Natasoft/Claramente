@@ -10,9 +10,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -191,161 +188,46 @@
                         class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline">search</span>
                     <input
                         class="w-full pl-12 pr-4 py-4 rounded-full bg-surface-container-low border-none ring-1 ring-outline-variant focus:ring-2 focus:ring-primary-container font-body-md transition-all outline-none"
-                        placeholder="Buscar artículos, guías, podcasts..." type="text" />
+                        id="buscador-biblioteca" autocomplete="off"
+                        placeholder="Buscar recursos por título o tema..." type="text" />
                 </div>
             </section>
-            <!-- Filters Section -->
+            <!-- Filters Section: los temas son los foros (se cargan desde la tabla foro) -->
             <section class="mb-12 overflow-x-auto pb-4 custom-scrollbar">
-                <div class="flex gap-3 whitespace-nowrap">
-                    <button
+                <div id="filtros-temas" class="flex gap-3 whitespace-nowrap">
+                    <button type="button" data-foro=""
                         class="px-6 py-2 rounded-full bg-primary text-on-primary font-label-md text-label-md hover:brightness-110 transition-all">Todos</button>
-                    <button
-                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Ansiedad</button>
-                    <button
-                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Depresión</button>
-                    <button
-                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Autoestima</button>
-                    <button
-                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Relaciones</button>
-                    <button
-                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Mindfulness</button>
-                    <button
-                        class="px-6 py-2 rounded-full bg-surface-container-high text-on-surface-variant font-label-md text-label-md hover:bg-primary-container transition-all">Duelo</button>
                 </div>
             </section>
             <div class="grid grid-cols-1 xl:grid-cols-3 gap-10">
                 <!-- Resource Grid (Main Content) -->
                 <div class="xl:col-span-2 space-y-12">
-                    <!-- Section: Recomendadas para ti -->
+                    <!-- Section: Recomendadas para ti (según la emoción que registraste; tabla recomendaciones) -->
                     <section>
-                        <div class="flex justify-between items-center mb-6">
+                        <div class="flex justify-between items-center mb-2">
                             <h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary">
                                 Recomendadas para ti</h3>
-                            <span class="font-label-md text-label-md text-primary cursor-pointer hover:underline">Ver
-                                todo</span>
+                            <button type="button" id="ver-todo-recomendadas"
+                                class="hidden font-label-md text-label-md text-primary cursor-pointer hover:underline">Ver
+                                todo</button>
                         </div>
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                            <!-- Card 1 -->
-                            <div
-                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow group transition-transform duration-300 hover:-translate-y-1">
-                                <div class="h-48 overflow-hidden relative">
-                                    <img alt="Resilience and mental health"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        data-alt="A tranquil landscape featuring a single, vibrant green plant growing through a crack in a smooth, light grey stone. The lighting is soft and morning-like, with a gentle mist in the background. The aesthetic is clean and minimalist, using a calming color palette of soft greens, warm greys, and pale lilac accents to symbolize resilience and hope."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv5ULLf3yc8r6Imz_bp-fqTPxs_IvzHKl0YG69UyuoqMm3rjwZ8J8AcBQxJrj4Mwk9Pd9y3cb4h1DGfl-tFIAkjG3DoMPiHME3tlaRybWbUOcPpNj-vpqCbYItnmt7DGDN9kmHcvUXgqh74I7Hv2Y0SL1Tt_qKpGGc7p_upyV--hRdknfmC-kKMbTnJjK-1hoSiqPF-BS-ToW3hvsaVyBk6BNmj6_9DRnqK6tliCMCu34VY_0CziEl0JWvNmQSt4zSFUKVVWbicTAQ" />
-                                    <div class="absolute top-4 left-4">
-                                        <span
-                                            class="bg-verde-menta/80 backdrop-blur-md text-on-secondary-fixed px-3 py-1 rounded-full font-label-sm text-label-sm">Ansiedad</span>
-                                    </div>
-                                </div>
-                                <div class="p-6">
-                                    <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">5 Técnicas de respiración
-                                        rápida</h4>
-                                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">
-                                        Aprende a calmar tu sistema nervioso en menos de tres minutos con estos
-                                        ejercicios probados clínicamente.</p>
-                                    <div class="flex justify-between items-center">
-                                        <button
-                                            class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Ver
-                                            recurso</button>
-                                        <button
-                                            class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-calm-peach/30 transition-all text-on-surface-variant">
-                                            <span class="material-symbols-outlined">favorite</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 2 -->
-                            <div
-                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow group transition-transform duration-300 hover:-translate-y-1">
-                                <div class="h-48 overflow-hidden relative">
-                                    <img alt="Peaceful journaling"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        data-alt="An overhead view of a minimalist desk with an open, blank journal and a simple pen. Beside it sits a ceramic cup of tea emitting soft steam. The lighting is diffuse and serene, casting gentle shadows. The color story is dominated by warm wood tones, off-whites, and a hint of soft lilac, creating a peaceful, contemplative mood for journaling."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA1tO1O1T-G3N1aAWizCpVb4rnWFSoQf0DYW4rvv1bc4FHLsN_EwGKZjLbrjBhqP-GiKAtF6QcvrfZPXuMJ1eFZNRKApn-cQvjPNavRj-P8gWIiPOVvoVtB5q8H9p9EiNVV2fBwLQPxpkTJ_jd1wLCQwiDQOq9_UiXPgb264IJU41YXTDkz18JmE4OzxztJu0HDihPqVLEU47Oa93NyFdgdKlXrur4zSG1wChC0--sorlAMzlCkLMA_sZQMIuVdcAHWjl3qptvgreMl" />
-                                    <div class="absolute top-4 left-4">
-                                        <span
-                                            class="bg-calm-peach/80 backdrop-blur-md text-on-tertiary-fixed-variant px-3 py-1 rounded-full font-label-sm text-label-sm">Autoestima</span>
-                                    </div>
-                                </div>
-                                <div class="p-6">
-                                    <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">El arte del diálogo
-                                        interno</h4>
-                                    <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2">Cómo
-                                        transformar tu voz crítica en una aliada compasiva para mejorar tu bienestar
-                                        diario.</p>
-                                    <div class="flex justify-between items-center">
-                                        <button
-                                            class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Ver
-                                            recurso</button>
-                                        <button
-                                            class="w-10 h-10 flex items-center justify-center rounded-full bg-surface-container hover:bg-calm-peach/30 transition-all text-on-surface-variant">
-                                            <span class="material-symbols-outlined">favorite</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                        <p id="recomendadas-motivo" class="font-body-md text-body-md text-on-surface-variant mb-6"></p>
+                        <div id="recomendadas-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <p class="font-body-md text-body-md text-on-surface-variant md:col-span-2">Cargando
+                                recomendaciones...</p>
                         </div>
                     </section>
-                    <!-- Section: Biblioteca General (Bento-ish) -->
+                    <!-- Section: Biblioteca General (agrupada por tema o foro; tabla bibliografia) -->
                     <section>
                         <h3 class="font-headline-md text-headline-md-mobile md:text-headline-md text-primary mb-6">
                             Explora la Biblioteca</h3>
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <!-- Card 3 -->
-                            <div
-                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-shadow flex flex-col md:flex-row col-span-1 sm:col-span-2 group">
-                                <div class="md:w-1/3 h-48 md:h-auto overflow-hidden">
-                                    <img alt="Meditation and focus"
-                                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                                        data-alt="A person sitting in a peaceful yoga pose on a terrace overlooking a calm sea at sunset. The lighting is golden and warm, creating a profound sense of tranquility. The overall aesthetic is clean and artistic, with a focus on harmony and balance, featuring a color palette of soft oranges, deep purples, and calming blues."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGweMz3vf7ujnBHpDcxNiSrXqjO3E8oTTRVyvCA_Y3NqUB1mIGV4eIPOARPFwKLCD3nVr6TR92mlqmsmCnIgzCBNKA_iSJbSjcFLQBJjZ7Ny89ZHuJFx8kfYI6-aAjLplDsMHJTbjfsdPrb9vIAWKrQGUyezF9sB8R0C8fpPFqE9fVeAdZKbxSf5EEFfFgbNqSUXn8sOnQIA9-92AmbbftriwpOnZzL_8xs7j21JJW6OpvFMctd3mTPhKiRVlGH00HAdIsYyyGXwzl" />
-                                </div>
-                                <div class="p-6 md:p-8 md:w-2/3 flex flex-col justify-center">
-                                    <span class="text-primary font-label-md text-label-md mb-2">Podcast • 15 min</span>
-                                    <h4 class="font-title-lg text-title-lg text-ink-dark mb-3">Meditación guiada para el
-                                        sueño profundo</h4>
-                                    <p class="font-body-md text-body-md text-on-surface-variant mb-6">Una sesión
-                                        auditiva diseñada para soltar las tensiones del día y facilitar un descanso
-                                        reparador.</p>
-                                    <div class="flex gap-4">
-                                        <button
-                                            class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Escuchar
-                                            ahora</button>
-                                        <button
-                                            class="border border-primary text-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:bg-primary/5 transition-all">Guardar</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card 4 -->
-                            <div
-                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-shadow hover:-translate-y-1 transition-all">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-verde-menta/20 flex items-center justify-center text-secondary mb-4">
-                                    <span class="material-symbols-outlined">menu_book</span>
-                                </div>
-                                <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">Guía del Duelo</h4>
-                                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Un manual comprensivo
-                                    sobre las etapas del duelo y cómo navegar la pérdida con paciencia.</p>
-                                <a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2"
-                                    href="#">Descargar PDF <span
-                                        class="material-symbols-outlined text-sm">download</span></a>
-                            </div>
-                            <!-- Card 5 -->
-                            <div
-                                class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-shadow hover:-translate-y-1 transition-all">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-primary-container/20 flex items-center justify-center text-primary mb-4">
-                                    <span class="material-symbols-outlined">videocam</span>
-                                </div>
-                                <h4 class="font-title-lg text-title-lg text-ink-dark mb-2">Taller de Ansiedad Social
-                                </h4>
-                                <p class="font-body-md text-body-md text-on-surface-variant mb-4">Serie de 4 videos con
-                                    estrategias prácticas para enfrentar situaciones sociales complejas.</p>
-                                <a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2"
-                                    href="#">Ver videos <span
-                                        class="material-symbols-outlined text-sm">arrow_forward</span></a>
-                            </div>
+                        <div id="biblioteca-grid" class="space-y-10">
+                            <p class="font-body-md text-body-md text-on-surface-variant">Cargando biblioteca...</p>
+                        </div>
+                        <div class="mt-8 text-center">
+                            <button type="button" id="btn-mas-recursos"
+                                class="hidden font-label-md text-label-md text-primary border border-primary/20 px-8 py-3 rounded-full hover:bg-primary/5 transition-colors">Ver
+                                más recursos</button>
                         </div>
                     </section>
                 </div>
@@ -355,78 +237,16 @@
                         <h3 class="font-title-lg text-title-lg text-primary mb-6 flex items-center gap-2">
                             <span class="material-symbols-outlined"
                                 style="font-variation-settings: 'FILL' 1;">star</span>
-                            Lo más consultado
+                            Te puede interesar
                         </h3>
-                        <div class="space-y-6">
-                            <!-- Popular Item 1 -->
-                            <div class="flex gap-4 group cursor-pointer">
-                                <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
-                                    <img alt="Mindfulness decor" class="w-full h-full object-cover"
-                                        data-alt="A macro photograph of a stack of smooth, dark river stones balanced perfectly on a clean wooden surface. A single white flower petal rests on top. The background is a soft blur of sage green and pale lilac. The lighting is natural and bright, conveying a sense of focus, balance, and modern zen aesthetic."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5Uf8aQ2XT8UNS16w2YTS2YM827gGqkzh7aNJInAqMQ87dewM23GhqJUvVowLxMsV_eUJBFhEGXhK-3Fw7N3_fyUp8rPB9IAE5Y8KEVpkWKsSiBmQ432vkp2gWacInCLD6CHwAsGtUz7BAstTzRbtND5cUPdi9NdsbpPgOyZx35u_Lbte-j0cmkRmL4bPDe8CReG8GcsWZmBygvIuQi0YF3VgcArxY5ns4h2-n2rUA-NxB9Kd-q-jh5VkThTE5qNuOblAlKQnG13Df" />
-                                </div>
-                                <div>
-                                    <h5
-                                        class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">
-                                        Vencer el insomnio</h5>
-                                    <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Guía
-                                        práctica nocturna</p>
-                                    <div class="flex items-center gap-1 mt-1">
-                                        <span
-                                            class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
-                                        <span class="font-label-sm text-label-sm text-on-surface-variant">2.4k
-                                            lecturas</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Popular Item 2 -->
-                            <div class="flex gap-4 group cursor-pointer">
-                                <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
-                                    <img alt="Calming waves" class="w-full h-full object-cover"
-                                        data-alt="A stylized digital illustration of soft, rolling ocean waves in shades of lavender and seafoam green. The style is flat yet textured, evoking a sense of rhythmic peace. The lighting is consistent with a bright afternoon, clear and optimistic, fitting the serene and supportive atmosphere of a mental health platform."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDxwHYk8rBny8HsK4SjBndeHQqQVu8VkCnj7SnWkEwwH2fdPVstPYBvb4EsXb575Qi8D01Jcs3uG9emYZ15T-DduE-xtz2x_qw99mqg43plY1IQBrX7qFRH5NRzIHFSN1sRdsC1c3QzlpYjr0z3o_MVvmB0oT82tHw8rqTi4vW0KVjf-UlBOeLTvUu5I-D07Ix1L2JMmnIOvKzkBGx6HMXllug_yrjBkakPvfc15XHO5EPfHyvGKcNU3SvOsZjt9_U2kTicYEe-yFi" />
-                                </div>
-                                <div>
-                                    <h5
-                                        class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">
-                                        Ansiedad y Trabajo</h5>
-                                    <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Límites
-                                        saludables en la oficina</p>
-                                    <div class="flex items-center gap-1 mt-1">
-                                        <span
-                                            class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
-                                        <span class="font-label-sm text-label-sm text-on-surface-variant">1.8k
-                                            lecturas</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Popular Item 3 -->
-                            <div class="flex gap-4 group cursor-pointer">
-                                <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0">
-                                    <img alt="Stretching" class="w-full h-full object-cover"
-                                        data-alt="A serene indoor scene featuring a yoga mat and a small succulent plant by a window. Soft sunlight filters through sheer white curtains, creating a dappled light effect. The color palette is composed of soft whites, pale greens, and delicate purple tones, emphasizing a clean, restorative, and modern interior aesthetic."
-                                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6_CM-6eBAh0A8UH-3KexWnxIEj4qhmmx09Kx1a_MzHTqH8mRY4XLQLeXxFTBwFeXLvie09JXcfvnrAkJFBFa27vYrUiNOYoIeNM09NtuI9YTdb4zT7CyV2KW_fqJ4V4yooEdRPf5_KrhcAUNXxxd3-_2XrBaBRYsnDuEWO2CzIcvDBp7qCLJ8x0CjdH_gk_tOAIktn83BvVNV2bsA4AQc0ngpXh7pCjOnv2D0x39m6MucNGdFNrJl1oNNj2HDqC7kgFfjsH_vdz08" />
-                                </div>
-                                <div>
-                                    <h5
-                                        class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors">
-                                        Mindful Eating</h5>
-                                    <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1">Relación
-                                        sana con la comida</p>
-                                    <div class="flex items-center gap-1 mt-1">
-                                        <span
-                                            class="material-symbols-outlined text-[14px] text-on-surface-variant">visibility</span>
-                                        <span class="font-label-sm text-label-sm text-on-surface-variant">1.2k
-                                            lecturas</span>
-                                    </div>
-                                </div>
-                            </div>
+                        <div id="sugeridos-lista" class="space-y-6">
+                            <p class="font-label-md text-label-md text-on-surface-variant">Cargando...</p>
                         </div>
                         <div class="mt-10 p-6 bg-primary-container/20 rounded-2xl border border-primary-container/30">
                             <h4 class="font-title-lg text-title-lg text-primary mb-2">¿No encuentras lo que buscas?</h4>
                             <p class="font-body-md text-body-md text-on-surface-variant mb-4">Nuestro equipo de
                                 psicólogos puede sugerir recursos personalizados para ti.</p>
-                            <button
+                            <button type="button" id="btn-solicitar-ayuda"
                                 class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md hover:brightness-110 transition-all">Solicitar
                                 ayuda</button>
                         </div>
@@ -435,6 +255,110 @@
             </div>
         </div>
     </main>
+
+    <!-- =====================================================================
+         MOLDES de las tarjetas. No se ven en pantalla: el JavaScript los copia
+         y rellena cada [data-campo] con los datos de la base de datos.
+         Si quieres cambiar el aspecto de una tarjeta, se hace aquí.
+         ===================================================================== -->
+    <!-- "Recomendadas para ti" -->
+    <template id="tpl-recomendada">
+        <div
+            class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-glow group transition-transform duration-300 hover:-translate-y-1">
+            <div class="h-48 overflow-hidden relative flex items-center justify-center bg-primary-container/20"
+                data-campo="media">
+                <span
+                    class="material-symbols-outlined text-primary text-6xl transition-transform duration-500 group-hover:scale-110"
+                    data-campo="icono">menu_book</span>
+                <div class="absolute top-4 left-4">
+                    <span
+                        class="bg-primary-container/80 backdrop-blur-md text-on-primary-container px-3 py-1 rounded-full font-label-sm text-label-sm"
+                        data-campo="etiqueta"></span>
+                </div>
+            </div>
+            <div class="p-6">
+                <h4 class="font-title-lg text-title-lg text-ink-dark mb-2" data-campo="titulo"></h4>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6 line-clamp-2" data-campo="descripcion"></p>
+                <div class="flex justify-between items-center">
+                    <a class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all"
+                        data-campo="enlace" target="_blank" rel="noopener noreferrer">Ver recurso</a>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- "Explora la Biblioteca": bloque de un tema (nombre del foro arriba y sus recursos debajo) -->
+    <template id="tpl-tema">
+        <div>
+            <div class="flex justify-between items-end gap-4 mb-4">
+                <h4 class="font-title-lg text-title-lg text-primary" data-campo="titulo"></h4>
+                <button type="button"
+                    class="hidden font-label-md text-label-md text-primary hover:underline whitespace-nowrap"
+                    data-campo="ver-todos"></button>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6" data-campo="tarjetas"></div>
+        </div>
+    </template>
+    <!-- "Explora la Biblioteca": tarjeta ancha (la primera de cada bloque) -->
+    <template id="tpl-destacado">
+        <div
+            class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 overflow-hidden soft-glow flex flex-col md:flex-row col-span-1 sm:col-span-2 group">
+            <div class="md:w-1/3 h-48 md:h-auto overflow-hidden flex items-center justify-center bg-primary-container/20"
+                data-campo="media">
+                <span
+                    class="material-symbols-outlined text-primary text-7xl transition-transform duration-500 group-hover:scale-110"
+                    data-campo="icono">menu_book</span>
+            </div>
+            <div class="p-6 md:p-8 md:w-2/3 flex flex-col justify-center">
+                <div class="flex items-center gap-3 mb-2 flex-wrap">
+                    <span class="text-primary font-label-md text-label-md" data-campo="meta"></span>
+                    <span class="hidden px-2 py-0.5 rounded-md font-label-sm text-label-sm" data-campo="modalidad"></span>
+                </div>
+                <h4 class="font-title-lg text-title-lg text-ink-dark mb-1" data-campo="titulo"></h4>
+                <p class="hidden font-label-md text-label-md text-on-surface-variant mb-3" data-campo="autor"></p>
+                <p class="font-body-md text-body-md text-on-surface-variant mb-6" data-campo="descripcion"></p>
+                <div class="flex gap-4">
+                    <a class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:brightness-110 transition-all"
+                        data-campo="enlace" target="_blank" rel="noopener noreferrer"><span
+                            data-campo="texto-enlace">Ver recurso</span></a>
+                </div>
+            </div>
+        </div>
+    </template>
+    <!-- "Explora la Biblioteca": tarjeta normal -->
+    <template id="tpl-recurso">
+        <div
+            class="bg-surface-container-lowest rounded-[24px] border border-outline-variant/30 p-6 soft-glow hover:-translate-y-1 transition-all">
+            <div class="flex items-start justify-between gap-3 mb-4">
+                <div class="w-12 h-12 rounded-xl bg-verde-menta/20 flex items-center justify-center text-secondary"
+                    data-campo="media">
+                    <span class="material-symbols-outlined" data-campo="icono">menu_book</span>
+                </div>
+                <span class="hidden px-2 py-0.5 rounded-md font-label-sm text-label-sm" data-campo="modalidad"></span>
+            </div>
+            <span class="text-primary font-label-sm text-label-sm" data-campo="meta"></span>
+            <h4 class="font-title-lg text-title-lg text-ink-dark mb-1" data-campo="titulo"></h4>
+            <p class="hidden font-label-sm text-label-sm text-on-surface-variant mb-2" data-campo="autor"></p>
+            <p class="font-body-md text-body-md text-on-surface-variant mb-4 line-clamp-3" data-campo="descripcion"></p>
+            <a class="text-primary font-label-md text-label-md font-bold hover:underline inline-flex items-center gap-2"
+                data-campo="enlace" target="_blank" rel="noopener noreferrer"><span
+                    data-campo="texto-enlace">Ver recurso</span> <span
+                    class="material-symbols-outlined text-sm">arrow_forward</span></a>
+        </div>
+    </template>
+    <!-- Tarjeta lateral "Te puede interesar" -->
+    <template id="tpl-sugerido">
+        <a class="flex gap-4 group cursor-pointer" data-campo="enlace" target="_blank" rel="noopener noreferrer">
+            <div class="w-16 h-16 rounded-xl bg-white overflow-hidden flex-shrink-0 flex items-center justify-center"
+                data-campo="media">
+                <span class="material-symbols-outlined text-primary" data-campo="icono">menu_book</span>
+            </div>
+            <div class="min-w-0">
+                <h5 class="font-label-md text-label-md text-ink-dark font-bold group-hover:text-primary transition-colors"
+                    data-campo="titulo"></h5>
+                <p class="font-label-sm text-label-sm text-on-surface-variant line-clamp-1" data-campo="descripcion"></p>
+            </div>
+        </a>
+    </template>
     <!-- Footer -->
     <footer
         class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
@@ -474,31 +398,6 @@
             <span class="text-[10px] font-label-sm">Comunidad</span>
         </button>
     </nav>
-    <script>
-        // Simple micro-interactions
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-4px)';
-                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Simulating loading animation for charts
-        window.addEventListener('load', () => {
-            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
-            bars.forEach(bar => {
-                const targetHeight = bar.style.height;
-                bar.style.height = '0';
-                setTimeout(() => {
-                    bar.style.transition = 'height 1.5s ease-out';
-                    bar.style.height = targetHeight;
-                }, 200);
-            });
-        });
-    </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
 
