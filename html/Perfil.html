@@ -10,9 +10,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -180,14 +177,12 @@
         <div class="max-w-container-max mx-auto space-y-8">
 
             <!-- Header Section -->
-            <header class="mb-xl flex flex-col md:flex-row md:items-center justify-between gap-md">
+            <header class="mb-8 flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 class="font-headline-md text-headline-md text-primary">Gestión de Cuenta</h1>
-                    <p class="text-on-surface-variant font-body-md text-body-md">Administra tu información personal y
-                        preferencias
-                        del portal.</p>
+                    <p class="text-on-surface-variant font-body-md text-body-md">Consulta y actualiza tu información
+                        personal.</p>
                 </div>
-                <!-- Nav Pills -->
             </header>
             <!-- INTERFACE 1: PERFIL -->
             <section class="space-y-6 transition-opacity duration-300" id="content-perfil">
@@ -196,78 +191,73 @@
                     <div class="lg:col-span-2 glass-card rounded-3xl soft-glow overflow-hidden">
                         <div class="p-6 border-b border-outline-variant/20 flex items-center justify-between">
                             <h3 class="font-title-lg text-title-lg">Información Personal</h3>
-                            <span
-                                class="px-sm py-1 bg-warning/20 text-tertiary-fixed-dim rounded-lg text-label-sm font-bold border border-warning/30">Miembro
-                                Premium</span>
+                            <span id="perfil-rol"
+                                class="px-3 py-1 bg-primary-container/30 text-on-primary-container rounded-lg text-label-sm font-bold border border-primary-container/50">—</span>
                         </div>
                         <div class="p-6">
                             <div class="flex flex-col md:flex-row gap-8 items-center md:items-start mb-8">
                                 <div class="relative group">
                                     <div class="w-[120px] h-[120px] rounded-full border-4 border-primary p-1 bg-white">
-                                        <div class="w-full h-full rounded-full bg-surface-container overflow-hidden">
-                                            <img class="w-full h-full object-cover"
-                                                data-alt="A professional studio portrait of a serene woman in her late 30s with a warm and composed expression. She has soft, natural lighting on her face, accentuating her professional and reliable demeanor. The background is a soft-focus minimalist wellness clinic with light lavender and warm wood accents. The overall aesthetic is clean, light, and premium corporate."
-                                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBbVCWDFcTNlGHCYNOeapjHwzkyrXJV0Ifly2hjLzlnZ4s6rwT_6m6jUW9TZ5NTSfsajVjzSy_HptOyDF_juxCcyoQ5J9ZRfwSIcKT-fLOgYZn9qikYjiLOobh9kwT1GK4O3CLPjAQ7n_e1OBBjwVeJYgV_P-dISTCKqqSg9486WOot5GmaXcKMUKnUr363sHERP8Rnw8SvnU_aTrwpYbrtu1W48nxPeKYJIbA-ZkfIcpSYgPz3f0a7uiYTjVDvNUJ8UlKaPLSx2T47" />
+                                        <div
+                                            class="w-full h-full rounded-full bg-primary-container/30 flex items-center justify-center">
+                                            <span id="perfil-inicial" class="font-headline-md text-5xl text-primary"
+                                                aria-hidden="true">?</span>
                                         </div>
                                     </div>
-                                    <button
-                                        class="absolute bottom-0 right-0 bg-primary text-white p-xs rounded-full soft-glow hover:scale-110 transition-transform">
-                                        <span class="material-symbols-outlined text-base">photo_camera</span>
-                                    </button>
                                 </div>
                                 <div class="flex-1 text-center md:text-left">
-                                    <h4 class="font-headline-md text-headline-md">Elena Valdivia</h4>
-                                    <p class="text-body-md text-outline mb-sm italic">"En busca de un equilibrio
-                                        consciente entre el trabajo y la vida personal."</p>
-                                    <div class="flex flex-wrap justify-center md:justify-start gap-1">
-                                        <span
-                                            class="text-label-sm px-2 py-1 bg-primary-subtle text-primary rounded-lg">Mindfulness</span>
-                                        <span
-                                            class="text-label-sm px-2 py-1 bg-primary-subtle text-primary rounded-lg">Productividad</span>
-                                        <span
-                                            class="text-label-sm px-2 py-1 bg-primary-subtle text-primary rounded-lg">Bienestar</span>
-                                    </div>
+                                    <h4 id="perfil-nombre" class="font-headline-md text-headline-md">—</h4>
+                                    <p id="perfil-tipo" class="text-body-md text-outline italic">—</p>
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
                                 <div class="space-y-2">
-                                    <label class="text-label-md text-outline flex items-center gap-1">
+                                    <label for="inp-nombres" class="text-label-md text-outline flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm">person</span> Nombres
+                                    </label>
+                                    <p id="val-nombres" class="font-body-md text-body-md font-bold">—</p>
+                                    <input id="inp-nombres" type="text" maxlength="30" autocomplete="given-name"
+                                        class="hidden w-full rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md" />
+                                </div>
+                                <div class="space-y-2">
+                                    <label for="inp-apellidos" class="text-label-md text-outline flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm">badge</span> Apellidos
+                                    </label>
+                                    <p id="val-apellidos" class="font-body-md text-body-md font-bold">—</p>
+                                    <input id="inp-apellidos" type="text" maxlength="30" autocomplete="family-name"
+                                        class="hidden w-full rounded-xl bg-surface-container-low border-none focus:ring-2 focus:ring-primary-container font-body-md" />
+                                </div>
+                                <div class="space-y-2">
+                                    <span class="text-label-md text-outline flex items-center gap-1">
                                         <span class="material-symbols-outlined text-sm">mail</span> Correo electrónico
-                                    </label>
-                                    <p class="font-body-md text-body-md font-bold">elena.valdivia@empresa.com</p>
+                                    </span>
+                                    <p id="val-correo" class="font-body-md text-body-md font-bold break-all">—</p>
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-label-md text-outline flex items-center gap-1">
-                                        <span class="material-symbols-outlined text-sm">call</span> Teléfono
-                                    </label>
-                                    <p class="font-body-md text-body-md font-bold">+34 612 345 678</p>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-label-md text-outline flex items-center gap-1">
-                                        <span class="material-symbols-outlined text-sm">location_on</span> Ubicación
-                                    </label>
-                                    <p class="font-body-md text-body-md font-bold">Madrid, España</p>
-                                </div>
-                                <div class="space-y-2">
-                                    <label class="text-label-md text-outline flex items-center gap-1">
-                                        <span class="material-symbols-outlined text-sm">calendar_month</span> Fecha de
-                                        registro
-                                    </label>
-                                    <p class="font-body-md text-body-md font-bold">15 de Marzo, 2023</p>
+                                    <span class="text-label-md text-outline flex items-center gap-1">
+                                        <span class="material-symbols-outlined text-sm">calendar_month</span> Primer registro emocional
+                                    </span>
+                                    <p id="val-desde" class="font-body-md text-body-md font-bold">—</p>
                                 </div>
                             </div>
-                            <div class="mt-8 pt-xl border-t border-outline-variant/20">
-                                <label class="text-label-md text-outline block mb-xs">Biografía</label>
+                            <div class="mt-8 pt-6 border-t border-outline-variant/20">
+                                <span class="text-label-md text-outline block mb-1">Así te ven en la comunidad</span>
+                                <p id="perfil-visible" class="font-body-md text-body-md font-bold mb-1">—</p>
                                 <p class="text-body-md text-on-surface-variant leading-relaxed">
-                                    Consultora senior especializada en recursos humanos con más de 10 años de
-                                    experiencia. Elena utiliza Lumina Wellness para gestionar el estrés corporativo y
-                                    mantener una rutina de salud mental estable. Apasionada de la lectura clásica y las
-                                    caminatas matutinas.
+                                    En los foros, las demás personas ven solo tu primer nombre y la inicial de tu
+                                    apellido.
                                 </p>
                             </div>
-                            <div class="mt-8 flex justify-end">
-                                <button
-                                    class="px-8 py-2 bg-primary text-white rounded-xl font-label-md soft-glow hover:bg-primary/90 transition-all active:scale-95 flex items-center gap-sm">
+                            <p id="perfil-msg" role="status" class="hidden mt-6 font-label-md text-label-md"></p>
+                            <div class="mt-8 flex flex-wrap justify-end gap-3">
+                                <button id="btn-cancelar-edicion" type="button"
+                                    class="hidden px-6 py-2 bg-surface-container-high text-on-surface-variant rounded-xl font-label-md hover:brightness-95 transition-all">Cancelar</button>
+                                <button id="btn-guardar-perfil" type="button"
+                                    class="hidden px-8 py-2 bg-primary text-white rounded-xl font-label-md soft-glow hover:bg-primary/90 transition-all active:scale-95 items-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">check</span> Guardar cambios
+                                </button>
+                                <button id="btn-editar-perfil" type="button"
+                                    class="px-8 py-2 bg-primary text-white rounded-xl font-label-md soft-glow hover:bg-primary/90 transition-all active:scale-95 flex items-center gap-2">
                                     <span class="material-symbols-outlined text-sm">edit</span> Editar perfil
                                 </button>
                             </div>
@@ -280,32 +270,30 @@
                             <div class="space-y-4">
                                 <div>
                                     <div class="flex justify-between text-label-sm mb-2">
-                                        <span>Racha de bienestar</span>
-                                        <span class="text-primary font-bold">12 días</span>
+                                        <span>Días con registro (últimos 30)</span>
+                                        <span id="prog-dias" class="text-primary font-bold">—</span>
                                     </div>
                                     <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-                                        <div class="bg-primary h-full w-[60%]"></div>
+                                        <div id="prog-dias-barra" class="bg-primary h-full transition-all duration-700"
+                                            style="width: 0%"></div>
                                     </div>
                                 </div>
-                                <div>
-                                    <div class="flex justify-between text-label-sm mb-2">
-                                        <span>Sesiones completadas</span>
-                                        <span class="text-primary font-bold">48/50</span>
-                                    </div>
-                                    <div class="w-full bg-surface-container-high h-2 rounded-full overflow-hidden">
-                                        <div class="bg-primary h-full w-[96%]"></div>
-                                    </div>
+                                <div class="flex justify-between text-label-sm">
+                                    <span>Emociones registradas en total</span>
+                                    <span id="prog-total" class="text-primary font-bold">—</span>
                                 </div>
                             </div>
                         </div>
                         <div class="bg-primary text-white p-6 rounded-xl soft-glow relative overflow-hidden">
                             <div class="relative z-10">
                                 <h5 class="font-title-lg text-title-lg mb-2">¿Necesitas ayuda?</h5>
-                                <p class="text-body-sm opacity-90 mb-4">Nuestros asesores de bienestar están
-                                    disponibles 24/7 para premium.</p>
-                                <button
-                                    class="w-full py-2 bg-white text-primary rounded-lg font-label-md hover:bg-secondary-fixed transition-all">Contactar
-                                    Soporte</button>
+                                <p class="text-label-md opacity-90 mb-4">Si estás pasando por un momento difícil, no
+                                    tienes que atravesarlo en soledad. Habla con alguien de confianza o con un
+                                    profesional de la salud mental.</p>
+                                <!-- Este botón se activa cuando exista un canal de ayuda real (correo, línea de atención...) -->
+                                <a id="btn-ayuda" href="#"
+                                    class="hidden w-full py-2 bg-white text-primary rounded-lg font-label-md text-center hover:bg-secondary-fixed transition-all">Contactar
+                                    ayuda</a>
                             </div>
                             <span
                                 class="material-symbols-outlined absolute -bottom-4 -right-4 text-[120px] opacity-10 rotate-12">support_agent</span>
@@ -317,28 +305,27 @@
         </div>
     </main>
     <!-- SUCCESS ALERT (Hidden) -->
-    <div class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out"
-        id="toast-success">
-        <div class="bg-success text-white px-xl py-md rounded-xl soft-glow flex items-center gap-md">
+    <div class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out pointer-events-none"
+        id="toast-success" role="status" aria-live="polite">
+        <div class="bg-secondary text-white px-6 py-4 rounded-xl soft-glow flex items-center gap-3">
             <span class="material-symbols-outlined">check_circle</span>
-            <span class="font-label-md">¡Configuración guardada correctamente!</span>
+            <span id="toast-texto" class="font-label-md">¡Cambios guardados correctamente!</span>
         </div>
     </div>
     <!-- CONFIRMATION MODAL -->
-    <div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-md"
+    <div class="fixed inset-0 bg-inverse-surface/40 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300 flex items-center justify-center p-4"
         id="modal-backdrop">
-        <div
+        <div id="modal-caja" role="dialog" aria-modal="true" aria-labelledby="modal-titulo"
             class="bg-surface-container-lowest max-w-md w-full rounded-xl soft-glow overflow-hidden transform scale-95 transition-transform duration-300">
             <div class="p-6">
-                <h3 class="font-title-lg text-title-lg mb-md">Confirmar Cambios</h3>
-                <p class="text-body-md text-on-surface-variant">¿Estás seguro de que deseas guardar las modificaciones
-                    realizadas en tu perfil y configuración?</p>
+                <h3 id="modal-titulo" class="font-title-lg text-title-lg mb-4">Confirmar Cambios</h3>
+                <p class="text-body-md text-on-surface-variant">¿Quieres guardar los cambios en tu perfil?</p>
             </div>
-            <div class="p-6 bg-surface-container flex justify-end gap-md">
-                <button class="px-6 py-1 text-on-surface-variant font-label-md"
-                    onclick="toggleModal(false)">Volver</button>
-                <button class="px-8 py-2 bg-primary text-white rounded-lg font-label-md soft-glow"
-                    onclick="confirmSave()">Confirmar y Guardar</button>
+            <div class="p-6 bg-surface-container flex justify-end gap-3">
+                <button id="btn-modal-volver" type="button"
+                    class="px-6 py-1 text-on-surface-variant font-label-md">Volver</button>
+                <button id="btn-modal-confirmar" type="button"
+                    class="px-8 py-2 bg-primary text-white rounded-lg font-label-md soft-glow">Confirmar y Guardar</button>
             </div>
         </div>
     </div>
@@ -381,150 +368,7 @@
             <span class="text-[10px] font-label-sm">Comunidad</span>
         </button>
     </nav>
-    <script>
-        // Simple micro-interactions
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-4px)';
-                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Simulating loading animation for charts
-        window.addEventListener('load', () => {
-            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
-            bars.forEach(bar => {
-                const targetHeight = bar.style.height;
-                bar.style.height = '0';
-                setTimeout(() => {
-                    bar.style.transition = 'height 1.5s ease-out';
-                    bar.style.height = targetHeight;
-                }, 200);
-            });
-        });
-    </script>
     <script type="module" src="../JS/main.js"></script>
-</body>
-
-</html>
-
-
-<script>
-    // Sidebar Mobile Toggle
-    const toggleBtn = document.getElementById('toggle-sidebar');
-    const sidebar = document.getElementById('sidebar');
-    let isSidebarOpen = false;
-
-    toggleBtn.addEventListener('click', () => {
-        isSidebarOpen = !isSidebarOpen;
-        if (isSidebarOpen) {
-            sidebar.classList.remove('-translate-x-full');
-            sidebar.classList.add('translate-x-0', 'shadow-2xl');
-        } else {
-            sidebar.classList.add('-translate-x-full');
-            sidebar.classList.remove('translate-x-0', 'shadow-2xl');
-        }
-    });
-
-    // Tab Switching Logic
-    function switchTab(tabId) {
-        const perfilContent = document.getElementById('content-perfil');
-        const configContent = document.getElementById('content-config');
-
-        const pillPerfil = document.getElementById('pill-perfil');
-        const pillConfig = document.getElementById('pill-config');
-
-        const subPerfil = document.getElementById('sub-perfil');
-        const subConfig = document.getElementById('sub-config');
-
-        // Reset
-        perfilContent.classList.add('hidden');
-        configContent.classList.add('hidden');
-
-        pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
-        pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-inactive transition-all';
-
-        subPerfil.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
-        subConfig.className = 'w-full text-left px-md py-xs rounded-lg text-label-sm text-on-surface-variant hover:bg-primary-subtle transition-all';
-
-        // Set Active
-        if (tabId === 'perfil') {
-            perfilContent.classList.remove('hidden');
-            pillPerfil.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
-            subPerfil.classList.add('active-subitem');
-            subPerfil.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
-        } else {
-            configContent.classList.remove('hidden');
-            pillConfig.className = 'px-xl py-xs rounded-full font-label-md nav-pill-active transition-all';
-            subConfig.classList.add('active-subitem');
-            subConfig.classList.remove('text-on-surface-variant', 'hover:bg-primary-subtle');
-        }
-
-        // Close mobile sidebar after click
-        if (window.innerWidth < 768) {
-            sidebar.classList.add('-translate-x-full');
-            isSidebarOpen = false;
-        }
-
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Modal Logic
-    function toggleModal(show) {
-        const modal = document.getElementById('modal-backdrop');
-        if (show) {
-            modal.classList.remove('hidden');
-            setTimeout(() => {
-                modal.classList.add('opacity-100');
-                modal.querySelector('div').classList.add('scale-100');
-            }, 10);
-        } else {
-            modal.classList.remove('opacity-100');
-            modal.querySelector('div').classList.remove('scale-100');
-            setTimeout(() => modal.classList.add('hidden'), 300);
-        }
-    }
-
-    function handleSave() {
-        const form = document.getElementById('password-form');
-        if (form.checkValidity()) {
-            toggleModal(true);
-        } else {
-            form.classList.add('was-validated');
-            // Trigger visual cues for validation
-            const inputs = form.querySelectorAll('input:invalid');
-            inputs.forEach(input => {
-                input.classList.add('border-error');
-            });
-        }
-    }
-
-    function confirmSave() {
-        toggleModal(false);
-        const toast = document.getElementById('toast-success');
-        toast.classList.remove('translate-y-20', 'opacity-0');
-        toast.classList.add('translate-y-0', 'opacity-100');
-
-        setTimeout(() => {
-            toast.classList.add('translate-y-20', 'opacity-0');
-            toast.classList.remove('translate-y-0', 'opacity-100');
-        }, 3000);
-    }
-
-    // Responsive Sidebar Adjustment
-    window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768) {
-            sidebar.classList.remove('-translate-x-full');
-            isSidebarOpen = false;
-        } else {
-            if (!isSidebarOpen) sidebar.classList.add('-translate-x-full');
-        }
-    });
-</script>
-<script type="module" src="../JS/main.js"></script>
 </body>
 
 </html>

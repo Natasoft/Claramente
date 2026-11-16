@@ -5,6 +5,7 @@ import { cargarSugerencia, mostrarInspiracionDelDia, cargarEstadoAlerta } from '
 import { cargarForos } from './foros.js';
 import { cargarModeracion } from './moderacion.js';
 import { cargarBiblioteca } from './biblioteca.js';
+import { cargarPerfil } from './perfil.js';
 
 document.addEventListener("DOMContentLoaded", (Event) => {
     //console.log(location.pathname);
@@ -24,6 +25,7 @@ document.addEventListener("DOMContentLoaded", (Event) => {
         if (location.pathname.includes("Participacion_foros.html")) cargarForos();
         if (location.pathname.includes("Moderacion_contenido_foros.html")) cargarModeracion();
         if (location.pathname.includes("Recomendaciones.html")) cargarBiblioteca();
+        if (location.pathname.includes("Perfil.html")) cargarPerfil();
     }
 });
 
