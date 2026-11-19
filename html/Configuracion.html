@@ -10,9 +10,6 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
-        rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
@@ -176,188 +173,136 @@
         </nav>
     </aside>
     <!-- Main Content -->
-    <main class="min-h-screen pt-24 pb-12 lg:ml-sidebar-width px-margin-mobile md:px-margin-desktop">
+    <main class="lg:ml-sidebar-width pt-24 pb-24 px-margin-mobile md:px-margin-desktop min-h-screen">
         <div class="max-w-container-max mx-auto space-y-8">
             <!-- Header Section -->
             <header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
                 <div>
                     <h1 class="font-headline-md text-headline-md text-primary">Gestión de Cuenta</h1>
-                    <p class="text-on-surface-variant font-body-md text-body-md">Administra tu información personal y
-                        preferencias del portal.</p>
+                    <p class="text-on-surface-variant font-body-md text-body-md">Cambia tu contraseña y ajusta cómo se
+                        comporta Claramente en este dispositivo.</p>
                 </div>
-                <!-- Nav Pills -->
-                <nav class="flex p-1 bg-surface-container-low rounded-full w-fit soft-shadow">
-                    <button class="px-8 py-xs rounded-full font-label-md transition-all nav-pill-active"
-                        id="pill-config" onclick="switchTab('config')">Configuración</button>
+                <nav aria-label="Sección actual">
+                    <span aria-current="page"
+                        class="inline-block px-6 py-2 rounded-full font-label-md bg-primary-container text-on-primary-container soft-glow">Configuración</span>
                 </nav>
             </header>
             <!-- INTERFACE 2: CONFIGURACIÓN -->
-            <section class="space-y-lg transition-opacity duration-300" id="content-config">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-lg">
-                    <!-- Notifications Card -->
+            <section class="space-y-6 transition-opacity duration-300" id="content-config">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Preferencias de este dispositivo (se guardan solo en este navegador) -->
                     <div class="bg-surface-container-lowest rounded-xl soft-glow flex flex-col">
-                        <div class="p-lg border-b border-outline-variant/20">
-                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
-                                <span class="material-symbols-outlined text-primary">notifications</span> Notificaciones
+                        <div class="p-6 border-b border-outline-variant/20">
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">tune</span> Preferencias de este
+                                dispositivo
                             </h3>
                         </div>
-                        <div class="p-6 flex-1 space-y-6">
-                            <div
-                                class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
+                        <div class="p-6 flex-1 space-y-4">
+                            <div class="flex items-center justify-between gap-4 p-2 hover:bg-surface rounded-lg transition-colors">
                                 <div>
-                                    <p class="font-label-md text-on-surface">Recordatorios diarios</p>
-                                    <p class="text-body-sm text-outline">Avisos para tus registros de bienestar.</p>
+                                    <p class="font-label-md text-on-surface">Recordatorio diario</p>
+                                    <p class="text-label-md text-outline">Un aviso dentro de la aplicación si hoy aún no registraste cómo te sientes.</p>
                                 </div>
-                                <label class="relative inline-flex items-center cursor-pointer">
-                                    <input checked="" class="sr-only peer" type="checkbox" />
+                                <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                                    <input id="pref-recordatorio" class="sr-only peer" type="checkbox" aria-label="Recordatorio diario" />
                                     <div
-                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        class="w-11 h-6 bg-surface-container-highest peer-focus-visible:ring-2 peer-focus-visible:ring-primary/40 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
                                     </div>
                                 </label>
                             </div>
-                            <div
-                                class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
+                            <div class="flex items-center justify-between gap-4 p-2 hover:bg-surface rounded-lg transition-colors">
                                 <div>
-                                    <p class="font-label-md text-on-surface">Actualizaciones de red</p>
-                                    <p class="text-body-sm text-outline">Novedades de la comunidad y grupos.</p>
+                                    <p class="font-label-md text-on-surface">Reducir animaciones</p>
+                                    <p class="text-label-md text-outline">Menos movimiento en las pantallas.</p>
                                 </div>
-                                <label class="relative inline-flex items-center cursor-pointer">
-                                    <input class="sr-only peer" type="checkbox" />
+                                <label class="relative inline-flex items-center cursor-pointer shrink-0">
+                                    <input id="pref-movimiento" class="sr-only peer" type="checkbox" aria-label="Reducir animaciones" />
                                     <div
-                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
+                                        class="w-11 h-6 bg-surface-container-highest peer-focus-visible:ring-2 peer-focus-visible:ring-primary/40 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-outline-variant after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
                                     </div>
                                 </label>
                             </div>
-                            <div
-                                class="flex items-center justify-between p-sm hover:bg-surface rounded-lg transition-colors">
-                                <div>
-                                    <p class="font-label-md text-on-surface">Reportes semanales</p>
-                                    <p class="text-body-sm text-outline">Resumen de tu progreso por email.</p>
-                                </div>
-                                <label class="relative inline-flex items-center cursor-pointer">
-                                    <input checked="" class="sr-only peer" type="checkbox" />
-                                    <div
-                                        class="w-11 h-6 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary">
-                                    </div>
-                                </label>
-                            </div>
+                            <p class="text-label-sm text-outline px-2">Estas preferencias se guardan solo en este navegador.</p>
                         </div>
                     </div>
-                    <!-- Privacy Card -->
+                    <!-- Privacidad y datos -->
                     <div class="glass-card rounded-3xl soft-glow flex flex-col">
                         <div class="p-6 border-b border-outline-variant/20">
-                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
-                                <span class="material-symbols-outlined text-primary">privacy_tip</span> Privacidad y
-                                Visibilidad
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">privacy_tip</span> Privacidad y datos
                             </h3>
                         </div>
-                        <div class="p-6 flex-1 space-y-6">
-                            <div class="flex items-start gap-2">
-                                <input checked=""
-                                    class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
-                                    id="priv-1" type="checkbox" />
-                                <label class="text-body-md" for="priv-1">Permitir que otros usuarios vean mi
-                                    perfil público.</label>
+                        <div class="p-6 flex-1 space-y-4">
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">visibility</span>
+                                <p class="font-body-md text-body-md text-on-surface-variant">En los foros, las demás personas
+                                    ven solo tu primer nombre y la inicial de tu apellido.</p>
                             </div>
-                            <div class="flex items-start gap-2">
-                                <input class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
-                                    id="priv-2" type="checkbox" />
-                                <label class="text-body-md" for="priv-2">Compartir datos de bienestar anónimos para
-                                    investigación académica.</label>
+                            <div class="flex items-start gap-3">
+                                <span class="material-symbols-outlined text-primary">lock</span>
+                                <p class="font-body-md text-body-md text-on-surface-variant">Tu correo y tu contraseña no se
+                                    muestran a nadie de la comunidad.</p>
                             </div>
-                            <div class="flex items-start gap-2">
-                                <input checked=""
-                                    class="mt-1 rounded border-outline text-primary focus:ring-primary h-5 w-5"
-                                    id="priv-3" type="checkbox" />
-                                <label class="text-body-md" for="priv-3">Activar modo navegación privada por
-                                    defecto.</label>
+                            <div class="pt-2">
+                                <p class="text-label-md text-outline mb-3">Descarga una copia de lo que Claramente guarda
+                                    sobre ti: tu cuenta, tus registros emocionales y tus publicaciones.</p>
+                                <button id="btn-descargar-datos" type="button"
+                                    class="px-6 py-2 border border-primary text-primary rounded-xl font-label-md hover:bg-primary/5 transition-all active:scale-95 inline-flex items-center gap-2">
+                                    <span class="material-symbols-outlined text-sm">download</span> Descargar mis datos
+                                </button>
+                                <p id="datos-msg" role="status" class="hidden mt-3 font-label-md text-label-md"></p>
                             </div>
                         </div>
                     </div>
-                    <!-- Password/Security Card -->
+                    <!-- Seguridad de la cuenta -->
                     <div class="glass-card rounded-3xl soft-glow flex flex-col md:col-span-2">
                         <div class="p-6 border-b border-outline-variant/20">
-                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
-                                <span class="material-symbols-outlined text-primary">security</span> Seguridad de la
-                                Cuenta
+                            <h3 class="font-title-lg text-title-lg flex items-center gap-2">
+                                <span class="material-symbols-outlined text-primary">shield</span> Seguridad de la Cuenta
                             </h3>
                         </div>
                         <div class="p-6">
-                            <form class="grid grid-cols-1 md:grid-cols-3 gap-xl" id="password-form" novalidate="">
+                            <form id="password-form" class="grid grid-cols-1 md:grid-cols-3 gap-6" novalidate>
                                 <div class="space-y-2">
-                                    <label class="text-label-md block font-bold">Contraseña actual</label>
-                                    <input
-                                        class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                                        placeholder="••••••••" required="" type="password" />
-                                    <p class="text-danger text-label-sm hidden invalid-feedback">Este campo es
-                                        obligatorio.</p>
+                                    <label for="pwd-actual" class="text-label-md block font-bold">Contraseña actual</label>
+                                    <input id="pwd-actual" type="password" autocomplete="current-password" maxlength="72" placeholder="••••••••"
+                                        class="w-full px-4 py-2 border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" required />
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-label-md block font-bold">Nueva contraseña</label>
-                                    <input
-                                        class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                                        minlength="8" placeholder="Nueva contraseña" required="" type="password" />
-                                    <p class="text-label-md text-outline">Mínimo 8 caracteres.</p>
+                                    <label for="pwd-nueva" class="text-label-md block font-bold">Nueva contraseña</label>
+                                    <input id="pwd-nueva" type="password" autocomplete="new-password" maxlength="72" placeholder="••••••••"
+                                        class="w-full px-4 py-2 border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" required />
+                                    <p class="text-label-sm text-outline">Mínimo 8 caracteres.</p>
                                 </div>
                                 <div class="space-y-2">
-                                    <label class="text-label-md block font-bold">Confirmar contraseña</label>
-                                    <input
-                                        class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
-                                        placeholder="Repite contraseña" required="" type="password" />
+                                    <label for="pwd-confirmar" class="text-label-md block font-bold">Confirmar nueva contraseña</label>
+                                    <input id="pwd-confirmar" type="password" autocomplete="new-password" maxlength="72" placeholder="••••••••"
+                                        class="w-full px-4 py-2 border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all" required />
                                 </div>
                             </form>
+                            <p id="pwd-msg" role="status" class="hidden mt-4 font-label-md text-label-md"></p>
                         </div>
-                    </div>
-                    <!-- Preferences Card -->
-                    <div class="glass-card rounded-3xl soft-glow flex flex-col md:col-span-2">
-                        <div class="p-6 border-b border-outline-variant/20">
-                            <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
-                                <span class="material-symbols-outlined text-primary">tune</span> Preferencias de
-                                Interfaz
-                            </h3>
-                        </div>
-                        <div class="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-
-                            <div class="space-y-2">
-                                <label class="block font-bold text-label-md">
-                                    Idioma del sistema
-                                </label>
-                                <select
-                                    class="w-full px-4 py-2 border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                                    <option>Español</option>
-                                    <option>English</option>
-                                </select>
-                            </div>
-                        </div>
-                        </form>
                     </div>
                 </div>
-                <!-- Preferences Card -->
-                <div class="glass-card rounded-3xl soft-glow flex flex-col md:col-span-2">
-                    <div class="p-6 border-b border-outline-variant/20">
-                        <h3 class="font-title-lg text-title-lg flex items-center gap-sm">
-                            <label class="text-label-md block font-bold">Tema visual</label>
-                            <select
-                                class="w-full px-md py-sm border border-outline rounded-xl focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all appearance-none bg-[url('data:image/svg+xml;charset=UTF-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%20fill%3D%22none%22%20stroke%3D%22%237a7580%22%20stroke-width%3D%222%22%20stroke-linecap%3D%22round%22%20stroke-linejoin%3D%22round%22%3E%3Cpolyline%20points%3D%226%209%2012%2015%2018%209%22%3E%3C%2Fpolyline%3E%3C%2Fsvg%3E')] bg-[length:20px_20px] bg-[right_12px_center] bg-no-repeat">
-                                <option>Modo Claro (Predeterminado)</option>
-                                <option>Modo Oscuro</option>
-                                <option>Automático (Sistema)</option>
-                            </select>
-                    </div>
-                </div>
-                <div
-                    class="px-8 py-2 flex flex-col md:flex-row justify-end gap-4 border-t border-outline-variant/10 pt-lg">
-                    <button
+                <!-- Actions -->
+                <div class="flex flex-col md:flex-row justify-end gap-4 border-t border-outline-variant/10 pt-6">
+                    <button id="btn-cancelar-clave" type="button"
                         class="px-8 py-2 border border-outline text-on-surface-variant rounded-xl font-label-md hover:bg-surface transition-all active:scale-95">Cancelar</button>
-                    <button
-                        class="px-8 py-2 bg-primary text-white rounded-xl font-label-md soft-shadow hover:bg-primary/90 transition-all active:scale-95"
-                        onclick="handleSave()">Guardar cambios</button>
+                    <button id="btn-cambiar-clave" type="submit" form="password-form"
+                        class="px-8 py-2 bg-primary text-white rounded-xl font-label-md soft-glow hover:bg-primary/90 transition-all active:scale-95">Cambiar contraseña</button>
                 </div>
-        </div>
-        </div>
-        </section>
+            </section>
         </div>
     </main>
+    <!-- SUCCESS ALERT (Hidden) -->
+    <div class="fixed bottom-8 right-8 z-50 transform translate-y-20 opacity-0 transition-all duration-500 ease-out pointer-events-none"
+        id="toast-success" role="status" aria-live="polite">
+        <div class="bg-secondary text-white px-6 py-4 rounded-xl soft-glow flex items-center gap-3">
+            <span class="material-symbols-outlined">check_circle</span>
+            <span id="toast-texto" class="font-label-md">¡Cambios guardados correctamente!</span>
+        </div>
+    </div>
     <!-- Footer -->
     <footer
         class="w-full bg-surface-container dark:bg-surface-container-highest flex flex-col md:flex-row justify-between items-center px-margin-desktop py-8 gap-4">
@@ -397,31 +342,6 @@
             <span class="text-[10px] font-label-sm">Comunidad</span>
         </button>
     </nav>
-    <script>
-        // Simple micro-interactions
-        document.querySelectorAll('.glass-card').forEach(card => {
-            card.addEventListener('mouseenter', () => {
-                card.style.transform = 'translateY(-4px)';
-                card.style.transition = 'all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
-            });
-            card.addEventListener('mouseleave', () => {
-                card.style.transform = 'translateY(0)';
-            });
-        });
-
-        // Simulating loading animation for charts
-        window.addEventListener('load', () => {
-            const bars = document.querySelectorAll('.bg-verde-menta, .bg-primary-container, .bg-calm-peach, .bg-outline-variant');
-            bars.forEach(bar => {
-                const targetHeight = bar.style.height;
-                bar.style.height = '0';
-                setTimeout(() => {
-                    bar.style.transition = 'height 1.5s ease-out';
-                    bar.style.height = targetHeight;
-                }, 200);
-            });
-        });
-    </script>
     <script type="module" src="../JS/main.js"></script>
 </body>
 
