@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-11-2026 a las 23:36:08
+-- Tiempo de generación: 20-11-2026 a las 21:10:49
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -112,7 +112,8 @@ INSERT INTO `estado_emocional` (`ID_ESTADO_EMOCIONAL`, `FECHA_REG`, `ID_EMOCION`
 (14, '2026-10-13 01:15:14', 3, 7, 'todo good', 1),
 (15, '2026-11-02 15:16:56', 8, 8, 'Debo tomar una decision pero me cuesta', 1),
 (16, '2026-11-15 03:09:46', 3, 5, 'tranquilamente', 1),
-(17, '2026-11-16 03:08:21', 1, 5, 'LA VIDA ES BELLA', 1);
+(17, '2026-11-16 03:08:21', 1, 5, 'LA VIDA ES BELLA', 1),
+(18, '2026-11-20 21:06:46', 10, 7, 'Agradecida por un día más de vida', 1);
 
 -- --------------------------------------------------------
 
@@ -489,7 +490,7 @@ ALTER TABLE `bibliografia`
 -- AUTO_INCREMENT de la tabla `estado_emocional`
 --
 ALTER TABLE `estado_emocional`
-  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `foro`
