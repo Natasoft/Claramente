@@ -10,6 +10,12 @@
 
 import { login, validarToken } from './inicio.js';
 import { validarUsuario, menu, salir } from './panelbootstrap.js';
+import { cargarEmociones, cargarEstadisticas } from './emocional.js';
+import { cargarSugerencia, mostrarInspiracionDelDia, cargarEstadoAlerta } from './recomendaciones.js';
+import { cargarForos } from './foros.js';
+import { cargarModeracion } from './moderacion.js';
+import { cargarBiblioteca } from './biblioteca.js';
+import { cargarPerfil } from './perfil.js';
 
 // Carga un módulo y ejecuta lo que corresponda. Un fallo aquí no afecta al resto.
 function usar(ruta, accion) {
