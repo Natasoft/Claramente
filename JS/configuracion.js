@@ -91,12 +91,70 @@ function iniciarPreferencias() {
 // ---------------------------------------------------------------------
 // Descargar mis datos
 // ---------------------------------------------------------------------
+// ---- Archivo de texto legible (se abre con el Bloc de notas) ----
+const NOMBRES_ROL = { ADMINISTRADOR: "Administrador", MODERADOR: "Moderador", CLIENTE: "Miembro" };
+const ESTADOS_HILO = { aprobada: "publicada", pendiente: "pendiente de revisión", rechazada: "no publicada" };
+
+function fechaLarga(fecha) {
+    const d = new Date(String(fecha).replace(" ", "T"));
+    return isNaN(d) ? String(fecha ?? "") : d.toLocaleString("es", { day: "numeric", month: "long", year: "numeric", hour: "numeric", minute: "2-digit" });
+}
+
+// Las líneas siguientes de un texto largo se sangran, para que se lea como un solo bloque
+function sangrar(texto) {
+    return String(texto ?? "").trim().replace(/\r?\n/g, "\r\n    ");
+}
+
+export function construirTexto(datos) {
+    const raya = "=".repeat(60);
+    const seccion = (titulo) => ["", raya, titulo, raya];
+    const cuenta = datos.cuenta || {};
+    const emociones = datos.emociones || [];
+    const publicaciones = datos.publicaciones || [];
+    const respuestas = datos.respuestas || [];
+
+    const l = [
+        "MIS DATOS EN CLARAMENTE",
+        `Generado el ${fechaLarga(datos.GENERADO)}`,
+        "",
+        "Este archivo es una copia de la información que Claramente guarda sobre ti.",
+        "Contiene datos personales y emocionales: guárdalo en un lugar seguro.",
+        ...seccion("CUENTA"),
+        `Nombre: ${[cuenta.NOMBRES, cuenta.APELLIDOS].filter(Boolean).join(" ")}`,
+        `Correo: ${cuenta.EMAIL ?? ""}`,
+        `Tipo de cuenta: ${NOMBRES_ROL[cuenta.ROL] || "Miembro"}`,
+        ...seccion(`REGISTROS EMOCIONALES (${emociones.length})`)
+    ];
+    if (!emociones.length) l.push("Aún no tienes registros emocionales.");
+    emociones.forEach((e) => {
+        l.push("", `${fechaLarga(e.FECHA)} — ${e.EMOCION} — intensidad ${e.INTENSIDAD}/10`);
+        if (e.COMENTARIO && String(e.COMENTARIO).trim()) l.push(`    Comentario: ${sangrar(e.COMENTARIO)}`);
+    });
+
+    l.push(...seccion(`PUBLICACIONES EN LOS FOROS (${publicaciones.length})`));
+    if (!publicaciones.length) l.push("Aún no has publicado en los foros.");
+    publicaciones.forEach((p) => {
+        l.push("", `${fechaLarga(p.FECHA)} — Foro: ${p.FORO} — ${ESTADOS_HILO[p.ESTADO] || p.ESTADO}`);
+        if (p.TITULO) l.push(`    Título: ${sangrar(p.TITULO)}`);
+        l.push(`    Mensaje: ${sangrar(p.CONTENIDO)}`);
+    });
+
+    l.push(...seccion(`RESPUESTAS EN LOS FOROS (${respuestas.length})`));
+    if (!respuestas.length) l.push("Aún no has respondido en los foros.");
+    respuestas.forEach((r) => {
+        l.push("", `${fechaLarga(r.FECHA)} — en el hilo: ${r.HILO || "(sin título)"}`, `    ${sangrar(r.CONTENIDO)}`);
+    });
+
+    return l.join("\r\n") + "\r\n"; // saltos de línea de Windows, para el Bloc de notas
+}
+
 function guardarArchivo(datos) {
-    const blob = new Blob([JSON.stringify(datos, null, 2)], { type: "application/json" });
+    // "\uFEFF" al inicio: así el Bloc de notas reconoce las tildes y la ñ
+    const blob = new Blob(["\uFEFF" + construirTexto(datos)], { type: "text/plain;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const $a = document.createElement("a");
     $a.href = url;
-    $a.download = `claramente_mis_datos_${fechaLocal()}.json`;
+    $a.download = `claramente_mis_datos_${fechaLocal()}.txt`;
     document.body.appendChild($a);
     $a.click();
     $a.remove();

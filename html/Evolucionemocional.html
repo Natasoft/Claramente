@@ -191,11 +191,7 @@
                         <span class="material-symbols-outlined" data-icon="share">share</span>
                         Compartir
                     </button>
-                    <button
-                        class="flex items-center gap-2 px-6 py-3 rounded-full bg-primary text-on-primary shadow-sm hover:brightness-105 transition-all font-label-md text-label-md">
-                        <span class="material-symbols-outlined" data-icon="picture_as_pdf">picture_as_pdf</span>
-                        Exportar PDF
-                    </button>
+                    
                 </div>
             </header>
             <!-- Key Metrics Grid -->
@@ -285,7 +281,7 @@
             <section class="glass-card rounded-3xl soft-glow overflow-hidden">
                 <div class="p-8 border-b border-outline-variant flex justify-between items-center">
                     <h2 class="font-title-lg text-title-lg text-on-surface">Histórico Cronológico</h2>
-                    <button class="text-primary font-label-md text-label-md hover:underline">Ver todas</button>
+                    <button type="button" id="btn-ver-todas" class="text-primary font-label-md text-label-md hover:underline hidden">Ver todas</button>
                 </div>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left" id="historico-emocional">

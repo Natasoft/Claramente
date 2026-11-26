@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-11-2026 a las 21:10:49
+-- Tiempo de generación: 25-11-2026 a las 20:56:02
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -20,14 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_claramente`
 --
-
-DELIMITER $$
---
--- Procedimientos
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `guardar_estado_emocional` (IN `id_emocion` INT(11), IN `intensidad` INT(11), IN `comentario` VARCHAR(250), IN `id_usuario` INT(11))   INSERT INTO estado_emocional (FECHA_REG, ID_EMOCION, INTENSIDAD, COMENTARIO, ID_USUARIO) VALUES(CURRENT_TIMESTAMP(), id_emocion, intensidad, comentario, id_usuario)$$
-
-DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -113,7 +105,11 @@ INSERT INTO `estado_emocional` (`ID_ESTADO_EMOCIONAL`, `FECHA_REG`, `ID_EMOCION`
 (15, '2026-11-02 15:16:56', 8, 8, 'Debo tomar una decision pero me cuesta', 1),
 (16, '2026-11-15 03:09:46', 3, 5, 'tranquilamente', 1),
 (17, '2026-11-16 03:08:21', 1, 5, 'LA VIDA ES BELLA', 1),
-(18, '2026-11-20 21:06:46', 10, 7, 'Agradecida por un día más de vida', 1);
+(18, '2026-11-21 16:11:48', 9, 5, 'La rutina y la sobrecarga hoy no me ayudan mucho', 1),
+(19, '2026-11-22 03:09:05', 8, 6, 'No me decido al tomar una decisión sobre mi relación, no comprendo que estoy esperando', 1),
+(20, '2026-11-22 16:16:44', 1, 5, 'Por todo lo bueno que tengo', 1),
+(21, '2026-11-26 02:45:17', 6, 5, 'Tengo mil cosas por hacer y se me acaba el tiempo', 1),
+(22, '2026-11-25 20:47:48', 10, 5, 'Agradezco lo bueno y lo malo', 1);
 
 -- --------------------------------------------------------
 
@@ -192,7 +188,8 @@ INSERT INTO `participacion` (`ID_PARTICIPACION`, `TITULO`, `CONTENIDO`, `FECHA_P
 (2, NULL, 'Amo a mi hijo, pero necesito espacio para mi autocuidado', '2026-04-16 05:22:48', 1, '', '2026-04-16 05:22:48', 2, 3, 1),
 (3, NULL, 'Me estoy destruyendo si continuo en mi relación de pareja, no me valora', '2026-04-16 05:25:45', 1, 'nananananananana', '2026-04-16 05:25:45', 7, 2, 1),
 (4, 'Separacion de pareja', 'La relación se torna conflictiva ya no puedo seguir mas', '2026-10-30 03:51:47', 1, '', '2026-11-02 16:13:02', 6, 1, 1),
-(5, 'decision dificil', 'No es fácil tomar la decision de terminar la relación, pero es algo necesario para el bienestar de nosotros', '2026-11-02 16:12:20', 1, '', '2026-11-02 16:13:09', 6, 1, 1);
+(5, 'decision dificil', 'No es fácil tomar la decision de terminar la relación, pero es algo necesario para el bienestar de nosotros', '2026-11-02 16:12:20', 1, '', '2026-11-02 16:13:09', 6, 1, 1),
+(6, 'Dedicarme tiempo para mi bienestar', 'Quiero organizarme para sacar espacio de ocio para mi', '2026-11-21 16:09:45', 1, '', '2026-11-21 16:10:15', 7, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -490,7 +487,7 @@ ALTER TABLE `bibliografia`
 -- AUTO_INCREMENT de la tabla `estado_emocional`
 --
 ALTER TABLE `estado_emocional`
-  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ID_ESTADO_EMOCIONAL` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT de la tabla `foro`
@@ -508,7 +505,7 @@ ALTER TABLE `gente`
 -- AUTO_INCREMENT de la tabla `participacion`
 --
 ALTER TABLE `participacion`
-  MODIFY `ID_PARTICIPACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ID_PARTICIPACION` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `recomendaciones`

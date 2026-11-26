@@ -1,4 +1,4 @@
-import { enviarPeticion } from "./herramientas.js";
+import { enviarPeticion, ir } from "./herramientas.js";
 
 let selectedEmotionId = null;
 
@@ -64,12 +64,15 @@ export async function saveRegistry() {
         params: {
             id_emocion: selectedEmotionId,
             intensidad: intensidad,
-            comentario: comentario,
-            id_usuario: localStorage.getItem("iduser")
+            comentario: comentario // la persona se identifica por la sesión del servidor
         },
         fSucces: (resp) => {
             if (resp.code == 200) {
                 document.getElementById("success-modal").classList.remove("hidden", "opacity-0");
+            } else if (resp.code == 401) {
+                alert("Tu sesión venció. Inicia sesión de nuevo para guardar tu registro.");
+                localStorage.clear();
+                ir("inicio.html");
             } else {
                 alert(resp.msg || "No se pudo guardar el registro.");
             }
@@ -119,56 +122,191 @@ if ($tip) {
     $tip.textContent = datosBienestar[Math.floor(Math.random() * datosBienestar.length)];
 }
 
+// =====================================================================
+// Evolución emocional (Evolucionemocional.html)
+// =====================================================================
+
+const LIMITE_TABLA = 10;     // la tabla muestra los 10 registros más recientes; "Ver todas" muestra el resto
+let registros = [];          // todos los registros de la persona (los usa el filtro)
+let listaActual = [];        // lo que se está mostrando ahora (todos, o los de la emoción filtrada)
+let verTodas = false;
+let filtroEnlazado = false;
+let botonEnlazado = false;
+
+// Los textos escritos por la persona (comentarios) se escapan: nunca se insertan como HTML
+function escapar(texto) {
+    return String(texto ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+}
+
+// "13 nov 2026, 9:11 p. m."  (para la tabla)
+function formatearFecha(fecha) {
+    const d = new Date(String(fecha).replace(" ", "T"));
+    return isNaN(d) ? String(fecha) : d.toLocaleString("es", { day: "numeric", month: "short", year: "numeric", hour: "numeric", minute: "2-digit" });
+}
+
+// "13 nov, 9:11 p. m."  (para la cajita pequeña; el año solo si no es el actual)
+function formatearFechaCorta(fecha) {
+    const d = new Date(String(fecha).replace(" ", "T"));
+    if (isNaN(d)) return String(fecha);
+    const opciones = { day: "numeric", month: "short", hour: "numeric", minute: "2-digit" };
+    if (d.getFullYear() !== new Date().getFullYear()) opciones.year = "numeric";
+    return d.toLocaleString("es", opciones);
+}
+
 export async function cargarEstadisticas() {
     await enviarPeticion({
         url: "../backend/vista_emociones/index.php",
         method: "GET",
-        params: {
-            id: "*",
-            id_usuario: localStorage.getItem("iduser")
-        },
+        params: { id: "*" }, // la persona se identifica por la sesión del servidor
         fSucces: (resp) => {
-            if (resp.code == 200) {
-                estadistica(resp.datos)
+            if (resp.code == 200 && Array.isArray(resp.datos)) {
+                estadistica(resp.datos);
+            } else if (resp.code == 401) {
+                localStorage.clear(); // la sesión venció: se vuelve al inicio de sesión
+                ir("inicio.html");
             } else {
-                alert(resp.msg || "No se pudo guardar el registro.");
+                alert("No pudimos cargar tu historial. Intenta de nuevo en unos minutos.");
             }
         }
     });
 }
 
+// Último registro = el de fecha más reciente (no depende del orden en que llegue la lista)
+function ultimoRegistro(datos) {
+    return datos.reduce((a, b) => {
+        if (b.FECHA_REG !== a.FECHA_REG) return b.FECHA_REG > a.FECHA_REG ? b : a;
+        return Number(b.ID_ESTADO_EMOCIONAL) > Number(a.ID_ESTADO_EMOCIONAL) ? b : a;
+    });
+}
+
+// Emoción predominante = la que más veces se registró (si empatan, la registrada más recientemente)
+function emocionPredominante(datos) {
+    const cuentas = {};
+    datos.forEach((e) => {
+        const c = cuentas[e.NOMBRE] || (cuentas[e.NOMBRE] = { nombre: e.NOMBRE, veces: 0, suma: 0, ultima: "" });
+        c.veces += 1;
+        c.suma += Number(e.INTENSIDAD) || 0;
+        if (e.FECHA_REG > c.ultima) c.ultima = e.FECHA_REG;
+    });
+    const mejor = Object.values(cuentas).sort((a, b) => b.veces - a.veces || (b.ultima > a.ultima ? 1 : b.ultima < a.ultima ? -1 : 0))[0];
+    return { nombre: mejor.nombre, promedio: Math.round((mejor.suma / mejor.veces) * 10) / 10 };
+}
+
 function estadistica(datos) {
-    const emocionpredominante = document.getElementById("emocion-predominante");
-    const emocionactual = document.getElementById("emocion-actual");
-    const totalregistros = document.getElementById("total-registros");
-    const fechaemocion = document.getElementById("fecha-emocion");
-    const intensidadpredominante = document.getElementById("intensidad-predominante");
-    const tabla = document.querySelector("#historico-emocional tbody");
-    const grafico = document.getElementById("grafico-frecuencia");
+    registros = datos;
+    verTodas = false;
+    const $predominante = document.getElementById("emocion-predominante");
+    const $intensidad = document.getElementById("intensidad-predominante");
+    const $actual = document.getElementById("emocion-actual");
+    const $fecha = document.getElementById("fecha-emocion");
+    const $total = document.getElementById("total-registros");
+
+    poblarFiltro();
+
+    const $ver = document.getElementById("btn-ver-todas");
+    if ($ver && !botonEnlazado) {
+        botonEnlazado = true;
+        $ver.addEventListener("click", () => { verTodas = !verTodas; pintarDetalle(listaActual); });
+    }
+
+    // Sin registros: se limpian las cajas y los datos de ejemplo
+    if (datos.length === 0) {
+        $predominante.textContent = "—";
+        $intensidad.textContent = "Sin registros";
+        $actual.textContent = "—";
+        $fecha.textContent = "—";
+        $total.textContent = "0";
+        pintarDetalle([]);
+        return;
+    }
+
+    const ultimo = ultimoRegistro(datos);
+    const predominante = emocionPredominante(datos);
+
+    $total.textContent = datos.length;
+    $actual.textContent = ultimo.NOMBRE;
+    $fecha.textContent = formatearFechaCorta(ultimo.FECHA_REG);
+    $predominante.textContent = predominante.nombre;
+    // Texto corto a propósito (la cajita es pequeña); la explicación va en el título emergente
+    $intensidad.textContent = `Promedio ${predominante.promedio.toLocaleString("es")}/10`;
+    $intensidad.title = "Intensidad promedio de tu emoción predominante";
+
+    pintarDetalle(datos);
+}
+
+// Llena el filtro con las emociones que la persona realmente registró (con cuántas veces)
+function poblarFiltro() {
+    const $filtro = document.getElementById("emotion-filter");
+    if (!$filtro) return;
+
+    const emociones = {};
+    registros.forEach((e) => {
+        const id = String(e.ID_EMOCION);
+        emociones[id] = emociones[id] || { nombre: e.NOMBRE, veces: 0 };
+        emociones[id].veces += 1;
+    });
+    $filtro.innerHTML = `<option value="">Todas las emociones</option>` + Object.entries(emociones)
+        .sort((a, b) => b[1].veces - a[1].veces)
+        .map(([id, e]) => `<option value="${escapar(id)}">${escapar(e.nombre)} (${e.veces})</option>`)
+        .join("");
+
+    if (!filtroEnlazado) {
+        filtroEnlazado = true;
+        $filtro.addEventListener("change", () => {
+            const elegida = $filtro.value;
+            verTodas = false;
+            pintarDetalle(elegida ? registros.filter((e) => String(e.ID_EMOCION) === elegida) : registros);
+        });
+    }
+}
+
+// Tabla de histórico y gráfico (el filtro actúa sobre estos dos; las cajas de arriba siempre muestran todo).
+// La tabla muestra los 10 registros más recientes; "Ver todas" muestra el resto. El gráfico muestra todos.
+function pintarDetalle(lista) {
+    listaActual = lista;
+    const $tabla = document.querySelector("#historico-emocional tbody");
+    const $grafico = document.getElementById("grafico-frecuencia");
+    const $ver = document.getElementById("btn-ver-todas");
+
+    if (lista.length === 0) {
+        const mensaje = registros.length === 0
+            ? "Aún no hay registros. Registra cómo te sientes y aquí verás tu evolución."
+            : "No hay registros de esta emoción.";
+        $tabla.innerHTML = `<tr><td class="px-8 py-5" colspan="5">${mensaje}</td></tr>`;
+        $grafico.innerHTML = "";
+        if ($ver) $ver.classList.add("hidden");
+        return;
+    }
+
+    // Más recientes primero, sin depender del orden en que llegue la lista
+    const recientes = [...lista].sort((a, b) =>
+        b.FECHA_REG > a.FECHA_REG ? 1 : b.FECHA_REG < a.FECHA_REG ? -1 : Number(b.ID_ESTADO_EMOCIONAL) - Number(a.ID_ESTADO_EMOCIONAL));
+    const visibles = verTodas ? recientes : recientes.slice(0, LIMITE_TABLA);
+
+    if ($ver) {
+        $ver.classList.toggle("hidden", lista.length <= LIMITE_TABLA);
+        $ver.textContent = verTodas ? "Ver menos" : `Ver todas (${lista.length})`;
+    }
+
     let historial = "", barras = "";
-    console.log(datos);
-    datos.forEach((emocion) => {
-        totalregistros.textContent = datos.length;
-        emocionactual.textContent = emocion.NOMBRE;
-        fechaemocion.textContent = emocion.FECHA_REG;
-        intensidadpredominante.textContent = emocion.INTENSIDAD;
+    lista.forEach((emocion) => {
         barras += `
             <div class="w-full flex flex-col items-center gap-2 h-full justify-end">
                 <div class="w-full bg-primary-container rounded-t-lg transition-all hover:brightness-110 flex items-center justify-center text-xs font-bold" style="height: ${emocion.INTENSIDAD * 10}%;">${emocion.INTENSIDAD}</div>
-                <span class="font-label-sm text-label-sm rotate-45 mt-4 whitespace-nowrap">${emocion.NOMBRE}</span>
-            </div>
-        `;
+                <span class="font-label-sm text-label-sm rotate-45 mt-4 whitespace-nowrap">${escapar(emocion.NOMBRE)}</span>
+            </div>`;
+    });
+    visibles.forEach((emocion) => {
         historial += `
             <tr>
-                <td class="px-8 py-5">${emocion.FECHA_REG}</td>
+                <td class="px-8 py-5">${formatearFecha(emocion.FECHA_REG)}</td>
                 <td class="px-8 py-5">
                     <span class="flex items-center gap-2">
-                        <!--<span class="w-2 h-2 rounded-full bg-verde-menta"></span>-->
                         <span class="text-4xl group-hover:scale-125 transition-transform duration-300">${emocion.ICONO}</span>
-                        ${emocion.NOMBRE}
+                        ${escapar(emocion.NOMBRE)}
                     </span>
                 </td>
-                <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">${emocion.COMENTARIO}</td>
+                <td class="px-8 py-5 text-on-surface-variant truncate max-w-xs">${escapar(emocion.COMENTARIO)}</td>
                 <td class="px-8 py-5">
                     <div class="flex gap-0.5" title="Intensidad de la emoción: ${emocion.INTENSIDAD}/10">
                         ${intensidadenEstrella(emocion.INTENSIDAD / 2)}
@@ -177,63 +315,19 @@ function estadistica(datos) {
                 <td class="px-8 py-5 text-right opacity-0 group-hover:opacity-100 transition-opacity">
                     <span class="material-symbols-outlined cursor-pointer text-on-surface-variant hover:text-primary" data-icon="chevron_right">chevron_right</span>
                 </td>
-            </tr>
-        `;
+            </tr>`;
     });
-    tabla.innerHTML = historial;
-    grafico.innerHTML = barras;
+    $tabla.innerHTML = historial;
+    $grafico.innerHTML = barras;
 }
 
-function intensidadenEstrella(datos) {
-    let intensidad = Math.round(datos);
-    switch (intensidad) {
-        case 0:
-            return `
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-            `;
-        case 1:
-            return `
-                <span class="material-symbols text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-            `;
-        case 2:
-            return `
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm"data-icon="star">star</span>
-            `;
-        case 3:
-            return `
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-            `;
-        case 4:
-            return `
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>
-            `;
-        case 5:
-            return `
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>
-                <span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill[1]">star</span>
-            `;
+function intensidadenEstrella(valor) {
+    const llenas = Math.max(0, Math.min(5, Math.round(valor)));
+    let html = "";
+    for (let i = 1; i <= 5; i++) {
+        html += i <= llenas
+            ? `<span class="material-symbols-outlined text-primary text-sm" data-icon="star" data-weight="fill">star</span>`
+            : `<span class="material-symbols-outlined text-outline-variant text-sm" data-icon="star">star</span>`;
     }
+    return html;
 }
